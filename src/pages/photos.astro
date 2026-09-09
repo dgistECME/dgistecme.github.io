@@ -7,7 +7,7 @@ const tabs = [{ label: 'ARTICLES', href: '/articles' }, { label: 'PHOTOS', href:
 const years = [...new Set(data.posts.map((p: any) => p.year))].sort((a: any, b: any) => b - a);
 const fmt = (d: string | null) => d ? d.replace(/^(\d{4})\.?(\d{2})?\.?(\d{2})?$/, (_, y, m, dd) => `${y}년${m ? ` ${+m}월` : ''}${dd ? ` ${+dd}일` : ''}`) : '';
 ---
-<Base title="Photos">
+<Base title="Photos" eyebrow="News" heading="Photos" sub={`${data.posts.length} posts · ${years[years.length - 1]} – ${years[0]}`}>
   <Fragment slot="head">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css" />
   </Fragment>
@@ -16,6 +16,7 @@ const fmt = (d: string | null) => d ? d.replace(/^(\d{4})\.?(\d{2})?\.?(\d{2})?$
     {years.map((y) => (
       <section>
         <h2 class="year">{y}</h2>
+        <div class="posts">
         {data.posts.filter((p: any) => p.year === y).map((p: any, i: number) => (
           <article class="post">
             <div class="head"><img src={img(data.profile_image)} alt="" />ECME_official</div>
@@ -33,6 +34,7 @@ const fmt = (d: string | null) => d ? d.replace(/^(\d{4})\.?(\d{2})?\.?(\d{2})?$
             </div>
           </article>
         ))}
+        </div>
       </section>
     ))}
   </main>

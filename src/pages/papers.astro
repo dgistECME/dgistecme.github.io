@@ -12,7 +12,7 @@ for (const p of data.papers) {
   groups.get(key)!.push(p);
 }
 ---
-<Base title="Papers">
+<Base title="Papers" eyebrow="Publication" heading="Papers" sub={`${data.papers.length} peer-reviewed publications, 2011 – ${data.papers[0].year}`}>
   <main class="wrap">
     <SubTabs tabs={tabs} current="/papers" />
     <div class="covers">
@@ -24,15 +24,16 @@ for (const p of data.papers) {
         <h2 class="year">{year}{year === '~2017' && <span class="muted" style="font-size:.9rem"> (before DGIST)</span>}</h2>
         {list.map((p: any) => (
           <article class="paper">
+            <div class="n">{p.number}</div>
             {p.raw ? (
               <div class="raw">{p.url ? <a href={p.url} target="_blank" rel="noopener">{p.raw}</a> : p.raw}</div>
             ) : (
-              <>
-                <div class="t"><span class="n">[{p.number}]</span>{p.url ? <a href={p.url} target="_blank" rel="noopener">{p.title}</a> : p.title}</div>
+              <div>
+                <div class="t">{p.url ? <a href={p.url} target="_blank" rel="noopener">{p.title}</a> : p.title}</div>
                 <div class="a">{p.authors}</div>
                 <div class="v">{p.venue}{p.note && <> — {p.note}</>}</div>
-                {p.impact_factor && <div class="if">[Impact Factor : {p.impact_factor}]</div>}
-              </>
+                {p.impact_factor && <div class="if">Impact Factor {p.impact_factor}</div>}
+              </div>
             )}
           </article>
         ))}

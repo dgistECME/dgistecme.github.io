@@ -4,9 +4,10 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import home from '../data/home.yaml';
 import { img } from '../lib/img';
-interface Props { title?: string; description?: string; wide?: boolean }
-const { title, description = 'ECME LAB — Prof. Ju-Hyuck Lee\'s Research Group, DGIST. Energy Conversion Materials Engineering.' } = Astro.props;
-const full = title ? `${title} | JU HYUCK LEE's Group` : "Home | JU HYUCK LEE's Group";
+interface Props { title?: string; heading?: string; eyebrow?: string; sub?: string; description?: string }
+const { title, heading, eyebrow, sub,
+  description = "ECME LAB — Prof. Ju-Hyuck Lee's Research Group, DGIST. Energy Conversion Materials Engineering." } = Astro.props;
+const full = title ? `${title} | ECME LAB` : 'ECME LAB — Energy Conversion Materials Engineering';
 ---
 <!doctype html>
 <html lang="en">
@@ -15,15 +16,28 @@ const full = title ? `${title} | JU HYUCK LEE's Group` : "Home | JU HYUCK LEE's 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{full}</title>
     <meta name="description" content={description} />
+    <meta name="theme-color" content="#0b1526" />
     <link rel="icon" href={img(home.logo)} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
     <slot name="head" />
   </head>
   <body>
     <Header />
-    <slot />
+    {heading && (
+      <section class="page-head on-dark">
+        <div class="wrap">
+          {eyebrow && <div class="eyebrow">{eyebrow}</div>}
+          <h1>{heading}</h1>
+          {sub && <p class="sub">{sub}</p>}
+        </div>
+      </section>
+    )}
+    <slot name="hero" />
+    <div class="light">
+      <slot />
+    </div>
     <Footer />
   </body>
 </html>

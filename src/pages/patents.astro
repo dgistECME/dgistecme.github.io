@@ -4,12 +4,12 @@ import SubTabs from '../components/SubTabs.astro';
 import data from '../data/patents.yaml';
 const tabs = [{ label: 'PAPERS', href: '/papers' }, { label: 'PATENTS', href: '/patents' }];
 ---
-<Base title="Patents">
+<Base title="Patents" eyebrow="Publication" heading="Patents" sub={`${data.international.length} international · ${data.domestic.length} domestic`}>
   <main class="wrap">
     <SubTabs tabs={tabs} current="/patents" />
     <h2 class="section-title">International Patents</h2>
-    {data.international.map((p: any) => <article class="paper"><span class="n">{p.number}.</span>{p.raw}</article>)}
+    {data.international.map((p: any) => <article class="paper"><div class="n">{p.number}</div><div>{p.raw}</div></article>)}
     <h2 class="section-title">Domestic Patents</h2>
-    {data.domestic.map((p: any) => <article class="paper"><span class="n">{p.number}.</span>{p.raw}</article>)}
+    {data.domestic.map((p: any) => <article class="paper"><div class="n">{p.number}</div><div>{p.raw}</div></article>)}
   </main>
 </Base>

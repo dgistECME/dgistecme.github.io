@@ -6,8 +6,8 @@ import { img } from '../lib/img';
 const tabs = [{ label: 'ARTICLES', href: '/articles' }, { label: 'PHOTOS', href: '/photos' }];
 const years = [...new Set(press.map((a: any) => a.year))].sort((a: any, b: any) => b - a);
 ---
-<Base title="Articles">
-  <main class="wrap" style="max-width:820px">
+<Base title="Articles" eyebrow="News" heading="In the Press" sub={`${press.length} articles`}>
+  <main class="wrap" style="max-width:860px">
     <SubTabs tabs={tabs} current="/articles" />
     {years.map((y) => (
       <section>
@@ -18,7 +18,7 @@ const years = [...new Set(press.map((a: any) => a.year))].sort((a: any, b: any) 
             <div>
               <h3>{a.url ? <a href={a.url} target="_blank" rel="noopener">{a.title}</a> : a.title}</h3>
               {a.summary && <p>{a.summary}</p>}
-              <div class="meta">{a.date}<b>{a.outlet}</b></div>
+              <div class="meta">{a.outlet} · {a.date}</div>
             </div>
           </article>
         ))}

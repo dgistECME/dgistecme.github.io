@@ -4,7 +4,7 @@ import r from '../data/research.yaml';
 import { img } from '../lib/img';
 const [photoPiezo, photoTribo, iconPiezo, iconTribo] = r.banner.images;
 ---
-<Base title="Research Interest">
+<Base title="Research Interest" eyebrow="Research" heading="Five directions, one goal." sub="Materials, devices and AI methods that turn ambient motion into usable power.">
   <main class="wrap">
     {r.topics.map((t: any, i: number) => {
       const paras: string[] = t.body.split('\n\n');
@@ -21,7 +21,7 @@ const [photoPiezo, photoTribo, iconPiezo, iconTribo] = r.banner.images;
               t.images.map((u: string) => <img src={img(u)} alt={t.title} loading="lazy" />)
             )}
           </figure>
-          <div>
+          <div class="text">
             <h2>{t.title}</h2>
             {lead && <p class="lead">{lead}</p>}
             {paras.map((p) => <p>{p}</p>)}

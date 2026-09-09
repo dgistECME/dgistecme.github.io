@@ -2,9 +2,9 @@
 import Base from '../layouts/Base.astro';
 import a from '../data/alumni.yaml';
 ---
-<Base title="Alumni">
+<Base title="Alumni" eyebrow="Peoples" heading="Alumni">
   <main class="wrap">
-    <h1 class="section-title">Alumni</h1>
+    <h2 class="section-title">Graduates</h2>
     <ul class="plain">
       {a.graduates.map((g: any) => (
         <li>

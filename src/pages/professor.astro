@@ -4,12 +4,12 @@ import p from '../data/professor.yaml';
 import { img } from '../lib/img';
 const header: string[] = p.header_lines.slice(1);
 ---
-<Base title="Prof. Ju-Hyuck Lee">
+<Base title="Prof. Ju-Hyuck Lee" eyebrow="Professor" heading="Ju-Hyuck Lee" sub="Associate Professor, Department of Energy Science & Engineering, DGIST">
   <main class="wrap">
     <div class="prof">
       <img src={img(p.photo)} alt="Prof. Ju-Hyuck Lee" />
       <div class="cv">
-        <h1>{p.name}</h1>
+        <h2 class="name">{p.name}</h2>
         <p class="muted" style="font-size:.9rem">
           {header.map((l) => <>{l.includes('@') ? <a href={`mailto:${p.email}`}>{l}</a> : l}<br /></>)}
         </p>

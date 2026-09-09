@@ -3,11 +3,11 @@ import Base from '../layouts/Base.astro';
 import sections from '../data/members.yaml';
 import { img } from '../lib/img';
 ---
-<Base title="Members">
+<Base title="Members" eyebrow="Peoples" heading="Members">
   <main class="wrap members">
     {sections.map((s: any) => (
       <section>
-        <h2>{s.section.replace('-', ' - ')}</h2>
+        <h2>{s.section}</h2>
         <div class="member-grid">
           {s.members.map((m: any) => (
             <article class="member">
