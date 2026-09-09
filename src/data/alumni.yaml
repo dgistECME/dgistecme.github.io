@@ -1,4 +1,9 @@
 graduates:
+- name_ko: 권민우
+  name_en: Minwoo Kwon
+  degree: M.S.
+  graduated: '27.02'
+  affiliation: 현대자동차 (TEST)
 - name_ko: 김리하
   name_en: Riha Kim
   degree: M.S.
