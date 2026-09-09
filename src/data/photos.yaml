@@ -1,21 +1,6 @@
 profile_image: aa3702_1f90535526244a0d99c2ea619b933cb5~mv2.jpg
 posts:
 - year: 2026
-  date: 2026.09.09
-  caption: '[TEST] 홈페이지 이전 기념 예시 포스트 — 지난 사진 5장 재사용'
-  tags: '#홈페이지이전 #예시'
-  images:
-  - uri: test-2026-09-photos-1.webp
-    alt: null
-  - uri: test-2026-09-photos-2.webp
-    alt: null
-  - uri: test-2026-09-photos-3.webp
-    alt: null
-  - uri: test-2026-09-photos-4.webp
-    alt: null
-  - uri: test-2026-09-photos-5.webp
-    alt: null
-- year: 2026
   date: 2026.08.14
   caption: 김리하 석사와 엄주연 학사의 졸업을 축하합니다!
   tags: '#척척석사&학사'

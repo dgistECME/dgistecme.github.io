@@ -12,14 +12,6 @@ covers:
 - b061b6_c3ac2dbd12884b76b57b603364564256~mv2.jpg
 - b061b6_ebbda960c6204291a1a1286b1484775e~mv2_d_1654_2204_s_2.jpg
 papers:
-- number: 82
-  year: 2026
-  title: '[TEST] Example Entry: Self-Powered Sensor Platform Based on Bio-Piezoelectric Glycine Films'
-  url: https://doi.org/10.1016/j.nanoen.2026.000000
-  authors: Gildong Hong†, Jinsung Choi†, Ju-Hyuck Lee*
-  venue: Nano Energy, 155, 112999 (2026)
-  impact_factor: 17.1
-  note: null
 - number: 81
   year: 2026
   title: Large-area kinetic stabilization of metastable β-glycine via meniscus-driven self-assembly with anisotropic piezoelectricity
