@@ -1,5 +1,8 @@
 # ECME LAB 홈페이지 (Astro + GitHub Pages)
 
+- 사이트: https://dgistecme.github.io/
+- 저장소: https://github.com/dgistECME/dgistecme.github.io
+
 Wix에서 이전한 정적 사이트. 콘텐츠는 전부 `src/data/*.yaml`, 디자인은 `src/styles/global.css` 상단 토큰.
 
 ## 로컬 실행
