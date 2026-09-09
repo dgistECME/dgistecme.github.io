@@ -4,10 +4,50 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import home from '../data/home.yaml';
 import { img } from '../lib/img';
+import { SITE } from '../lib/site';
 interface Props { title?: string; heading?: string; eyebrow?: string; sub?: string; description?: string }
-const { title, heading, eyebrow, sub,
-  description = "ECME LAB — Prof. Ju-Hyuck Lee's Research Group, DGIST. Energy Conversion Materials Engineering." } = Astro.props;
-const full = title ? `${title} | ECME LAB` : 'ECME LAB — Energy Conversion Materials Engineering';
+const { title, heading, eyebrow, sub, description = SITE.description } = Astro.props;
+const full = title
+  ? `${title} | ECME LAB · ${SITE.nameKo}`
+  : `ECME LAB — Energy Conversion Materials Engineering | ${SITE.nameKo}`;
+const canonical = new URL(Astro.url.pathname, SITE.url).href;
+const ogImage = new URL(img(home.banner)!, SITE.url).href;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'ResearchOrganization',
+      '@id': `${SITE.url}/#org`,
+      name: SITE.fullName,
+      alternateName: ['ECME LAB', 'ECME', 'DGIST ECME', SITE.nameKo, 'Energy Conversion Materials Engineering'],
+      url: SITE.url,
+      logo: new URL(img(home.logo)!, SITE.url).href,
+      email: SITE.email,
+      telephone: SITE.tel,
+      parentOrganization: { '@type': 'CollegeOrUniversity', name: 'DGIST (Daegu Gyeongbuk Institute of Science and Technology)', url: 'https://www.dgist.ac.kr' },
+      address: { '@type': 'PostalAddress', streetAddress: SITE.address.street, addressLocality: SITE.address.city, postalCode: SITE.address.postal, addressCountry: SITE.address.country },
+      founder: { '@id': `${SITE.url}/#prof` },
+    },
+    {
+      '@type': 'Person',
+      '@id': `${SITE.url}/#prof`,
+      name: SITE.professor,
+      alternateName: [SITE.professorKo, '이주혁 교수'],
+      jobTitle: 'Associate Professor',
+      worksFor: { '@id': `${SITE.url}/#org` },
+      affiliation: { '@type': 'CollegeOrUniversity', name: 'DGIST' },
+      email: SITE.email,
+      url: `${SITE.url}/professor/`,
+    },
+    {
+      '@type': 'WebSite',
+      url: SITE.url,
+      name: 'ECME LAB',
+      inLanguage: ['en', 'ko'],
+      publisher: { '@id': `${SITE.url}/#org` },
+    },
+  ],
+};
 ---
 <!doctype html>
 <html lang="en">
@@ -16,11 +56,31 @@ const full = title ? `${title} | ECME LAB` : 'ECME LAB — Energy Conversion Mat
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{full}</title>
     <meta name="description" content={description} />
+    <meta name="keywords" content={SITE.keywords} />
+    <meta name="author" content={`${SITE.professor} (${SITE.professorKo}), ${SITE.department}`} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ECME LAB · DGIST" />
+    <meta property="og:title" content={full} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={full} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    {SITE.googleVerification && <meta name="google-site-verification" content={SITE.googleVerification} />}
+    {SITE.naverVerification && <meta name="naver-site-verification" content={SITE.naverVerification} />}
     <meta name="theme-color" content="#0b1526" />
     <link rel="icon" href={img(home.logo)} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
     <slot name="head" />
   </head>
   <body>
