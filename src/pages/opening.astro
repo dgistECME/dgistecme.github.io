@@ -1,0 +1,52 @@
+---
+import Base from '../layouts/Base.astro';
+const email = 'jhlee85@dgist.ac.kr';
+---
+<Base title="Opening">
+  <main class="wrap opening" style="max-width:820px">
+    <h1>CONTACT</h1>
+    <p class="lead" style="font-family:var(--f-sans);font-weight:600;font-size:1.1rem">
+      We are looking for highly motivated and aggressive students and researchers in multiple positions.
+    </p>
+
+    <h2>Graduate students</h2>
+    <p>Students with highly motivated graduate students who are interested in novel energy harvesting technology.</p>
+    <p>To apply, please email Prof. Ju Hyuck Lee at <a href={`mailto:${email}`}>{email}</a>.</p>
+    <p>Please visit international applicant: <a href="http://admission.dgist.ac.kr/site/dgist_admission/menu/478.do" target="_blank" rel="noopener">Admission information</a></p>
+
+    <h2>Post Doctors</h2>
+    <p>Researchers with experience in energy harvesting or synthesis of various novel materials including organic/inorganic/bio materials.</p>
+    <p>To apply, please email your CV to Prof. Ju Hyuck Lee at <a href={`mailto:${email}`}>{email}</a></p>
+
+    <div class="box">
+      <p>저희 연구실은 차세대 에너지 발전/변환 소재 및 소자 개발 연구를 하고 있습니다.</p>
+      <p>연구실에서 연구를 함께할 학사, 석사, 박사 학생을 모집합니다.<br />에너지 및 관련분야 연구경험이 있는 박사후 연구원을 모집합니다.</p>
+      <p>관심있는 학생 및 연구원은 연락 바랍니다<br /><a href={`mailto:${email}`}>{email}</a> (지도교수: 이주혁)</p>
+    </div>
+
+    <h2>대학원생</h2>
+    <p>DGIST 대학원 입학 자격요건에 해당하는자: <a href="http://admission.dgist.ac.kr/site/dgist_admission/menu/440.do" target="_blank" rel="noopener">모집요강 참조</a></p>
+    <ul>
+      <li>장학금 전액지원</li>
+      <li>생활비 지원 — 석사과정 : 90만원/월 + α / 박사과정 : 140만원/월 + α</li>
+      <li>성과에 따른 성과급 지급</li>
+      <li>기숙사 및 의료보험 지원</li>
+      <li>전문연구요원 편입 가능</li>
+      <li>국내외 학회에 참가할 수 있는 기회 제공</li>
+      <li>해외 장기파견 기회 (미국, 호주 등)</li>
+    </ul>
+
+    <h2>인턴/학부 연구생 환영</h2>
+    <p>지도교수 면접 후 선발</p>
+
+    <h2>박사후 연구원</h2>
+    <p>지도교수 면접 후 선발 (관련연구 경험자 우대)</p>
+    <ul>
+      <li>Energy Harvesting (piezoelectric, triboelectric, pyroelectric, thermoelectric, photovoltaic)</li>
+      <li>Organic/Inorganic/Bio material synthesis</li>
+    </ul>
+
+    <h2>Address</h2>
+    <p class="muted">Room E6-411, Dept. of Energy Science &amp; Engineering, DGIST<br />333 Techno Jungang-daero, Hyeonpung-myeon, Dalseong-gun, Daegu, 42988, Republic of Korea</p>
+  </main>
+</Base>

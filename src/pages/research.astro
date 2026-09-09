@@ -1,0 +1,33 @@
+---
+import Base from '../layouts/Base.astro';
+import r from '../data/research.yaml';
+import { img } from '../lib/img';
+const [photoPiezo, photoTribo, iconPiezo, iconTribo] = r.banner.images;
+---
+<Base title="Research Interest">
+  <main class="wrap">
+    {r.topics.map((t: any, i: number) => {
+      const paras: string[] = t.body.split('\n\n');
+      const lead = i === 0 && paras.length > 1 ? paras.shift() : null;
+      return (
+        <section class="topic">
+          <figure>
+            {i === 0 ? (
+              <div class="rbanner">
+                <div><img src={img(photoPiezo)} alt="" /><div>{r.banner.labels[0]}</div><img src={img(iconPiezo)} alt="" style="max-height:130px;margin:0 auto" /></div>
+                <div><img src={img(photoTribo)} alt="" /><div>{r.banner.labels[1]}</div><img src={img(iconTribo)} alt="" style="max-height:130px;margin:0 auto" /></div>
+              </div>
+            ) : (
+              t.images.map((u: string) => <img src={img(u)} alt={t.title} loading="lazy" />)
+            )}
+          </figure>
+          <div>
+            <h2>{t.title}</h2>
+            {lead && <p class="lead">{lead}</p>}
+            {paras.map((p) => <p>{p}</p>)}
+          </div>
+        </section>
+      );
+    })}
+  </main>
+</Base>

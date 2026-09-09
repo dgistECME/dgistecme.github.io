@@ -1,0 +1,41 @@
+---
+import Base from '../layouts/Base.astro';
+import SubTabs from '../components/SubTabs.astro';
+import data from '../data/photos.yaml';
+import { img } from '../lib/img';
+const tabs = [{ label: 'ARTICLES', href: '/articles' }, { label: 'PHOTOS', href: '/photos' }];
+const years = [...new Set(data.posts.map((p: any) => p.year))].sort((a: any, b: any) => b - a);
+const fmt = (d: string | null) => d ? d.replace(/^(\d{4})\.?(\d{2})?\.?(\d{2})?$/, (_, y, m, dd) => `${y}년${m ? ` ${+m}월` : ''}${dd ? ` ${+dd}일` : ''}`) : '';
+---
+<Base title="Photos">
+  <Fragment slot="head">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css" />
+  </Fragment>
+  <main class="wrap">
+    <SubTabs tabs={tabs} current="/photos" />
+    {years.map((y) => (
+      <section>
+        <h2 class="year">{y}</h2>
+        {data.posts.filter((p: any) => p.year === y).map((p: any, i: number) => (
+          <article class="post">
+            <div class="head"><img src={img(data.profile_image)} alt="" />ECME_official</div>
+            <div class="grid">
+              {p.images.map((im: any) => (
+                <a href={img(im.uri)} class="glightbox" data-gallery={`p-${y}-${i}`} data-description={p.caption ?? ''}>
+                  <img src={img(im.uri, 'thumb')} alt={im.alt ?? p.caption ?? ''} loading="lazy" />
+                </a>
+              ))}
+            </div>
+            <div class="body">
+              {p.caption && <div>{p.caption}</div>}
+              {p.tags && <div class="tags">{p.tags}</div>}
+              {p.date && <div class="date">{fmt(p.date)}</div>}
+            </div>
+          </article>
+        ))}
+      </section>
+    ))}
+  </main>
+  <script is:inline src="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/js/glightbox.min.js"></script>
+  <script is:inline>GLightbox({ selector: '.glightbox', loop: true });</script>
+</Base>

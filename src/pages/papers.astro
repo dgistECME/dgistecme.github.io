@@ -1,0 +1,42 @@
+---
+import Base from '../layouts/Base.astro';
+import SubTabs from '../components/SubTabs.astro';
+import data from '../data/papers.yaml';
+import { img } from '../lib/img';
+const tabs = [{ label: 'PAPERS', href: '/papers' }, { label: 'PATENTS', href: '/patents' }];
+// group by year, newest first; legacy (<=2017) lumped under "~2017"
+const groups = new Map<string, any[]>();
+for (const p of data.papers) {
+  const key = p.year >= 2018 ? String(p.year) : '~2017';
+  if (!groups.has(key)) groups.set(key, []);
+  groups.get(key)!.push(p);
+}
+---
+<Base title="Papers">
+  <main class="wrap">
+    <SubTabs tabs={tabs} current="/papers" />
+    <div class="covers">
+      {data.covers.map((u: string) => <img src={img(u)} alt="Journal cover" loading="lazy" />)}
+    </div>
+    <p class="muted"><b>Peer Reviewed Publications</b> : (* corresponding authors, † co-first authors)</p>
+    {[...groups.entries()].map(([year, list]) => (
+      <section>
+        <h2 class="year">{year}{year === '~2017' && <span class="muted" style="font-size:.9rem"> (before DGIST)</span>}</h2>
+        {list.map((p: any) => (
+          <article class="paper">
+            {p.raw ? (
+              <div class="raw">{p.url ? <a href={p.url} target="_blank" rel="noopener">{p.raw}</a> : p.raw}</div>
+            ) : (
+              <>
+                <div class="t"><span class="n">[{p.number}]</span>{p.url ? <a href={p.url} target="_blank" rel="noopener">{p.title}</a> : p.title}</div>
+                <div class="a">{p.authors}</div>
+                <div class="v">{p.venue}{p.note && <> — {p.note}</>}</div>
+                {p.impact_factor && <div class="if">[Impact Factor : {p.impact_factor}]</div>}
+              </>
+            )}
+          </article>
+        ))}
+      </section>
+    ))}
+  </main>
+</Base>

@@ -1,0 +1,581 @@
+covers:
+- aa3702_799cd498dcba48bbaf3a8399bfa6ef47~mv2.jpg
+- b061b6_03baece61fd442f0aad4b638ad68840b~mv2_d_1652_2204_s_2.jpg
+- b061b6_234561598e06431ab8f017cb76601096~mv2_d_1652_2204_s_2.jpg
+- b061b6_4aace5eab07f468ba2eda9cef23d2ab3~mv2.jpg
+- b061b6_64d050dbbae94c22b3708229af6d1c12~mv2_d_1650_2175_s_2.jpg
+- b061b6_8027554f990c45c5b5c9e1d181caa935~mv2_d_1654_2174_s_2.jpg
+- b061b6_9ceba17f5fca491c9f6c058ea29553af~mv2.jpg
+- b061b6_b977874870d2453dabb31b649fcca8eb~mv2_d_2478_3308_s_4_2.jpg
+- b061b6_bbba2a2c74a741d68b2524436f481921~mv2.jpg
+- b061b6_c0f40bb7f5ce4fc1a3facd469e049db4~mv2.png
+- b061b6_c3ac2dbd12884b76b57b603364564256~mv2.jpg
+- b061b6_ebbda960c6204291a1a1286b1484775e~mv2_d_1654_2204_s_2.jpg
+papers:
+- number: 81
+  year: 2026
+  title: Large-area kinetic stabilization of metastable β-glycine via meniscus-driven self-assembly with anisotropic piezoelectricity
+  url: https://www.sciencedirect.com/science/article/pii/S2211285526003095
+  authors: Yeonkyeong Ryu, Cheoljae Lee, Pin Zhao, Jimin Yeon, Jinsung Choi, Tijani Okanlawon Ibrahim, Sujeong Gwak, Gerald Selasie Gbadam, Yeongheum Moon, Dong-Myeong Shin, Ju Hun Lee, Ju-Hyuck Lee*
+  venue: Nano Energy, 154, 112005 (2026) Invited as a Nano Energy Eerging Investigator
+  impact_factor: 17.1
+  note: null
+- number: 80
+  year: 2026
+  title: 'Progress in PDMS modification strategies for high-performance triboelectric nanogenerators: design, applications and future perspective'
+  url: https://www.sciencedirect.com/science/article/pii/S1359028626000239?dgcid=author
+  authors: Davis Jacob Inbaraj†, Sujeong Gwak†, Ju-Hyuck Lee*, Dong-Wook Shin*
+  venue: Current Opinion in Solid State and Materials Science, 43, 101276 (2026)
+  impact_factor: 13.4
+  note: null
+- number: 79
+  year: 2026
+  title: Concurrently Achieving 4.6 W/M2 and 120,000 Cyclability Enabled by Extendable Swing Arms in Rotational Triboelectric Nanogenerator
+  url: https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.75294
+  authors: Yihong Lin, Jiaming Zhou, In-Yong Suh, Eunjong Kim, Kin Chiu Yip, Dae-jin Kim, Jang-Mook Jeong, Young-Jun Kim, Jinyoung Jeon, Ju-Hyuck Lee, Yoon-Hwae Hwang*, Sang-Woo Kim*, Dong-Myeong Shin*
+  venue: Advanced Science, e75294 (2026)
+  impact_factor: 14.1
+  note: null
+- number: 78
+  year: 2026
+  title: Efficient Harvesting of Irregular and Low-Frequency Mechanical Energy via Hybridized Electromagnetic-Triboelectric Systems
+  url: https://onlinelibrary.wiley.com/doi/10.1002/smll.202514996
+  authors: Yongbin Han, Ju-Hyuck Lee*, Hong-Joon Yoon*
+  venue: Small, e14996 (2026)
+  impact_factor: 12.1
+  note: null
+- number: 77
+  year: 2026
+  title: Emerging DC-Generating TENG Mechanisms and Their IoT Applications
+  url: https://www.sciltp.com/journals/nc/articles/2602002995
+  authors: Sontyana Adonijah Graham, Andris Šutka, Ju-Hyuck Lee*
+  venue: Nanoenergy Communications, 1, 3 (2026)
+  impact_factor: null
+  note: null
+- number: 76
+  year: 2026
+  title: 'Skin-Integrated Wearable Electronics: A Dual-Interface Perspective'
+  url: https://onlinelibrary.wiley.com/doi/10.1002/sys3.70013
+  authors: Fuying Dong, Chi Han, Sheling T. Cai, Ju-Hyuck Lee, Simiao Niu*
+  venue: SmartSys, 1, e70013 (2026)
+  impact_factor: null
+  note: null
+- number: 75
+  year: 2026
+  title: Natural Antioxidant-Inspired Interfacial Engineering for Stable and High-Performance Perovskite Solar Cells
+  url: https://advanced.onlinelibrary.wiley.com/doi/10.1002/aenm.202505914
+  authors: Seongmin Choi, Taeyeong Yong, Soo-Kwan Kim, Jin Young Park, Sanghun Han, Gayoung Seo, Hae Jeong Kim, Hyeon Soo Ma, Ju-Hyuck Lee, Seo-Jin Ko, Byung Joon Moon*, Jongmin Choi*
+  venue: Advanced Energy Materials, 0, e05914 (2026)
+  impact_factor: 26.0
+  note: null
+- number: 74
+  year: 2026
+  title: Dielectric Polarization-Driven Energy Amplification in 2D Nanostructure-Embedded PVC Gel TENGs for Tribo-Resistive Sensing Applications
+  url: https://onlinelibrary.wiley.com/doi/10.1002/smll.202509645
+  authors: Hyosik Park†, Gerald Selasie Gbadam†, Cheoljae Lee, Hyeonseo Joo, Sujeong Gwak, Orlando J. Rojas, Ju-Hyuck Lee*
+  venue: Small, 22, e09645 (2026)
+  impact_factor: 12.1
+  note: null
+- number: 73
+  year: 2025
+  title: Direct current generation in triboelectric nanogenerators through ionic dynamics and electrode polarization effects
+  url: https://www.nature.com/articles/s41467-025-64582-w
+  authors: Gerald Selasie Gbadam, Hyosik Park, Cheoljae Lee, Hyeonseo Joo, Sujeong Gwak, Hong-Joon Yoon, Hanjun Ryu, Sang Min Lee, Ju Hun Lee, Ju-Hyuck Lee*
+  venue: Nature Communications, 16, 9540 (2025)
+  impact_factor: 15.7
+  note: null
+- number: 72
+  year: 2025
+  title: Reconfiguring Hierarchical Porous Architecture of 2D Metal Nanosheets for Multifunctional Triboelectric Nanogenerators
+  url: https://advanced.onlinelibrary.wiley.com/doi/10.1002/adma.202515466
+  authors: Dae-Hong Kim, Ju-Hyoung Yu, Cheoljae Lee, Min-Young Seo, Seungyeon Kim, Hyeonji Joo, Young-Seok Song, Sukang Bae, Ju-Hyuck Lee, Seoung-Ki Lee*, Tae-Wook Kim*
+  venue: Advanced Materials, e15466 (2025)
+  impact_factor: 27.4
+  note: null
+- number: 71
+  year: 2025
+  title: Mechanoluminescent-energy harvesting bimodal sensors for self-powered communication sensors
+  url: https://pubs.rsc.org/en/content/articlelanding/2025/tc/d5tc02181b
+  authors: Sugato Hajra, Swati Panda, Kushal Ruthvik Kaja, Seongkyu Song, Yeonkyeong Ryu, Basanta Kumar Panigrahi, Naratip Vittayakorn, Ju-Hyuck Lee*, Soon Moon Jeong*, Hoe Joon Kim*
+  venue: Journal of Materials Chemistry C, Advanced Article (2025)
+  impact_factor: 5.1
+  note: null
+- number: 70
+  year: 2025
+  title: Polyelectrolytes as a Stable and Tunable Platform for Triboelectric Nanogenerators
+  url: https://advanced.onlinelibrary.wiley.com/doi/10.1002/adma.202505547
+  authors: Hyeonseo Joo†, Sujin Park†, Sujeong Gwak, Hyosik Park, Soyoung Kim, Cheoljae Lee, Wonho Lee* and Ju-Hyuck Lee*
+  venue: Advanced Materials, e70822 (2025)_Inside front cover
+  impact_factor: 27.4
+  note: null
+- number: 69
+  year: 2025
+  title: Self-powered directional dust removal via wind-driven phase-controlled TENG for solar panel maintenance
+  url: https://www.sciencedirect.com/science/article/abs/pii/S2211285525006214
+  authors: Cheoljae Lee†, Junyeong Yang†, Soo-Kwan Kim, Yugyung Jin, Hyosik Park, Sujeong Gwak, Gerald Selasie Gbadam, Jimin Yeon, Yeonkyeong Ryu, Jongsung Lee, Seongho Son, Jeongnam Cheon Jongmin Choi, Wanchul Seung* and Ju-Hyuck Lee*
+  venue: Nano Energy, 142, 111262 (2025)
+  impact_factor: 16.8
+  note: null
+- number: 68
+  year: 2025
+  title: 'Transfer of laser induced graphene onto the surface of cotton fabric: An efficient electrode for triboelectric nanogenerator'
+  url: https://www.sciencedirect.com/science/article/abs/pii/S1385894725051058
+  authors: Tapas Kamilya, Doohyun Han, Hyosik Park, Sima Roy, Yong-Seok Lee, Mallappa Mahanthappa, Mohd Afzal, Ju-Hyuck Lee, Soongeun Kwon*, Jinhyoung Park*
+  venue: Chemical Engineering Journal, 517, 164270 (2025)
+  impact_factor: 13.4
+  note: null
+- number: 67
+  year: 2025
+  title: 'Tunable Phase-Engineered Polyhydroxybutyrate Fibrous Mat: An Energy Autonomous, Temperature-Responsive Platform for Wearable Application'
+  url: https://link.springer.com/article/10.1007/s42765-025-00555-4
+  authors: Kusum Sharma, Nagamalleswara Rao Alluri, Asokan Poorani Sathya Prasanna, Muthukumar Perumalsamy, Anandhan Ayyappan Saj, Yeonkyeong Ryu, Ju‑Hyuck Lee, Kwi‑Il Park, Sang‑Jae Kim*
+  venue: Advanced Fiber Materials, online (2025)
+  impact_factor: 17.2
+  note: null
+- number: 66
+  year: 2025
+  title: Constructing Ion-Bridging Structure with Controlled Cracks in Plasticized PVC with Graphene for Highly Sensitive Strain Sensor with a Wide Strain Range
+  url: https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202415998
+  authors: Hyosik Park, Mingyu Kim, Gerald Selasie Gbadam, Cheoljae Lee, Hyeonseo Joo, Sujeong Gwak, Bo-Yeon Lee, Kyeong Nam Kim*, Ju-Hyuck Lee*,
+  venue: Advanced Science, 12, 2415998 (2025)
+  impact_factor: 14.3
+  note: null
+- number: 65
+  year: 2025
+  title: Magnetically driven triboelectric nanogenerator for a wireless, versatile energy transfer system
+  url: https://www.science.org/doi/10.1126/sciadv.adu5919
+  authors: Junyeop Kim, Jeongmin Yoo, Hantae Seo, Raudel Avila, Gooyoon Chung, Gyuri Shin, Sujeong Gwak, Yongbin Han, Ju-Hyuck Lee, Hong-Joon Yoon*, Yoonseok Park*,
+  venue: Science Advances, 11, eadu5919 (2025)
+  impact_factor: 11.7
+  note: null
+- number: 64
+  year: 2025
+  title: Ion diffusivity and alkyl chain length-dependent triboelectric behavior of PVDF-HFP+IL composites
+  url: https://www.sciencedirect.com/science/article/pii/S2666978125000339?via%3Dihub
+  authors: Sujeong Gwak, Hyeonseo Joo, Bonhyeop Koo, Cheoljae Lee, Hyosik Park, Hochun Lee, and Ju-Hyuck Lee*
+  venue: Nano Trends, 10, 100104 (2025)
+  impact_factor: null
+  note: null
+- number: 63
+  year: 2025
+  title: 'Hybridized nanogenerators: Materials and structural design for improving energy harvesting'
+  url: https://link.springer.com/article/10.1557/s43577-025-00873-3?utm_source=rct_congratemailt&utm_medium=email&utm_campaign=nonoa_20250303&utm_content=10.1557%2Fs43577-025-00873-3
+  authors: Ya Yang* and Ju-Hyuck Lee
+  venue: MRS Bulletin, 50 (2025)
+  impact_factor: 4.1
+  note: null
+- number: 62
+  year: 2025
+  title: High-output, thermally resilient Nano-TiO2 dielectric gel triboelectric nanogenerator for energy harvesting and reliable temperature-independent pressure sensing
+  url: https://pubs.rsc.org/en/content/articlelanding/2025/ta/d4ta07867e
+  authors: Hyosik Park†, Yeonkyeong Ryu†, Hyeonseo Joo, Sujeong Gwak, Gerald Selasie Gbadam, Simiao Niu, and Ju-Hyuck Lee*
+  venue: Journal of Materials Chemistry A, 13, 4197 (2025)
+  impact_factor: 10.7
+  note: null
+- number: 61
+  year: 2024
+  title: Manufacturing strategies for highly sensitive and self-powered piezoelectric and triboelectric tactile sensors
+  url: https://iopscience.iop.org/article/10.1088/2631-7990/ad88be
+  authors: Hyosik Park, Gerald Selasie Gbadam, Simiao Niu, Hanjun Ryu* and Ju-Hyuck Lee*
+  venue: International Journal of Extreme Manufacturing, 7, 012006 (2025)
+  impact_factor: 16.1
+  note: null
+- number: 60
+  year: 2024
+  title: 'Self-Powered Flexible Sensors: From Fundamental Mechanisms toward Diverse Applications'
+  url: https://iopscience.iop.org/article/10.1088/2631-7990/ad8735
+  authors: Jing jing Chen, Jiang Shan Zhang, Nuo Xu, Meng Meng Chen, Ju-Hyuck Lee, Yu Wang, Qijun Sun*, Bao Lin Liu* and Zhi Xian Gao*
+  venue: International Journal of Extreme Manufacturing, Accepted Manuscript (2024)
+  impact_factor: 16.1
+  note: null
+- number: 59
+  year: 2024
+  title: Engineering self-healable and biodegradable ionic polyurethane with highly tribopositive behavior
+  url: https://www.sciencedirect.com/science/article/pii/S2211285524004543
+  authors: Hyeonseo Joo, Sujeong Gwak, Hyosik Park, Hong-Joon Yoon, Hanjun Ryu, Sang A Han*, Ju-Hyuck Lee*
+  venue: Nano Energy, 126, 109706 (2024)
+  impact_factor: 16.8
+  note: null
+- number: 58
+  year: 2024
+  title: 'Interfacial Triboelectricity Lights Up Phosphor-Polymer Elastic Composites: Unraveling the Mechanism of Mechanoluminescence in Zinc Sulfide Microparticle-Embedded Polydimethylsiloxane Films'
+  url: https://onlinelibrary.wiley.com/doi/10.1002/smll.202307089
+  authors: Gyudong Lee, Seongkyu Song, Woo Hyeon Jeong, Cheoljae Lee, June-Seo Kim, Ju-Hyuck Lee, Jongmin Choi, Hyosung Choi, Younghoon Kim*, Sung Jun Lim*, Soon Moon Jeong*
+  venue: Small, 2307089 (2024)
+  impact_factor: 13.0
+  note: null
+- number: 57
+  year: 2024
+  title: Self-powered electrodynamic dust removal for sustainable solar panels using triboelectric nanogenerators
+  url: https://www.sciencedirect.com/science/article/pii/S2211285524000053?dgcid=author
+  authors: Minsu Heo, Junyeong Yang, Bosung Kim, Cheoljae Lee, Hyosik Park, Soo-Kwan Kim, Jongsung Lee, Seongho Son, Jeongnam Cheon, Jongmin Choi, Wanchul Seung*, Sang-Woo Kim*, Ju-Hyuck Lee*
+  venue: Nano Energy, 121, 109257 (2024)
+  impact_factor: 16.8
+  note: null
+- number: 56
+  year: 2023
+  title: Plasticizer structural effect for sustainable and high-performance PVC gel-based triboelectric nanogenerators
+  url: https://www.sciencedirect.com/science/article/pii/S2211285523004524
+  authors: Hyosik Park, Seung-Ju Oh, Mingyu Kim, Cheoljae Lee, Hyeonseo Joo, Jin Woo Bae*, Ju-Hyuck Lee*
+  venue: Nano Energy, 114, 108615 (2023)
+  impact_factor: 19.069
+  note: null
+- number: 55
+  year: 2023
+  title: Functionalized thermoplastic polyurethane with tunable tribopolarity and biodegradability for high performance and biodegradable triboelectric nanogenerator
+  url: https://www.sciencedirect.com/science/article/pii/S2214993723000738?dgcid=author
+  authors: Hyeonseo Joo, Sujeong Gwak, Mun Hwan Lee, Hyosik Park, Cheoljae Lee, Ju Hun Lee, Sang A Han*, Ju-Hyuck Lee*
+  venue: Sustainable Materials and Technologies, 36, e00638 (2023)
+  impact_factor: 10.681
+  note: null
+- number: 54
+  year: 2023
+  title: 'Recent Advances in Triboelectric Nanogenerators: From Technological Progress to Commercial'
+  url: https://pubs.acs.org/doi/10.1021/acsnano.2c12458
+  authors: Dongwhi Choi, Younghoon Lee, Zong-Hong Lin, Sumin Cho, Miso Kim, Chi Kit Ao, Siowling Soh, Changwan Sohn, Chang Kyu Jeong, Jeongwan Lee, Minbaek Lee, Seungah Lee, Jungho Ryu, Parag Parashar, Yujang Cho, Jaewan Ahn, Il-Doo Kim, Feng Jiang, Pooi See Lee, Gaurav Khandelwal, Sang-Jae Kim, Hyun Soo Kim, Hyun-Cheol Song, Minje Kim, Junghyo Nah, Wook Kim, Habtamu Gebeyehu Menge, Yong Tae Park, Wei Xu, Jianhua Hao, Hyosik Park, Ju-Hyuck Lee, Dong-Min Lee, Sang-Woo Kim, Ji Young Park, Haixia Zhang, Yunlong Zi, Ru Guo, Jia Cheng, Ze Yang, Yannan Xie, Sangmin Lee, Jihoon Chung, Il-Kwon Oh, Ji-Seok im, Tinghai Cheng, Qi Gao, Gang Cheng, Guangqin Gu, Minseob Shim, Jeehoon Jung, Changwoo Yun, Chi Zhang, Guoxu Liu, Yufeng Chen, Suhan Kim, Xiangyu Chen, Jun Hu, Xiong Pu, Zi Hao Guo, Xudong Wang, Jun hen, Xiao Xiao, Xing Xie, Mourin Jarin, Hulin Zhang, Ying-Chih Lai, Tianyiyi He, Hakjeong Kim, Inkyu Park, Junseong Ahn, Nghia Dinh Huynh, Ya Yang, Zhong Lin Wang*, Jeong Min Baik*, and Dukhyun Choi*
+  venue: ACS Nano, 17, 11087 (2023)
+  impact_factor: 18.027
+  note: null
+- number: 53
+  year: 2023
+  title: Cell activity manipulation through optimizing piezoelectricity and polarization of diphenylalanine peptide nanotube-based nanocomposite
+  url: https://www.sciencedirect.com/science/article/pii/S1385894723023288
+  authors: Huiling Guo, Dong-Min Lee, Pin Zhao, So-Hee Kim, Inah Hyun, Byung-Joon Park, Ju-Hyuck Lee*, Huajun Sun, Sang-Woo Kim*
+  venue: Chemical Engineering Journal, 468, 143597 (2023)
+  impact_factor: 16.744
+  note: null
+- number: 52
+  year: 2023
+  title: High Performance Triboelectric Nanogenerator Based on Ultrastretchable Composite Electrode
+  url: https://link.springer.com/article/10.1007/s40684-023-00517-4
+  authors: Jinah Kim, Hyosik Park, Giyong Kim, Ju-Hyuck Lee, Jinhyoung Park*, Sung Yeol Kim*
+  venue: International Journal of Precision Engineering and Manufacturing-Green Technology, 10, 1543 (2023)
+  impact_factor: 4.66
+  note: null
+- number: 51
+  year: 2023
+  title: Suppressing storage-induced degradation of Li7La3Zr2O12 via encapsulation with hydrophobicity-tailored polymer nanolayer
+  url: https://www.sciencedirect.com/science/article/pii/S0013468623005364?dgcid=coauthor
+  authors: Wooyoung Jeong†, Hyeonseo Joo†, Chaejeong Kim, Kyu-Nam Jung, Ju-Hyuck Lee*, Jong-Won Lee*
+  venue: Electrochimica Acta, 450, 142358 (2023)
+  impact_factor: 7.336
+  note: null
+- number: 50
+  year: 2023
+  title: High Performance and Direct Current Piezoelectric Nanogenerators Using Lithium-doped Zinc Oxide Nanosheets
+  url: https://onlinelibrary.wiley.com/doi/10.1002/ente.202201453
+  authors: Jeongeun Kim†, Yuseok Kim†, Yerin Kim, Cheoljae Lee, Ju-Hyuck Lee*
+  venue: Energy Technology, 2201453 (2023)
+  impact_factor: 4.149
+  note: null
+- number: 49
+  year: 2023
+  title: Self-assembly of unidirectionally polarized piezoelectric peptide nanotubes using environmentally friendly solvents
+  url: https://www.sciencedirect.com/science/article/pii/S0169433223002647
+  authors: Hyojin Park†, Yuseok Kim†, Yerin Kim, Cheoljae Lee, Hyosik Park, Hyeonseo Joo, Ju Hun Lee*, Ju-Hyuck Lee*
+  venue: Applied Surface Science, 618, 156588 (2023)
+  impact_factor: 7.392
+  note: null
+- number: 48
+  year: 2023
+  title: Plasticized Poly(Vinyl Chloride)–Acetyl Tributyl Citrate Gels Based Triboelectric Nanogenerator
+  url: https://46061697-525e-422c-964f-f8e0a6d21210.filesusr.com/ugd/aa3702_23157efbff494bd483ad567d049ac46f.pdf
+  authors: Dohye Park, Hyosik Park, Ju-Hyuck Lee*
+  venue: Journal of the Korean Institute of Electrical and Electronic Material Engineers, 36, 93-97 (2023)
+  impact_factor: null
+  note: null
+- number: 47
+  year: 2023
+  title: Stretching-insensitive stretchable and biocompatible triboelectric nanogenerators using plasticized PVC gel and graphene electrode for body-integrated touch sensor
+  url: https://www.sciencedirect.com/science/article/pii/S221128552201237X?via%3Dihub
+  authors: MingyuKim, Hyosik Park, Munhwan Lee, Jinwoo Bae, Keun YoungLee*, Ju Hun Lee*, Ju-Hyuck Lee*
+  venue: Nano Energy, 107, 108159 (2023)
+  impact_factor: 19.069
+  note: null
+- number: 46
+  year: 2022
+  title: Electrostatic discharge prevention system via body potential control based on a triboelectric nanogenerator
+  url: https://www.sciencedirect.com/science/article/pii/S2211285522009119#ack0005
+  authors: Cheoljae Lee, Minsu Heo, Hyosik Park, Hyeonseo Joo, Wanchul Seung*, Ju-Hyuck Lee*
+  venue: Nano Energy, 103, 107834 (2022)
+  impact_factor: 19.069
+  note: null
+- number: 45
+  year: 2022
+  title: Control of the Biodegradability of Piezoelectric Peptide Nanotubes Integrated with Hydrophobic Porphyrin
+  url: https://pubs.acs.org/doi/full/10.1021/acsami.2c09751
+  authors: Yerin Kim, Hyojin Park, Yuseok Kim, Cheoljae Lee, Hyosik Park, Ju-Hyuck Lee*
+  venue: ACS Applied Materials & Interfaces, 14, 38778-38785 (2022)
+  impact_factor: 10.383
+  note: null
+- number: 44
+  year: 2022
+  title: Triboelectrification based Multifunctional Tactile Sensors
+  url: https://koreascience.kr/article/JAKO202216760111354.page
+  authors: Hyosik Park†, Jeongeun Kim†, Ju-Hyuck Lee*
+  venue: Journal of Sensor Science and Technology, 31, 139-144 (2022)
+  impact_factor: null
+  note: null
+- number: 43
+  year: 2022
+  title: Toxic micro/nano particles removal in water via triboelectric nanogenerator
+  url: https://www.sciencedirect.com/science/article/pii/S2211285522005110
+  authors: Byung-Geon Park†, Cheoljae Lee†, Young-Jun Kim, Jinhyoung Park, Hyeok Kim, Young Jung, Jong Soo Ko, Sang-Woo Kim*, Ju-Hyuck Lee*, Hanchul Cho*
+  venue: Nano Energy, 100, 107433 (2022)
+  impact_factor: 19.069
+  note: null
+- number: 42
+  year: 2022
+  title: Plasticized PVC-Gel Single Layer-Based Stretchable Triboelectric Nanogenerator for Harvesting Mechanical Energy and Tactile Sensing
+  url: https://onlinelibrary.wiley.com/doi/full/10.1002/advs.202201070
+  authors: Hyosik Park†, Seung-Ju Oh†, Daeyeong Kim, Mingyu Kim, Cheoljae Lee, Hyeonseo Joo, Insun Woo, Jin Woo Bae, Ju-Hyuck Lee*
+  venue: Advanced Science, 9, 2201070 (2022)
+  impact_factor: 17.521
+  note: null
+- number: 41
+  year: 2022
+  title: Piezo/Triboelectric Effect Driven Self-Powered Gas Sensor for Environmental Sensor Networks
+  url: https://onlinelibrary.wiley.com/doi/full/10.1002/ente.202200113
+  authors: Hyeonseo Joo†, Keun Young Lee*, Ju-Hyuck Lee*
+  venue: Energy Technology, 10, 2200113 (2022)
+  impact_factor: 4.149
+  note: null
+- number: 40
+  year: 2021
+  title: M13 Virus Triboelectricity and Energy Harvesting
+  url: https://pubs.acs.org/doi/full/10.1021/acs.nanolett.1c01881
+  authors: Han Kim, Ju-Hyuck Lee, Ju Hun Lee, Byung Yang Lee, Byoung Duk Lee, Kento Okada, Seungwook Ji, Jihwan Yoon, Jong Hyuk Lee, Seung-Wuk Lee*
+  venue: Nano Letters 21, 6851-6858 (2021)
+  impact_factor: 12.344
+  note: null
+- number: 39
+  year: 2021
+  title: Simultaneous enhancement of specific capacitance and potential window of graphene-based electric double-layer capacitors using ferroelectric polymers
+  url: https://doi.org/10.1016/j.jpowsour.2021.230268
+  authors: Viet Thong Le, Hanjun Ryu, Sang A.Han, Hao Van Bui, Viet Huong Nguyen, Nguyen Van Hieu, Ju-Hyuck Lee*, Sang-Woo Kim*, Young Hee Lee*
+  venue: Journal of Power Sources, 507, 230268 (2021)
+  impact_factor: 9.127
+  note: null
+- number: 38
+  year: 2021
+  title: Patchable and Implantable 2D Nanogenerator
+  url: https://onlinelibrary.wiley.com/doi/full/10.1002/smll.201903519
+  authors: Sang A Han†, Ju-Hyuck Lee†, Wanchul Seung, Jaewoo Lee, Sang-Woo Kim*,Jung Ho Kim*
+  venue: Small, 17, 1903519 (2021)
+  impact_factor: 11.459
+  note: null
+- number: 37
+  year: 2020
+  title: Advances in piezoelectric halide perovskites for energy harvesting applications
+  url: https://pubs.rsc.org/en/content/articlehtml/2020/ta/d0ta08780g
+  authors: Hyojin Park†, Chihyun Ha†, Ju-Hyuck Lee*
+  venue: Journal of Materials Chemistry A, 8, 24353-24367 (2020)
+  impact_factor: 11.301
+  note: null
+- number: 36
+  year: 2020
+  title: n-ZnO/p-NiO Core/Shell-Structured Nanorods for Piezoelectric Nanogenerators
+  url: https://onlinelibrary.wiley.com/doi/full/10.1002/ente.202000462
+  authors: Sang A Han†, Soo Min Hwang†, Wanchul Seung, Tae Yun Kim, Min-Sik Park, Ju-Hyuck Lee*, Sang-Woo Kim*, Jung Ho Kim*
+  venue: Energy Technology, 8, 2000462 (2020)
+  impact_factor: 3.175
+  note: null
+- number: 35
+  year: 2020
+  title: Recent Structure Development of Poly(vinylidene fluoride)-Based Piezoelectric Nanogenerator for Self-Powered Sensor
+  url: https://www.mdpi.com/2076-0825/9/3/57
+  authors: Cheoljae Lee†, Hyosik Park†, Ju-Hyuck Lee*
+  venue: Actuators. 9, 57 (2020) (Invited review)
+  impact_factor: 1.957
+  note: null
+- number: 34
+  year: 2020
+  title: 'Biomolecular Piezoelectric Materials: From Amino Acids to Living Tissues'
+  url: https://onlinelibrary.wiley.com/doi/full/10.1002/adma.201906989
+  authors: Daeyeong Kim†, Sang A Han†, Jung Ho Kim, Ju-Hyuck Lee*, Sang-Woo Kim*, Seung-Wuk Lee*
+  venue: Advanced Materials, 32, 1906989, (2020) (Invited review)
+  impact_factor: 27.398
+  note: null
+- number: 33
+  year: 2020
+  title: Direct-current flexible piezoelectric nanogenerators based on two-dimensional ZnO nanosheet
+  url: https://www.sciencedirect.com/science/article/pii/S0169433220300842
+  authors: Yoonjung Lee†, Sohee Kim†, Daeyeong Kim, Cheoljae Lee, Hyojin Park, Ju-Hyuck Lee*
+  venue: Applied Surface Science, 509, 145328 (2020)
+  impact_factor: 6.182
+  note: null
+- number: 32
+  year: 2019
+  title: Bacteriophage nanofiber fabrication using near field electrospinning
+  url: https://pubs.rsc.org/ra/article/9/67/39111/661334/Bacteriophage-nanofiber-fabrication-using-near
+  authors: Ryota Sugimoto, Ju Hun Lee, Ju-Hyuck Lee, Hyo-Eon Jin, So Young Yoo*, Seung-Wuk Lee*
+  venue: RSC advances, 9, 39111-39118 (2019)
+  impact_factor: 3.049
+  note: null
+- number: 31
+  year: 2019
+  title: Vertical Self-assembly of Polarized Phage Nanostructure for Energy Harvesting
+  url: https://pubs.acs.org/doi/full/10.1021/acs.nanolett.9b00569
+  authors: Ju-Hyuck Lee†, Ju Hun Lee†, Jun Xiao, Malav S. Desai, Xiang Zhang, Seung-Wuk Lee*
+  venue: Nano letters, 19, 2661-2667 (2019)
+  impact_factor: 12.344
+  note: null
+- number: 30
+  year: 2018
+  title: Hybridization of the Energy Generator and Storage Device for Self-Powered Electronics
+  url: https://doi.org/10.5229/JKES.2018.21.4.68
+  authors: Ju-Hyuck Lee*
+  venue: Journal of the Korean Electrochemical Society, 21, 68 (2018)
+  impact_factor: null
+  note: null
+- number: 29
+  year: 2018
+  title: Diphenylalanine Peptide Nanotube Energy Harvesters
+  url: https://doi.org/10.1021/acsnano.8b03118
+  authors: Ju-Hyuck Lee†, Kwang Heo†, Konstantin Schulz-Schönhagen, Ju Hun Lee, Malav S. Desai, Hyo-Eon Jin, Seung-Wuk Lee*
+  venue: ACS Nano, 12, 8138 (2018)
+  impact_factor: 13.903
+  note: null
+- number: 28
+  year: 2018
+  title: Point-Defect-Passivated MoS2 Nanosheet-Based High Performance Piezoelectric Nanogenerator
+  url: https://doi.org/10.1002/adma.201800342
+  authors: Sang A. Han, Tae-Ho Kim, Sung Kyun Kim, Kang Hyuck Lee, Hye-Jeong Park, Ju-Hyuck Lee, Sang-Woo Kim*
+  venue: Advanced Materials, 30, 1800342 (2018)(Selected as a cover article)
+  impact_factor: 25.809
+  note: ~2017(before DGIST)
+- number: 27
+  year: 2017
+  raw: '27. J.-H. Lee#, J. Y. Park#, E. B. Cho#, T. Y. Kim, S. A. Han, T.-H. Kim, Y. Liu, S. K. Kim, C. J. Roh, H.-J. Yoon, H. Ryu, W. Seung, J. S. Lee, J. Lee*, S.-W. Kim* “Reliable Piezoelectricity in Bilayer WSe2 for Piezoelectric Nanogenerators” Advanced Materials, 4, 1606667 (2017) [Impact Factor: 25.809]'
+  url: null
+  impact_factor: 25.809
+- number: 26
+  year: 2017
+  raw: '26. H. Ryu#, J.-H. Lee#, T.-Y. Kim, U. Khan, J. H. Lee, S. S. Kwak, H.-J. Yoon, S.-W. Kim* “High Performance Triboelectric Nanogenerators Based on Solid Polymer Electrolytes with Asymmetric Pairing of Ions” Advanced Energy Materials, 7, 1700289 (2017) [Impact Factor: 24.884]'
+  url: null
+  impact_factor: 24.884
+- number: 25
+  year: 2017
+  raw: '25. J. Kim#, J.-H. Lee#, J.-W. Lee, Y. Yamauchi, C. H. Choi, J. H. Kim* “Research Update: Hybrid Energy Devices Combining Nanogenerators and Energy Storage Systems for Self-Charging Capability” APL Materials, 5, 073804 (2017) [Impact Factor: 4.296] )'
+  url: null
+  impact_factor: 4.296
+- number: 24
+  year: 2017
+  raw: '24. J. H. Kim, J. H. Lee, H. Ryu, J.-H. Lee, S. S. Kwak, S.-W. Kim* “High-Performance Piezoelectric, Pyroelectric, and Triboelectric Nanogenerators Based on P(VDF-TrFE) with Controlled Crystallinity and Dipole Alignment” Advanced Functional Materials, 27, 1700702 (2017) [Impact Factor: 15.621] (Selected as a cover article)'
+  url: null
+  impact_factor: 15.621
+- number: 23
+  year: 2017
+  raw: '23. W. Seung, H.-J. Yoon, T. Y. Kim, H. Ryu, J. Kim, J.-H. Lee, J. H. Lee, S. Kim, Y. K. Park, Y. J. Park, S.-W. Kim* “Boosting Power-Generating Performance of Triboelectric Nanogenerators via Artificial Control of Ferroelectric Polarization and Dielectric Properties” Advanced Energy Materials, 7, 1600988 (2017) [Impact Factor: 24.884] (Selected as a cover article)'
+  url: null
+  impact_factor: 24.884
+- number: 22
+  year: 2016
+  raw: '22. J.-H. Lee#, J. Kim#, T. Y. Kim, M. D. A Hossain, S.-W. Kim*, J. H. Kim* “All-in-one energy harvesting and storage devices”, Journal of Materials Chemistry A, 4, 7983 (2016) [Impact Factor: 10.733]'
+  url: null
+  impact_factor: 10.733
+- number: 21
+  year: 2016
+  raw: '21. K. Y. Lee, S. K. Kim, J.-H. Lee, D. Seol, M. K. Gupta, Y. Kim*, S.-W. Kim* “Controllable Charge Transfer by Ferroelectric Polarization Mediated Triboelectricity”, Advanced Functional Materials, 26, 3067 (2016) [Impact Factor: 15.621]'
+  url: null
+  impact_factor: 15.621
+- number: 20
+  year: 2015
+  raw: '20. U. Khan, T.-H. Kim, K. H. Lee, J.-H. Lee, H. J. Yoon, R. Bhatia, I. Sameera, W. Seung, H. J. Ryu, C. Falconi*, S.-W. Kim* “Self-powered, wearable, transparent and flexible graphene microheaters”, Nanoenergy, 17, 356 (2015) [Impact Factor: 15.548]'
+  url: null
+  impact_factor: 15.548
+- number: 19
+  year: 2015
+  raw: '19. J.-H. Lee#, R. Hinchet#, T. Y. Kim, H. Ryu, W. Seung, H.-J. Yoon, S.-W. Kim* “Control of Skin Potential by Triboelectrification with Ferroelectric Polymers”, Advanced Materials, 27, 5553 (2015) [Impact Factor: 25.809]'
+  url: null
+  impact_factor: 25.809
+- number: 18
+  year: 2015
+  raw: '18. B.-Y. Hwang#, J.-H. Lee#, T. Q. Trung#, E. Roh, D.-I. Kim, S.-W. Kim*, N.-E. Lee* “Transparent Stretchable Self-Powered Patchable Sensor Platform with Ultrasensitive Recognition of Human Activities”, ACS Nano, 9, 8801 (2015) [Impact Factor: 13.903]'
+  url: null
+  impact_factor: 13.903
+- number: 17
+  year: 2015
+  raw: '17. J.-H. Lee#, H Ryu#, T.-Y. Kim, S.-S. Kwak, H.-J. Yoon, T.-H. Kim, W. Seung, S.-W. Kim* “Thermally Induced Strain-Coupled Highly Stretchable and Sensitive Pyroelectric Nanogenerators”, Advanced Energy Materials, 5, 1500704 (2015) [Impact Factor: 24.884] (Selected as a cover article)'
+  url: null
+  impact_factor: 24.884
+- number: 16
+  year: 2015
+  raw: '16. J.-H. Lee#, H.-J. Yoon#, T. Y. Kim, M. K. Gupta, J. H. Lee, W. Seung, H. Ryu, S.-W. Kim* “Micro-patterned P(VDF-TrFE) films-based piezoelectric nanogenerators for highly sensitive self-powered pressure sensors”, Advanced Functional Materials, 25, 3203 (2015) [Impact Factor: 15.621] (Selected as a cover article)'
+  url: null
+  impact_factor: 15.621
+- number: 15
+  year: 2015
+  raw: '15. W. Seung, M. K. Gupta, K. Y. Lee, K.-S. Shin, J.-H. Lee, T. Y. Kim, S. Kim, J. Lin, J. H. Kim, S.-W. Kim* “Nanopatterned Textile-Based Wearable Triboelectric Nanogenerator”, ACS Nano, 9, 3501 (2015) [Impact Factor: 13.903]'
+  url: null
+  impact_factor: 13.903
+- number: 14
+  year: 2015
+  raw: '14. G. C. Yoon, K.-S. Shin, M. K. Gupta, K. Y. Lee, J.-H. Lee, Z. L. Wang, S.-W. Kim* “High-performance Hybrid cell based on an organic photovoltaic device and a direct current piezoelectric nanogenerator”, Nano Energy, 12, 547 (2015) [Impact Factor: 15.548]'
+  url: null
+  impact_factor: 15.548
+- number: 13
+  year: 2014
+  raw: '13. K.Y. Lee, J. Bae, S. Kim, J.-H. Lee, G.C. Yoon, M.K. Gupta, S. Kim, H. Kim, J. Park*, and S.-W. Kim* “Depletion width engineering via surface modification for high performance semiconducting piezoelectric nanogenerators”, Nano Energy, 8, 165 (2014) [Impact Factor: 15.548]'
+  url: null
+  impact_factor: 15.548
+- number: 12
+  year: 2014
+  raw: '12. K. Y. Lee, J. Chun, J.-H. Lee, K. N. Kim, N.-R. Kang, J.-Y. Kim, M. H. Kim, K.-S. Shin, M. K. Gupta, J. M. Baik* and S.-W. Kim* “Hydrophobic Sponge Structure-Based Triboelectric Nanogenerator”, Advanced Materials, 29, 5037 (2014) [Impact Factor: 25.809] (Selected as a cover article)'
+  url: null
+  impact_factor: 25.809
+- number: 11
+  year: 2014
+  raw: '11. J.-H. Lee, K. Y. Lee, M. K. Gupta, T. Y. Kim, D.-Y. Lee, J. Oh, C. Ryu, W. J. Yoo, C.-Y. Kang, S.-J. Yoon, J.-B. Yoo, and S.-W. Kim* “Highly Stretchable Piezoelectric-Pyroelectric Hybrid Nanogenerator”, Advanced Materials, 26, 765 (2014) [Impact Factor: 25.809] (Selected as a cover article)'
+  url: null
+  impact_factor: 25.809
+- number: 10
+  year: 2014
+  raw: '10. K. Y. Lee, D. Kim, J.-H. Lee, T. Y. Kim, M. K. Gupta, and S.-W. Kim* “Unidirectional High-Power Generation via Stress-Induced Dipole Alignment from ZnSnO3 Nanocubes/Polymer Hybrid Piezoelectric nanogenerator”, Advanced Functional Materials, 24, 37 (2014) [Impact Factor: 15.621] (Selected as a cover article)'
+  url: null
+  impact_factor: 15.621
+- number: 9
+  year: 2013
+  raw: '9. M. K. Gupta, J.-H Lee, K. Y. Lee, S.-W. Kim* “Two-Dimensional Vanadium-Doped ZnO Nanosheet-Based Flexible Direct Current Nanogenerator”, ACS Nano, 7, 8932 (2013) [Impact Factor: 13.903]'
+  url: null
+  impact_factor: 13.903
+- number: 8
+  year: 2013
+  raw: '8. V. T. Le, H. Kim, A. Ghosh, J. Kim, J. Chang, Q. A. Vu, D. T. Pham, J.-H, Lee, S.-W, Kim and Y. H. Lee* “Coaxial Fiber Supercapacitor Using All-Carbon Material Electrodes”, ACS Nano, 7, 5940 (2013) [Impact Factor: 13.903]'
+  url: null
+  impact_factor: 13.903
+- number: 7
+  year: 2013
+  raw: '7. K.-H. Kim, B. Kumar, K.Y. Lee, H.-K. Park, J.-H. Lee, H. H. Lee, H. Jun, D. Lee & S.-W. Kim* “Piezoelectric two-dimensional nanosheets/anionic layer heterojunction for efficient direct current power generation”, Scientific Reports, 3 (2013) [Impact Factor: 4.011]'
+  url: null
+  impact_factor: 4.011
+- number: 6
+  year: 2013
+  raw: '6. S. Kim, J.-H. Lee, J. Lee, S.-W. Kim, M .H. Kim, S. Park, H. Chung, Y.-I. Kim, and W. Kim* “Synthesis of Monoclinic Potassium Niobate Nanowires That Are Stable at Room Temperature”, Journal of the American Chemical Society, 135, 6 (2013) [Impact Factor: 14.695]'
+  url: null
+  impact_factor: 14.695
+- number: 5
+  year: 2013
+  raw: '5. T. T. Pham, K. Y. Lee, J.-H. Lee, K. H. Kim, K. S. Shin, M. K. Gupta, B. Kumar, and S.-W. Kim* “Reliable operation of nanogenerator under ultraviolet light via engineering piezoelectric potential”, Energy & Environmental Science, 6, 841 (2013) [Impact Factor: 33.25]'
+  url: null
+  impact_factor: 33.25
+- number: 4
+  year: 2013
+  raw: '4. J.-H. Lee, K. Y. Lee, B. Kumar, N. T. Tien, N.-E. Lee, and S.-W. Kim* “Highly Sensitive Stretchable Transparent Piezoelectric Nanogenerators”, Energy & Environmental Science, 6, 169 (2013) [Impact Factor: 33.25]'
+  url: null
+  impact_factor: 33.25
+- number: 3
+  year: 2012
+  raw: '3. S. Y. Chung, S. Kim, J.-H. Lee, K. Kim, S.-W. Kim*, C.-Y. Kang and Y. S. Kim* “All-Solution-Processed Flexible Thin Film Piezoelectric Nanogenerator”, Advanced Materials, 24, 6022 (2012) [Impact Factor: 25.809] (Selected as a cover article)'
+  url: null
+  impact_factor: 25.809
+- number: 2
+  year: 2012
+  raw: '2. J.-H. Lee, K.Y. Lee, B. Kumar, S.-W. Kim*, “Synthesis of Ga-Doped ZnO Nanorods Using an Aqueous Solution Method for a Piezoelectric Nanogenerator” Journal of Nanoscience and Nanotechnology, 12, 3430 (2012) [Impact Factor: 1.354]'
+  url: null
+  impact_factor: 1.354
+- number: 1
+  year: 2011
+  raw: 1. J.-H. Lee, S.-W. Kim*, “Recent Advances in Piezoelectric Nanogenerators for Self-Powered Smart Sensors” Journal of photonic Science and Technology, 1, 36 (2011)
+  url: null
+  impact_factor: null

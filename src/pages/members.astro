@@ -1,0 +1,32 @@
+---
+import Base from '../layouts/Base.astro';
+import sections from '../data/members.yaml';
+import { img } from '../lib/img';
+---
+<Base title="Members">
+  <main class="wrap members">
+    {sections.map((s: any) => (
+      <section>
+        <h2>{s.section.replace('-', ' - ')}</h2>
+        <div class="member-grid">
+          {s.members.map((m: any) => (
+            <article class="member">
+              <img src={img(m.photo)} alt={m.name} loading="lazy" />
+              <div>
+                <h3>{m.name}</h3>
+                <div class="pos">{m.position}</div>
+                <dl>
+                  <dt>Education</dt>
+                  {m.education.map((e: string) => <dd>{e}</dd>)}
+                  <dt>Research Field</dt>
+                  <dd>{m.research_field}</dd>
+                  {m.email && <><dt>E-mail</dt><dd><a href={`mailto:${m.email}`}>{m.email}</a></dd></>}
+                </dl>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+    ))}
+  </main>
+</Base>

@@ -1,0 +1,181 @@
+graduates:
+- name_ko: 김리하
+  name_en: Riha Kim
+  degree: M.S.
+  graduated: '26.08'
+  affiliation: null
+- name_ko: 이철재
+  name_en: Cheoljae Lee
+  degree: Ph.D.
+  graduated: '26.03'
+  affiliation: DGIST. 박사후연구원
+- name_ko: 진유경
+  name_en: Yugyung Jin
+  degree: M.S.
+  graduated: '25.08'
+  affiliation: null
+- name_ko: 박효식
+  name_en: Hyosik Park
+  degree: Ph.D.
+  graduated: '25.08'
+  affiliation: Northwestern Univ. 박사후연구원
+- name_ko: 양준영
+  name_en: Junyeoung Yang
+  degree: M.S.
+  graduated: '25.02'
+  affiliation: null
+- name_ko: 주현서
+  name_en: Hyeonseo Joo
+  degree: Ph.D.
+  graduated: '24.08'
+  affiliation: Purdue Univ. 박사후연구원
+- name_ko: 김예린
+  name_en: Yerin Kim
+  degree: M.S.
+  graduated: '23.08'
+  affiliation: 현대자동차
+- name_ko: 김유석
+  name_en: Yuseok Kim
+  degree: M.S.
+  graduated: '23.02'
+  affiliation: null
+- name_ko: 허민수
+  name_en: Minsu Heo
+  degree: M.S.
+  graduated: '23.02'
+  affiliation: 삼성전자
+- name_ko: 김민규
+  name_en: Mingyu Kim
+  degree: M.S.
+  graduated: '23.02'
+  affiliation: 삼성전자
+- name_ko: 하치현
+  name_en: Chihyun Ha
+  degree: M.S.
+  graduated: '22.02'
+  affiliation: 솔브레인
+- name_ko: 박효진
+  name_en: Hyojin Park
+  degree: M.S.
+  graduated: '21.08'
+  affiliation: 삼성전자
+- name_ko: 김대영
+  name_en: Daeyoeng Kim
+  degree: M.S.
+  graduated: '21.02'
+  affiliation: 다이텍연구원
+ugrp:
+- year: 2026
+  names:
+  - 김병윤
+  - 김상윤
+  - 조재현
+  - 정지후
+- year: 2024
+  names:
+  - 정라경
+  - 하주원
+  - 엄주연
+  - 정다혜
+- year: 2021
+  names:
+  - 강하늘
+  - 손나영
+  - 양준영
+- year: 2020
+  names:
+  - 김유석
+  - 한익희
+  - 김해성
+  - 전우진
+interns:
+- year: 2026
+  season: Winter
+  names:
+  - 강주희
+  - 김병윤
+  - 김상윤
+  - 이민규
+  - 조재현
+  - 정지후
+- year: 2025
+  season: Summer
+  names:
+  - 문영준
+  - 최진성
+- year: 2025
+  season: Winter
+  names:
+  - 문영흠
+  - 권민우
+  - 최다은
+- year: 2024
+  season: Summer
+  names:
+  - 김리하
+- year: 2024
+  season: Winter
+  names:
+  - 정라경
+  - 엄주연
+  - 정다혜
+  - 손창욱
+  - 김세영
+- year: 2023
+  season: Summer
+  names:
+  - 권세민
+  - 소혜린
+  - 윤여준
+  - 이정호
+  - 이지형
+  - 정지혜
+  - 진유경
+- year: 2023
+  season: Winter
+  names:
+  - 윤서진
+  - 이경은
+  - 이수연
+- year: 2022
+  season: Summer
+  names:
+  - 박민아
+  - 연지민
+- year: 2022
+  season: Winter
+  names:
+  - 김지은
+  - 류연경
+  - 오해성
+- year: 2021
+  season: Winter
+  names:
+  - 강준희
+  - 서준표
+  - 신혜현
+- year: 2020
+  season: Summer
+  names:
+  - 김지훈
+  - 박기빈
+  - 한인경
+- year: 2020
+  season: Winter
+  names:
+  - 김유석
+  - 김예린
+  - 김정은
+- year: 2019
+  season: Summer
+  names:
+  - 이철재
+  - 이윤정
+  - 김소희
+- year: 2019
+  season: Winter
+  names:
+  - 김대영
+  - 최종혁
+  - 손수민
+  - 박해인

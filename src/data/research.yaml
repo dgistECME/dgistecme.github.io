@@ -1,0 +1,32 @@
+banner:
+  images:
+  - b061b6_ca00ffc7b86f4555b57d8c1c81203f64~mv2.jpg
+  - b061b6_2a3780c99564400bbe66610a6cabb4d5~mv2.jpg
+  - aa3702_6252fae36ca44e02b88bc21fcce1fb1c~mv2.png
+  - aa3702_9d8305b4b5984e60acd5fa4a4a4234e2~mv2.png
+  labels:
+  - Piezoelectric Nanogenerator
+  - Triboelectric Nanogenerator
+topics:
+- title: Energy Harvesting Technology
+  images: []
+  body: |-
+    Energy Conversion From Waste Energy into Electrical Energy for Battery-Free Self Powered Electronics
+
+    We are investigating novel energy generation technology such as piezoelectric and triboelectric energy generator for self-powered small electronics system. Recently, the number of small & portable electronics is rapidly increasing for health care monitoring system, wearable device and sensors for IoT system. However, all of these electronics energy source are battery which has certain life span whether it can rechargeable or not. Due to its limited life time, battery is replaced by person one by one. However, it is impossible to check all battery on time. Therefore, the demand and interest of self-powered electronics are increasing.
+- title: Synthesis of Functional Polymers
+  images:
+  - b061b6_07c2dd24f314440485c18cf3419c994a~mv2.jpg
+  body: We are synthesizing various functional polymers/nanocomposites for energy applications, including triboelectric nanogenerators, piezoelectric nanogenerators, and self-powered electronics, with high stretchability, wearability, attachability, transparency, biocompatibility, and biodegradability.
+- title: Synthesis of Bio-Piezoelectric Materials
+  images:
+  - b061b6_5154ecec5f904e8fa5e38d60056a3524~mv2.jpg
+  body: Biomolecular piezoelectric materials are considered strong candidate material for biomedical applications because of their robust piezoelectricity, biocompatibility, and low dielectric property. We are synthesizing various types of piezoelectric biomolecules, including amino acids, peptides, and proteins, through self-assembly for biomedical applications such as bioimplantable electronics and the treatment of intractable diseases.
+- title: Various Novel Applications
+  images:
+  - b061b6_328e9680a46d4ca7aaabac0a14b028a2~mv2.jpg
+  body: We are also exploring new, creative, and practical uses for our developed materials and devices. For instance, we recently developed a wearable tactile sensor, a system for removing micro/nano plastics/particles, anti-static shoes, and dust removal technology with an electrodynamic screen effect.
+- title: AI-Integrated Research Platform
+  images:
+  - 5791d2_1319a8ca329f45e2ba69a18428dd1ab0~mv2.png
+  body: We integrate artificial intelligence (AI) as a unifying methodology across our four research directions — bio-piezoelectric materials, triboelectric devices, particle dynamics, and multi-physics simulation. Through Bayesian optimization, deep learning, physics-informed neural networks, and inverse design, we link synthesis parameters to device performance, extract physical mechanisms from complex signals, and progressively close the loop between experiments and AI toward a more autonomous research environment.

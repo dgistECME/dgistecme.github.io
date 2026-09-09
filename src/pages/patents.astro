@@ -1,0 +1,15 @@
+---
+import Base from '../layouts/Base.astro';
+import SubTabs from '../components/SubTabs.astro';
+import data from '../data/patents.yaml';
+const tabs = [{ label: 'PAPERS', href: '/papers' }, { label: 'PATENTS', href: '/patents' }];
+---
+<Base title="Patents">
+  <main class="wrap">
+    <SubTabs tabs={tabs} current="/patents" />
+    <h2 class="section-title">International Patents</h2>
+    {data.international.map((p: any) => <article class="paper"><span class="n">{p.number}.</span>{p.raw}</article>)}
+    <h2 class="section-title">Domestic Patents</h2>
+    {data.domestic.map((p: any) => <article class="paper"><span class="n">{p.number}.</span>{p.raw}</article>)}
+  </main>
+</Base>

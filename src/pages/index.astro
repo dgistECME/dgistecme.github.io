@@ -1,0 +1,40 @@
+---
+import Base from '../layouts/Base.astro';
+import home from '../data/home.yaml';
+import news from '../data/news.yaml';
+import { img, href } from '../lib/img';
+---
+<Base>
+  <section class="hero">
+    <img class="bg" src={img(home.banner)} alt="ECME LAB group photo" fetchpriority="high" />
+    <div class="logo">
+      <div class="lockup">
+        <img src={img(home.logo)} alt="" />
+        <div>
+          <div class="big">ECME</div>
+          <div class="sm">Energy Conversion Materials Engineering</div>
+          <div class="sm">Prof. Ju-Hyuck Lee's Research Group</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <main class="wrap">
+    <p class="mission">{home.mission}</p>
+    <div class="home-grid">
+      <section>
+        <h2>Articles</h2>
+        <p class="muted" style="font-size:.85rem">기사를 통한 ECME의<br />다양한 연구 소식을 전해드립니다.</p>
+        <ul class="highlights">
+          {home.highlights.map((h: any) => <li><a href={h.url} target="_blank" rel="noopener">{h.title}</a></li>)}
+        </ul>
+        <p><a href={href('/articles')} style="font-weight:700;color:var(--c-text)">MORE →</a></p>
+      </section>
+      <section>
+        <h2>ECME News</h2>
+        <ul class="newslist">
+          {news.map((n: any) => <li>{n.text}<span class="d">({n.date})</span></li>)}
+        </ul>
+      </section>
+    </div>
+  </main>
+</Base>

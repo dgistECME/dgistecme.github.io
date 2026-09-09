@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+import p from '../data/professor.yaml';
+import { img } from '../lib/img';
+const header: string[] = p.header_lines.slice(1);
+---
+<Base title="Prof. Ju-Hyuck Lee">
+  <main class="wrap">
+    <div class="prof">
+      <img src={img(p.photo)} alt="Prof. Ju-Hyuck Lee" />
+      <div class="cv">
+        <h1>{p.name}</h1>
+        <p class="muted" style="font-size:.9rem">
+          {header.map((l) => <>{l.includes('@') ? <a href={`mailto:${p.email}`}>{l}</a> : l}<br /></>)}
+        </p>
+        <h3>Education</h3>
+        <ul>{p.education.map((l: string) => <li>{l}</li>)}</ul>
+        <h3>Professional Experience</h3>
+        <ul>{p.experience.map((l: string) => <li>{l}</li>)}</ul>
+        <h3>Research Interest</h3>
+        <ul>{p.research_interest.map((l: string) => <li>{l}</li>)}</ul>
+        <h3>Honors, Awards and Activities</h3>
+        <ul>{p.honors.map((l: string) => <li>{l}</li>)}</ul>
+      </div>
+    </div>
+  </main>
+</Base>
