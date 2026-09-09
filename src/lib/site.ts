@@ -21,6 +21,6 @@ export const SITE = {
   keywords:
     'ECME, ECME LAB, DGIST ECME, dgistECME, 이주혁, 이주혁 교수, DGIST 이주혁, 디지스트 이주혁, Ju-Hyuck Lee, DGIST 에너지공학과, energy harvesting, triboelectric nanogenerator, piezoelectric nanogenerator, TENG, PENG, 마찰전기, 압전, 나노발전기, 자가발전, 에너지 하베스팅',
   // Search-engine ownership verification tokens. Leave empty until each console issues one.
-  googleVerification: '',
+  googleVerification: 'Gjio0keqGDuaBbB86XTsExOiL1o1tfCkYhl8VzktJes',
   naverVerification: '',
 };
