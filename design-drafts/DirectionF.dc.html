@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700;800&family=Barlow:wght@400;500;600&display=swap">
+  <style>
+    body { margin: 0; background: #ffffff; color: #141414; font-family: 'Barlow', 'Helvetica Neue', Arial, sans-serif; font-size: 15px; line-height: 1.55; }
+    a { color: #141414; text-decoration: none; border-bottom: 2px solid #ffd400; } a:hover { background: #ffd400; }
+  </style>
+</helmet>
+<div style="width: 1440px; background: #ffffff;">
+  <!-- Header -->
+  <div style="display: flex; align-items: center; justify-content: space-between; padding: 0 56px; height: 76px; border-bottom: 1px solid #141414;">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <img src="logo.png" style="width: 34px; display: block;">
+      <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.02em; text-transform: uppercase;">ECME Lab</div>
+    </div>
+    <div style="display: flex; gap: 30px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 17px; letter-spacing: 0.06em; text-transform: uppercase;">
+      <div style="background: #ffd400; padding: 4px 8px;">Home</div><div>Professor</div><div>People</div><div>Research</div><div>Publications</div><div>News</div><div>Contact</div>
+    </div>
+  </div>
+  <!-- Split hero: vertical title + photo mosaic -->
+  <div style="display: grid; grid-template-columns: 440px 1fr; height: 640px;">
+    <div style="border-right: 1px solid #141414; padding: 40px 40px 40px 56px; display: flex; flex-direction: column; justify-content: space-between;">
+      <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 104px; line-height: 0.88; letter-spacing: -0.01em; text-transform: uppercase;">Energy<br>from<br>motion<span style="color: #ffd400;">.</span></div>
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <div style="font-size: 16px; color: #444444; max-width: 320px;">Prof. Ju-Hyuck Lee's Research Group, DGIST. Piezoelectric &amp; triboelectric nanogenerators for battery-free electronics.</div>
+        <div style="display: flex; gap: 10px;">
+          <div style="padding: 12px 20px; background: #141414; color: #ffffff; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.08em; text-transform: uppercase;">Research</div>
+          <div style="padding: 12px 20px; border: 1px solid #141414; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.08em; text-transform: uppercase;">Join us</div>
+        </div>
+      </div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(0, 1fr)); gap: 1px; background: #141414;">
+      <div style="grid-column: span 2; grid-row: span 2; overflow: hidden; background: #fff;"><img src="hero.jpg" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+      <div style="overflow: hidden; background: #fff;"><img src="photo1.jpg" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+      <div style="background: #ffd400; padding: 22px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.1em; text-transform: uppercase;">Latest</div>
+        <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.1;">Nature Communications<br><span style="font-weight: 500; font-size: 15px; font-family: 'Barlow', sans-serif;">논문 Accept · Gbadam 1저자 · 2025.10</span></div>
+      </div>
+    </div>
+  </div>
+  <!-- Ticker -->
+  <div style="border-top: 1px solid #141414; border-bottom: 1px solid #141414; padding: 12px 56px; display: flex; gap: 40px; white-space: nowrap; overflow: hidden; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.06em; text-transform: uppercase;">
+    <div><span style="color: #b59400;">2026.06.12</span> &nbsp; Gbadam · Best Oral Award, NGPT 2026</div>
+    <div><span style="color: #b59400;">2026.06.12</span> &nbsp; 류연경 · Best Oral Award, NGPT 2026</div>
+    <div><span style="color: #b59400;">2026.06.12</span> &nbsp; 곽수정 · Best Poster Award, NGPT 2026</div>
+  </div>
+  <!-- Research cards with numerals + people strip -->
+  <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 32px; padding: 56px 56px 0 56px;">
+    <div style="grid-column: span 8; display: flex; flex-direction: column; gap: 18px;">
+      <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 48px; line-height: 1; text-transform: uppercase;">Research</div>
+      <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: #141414; border: 1px solid #141414;">
+        <div style="background: #fff; padding: 22px; min-height: 170px; display: flex; flex-direction: column; justify-content: space-between;"><div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 40px; color: #ffd400; -webkit-text-stroke: 1px #141414;">01</div><div style="font-weight: 600; font-size: 16px;">Energy Harvesting Technology</div></div>
+        <div style="background: #fff; padding: 22px; min-height: 170px; display: flex; flex-direction: column; justify-content: space-between;"><div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 40px; color: #ffd400; -webkit-text-stroke: 1px #141414;">02</div><div style="font-weight: 600; font-size: 16px;">Synthesis of Functional Polymers</div></div>
+        <div style="background: #fff; padding: 22px; min-height: 170px; display: flex; flex-direction: column; justify-content: space-between;"><div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 40px; color: #ffd400; -webkit-text-stroke: 1px #141414;">03</div><div style="font-weight: 600; font-size: 16px;">Bio-Piezoelectric Materials</div></div>
+        <div style="background: #fff; padding: 22px; min-height: 170px; display: flex; flex-direction: column; justify-content: space-between;"><div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 40px; color: #ffd400; -webkit-text-stroke: 1px #141414;">04</div><div style="font-weight: 600; font-size: 16px;">Various Novel Applications</div></div>
+        <div style="background: #fff; padding: 22px; min-height: 170px; display: flex; flex-direction: column; justify-content: space-between;"><div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 40px; color: #ffd400; -webkit-text-stroke: 1px #141414;">05</div><div style="font-weight: 600; font-size: 16px;">AI-Integrated Research Platform</div></div>
+        <div style="background: #141414; color: #fff; padding: 22px; min-height: 170px; display: flex; flex-direction: column; justify-content: flex-end; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.06em; text-transform: uppercase;">All topics →</div>
+      </div>
+    </div>
+    <div style="grid-column: span 4; display: flex; flex-direction: column; gap: 18px;">
+      <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 48px; line-height: 1; text-transform: uppercase;">People</div>
+      <div style="display: flex; flex-direction: column; gap: 1px; background: #141414; border: 1px solid #141414;">
+        <div style="background: #fff; padding: 14px 16px; display: flex; align-items: center; gap: 14px;"><img src="member.jpg" style="width: 52px; height: 52px; object-fit: cover; display: block;"><div><div style="font-weight: 600;">Sontyana Adonijah Graham</div><div style="font-size: 13px; color: #666;">Post-Doc · Energy harvesting &amp; IoT</div></div></div>
+        <div style="background: #fff; padding: 14px 16px; display: flex; align-items: center; gap: 14px;"><div style="width: 52px; height: 52px; background: #e9e9e9;"></div><div><div style="font-weight: 600;">Sujeong Gwak</div><div style="font-size: 13px; color: #666;">MS/Ph.D · Triboelectric materials</div></div></div>
+        <div style="background: #fff; padding: 14px 16px; display: flex; align-items: center; gap: 14px;"><div style="width: 52px; height: 52px; background: #e9e9e9;"></div><div><div style="font-weight: 600;">Gerald Selasie Gbadam</div><div style="font-size: 13px; color: #666;">MS/Ph.D · Piezo/tribo nanogenerators</div></div></div>
+        <div style="background: #ffd400; padding: 14px 16px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.06em; text-transform: uppercase;">18 members · 13 alumni →</div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top: 56px; padding: 18px 56px; border-top: 1px solid #141414; display: flex; justify-content: space-between; font-size: 13px; color: #666;">
+    <div>Room E6-411, Dept. of Energy Science &amp; Engineering, DGIST, Daegu 42988, Republic of Korea</div>
+    <div>© JU HYUCK LEE's Group</div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

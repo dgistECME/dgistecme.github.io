@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <style>
+    body { margin: 0; background: #ffffff; color: #111111; font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-size: 15px; line-height: 1.5; }
+    a { color: #111111; text-decoration: underline; } a:hover { color: #e63312; }
+  </style>
+</helmet>
+<div style="width: 1440px; background: #ffffff; position: relative;">
+  <!-- Header: 4-col rule -->
+  <div style="display: grid; grid-template-columns: 1fr 1.4fr 1fr 2.6fr; border-bottom: 2px solid #111111; padding: 0 48px; height: 72px; align-items: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase;">
+    <div style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 20px; letter-spacing: -0.02em; text-transform: none;">ECME<span style="color: #e63312;">.</span></div>
+    <div>Energy Conversion Materials Eng.</div>
+    <div>DGIST · Daegu, KR</div>
+    <div style="display: flex; gap: 18px; justify-content: flex-end;"><div style="border-bottom: 2px solid #e63312;">Home</div><div>Professor</div><div>People</div><div>Research</div><div>Papers</div><div>News</div><div>Contact</div></div>
+  </div>
+  <!-- Hero: text-only, giant, grid-ruled -->
+  <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); padding: 56px 48px 0 48px; gap: 0 24px;">
+    <div style="grid-column: span 9; font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 128px; line-height: 0.9; letter-spacing: -0.045em;">Energy<br>Conversion<br>Materials<span style="color: #e63312;">.</span></div>
+    <div style="grid-column: span 3; display: flex; flex-direction: column; justify-content: flex-end; gap: 14px; font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; line-height: 1.6; color: #444444;">
+      <div style="border-top: 1px solid #111111; padding-top: 10px;">Prof. Ju-Hyuck Lee's Research Group<br>Dept. of Energy Science &amp; Engineering</div>
+      <div style="border-top: 1px solid #111111; padding-top: 10px;">Piezoelectric &amp; triboelectric nanogenerators, functional polymers, bio-piezoelectric materials — battery-free electronics.</div>
+      <div style="display: flex; gap: 10px; margin-top: 6px;"><div style="padding: 10px 16px; background: #111111; color: #ffffff; font-weight: 500;">RESEARCH →</div><div style="padding: 10px 16px; border: 1px solid #111111;">JOIN</div></div>
+    </div>
+  </div>
+  <!-- Number bar -->
+  <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 48px 48px 0 48px; border-top: 2px solid #111111; border-bottom: 1px solid #111111;">
+    <div style="padding: 22px 0; border-right: 1px solid #111111; display: flex; flex-direction: column; gap: 4px;"><div style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 56px; line-height: 1; letter-spacing: -0.04em;">81</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; text-transform: uppercase; color: #444444;">Publications</div></div>
+    <div style="padding: 22px 24px; border-right: 1px solid #111111; display: flex; flex-direction: column; gap: 4px;"><div style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 56px; line-height: 1; letter-spacing: -0.04em;">35</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; text-transform: uppercase; color: #444444;">Patents</div></div>
+    <div style="padding: 22px 24px; border-right: 1px solid #111111; display: flex; flex-direction: column; gap: 4px;"><div style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 56px; line-height: 1; letter-spacing: -0.04em;">18</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; text-transform: uppercase; color: #444444;">Members</div></div>
+    <div style="padding: 22px 24px; display: flex; flex-direction: column; gap: 4px;"><div style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 56px; line-height: 1; letter-spacing: -0.04em;">2018</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; text-transform: uppercase; color: #444444;">Est. at DGIST</div></div>
+  </div>
+  <!-- Photo + research index -->
+  <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 24px; padding: 48px 48px 0 48px;">
+    <div style="grid-column: span 7; height: 420px; overflow: hidden; filter: grayscale(1) contrast(1.05);">
+      <img src="hero.jpg" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+    </div>
+    <div style="grid-column: span 5; display: flex; flex-direction: column;">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; text-transform: uppercase; color: #444444; border-bottom: 2px solid #111111; padding-bottom: 8px;">Research index</div>
+      <div style="display: grid; grid-template-columns: 48px 1fr; padding: 16px 0; border-bottom: 1px solid #111111; font-weight: 600; font-size: 17px;"><div style="font-family: 'IBM Plex Mono', monospace; font-weight: 400; color: #e63312;">01</div><div>Energy Harvesting Technology</div></div>
+      <div style="display: grid; grid-template-columns: 48px 1fr; padding: 16px 0; border-bottom: 1px solid #111111; font-weight: 600; font-size: 17px;"><div style="font-family: 'IBM Plex Mono', monospace; font-weight: 400; color: #e63312;">02</div><div>Synthesis of Functional Polymers</div></div>
+      <div style="display: grid; grid-template-columns: 48px 1fr; padding: 16px 0; border-bottom: 1px solid #111111; font-weight: 600; font-size: 17px;"><div style="font-family: 'IBM Plex Mono', monospace; font-weight: 400; color: #e63312;">03</div><div>Synthesis of Bio-Piezoelectric Materials</div></div>
+      <div style="display: grid; grid-template-columns: 48px 1fr; padding: 16px 0; border-bottom: 1px solid #111111; font-weight: 600; font-size: 17px;"><div style="font-family: 'IBM Plex Mono', monospace; font-weight: 400; color: #e63312;">04</div><div>Various Novel Applications</div></div>
+      <div style="display: grid; grid-template-columns: 48px 1fr; padding: 16px 0; border-bottom: 1px solid #111111; font-weight: 600; font-size: 17px;"><div style="font-family: 'IBM Plex Mono', monospace; font-weight: 400; color: #e63312;">05</div><div>AI-Integrated Research Platform</div></div>
+    </div>
+  </div>
+  <!-- News table -->
+  <div style="padding: 56px 48px 64px 48px;">
+    <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #111111; padding-bottom: 8px;">
+      <div style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 32px; letter-spacing: -0.03em;">News</div>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; text-transform: uppercase; color: #444444;">53 entries · 2021–2026</div>
+    </div>
+    <div style="display: grid; grid-template-columns: 140px 1fr; padding: 14px 0; border-bottom: 1px solid #cccccc; font-size: 15px;"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px;">2026.06.12</div><div>Gerald Selasie Gbadam 석∙박사과정이 2026 NGPT에서 Best Oral Award를 수상하였습니다.</div></div>
+    <div style="display: grid; grid-template-columns: 140px 1fr; padding: 14px 0; border-bottom: 1px solid #cccccc; font-size: 15px;"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px;">2026.06.12</div><div>류연경 석∙박사과정이 2026 NGPT에서 Best Oral Award를 수상하였습니다.</div></div>
+    <div style="display: grid; grid-template-columns: 140px 1fr; padding: 14px 0; border-bottom: 1px solid #cccccc; font-size: 15px;"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px;">2025.12.16</div><div>Gerald Selasie Gbadam 석∙박사과정이 2025년 대학원 연구페스티벌에서 우수 연구자상을 수상하였습니다.</div></div>
+    <div style="display: grid; grid-template-columns: 140px 1fr; padding: 14px 0; border-bottom: 1px solid #cccccc; font-size: 15px;"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px;">2025.10</div><div>Gerald Selasie Gbadam 석∙박사과정이 1저자로 참여한 논문이 Nature Communications 지에 Accept 되었습니다.</div></div>
+    <div style="display: grid; grid-template-columns: 140px 1fr; padding: 14px 0; border-bottom: 1px solid #cccccc; font-size: 15px;"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px;">2025.06.19</div><div>주현서 석∙박사과정이 1저자로 참여한 논문이 Advanced Materials 지에 Accept 되었습니다.</div></div>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); padding: 20px 48px; border-top: 2px solid #111111; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #444444; text-transform: uppercase;">
+    <div>ECME Lab</div><div>Room E6-411, DGIST</div><div>Daegu 42988, Korea</div><div style="text-align: right;">© JU HYUCK LEE's Group</div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

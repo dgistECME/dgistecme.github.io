@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+  <style>
+    body { margin: 0; background: #0b1526; color: #e6ebf5; font-family: 'Noto Sans KR', 'Helvetica Neue', Arial, sans-serif; font-size: 15px; line-height: 1.6; }
+    a { color: #7cc4ff; text-decoration: none; } a:hover { color: #ffffff; }
+  </style>
+</helmet>
+<div style="width: 1440px; background: #0b1526;">
+  <!-- Header -->
+  <div style="display: flex; align-items: center; justify-content: space-between; height: 80px; padding: 0 80px; border-bottom: 1px solid rgba(230,235,245,0.12);">
+    <div style="display: flex; align-items: center; gap: 14px;">
+      <img src="logo-white.png" style="width: 40px; display: block;">
+      <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.12em;">ECME</div>
+    </div>
+    <div style="display: flex; gap: 36px; font-family: 'Space Grotesk', sans-serif; font-weight: 500; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; color: #b7c2d9;">
+      <div style="color: #ffffff;">Home</div><div>Professor</div><div>People</div><div>Research</div><div>Publications</div><div>News</div><div>Contact</div>
+    </div>
+  </div>
+  <!-- Hero full bleed -->
+  <div style="position: relative; height: 720px; overflow: hidden;">
+    <img src="hero.jpg" style="width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.55;">
+    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,21,38,0) 30%, #0b1526 100%);"></div>
+    <div style="position: absolute; left: 80px; right: 80px; bottom: 72px; display: flex; flex-direction: column; gap: 22px;">
+      <div style="font-family: 'Space Grotesk', sans-serif; font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; color: #7cc4ff;">Prof. Ju-Hyuck Lee's Research Group — DGIST</div>
+      <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 96px; line-height: 0.98; letter-spacing: -0.03em; max-width: 1200px;">Energy Conversion<br>Materials Engineering</div>
+      <div style="display: flex; gap: 48px; align-items: flex-end; justify-content: space-between;">
+        <div style="font-size: 18px; color: #b7c2d9; max-width: 620px;">Harvesting waste mechanical energy with piezoelectric and triboelectric nanogenerators — toward battery-free, self-powered electronics.</div>
+        <div style="display: flex; gap: 12px;">
+          <div style="padding: 14px 24px; background: #7cc4ff; color: #0b1526; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase;">Research</div>
+          <div style="padding: 14px 24px; border: 1px solid rgba(230,235,245,0.4); font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase;">Join</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Ticker-like news strip -->
+  <div style="padding: 0 80px;">
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: rgba(230,235,245,0.12); border: 1px solid rgba(230,235,245,0.12);">
+      <div style="background: #0b1526; padding: 28px 24px; display: flex; flex-direction: column; gap: 10px;"><div style="font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: 0.18em; color: #7cc4ff;">2026.06.12</div><div style="font-size: 14.5px; color: #e6ebf5;">Gerald Selasie Gbadam — 2026 NGPT Best Oral Award</div></div>
+      <div style="background: #0b1526; padding: 28px 24px; display: flex; flex-direction: column; gap: 10px;"><div style="font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: 0.18em; color: #7cc4ff;">2026.06.12</div><div style="font-size: 14.5px; color: #e6ebf5;">류연경 — 2026 NGPT Best Oral Award</div></div>
+      <div style="background: #0b1526; padding: 28px 24px; display: flex; flex-direction: column; gap: 10px;"><div style="font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: 0.18em; color: #7cc4ff;">2025.10</div><div style="font-size: 14.5px; color: #e6ebf5;">Nature Communications — 논문 Accept (Gbadam 1저자)</div></div>
+      <div style="background: #0b1526; padding: 28px 24px; display: flex; flex-direction: column; gap: 10px;"><div style="font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: 0.18em; color: #7cc4ff;">2025.06.19</div><div style="font-size: 14.5px; color: #e6ebf5;">Advanced Materials — 논문 Accept (주현서 1저자)</div></div>
+    </div>
+  </div>
+  <!-- Light section: research -->
+  <div style="background: #f3f5f9; color: #0b1526; margin-top: 80px; padding: 80px 80px;">
+    <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 40px;">
+      <div style="grid-column: span 4; display: flex; flex-direction: column; gap: 16px;">
+        <div style="font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase; color: #3b6fb6;">Research</div>
+        <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 44px; line-height: 1.05; letter-spacing: -0.02em;">Five directions, one goal.</div>
+        <div style="color: #4a5568; font-size: 16px;">Materials, devices and AI methods that turn ambient motion into usable power.</div>
+      </div>
+      <div style="grid-column: span 8; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: #cfd6e4; border: 1px solid #cfd6e4;">
+        <div style="background: #f3f5f9; padding: 28px; display: flex; flex-direction: column; gap: 8px;"><div style="font-family: 'Space Grotesk', sans-serif; font-size: 13px; color: #3b6fb6;">01</div><div style="font-weight: 700; font-size: 18px;">Energy Harvesting Technology</div><div style="font-size: 14px; color: #4a5568;">Piezoelectric and triboelectric nanogenerators for self-powered systems.</div></div>
+        <div style="background: #f3f5f9; padding: 28px; display: flex; flex-direction: column; gap: 8px;"><div style="font-family: 'Space Grotesk', sans-serif; font-size: 13px; color: #3b6fb6;">02</div><div style="font-weight: 700; font-size: 18px;">Synthesis of Functional Polymers</div><div style="font-size: 14px; color: #4a5568;">Stretchable, wearable, biodegradable nanocomposites.</div></div>
+        <div style="background: #f3f5f9; padding: 28px; display: flex; flex-direction: column; gap: 8px;"><div style="font-family: 'Space Grotesk', sans-serif; font-size: 13px; color: #3b6fb6;">03</div><div style="font-weight: 700; font-size: 18px;">Bio-Piezoelectric Materials</div><div style="font-size: 14px; color: #4a5568;">Amino acids, peptides and proteins via self-assembly.</div></div>
+        <div style="background: #f3f5f9; padding: 28px; display: flex; flex-direction: column; gap: 8px;"><div style="font-family: 'Space Grotesk', sans-serif; font-size: 13px; color: #3b6fb6;">04</div><div style="font-weight: 700; font-size: 18px;">Novel Applications &amp; AI Platform</div><div style="font-size: 14px; color: #4a5568;">Tactile sensors, particle removal, Bayesian optimization.</div></div>
+      </div>
+    </div>
+  </div>
+  <div style="padding: 28px 80px; display: flex; justify-content: space-between; font-size: 13px; color: #8a97b3; border-top: 1px solid rgba(230,235,245,0.12);">
+    <div>Room E6-411, Dept. of Energy Science &amp; Engineering, DGIST, Daegu 42988, Republic of Korea</div>
+    <div>© JU HYUCK LEE's Group</div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>
