@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import '../styles/motion.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import home from '../data/home.yaml';
@@ -81,6 +82,16 @@ const jsonLd = {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <script is:inline define:vars={{ defaultAnim: SITE.animation }}>
+      // Motion preset: ?anim=a|b|c previews (persists), ?anim=off clears. Default from site.ts.
+      try {
+        const q = new URLSearchParams(location.search).get('anim');
+        if (q === 'off') localStorage.removeItem('anim');
+        else if (q) localStorage.setItem('anim', q);
+        const a = localStorage.getItem('anim') || defaultAnim;
+        if (a) document.documentElement.dataset.anim = a;
+      } catch (e) {}
+    </script>
     <slot name="head" />
   </head>
   <body>
@@ -99,5 +110,27 @@ const jsonLd = {
       <slot />
     </div>
     <Footer />
+    <script is:inline>
+      // Scroll reveal + header shrink (only when a motion preset is active)
+      (function () {
+        const anim = document.documentElement.dataset.anim;
+        if (!anim) return;
+        const sel = '.strip > div, .split > *, .cells > *, .newslist li, .member, .members h2, .paper, .press, .post, .topic, .year, .plain li, .cv h3, .prof > *, .opening > main > *';
+        const els = document.querySelectorAll(sel);
+        let i = 0, lastTop = -1;
+        els.forEach((el) => {
+          const top = el.getBoundingClientRect().top;
+          i = Math.abs(top - lastTop) < 4 ? i + 1 : 0; lastTop = top;
+          el.style.setProperty('--d', Math.min(i, 6) * 70 + 'ms');
+          el.setAttribute('data-reveal', '');
+        });
+        if ('IntersectionObserver' in window) {
+          const io = new IntersectionObserver((ents) => ents.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+          els.forEach((el) => io.observe(el));
+        } else els.forEach((el) => el.classList.add('in'));
+        const hdr = document.querySelector('.site-header');
+        addEventListener('scroll', () => hdr.classList.toggle('scrolled', scrollY > 40), { passive: true });
+      })();
+    </script>
   </body>
 </html>

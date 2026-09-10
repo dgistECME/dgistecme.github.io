@@ -1,0 +1,85 @@
+/* ---- Motion presets. Active preset = <html data-anim="a|b|c">. None = static. ----
+   Preview any preset with ?anim=a (persists in localStorage until ?anim=off).
+   Every preset is disabled under prefers-reduced-motion. */
+
+@media (prefers-reduced-motion: reduce) {
+  [data-anim] *, [data-anim] *::before, [data-anim] *::after { animation: none !important; transition: none !important; }
+  [data-anim] [data-reveal] { opacity: 1 !important; transform: none !important; }
+}
+
+/* Shared: scroll reveal (JS adds .in when element enters viewport) */
+[data-anim] [data-reveal] { opacity: 0; transform: translateY(18px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); transition-delay: var(--d, 0ms); }
+[data-anim] [data-reveal].in { opacity: 1; transform: none; }
+
+/* Shared: nav underline grow */
+[data-anim] .nav > li > a, [data-anim] .nav summary { position: relative; }
+[data-anim] .nav > li > a::after, [data-anim] .nav summary::after { content: ""; position: absolute; left: .9rem; right: .9rem; bottom: .35rem; height: 1px; background: var(--c-accent); transform: scaleX(0); transform-origin: left; transition: transform .3s ease; }
+[data-anim] .nav > li > a:hover::after, [data-anim] .nav summary:hover::after, [data-anim] .nav a[aria-current="page"]::after { transform: scaleX(1); }
+
+/* =========================================================
+   A · Soft fade — hero elements stagger in, sections fade-up on scroll
+   ========================================================= */
+@keyframes a-up { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+[data-anim="a"] .hero .eyebrow, [data-anim="a"] .hero h1, [data-anim="a"] .hero .lead, [data-anim="a"] .hero .btns,
+[data-anim="a"] .page-head .eyebrow, [data-anim="a"] .page-head h1, [data-anim="a"] .page-head .sub {
+  animation: a-up .9s cubic-bezier(.2,.7,.2,1) both;
+}
+[data-anim="a"] .hero h1, [data-anim="a"] .page-head h1 { animation-delay: .12s; }
+[data-anim="a"] .hero .lead, [data-anim="a"] .page-head .sub { animation-delay: .26s; }
+[data-anim="a"] .hero .btns { animation-delay: .38s; }
+[data-anim="a"] .hero img.bg { animation: a-fade 1.4s ease both; }
+@keyframes a-fade { from { opacity: 0; } to { opacity: .55; } }
+[data-anim="a"] .cells > a, [data-anim="a"] .member, [data-anim="a"] .post, [data-anim="a"] .press { transition: background .3s, transform .3s; }
+[data-anim="a"] .cells > a:hover, [data-anim="a"] .post:hover { transform: translateY(-2px); }
+
+/* =========================================================
+   B · Kinetic — masked title reveal, slow Ken Burns hero, accent bars slide in
+   ========================================================= */
+@keyframes b-mask { from { clip-path: inset(0 0 100% 0); transform: translateY(30%); } to { clip-path: inset(0 0 -10% 0); transform: none; } }
+@keyframes b-zoom { from { transform: scale(1.08); } to { transform: scale(1); } }
+@keyframes b-line { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes b-in { from { opacity: 0; transform: translateX(-14px); } to { opacity: 1; transform: none; } }
+[data-anim="b"] .hero img.bg { animation: b-zoom 9s ease-out both; transform-origin: 60% 40%; }
+[data-anim="b"] .hero h1, [data-anim="b"] .page-head h1 { animation: b-mask 1s cubic-bezier(.16,1,.3,1) .15s both; }
+[data-anim="b"] .hero .eyebrow, [data-anim="b"] .page-head .eyebrow { animation: b-in .7s ease both; position: relative; padding-left: 2.2rem; }
+[data-anim="b"] .hero .eyebrow::before, [data-anim="b"] .page-head .eyebrow::before { content: ""; position: absolute; left: 0; top: 50%; width: 1.6rem; height: 1px; background: var(--c-accent); transform-origin: left; animation: b-line .8s ease .2s both; }
+[data-anim="b"] .hero .lead, [data-anim="b"] .hero .btns, [data-anim="b"] .page-head .sub { animation: b-in .8s ease .6s both; }
+[data-anim="b"] .strip > div { position: relative; overflow: hidden; }
+[data-anim="b"] .strip > div::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: var(--c-accent); transform: scaleY(0); transform-origin: top; transition: transform .35s ease; }
+[data-anim="b"] .strip > div:hover::before { transform: scaleY(1); }
+[data-anim="b"] .cells > a { position: relative; transition: color .3s; }
+[data-anim="b"] .cells > a::after { content: ""; position: absolute; left: 0; bottom: 0; height: 2px; width: 100%; background: var(--c-accent-deep); transform: scaleX(0); transform-origin: left; transition: transform .35s cubic-bezier(.2,.7,.2,1); }
+[data-anim="b"] .cells > a:hover::after { transform: scaleX(1); }
+[data-anim="b"] .year { position: relative; }
+[data-anim="b"] .year.in::after { content: ""; position: absolute; left: 0; bottom: -1px; height: 2px; width: 100%; background: var(--c-accent-deep); transform-origin: left; animation: b-line .9s cubic-bezier(.2,.7,.2,1) both; }
+[data-anim="b"] .btn { position: relative; overflow: hidden; }
+[data-anim="b"] .btn::before { content: ""; position: absolute; inset: 0; background: rgba(255,255,255,.18); transform: translateX(-101%); transition: transform .35s ease; }
+[data-anim="b"] .btn:hover::before { transform: translateX(0); }
+[data-anim="b"] .btn:hover { filter: none; }
+
+/* =========================================================
+   C · Micro — no load animation; hover/scroll micro-interactions only
+   ========================================================= */
+[data-anim="c"] [data-reveal] { opacity: 1; transform: none; transition: none; }
+[data-anim="c"] .site-header { transition: background .3s, box-shadow .3s; }
+[data-anim="c"] .site-header.scrolled { background: rgba(11,21,38,.98); box-shadow: 0 8px 30px rgba(0,0,0,.25); }
+[data-anim="c"] .site-header.scrolled .wrap { min-height: 64px; }
+[data-anim="c"] .site-header .wrap { transition: min-height .3s ease; }
+[data-anim="c"] .cells > a, [data-anim="c"] .strip > div, [data-anim="c"] .member, [data-anim="c"] .post, [data-anim="c"] .press, [data-anim="c"] .paper { transition: background .25s ease, transform .25s ease, box-shadow .25s ease; }
+[data-anim="c"] .cells > a:hover { background: var(--c-paper-2); transform: translateX(6px); }
+[data-anim="c"] .cells > a .t { transition: color .25s; }
+[data-anim="c"] .cells > a:hover .t { color: var(--c-accent-deep); }
+[data-anim="c"] .strip > div:hover { background: var(--c-navy-2); }
+[data-anim="c"] .member img { transition: transform .4s cubic-bezier(.2,.7,.2,1), filter .4s; filter: grayscale(.15); }
+[data-anim="c"] .member:hover img { transform: scale(1.04); filter: none; }
+[data-anim="c"] .post { transition: transform .3s ease, box-shadow .3s ease; }
+[data-anim="c"] .post:hover { transform: translateY(-4px); box-shadow: 0 14px 34px rgba(11,21,38,.12); }
+[data-anim="c"] .post .grid img { transition: transform .5s ease; }
+[data-anim="c"] .post .grid a:hover img { transform: scale(1.05); }
+[data-anim="c"] .paper:hover { background: var(--c-paper-2); }
+[data-anim="c"] .press img { transition: transform .5s ease; }
+[data-anim="c"] .press a:hover img { transform: scale(1.03); }
+[data-anim="c"] .btn { transition: transform .2s ease, background .2s ease, color .2s ease; }
+[data-anim="c"] .btn:hover { transform: translateY(-2px); filter: none; }
+[data-anim="c"] .btn.ghost:hover { background: var(--c-on-navy); color: var(--c-navy); }
+[data-anim="c"] .subtabs a { transition: background .2s, color .2s; }
