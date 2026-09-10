@@ -7,6 +7,9 @@ Claude Design 캔버스( https://claude.ai/code/artifact/a6db981f-9b66-4d66-8b9a
 |---|---|---|
 | `Main.dc.html` | C · Bold Editorial (다크 네이비) | **현재 사이트 적용 중** |
 | `DirectionF.dc.html` | F · Photo Magazine (세로 대제목 + 사진 모자이크 + 노랑) | 백업 요청됨 — 다음 후보 |
+| `DirectionG.dc.html` | G · Sky Airy (흰+하늘색, 라운드 사진, 파스텔 타일) | 밝은 후보 |
+| `DirectionH.dc.html` | H · Mint Lab (민트/라임 밴드, 유기 곡선 사진, 칩) | 밝은 후보 |
+| `DirectionI.dc.html` | I · Warm Sunlight (아이보리+코랄, 세리프 제목) | 밝은 후보 |
 | `DirectionD.dc.html` | D · Swiss Grid (흰/검/빨강 점, 모노 라벨) | 후보 |
 | `DirectionE.dc.html` | E · Paper Journal (크림 종이, 세리프, 학술지) | 후보 |
 | `DirectionA.dc.html` | A · Classic Academic (네이비+금색) | 탈락 |

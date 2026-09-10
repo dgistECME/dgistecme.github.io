@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;800&display=swap">
+  <style>
+    body { margin: 0; background: #ffffff; color: #17233a; font-family: 'Plus Jakarta Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 15.5px; line-height: 1.6; }
+    a { color: #1f6feb; text-decoration: none; } a:hover { color: #144ea8; text-decoration: underline; }
+  </style>
+</helmet>
+<div style="width: 1440px; background: #ffffff;">
+  <!-- Header -->
+  <div style="display: flex; align-items: center; justify-content: space-between; height: 84px; padding: 0 96px;">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <img src="logo.png" style="width: 34px; display: block;">
+      <div style="font-weight: 800; font-size: 20px; letter-spacing: -0.02em;">ECME Lab</div>
+    </div>
+    <div style="display: flex; gap: 4px; font-weight: 500; font-size: 14.5px; color: #4b5568;">
+      <div style="padding: 8px 14px; border-radius: 999px; background: #eaf3ff; color: #1f6feb; font-weight: 600;">Home</div><div style="padding: 8px 14px;">Professor</div><div style="padding: 8px 14px;">People</div><div style="padding: 8px 14px;">Research</div><div style="padding: 8px 14px;">Publications</div><div style="padding: 8px 14px;">News</div><div style="padding: 8px 14px;">Contact</div>
+    </div>
+  </div>
+  <!-- Hero: full-width photo fading to white, centered copy below -->
+  <div style="position: relative; height: 520px; margin: 0 48px; border-radius: 28px; overflow: hidden;">
+    <img src="hero.jpg" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(255,255,255,0) 40%, rgba(255,255,255,0.96) 100%);"></div>
+    <div style="position: absolute; left: 0; right: 0; bottom: 40px; display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center;">
+      <div style="padding: 6px 14px; border-radius: 999px; background: #ffffff; border: 1px solid #d9e6f7; font-size: 12.5px; font-weight: 600; color: #1f6feb; letter-spacing: 0.04em;">DGIST · Prof. Ju-Hyuck Lee's Research Group</div>
+      <div style="font-weight: 800; font-size: 64px; line-height: 1.02; letter-spacing: -0.035em; max-width: 900px;">Energy Conversion<br>Materials Engineering</div>
+    </div>
+  </div>
+  <div style="display: flex; flex-direction: column; align-items: center; gap: 22px; padding: 32px 96px 0 96px; text-align: center;">
+    <div style="font-size: 18px; color: #4b5568; max-width: 640px;">Piezoelectric and triboelectric nanogenerators, functional polymers, and bio-piezoelectric materials — toward battery-free, self-powered electronics.</div>
+    <div style="display: flex; gap: 12px;">
+      <div style="padding: 13px 24px; border-radius: 999px; background: #1f6feb; color: #ffffff; font-weight: 600; font-size: 15px;">Explore research</div>
+      <div style="padding: 13px 24px; border-radius: 999px; background: #eaf3ff; color: #1f6feb; font-weight: 600; font-size: 15px;">Join the lab</div>
+    </div>
+  </div>
+  <!-- Pastel stat pills -->
+  <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; padding: 56px 96px 0 96px;">
+    <div style="border-radius: 20px; background: #eaf3ff; padding: 24px; display: flex; flex-direction: column; gap: 4px;"><div style="font-weight: 800; font-size: 40px; letter-spacing: -0.03em; color: #1f6feb;">81</div><div style="font-size: 14px; color: #4b5568;">Peer-reviewed papers</div></div>
+    <div style="border-radius: 20px; background: #eefaf3; padding: 24px; display: flex; flex-direction: column; gap: 4px;"><div style="font-weight: 800; font-size: 40px; letter-spacing: -0.03em; color: #1a8f5c;">35</div><div style="font-size: 14px; color: #4b5568;">Patents</div></div>
+    <div style="border-radius: 20px; background: #fff4e8; padding: 24px; display: flex; flex-direction: column; gap: 4px;"><div style="font-weight: 800; font-size: 40px; letter-spacing: -0.03em; color: #d97a1a;">18</div><div style="font-size: 14px; color: #4b5568;">Members</div></div>
+    <div style="border-radius: 20px; background: #f3efff; padding: 24px; display: flex; flex-direction: column; gap: 4px;"><div style="font-weight: 800; font-size: 40px; letter-spacing: -0.03em; color: #6b4fd8;">5</div><div style="font-size: 14px; color: #4b5568;">Research directions</div></div>
+  </div>
+  <!-- News timeline + Research -->
+  <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 40px; padding: 64px 96px 72px 96px;">
+    <div style="grid-column: span 7; display: flex; flex-direction: column; gap: 22px;">
+      <div style="font-weight: 800; font-size: 30px; letter-spacing: -0.03em;">Latest news</div>
+      <div style="display: flex; flex-direction: column;">
+        <div style="display: grid; grid-template-columns: 24px 1fr; gap: 18px; padding: 0 0 22px 0;"><div style="display: flex; flex-direction: column; align-items: center;"><div style="width: 12px; height: 12px; border-radius: 50%; background: #1f6feb; margin-top: 6px;"></div><div style="flex: 1; width: 2px; background: #e3ebf6; margin-top: 6px;"></div></div><div><div style="font-size: 12.5px; font-weight: 600; color: #1f6feb;">2026.06.12</div><div>Gerald Selasie Gbadam 석∙박사과정이 2026 NGPT에서 Best Oral Award를 수상하였습니다.</div></div></div>
+        <div style="display: grid; grid-template-columns: 24px 1fr; gap: 18px; padding: 0 0 22px 0;"><div style="display: flex; flex-direction: column; align-items: center;"><div style="width: 12px; height: 12px; border-radius: 50%; background: #c9dcf7; margin-top: 6px;"></div><div style="flex: 1; width: 2px; background: #e3ebf6; margin-top: 6px;"></div></div><div><div style="font-size: 12.5px; font-weight: 600; color: #6b7a90;">2026.06.12</div><div>류연경 석∙박사과정이 2026 NGPT에서 Best Oral Award를 수상하였습니다.</div></div></div>
+        <div style="display: grid; grid-template-columns: 24px 1fr; gap: 18px; padding: 0 0 22px 0;"><div style="display: flex; flex-direction: column; align-items: center;"><div style="width: 12px; height: 12px; border-radius: 50%; background: #c9dcf7; margin-top: 6px;"></div><div style="flex: 1; width: 2px; background: #e3ebf6; margin-top: 6px;"></div></div><div><div style="font-size: 12.5px; font-weight: 600; color: #6b7a90;">2025.12.16</div><div>Gerald Selasie Gbadam 석∙박사과정이 2025년 대학원 연구페스티벌에서 우수 연구자상을 수상하였습니다.</div></div></div>
+        <div style="display: grid; grid-template-columns: 24px 1fr; gap: 18px;"><div style="display: flex; flex-direction: column; align-items: center;"><div style="width: 12px; height: 12px; border-radius: 50%; background: #c9dcf7; margin-top: 6px;"></div></div><div><div style="font-size: 12.5px; font-weight: 600; color: #6b7a90;">2025.10</div><div>Gerald Selasie Gbadam 석∙박사과정이 1저자로 참여한 논문이 Nature Communications 지에 Accept 되었습니다.</div></div></div>
+      </div>
+      <a href="#" style="font-weight: 600; font-size: 14.5px;">All 53 news →</a>
+    </div>
+    <div style="grid-column: span 5; display: flex; flex-direction: column; gap: 22px;">
+      <div style="font-weight: 800; font-size: 30px; letter-spacing: -0.03em;">Research</div>
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="padding: 16px 18px; border-radius: 16px; border: 1px solid #e3ebf6; display: flex; align-items: center; gap: 14px;"><div style="width: 34px; height: 34px; border-radius: 10px; background: #eaf3ff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 13px; color: #1f6feb;">01</div><div style="font-weight: 600;">Energy Harvesting Technology</div></div>
+        <div style="padding: 16px 18px; border-radius: 16px; border: 1px solid #e3ebf6; display: flex; align-items: center; gap: 14px;"><div style="width: 34px; height: 34px; border-radius: 10px; background: #eefaf3; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 13px; color: #1a8f5c;">02</div><div style="font-weight: 600;">Synthesis of Functional Polymers</div></div>
+        <div style="padding: 16px 18px; border-radius: 16px; border: 1px solid #e3ebf6; display: flex; align-items: center; gap: 14px;"><div style="width: 34px; height: 34px; border-radius: 10px; background: #fff4e8; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 13px; color: #d97a1a;">03</div><div style="font-weight: 600;">Bio-Piezoelectric Materials</div></div>
+        <div style="padding: 16px 18px; border-radius: 16px; border: 1px solid #e3ebf6; display: flex; align-items: center; gap: 14px;"><div style="width: 34px; height: 34px; border-radius: 10px; background: #f3efff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 13px; color: #6b4fd8;">04</div><div style="font-weight: 600;">Various Novel Applications</div></div>
+        <div style="padding: 16px 18px; border-radius: 16px; border: 1px solid #e3ebf6; display: flex; align-items: center; gap: 14px;"><div style="width: 34px; height: 34px; border-radius: 10px; background: #fdeef2; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 13px; color: #d13b6a;">05</div><div style="font-weight: 600;">AI-Integrated Research Platform</div></div>
+      </div>
+    </div>
+  </div>
+  <div style="margin: 0 48px 40px 48px; padding: 24px 48px; border-radius: 20px; background: #f6f9fd; display: flex; justify-content: space-between; font-size: 13px; color: #6b7a90;">
+    <div>Room E6-411, Dept. of Energy Science &amp; Engineering, DGIST, Daegu 42988, Republic of Korea</div>
+    <div>© JU HYUCK LEE's Group</div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>
