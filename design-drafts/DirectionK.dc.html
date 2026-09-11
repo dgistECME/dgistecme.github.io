@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600&display=swap">
+  <style>
+    body { margin: 0; background: #ffffff; color: #1c1c1c; font-family: 'Instrument Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.65; }
+    a { color: #1c1c1c; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: #9ca3af; } a:hover { text-decoration-color: #1c1c1c; }
+  </style>
+</helmet>
+<div style="width: 1440px; background: #ffffff;">
+  <!-- Header: text only -->
+  <div style="display: flex; align-items: baseline; justify-content: space-between; padding: 36px 120px 0 120px;">
+    <div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 30px; letter-spacing: -0.01em;">ECME Laboratory</div>
+    <div style="display: flex; gap: 32px; font-size: 15px; color: #4b5563;">
+      <div style="color: #1c1c1c; text-decoration: underline; text-underline-offset: 6px;">Home</div><div>Professor</div><div>People</div><div>Research</div><div>Publications</div><div>News</div><div>Contact</div>
+    </div>
+  </div>
+  <!-- Hero: giant serif statement -->
+  <div style="padding: 96px 120px 0 120px; display: flex; flex-direction: column; gap: 32px;">
+    <div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 104px; line-height: 0.98; letter-spacing: -0.03em; max-width: 1100px;">Energy from motion.<br><span style="font-style: italic; color: #6b7280;">Materials for a self-powered world.</span></div>
+    <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 40px; align-items: end;">
+      <div style="grid-column: span 6; font-size: 18px; color: #4b5563; max-width: 560px;">Prof. Ju-Hyuck Lee's research group at DGIST develops piezoelectric and triboelectric nanogenerators, functional polymers, and bio-piezoelectric materials.</div>
+      <div style="grid-column: span 6; display: flex; gap: 32px; justify-content: flex-end; font-size: 15px;">
+        <a href="#">Research →</a>
+        <a href="#">Publications →</a>
+        <a href="#">Join us →</a>
+      </div>
+    </div>
+  </div>
+  <!-- Full-width photo with white margins -->
+  <div style="margin: 72px 120px 0 120px; height: 560px; overflow: hidden;">
+    <img src="hero.jpg" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+  </div>
+  <div style="padding: 14px 120px 0 120px; font-size: 13.5px; color: #9ca3af; font-style: italic; font-family: 'Instrument Serif', Georgia, serif;">ECME LAB members on the DGIST campus.</div>
+  <!-- Research: large serif numerals -->
+  <div style="padding: 96px 120px 0 120px; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 40px;">
+    <div style="grid-column: span 4;">
+      <div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 44px; line-height: 1.05; letter-spacing: -0.02em;">Five research<br>directions</div>
+    </div>
+    <div style="grid-column: span 8; display: flex; flex-direction: column;">
+      <div style="display: grid; grid-template-columns: 96px 1fr; align-items: baseline; padding: 22px 0; border-top: 1px solid #1c1c1c;"><div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 36px; color: #9ca3af;">01</div><div style="font-size: 22px;">Energy Harvesting Technology</div></div>
+      <div style="display: grid; grid-template-columns: 96px 1fr; align-items: baseline; padding: 22px 0; border-top: 1px solid #e5e7eb;"><div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 36px; color: #9ca3af;">02</div><div style="font-size: 22px;">Synthesis of Functional Polymers</div></div>
+      <div style="display: grid; grid-template-columns: 96px 1fr; align-items: baseline; padding: 22px 0; border-top: 1px solid #e5e7eb;"><div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 36px; color: #9ca3af;">03</div><div style="font-size: 22px;">Synthesis of Bio-Piezoelectric Materials</div></div>
+      <div style="display: grid; grid-template-columns: 96px 1fr; align-items: baseline; padding: 22px 0; border-top: 1px solid #e5e7eb;"><div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 36px; color: #9ca3af;">04</div><div style="font-size: 22px;">Various Novel Applications</div></div>
+      <div style="display: grid; grid-template-columns: 96px 1fr; align-items: baseline; padding: 22px 0; border-top: 1px solid #e5e7eb; border-bottom: 1px solid #1c1c1c;"><div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 36px; color: #9ca3af;">05</div><div style="font-size: 22px;">AI-Integrated Research Platform</div></div>
+    </div>
+  </div>
+  <!-- News: hanging dates -->
+  <div style="padding: 96px 120px 88px 120px; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 40px;">
+    <div style="grid-column: span 4;">
+      <div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 44px; line-height: 1.05; letter-spacing: -0.02em;">Recent<br>news</div>
+      <a href="#" style="display: inline-block; margin-top: 18px; font-size: 15px;">All 53 entries →</a>
+    </div>
+    <div style="grid-column: span 8; display: flex; flex-direction: column; gap: 22px;">
+      <div style="display: grid; grid-template-columns: 140px 1fr; gap: 24px;"><div style="font-size: 14px; color: #9ca3af; padding-top: 3px;">12 June 2026</div><div style="font-size: 17px;">Gerald Selasie Gbadam 석∙박사과정이 2026 NGPT에서 Best Oral Award를 수상하였습니다.</div></div>
+      <div style="display: grid; grid-template-columns: 140px 1fr; gap: 24px;"><div style="font-size: 14px; color: #9ca3af; padding-top: 3px;">12 June 2026</div><div style="font-size: 17px;">류연경 석∙박사과정이 2026 NGPT에서 Best Oral Award를 수상하였습니다.</div></div>
+      <div style="display: grid; grid-template-columns: 140px 1fr; gap: 24px;"><div style="font-size: 14px; color: #9ca3af; padding-top: 3px;">16 Dec 2025</div><div style="font-size: 17px;">Gerald Selasie Gbadam 석∙박사과정이 2025년 대학원 연구페스티벌에서 우수 연구자상을 수상하였습니다.</div></div>
+      <div style="display: grid; grid-template-columns: 140px 1fr; gap: 24px;"><div style="font-size: 14px; color: #9ca3af; padding-top: 3px;">Oct 2025</div><div style="font-size: 17px;">Gerald Selasie Gbadam 석∙박사과정이 1저자로 참여한 논문이 Nature Communications 지에 Accept 되었습니다.</div></div>
+    </div>
+  </div>
+  <div style="padding: 24px 120px 40px 120px; border-top: 1px solid #1c1c1c; display: flex; justify-content: space-between; font-size: 13.5px; color: #6b7280;">
+    <div>Room E6-411, Dept. of Energy Science &amp; Engineering, DGIST, Daegu 42988, Republic of Korea</div>
+    <div>© JU HYUCK LEE's Group</div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>
