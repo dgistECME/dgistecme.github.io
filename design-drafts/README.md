@@ -7,11 +7,17 @@ Claude Design 캔버스( https://claude.ai/code/artifact/a6db981f-9b66-4d66-8b9a
 |---|---|---|
 | `Main.dc.html` | C · Bold Editorial (다크 네이비) | **현재 사이트 적용 중** |
 | `DirectionF.dc.html` | F · Photo Magazine (세로 대제목 + 사진 모자이크 + 노랑) | 백업 요청됨 — 다음 후보 |
+| `DirectionS.dc.html` | S · Glow Cards (풀블리드 사진 히어로, 그라데이션 제목, 글래스 카드, 컬러 태그) | 레퍼런스 결 |
+| `DirectionT.dc.html` | T · Aurora (파스텔 블롭, 라운드 사진 + 부유 통계 칩, 5색 타일) | 레퍼런스 결 |
+| `DirectionU.dc.html` | U · Spectrum (곡선 사진 카드, 스펙트럼 테두리, 캐러셀) | 레퍼런스 결 |
 | `DirectionN.dc.html` | N · Orbit (동심원 링 + 원형 사진, 공전 노드 애니메이션) | **사용자 선호 — 후보 1순위** |
 | `DirectionP.dc.html` | P · Waveform (사인파 + 알약형 사진, 파형 위 연구 노드) | N 계열 |
 | `DirectionQ.dc.html` | Q · Hex Lattice (육각 격자 + 육각 사진/셀) | N 계열 |
 | `DirectionR.dc.html` | R · Signal Field (점 필드 + 신호 링 퍼짐 + 통계 바) | N 계열 |
 | `DirectionM.dc.html` | M · Overlap Editorial (순백, 초대형 아웃라인 타이포 + 기울어진 사진 겹침) | 흰 배경·강한 구성 |
+| `DirectionS.dc.html` | S · Glow Cards (풀블리드 사진 히어로, 그라데이션 제목, 글래스 카드, 컬러 태그) | 레퍼런스 결 |
+| `DirectionT.dc.html` | T · Aurora (파스텔 블롭, 라운드 사진 + 부유 통계 칩, 5색 타일) | 레퍼런스 결 |
+| `DirectionU.dc.html` | U · Spectrum (곡선 사진 카드, 스펙트럼 테두리, 캐러셀) | 레퍼런스 결 |
 | `DirectionN.dc.html` | N · Orbit (순백, 동심원 링 + 원형 사진) | 흰 배경·강한 구성 |
 | `DirectionO.dc.html` | O · Vertical Rail (순백, 세로 레일 + 굵은 룰 + 흑백 사진) | 흰 배경·강한 구성 |
 | `DirectionJ.dc.html` | J · Hairline Magazine (순백, 회색 룰선, 잡지 3단) | 흰 배경 후보 |

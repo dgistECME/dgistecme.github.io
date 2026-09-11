@@ -5,6 +5,10 @@
       "name": "Final · Bold Editorial"
     },
     {
+      "id": "page-8",
+      "name": "Reference-inspired S · T · U (bright & vivid)"
+    },
+    {
       "id": "page-7",
       "name": "Orbit family N · P · Q · R (animated)"
     },
@@ -38,6 +42,33 @@
       "h": 1640,
       "title": "Home · Bold Editorial (적용 중)",
       "page": "page-1"
+    },
+    {
+      "file": "DirectionS.dc.html",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 2760,
+      "title": "S · Glow Cards",
+      "page": "page-8"
+    },
+    {
+      "file": "DirectionT.dc.html",
+      "x": 1560,
+      "y": 0,
+      "w": 1440,
+      "h": 1800,
+      "title": "T · Aurora",
+      "page": "page-8"
+    },
+    {
+      "file": "DirectionU.dc.html",
+      "x": 3120,
+      "y": 0,
+      "w": 1440,
+      "h": 1840,
+      "title": "U · Spectrum",
+      "page": "page-8"
     },
     {
       "file": "DirectionP.dc.html",
@@ -212,6 +243,14 @@
       "text": "C · Bold Editorial 적용 완료 → https://dgistecme.github.io/ (애니메이션 A 기본)\n색·폰트·간격은 site/src/styles/global.css 상단 토큰에서 조정.\n이전 디자인 복구: git checkout v1-wix-style (또는 backup/wix-style 브랜치)."
     },
     {
+      "id": "ref-brief",
+      "x": 0,
+      "y": -420,
+      "w": 820,
+      "page": "page-8",
+      "text": "레퍼런스(NOMAD Lab) 결 — 밝고 화려하게. 공통: 흰/연회색 배경, 파랑→보라(→핑크) 그라데이션 제목, 둥근 카드 + 큰 그림자, 컬러 필 태그(Award/Paper/Recognition), 부드러운 블롭, 카드 호버 리프트.\nS · Glow Cards — 풀블리드 사진 히어로 + 어두운 오버레이 + 로고 중앙, 뉴스 3카드(이미지+태그), 컬러 아이콘 연구 타일, PI 카드(그라데이션 링 사진 + 인용) + 통계 타일 + 경력 타임라인. 레퍼런스와 가장 가까움.\nT · Aurora — 파스텔 오로라 블롭 배경, 좌 텍스트/우 라운드 사진 + 부유하는 글래스 통계 칩, 5색 연구 타일, 태그 붙은 뉴스 카드. 가장 부드럽고 예쁨.\nU · Spectrum — 둥근 하단 곡선 사진 카드 히어로 + 글래스 통계, 스펙트럼 그라데이션 테두리 연구 카드, 흘러가는 그라데이션 바, 뉴스 캐러셀 카드. 가장 컬러풀.\n\n하나 고르거나 섞어 말하면 이식."
+    },
+    {
       "id": "orbit-brief",
       "x": 0,
       "y": -420,
@@ -262,6 +301,6 @@
   ],
   "launch": {
     "view": "canvas",
-    "page": "page-7"
+    "page": "page-8"
   }
 }

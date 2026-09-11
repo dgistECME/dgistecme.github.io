@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&display=swap">
+  <style>
+    body { margin: 0; background: #ffffff; color: #0b1220; font-family: 'Sora', 'Helvetica Neue', Arial, sans-serif; font-size: 15px; line-height: 1.6; }
+    a { color: #0284c7; text-decoration: none; } a:hover { text-decoration: underline; }
+    .u-grad { background: linear-gradient(90deg, #06b6d4, #3b82f6 50%, #8b5cf6); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    @keyframes u-up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+    @keyframes u-shine { from { background-position: 0% 50%; } to { background-position: 200% 50%; } }
+    @keyframes u-zoom { from { transform: scale(1.05); } to { transform: scale(1); } }
+    .u-hero-img { animation: u-zoom 9s ease-out both; }
+    .u-hero > * { animation: u-up .9s cubic-bezier(.2,.7,.2,1) both; }
+    .u-hero > :nth-child(2) { animation-delay: .12s; } .u-hero > :nth-child(3) { animation-delay: .24s; } .u-hero > :nth-child(4) { animation-delay: .36s; }
+    .u-bar { background: linear-gradient(90deg, #06b6d4, #3b82f6, #8b5cf6, #ec4899, #06b6d4); background-size: 200% 100%; animation: u-shine 6s linear infinite; }
+    .u-card { transition: transform .3s ease, box-shadow .3s ease; } .u-card:hover { transform: translateY(-6px); box-shadow: 0 30px 60px rgba(11,18,32,0.14); }
+    @media (prefers-reduced-motion: reduce) { .u-hero-img, .u-bar { animation: none !important; } }
+  </style>
+</helmet>
+<div style="width: 1440px; background: #ffffff; position: relative; overflow: hidden;">
+  <!-- Header on white -->
+  <div style="display: flex; align-items: center; justify-content: space-between; height: 84px; padding: 0 72px;">
+    <div style="display: flex; align-items: center; gap: 12px;"><img src="logo.png" style="width: 34px; display: block;"><div style="font-weight: 800; font-size: 19px; letter-spacing: -0.02em;">ECME <span class="u-grad">Lab</span></div></div>
+    <div style="display: flex; gap: 26px; font-weight: 600; font-size: 14px; color: #334155;">
+      <div style="position: relative; color: #0b1220;">Home<div class="u-bar" style="position: absolute; left: 0; right: 0; bottom: -8px; height: 3px; border-radius: 999px;"></div></div><div>Professor</div><div>People</div><div>Research</div><div>Publications</div><div>News</div><div>Contact</div>
+    </div>
+  </div>
+  <!-- Hero: photo card with curved bottom, overlay copy -->
+  <div style="position: relative; margin: 0 40px; height: 640px; border-radius: 40px 40px 200px 200px / 40px 40px 120px 120px; overflow: hidden; box-shadow: 0 40px 100px rgba(11,18,32,0.18);">
+    <img class="u-hero-img" src="hero.jpg" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block;">
+    <div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(11,18,32,0.72) 0%, rgba(11,18,32,0.45) 50%, rgba(11,18,32,0.15) 100%);"></div>
+    <div class="u-hero" style="position: absolute; left: 72px; top: 110px; width: 640px; display: flex; flex-direction: column; gap: 20px; color: #ffffff;">
+      <div style="display: inline-flex; align-self: flex-start; padding: 7px 14px; border-radius: 999px; background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.35); backdrop-filter: blur(8px); font-size: 12.5px; font-weight: 700; letter-spacing: 0.04em;">Prof. Ju-Hyuck Lee's Research Group · DGIST</div>
+      <div style="font-weight: 800; font-size: 62px; line-height: 1.02; letter-spacing: -0.035em; text-shadow: 0 4px 30px rgba(0,0,0,0.3);">Energy Conversion Materials Engineering</div>
+      <div style="font-size: 17px; opacity: 0.92; max-width: 540px;">Piezoelectric and triboelectric nanogenerators, functional polymers, and bio-piezoelectric materials for battery-free, self-powered electronics.</div>
+      <div style="display: flex; gap: 12px;">
+        <div style="padding: 14px 24px; border-radius: 14px; background: linear-gradient(90deg, #06b6d4, #3b82f6); color: #ffffff; font-weight: 700; font-size: 14.5px; box-shadow: 0 12px 30px rgba(59,130,246,0.4);">Explore research</div>
+        <div style="padding: 14px 24px; border-radius: 14px; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.4); color: #ffffff; font-weight: 700; font-size: 14.5px; backdrop-filter: blur(8px);">Join us</div>
+      </div>
+    </div>
+    <div style="position: absolute; right: 72px; bottom: 90px; display: flex; gap: 12px;">
+      <div style="padding: 16px 20px; border-radius: 18px; background: rgba(255,255,255,0.92); display: flex; flex-direction: column; gap: 2px; min-width: 120px;"><div class="u-grad" style="font-weight: 800; font-size: 32px; line-height: 1;">81</div><div style="font-size: 12.5px; color: #475569; font-weight: 600;">Papers</div></div>
+      <div style="padding: 16px 20px; border-radius: 18px; background: rgba(255,255,255,0.92); display: flex; flex-direction: column; gap: 2px; min-width: 120px;"><div class="u-grad" style="font-weight: 800; font-size: 32px; line-height: 1;">35</div><div style="font-size: 12.5px; color: #475569; font-weight: 600;">Patents</div></div>
+      <div style="padding: 16px 20px; border-radius: 18px; background: rgba(255,255,255,0.92); display: flex; flex-direction: column; gap: 2px; min-width: 120px;"><div class="u-grad" style="font-weight: 800; font-size: 32px; line-height: 1;">18</div><div style="font-size: 12.5px; color: #475569; font-weight: 600;">Members</div></div>
+    </div>
+  </div>
+  <!-- Research: gradient-border cards -->
+  <div style="padding: 88px 72px 0 72px; display: flex; flex-direction: column; gap: 28px;">
+    <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px;">
+      <div style="font-weight: 800; font-size: 40px; letter-spacing: -0.03em;">What we <span class="u-grad">research</span></div>
+      <div class="u-bar" style="width: 90px; height: 5px; border-radius: 999px;"></div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 18px;">
+      <div class="u-card" style="padding: 2px; border-radius: 24px; background: linear-gradient(135deg, #06b6d4, #3b82f6);"><div style="background: #ffffff; border-radius: 22px; padding: 22px 20px; height: 100%; display: flex; flex-direction: column; gap: 12px; box-sizing: border-box;"><div class="u-grad" style="font-weight: 800; font-size: 28px;">01</div><div style="font-weight: 700; font-size: 15px; line-height: 1.35;">Energy Harvesting Technology</div></div></div>
+      <div class="u-card" style="padding: 2px; border-radius: 24px; background: linear-gradient(135deg, #3b82f6, #8b5cf6);"><div style="background: #ffffff; border-radius: 22px; padding: 22px 20px; height: 100%; display: flex; flex-direction: column; gap: 12px; box-sizing: border-box;"><div class="u-grad" style="font-weight: 800; font-size: 28px;">02</div><div style="font-weight: 700; font-size: 15px; line-height: 1.35;">Synthesis of Functional Polymers</div></div></div>
+      <div class="u-card" style="padding: 2px; border-radius: 24px; background: linear-gradient(135deg, #8b5cf6, #ec4899);"><div style="background: #ffffff; border-radius: 22px; padding: 22px 20px; height: 100%; display: flex; flex-direction: column; gap: 12px; box-sizing: border-box;"><div class="u-grad" style="font-weight: 800; font-size: 28px;">03</div><div style="font-weight: 700; font-size: 15px; line-height: 1.35;">Bio-Piezoelectric Materials</div></div></div>
+      <div class="u-card" style="padding: 2px; border-radius: 24px; background: linear-gradient(135deg, #ec4899, #f59e0b);"><div style="background: #ffffff; border-radius: 22px; padding: 22px 20px; height: 100%; display: flex; flex-direction: column; gap: 12px; box-sizing: border-box;"><div class="u-grad" style="font-weight: 800; font-size: 28px;">04</div><div style="font-weight: 700; font-size: 15px; line-height: 1.35;">Various Novel Applications</div></div></div>
+      <div class="u-card" style="padding: 2px; border-radius: 24px; background: linear-gradient(135deg, #f59e0b, #06b6d4);"><div style="background: #ffffff; border-radius: 22px; padding: 22px 20px; height: 100%; display: flex; flex-direction: column; gap: 12px; box-sizing: border-box;"><div class="u-grad" style="font-weight: 800; font-size: 28px;">05</div><div style="font-weight: 700; font-size: 15px; line-height: 1.35;">AI-Integrated Research Platform</div></div></div>
+    </div>
+  </div>
+  <!-- News carousel-like cards on soft band -->
+  <div style="margin-top: 88px; padding: 72px 72px 80px 72px; background: linear-gradient(180deg, #f8fafc, #ffffff);">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 28px;">
+      <div style="font-weight: 800; font-size: 34px; letter-spacing: -0.03em;">Latest <span class="u-grad">news</span></div>
+      <div style="display: flex; gap: 8px;"><div style="width: 40px; height: 40px; border-radius: 50%; border: 1px solid #e2e8f0; background: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; color: #94a3b8;">‹</div><div style="width: 40px; height: 40px; border-radius: 50%; background: #0b1220; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700;">›</div></div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px;">
+      <div class="u-card" style="border-radius: 24px; overflow: hidden; background: #ffffff; box-shadow: 0 16px 44px rgba(11,18,32,0.08); display: flex; flex-direction: column;">
+        <div style="position: relative; height: 180px; overflow: hidden;"><img src="photo1.jpg" style="width: 100%; height: 100%; object-fit: cover; display: block;"><div style="position: absolute; left: 14px; top: 14px; padding: 5px 11px; border-radius: 999px; background: #22c55e; color: #fff; font-size: 11.5px; font-weight: 700;">Award</div></div>
+        <div style="padding: 20px 22px 24px; display: flex; flex-direction: column; gap: 8px;"><div style="font-size: 12.5px; color: #94a3b8; font-weight: 600;">2026.06.12</div><div style="font-weight: 700; font-size: 16px; line-height: 1.4;">Gerald Selasie Gbadam 석∙박사과정이 2026 NGPT에서 Best Oral Award를 수상하였습니다.</div></div>
+      </div>
+      <div class="u-card" style="border-radius: 24px; overflow: hidden; background: #ffffff; box-shadow: 0 16px 44px rgba(11,18,32,0.08); display: flex; flex-direction: column;">
+        <div style="position: relative; height: 180px; background: linear-gradient(135deg, #06b6d4, #3b82f6, #8b5cf6); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 800; font-size: 22px; text-align: center; padding: 0 30px; line-height: 1.25;">Nature Communications<div style="position: absolute; left: 14px; top: 14px; padding: 5px 11px; border-radius: 999px; background: rgba(255,255,255,0.25); color: #fff; font-size: 11.5px; font-weight: 700;">Paper</div></div>
+        <div style="padding: 20px 22px 24px; display: flex; flex-direction: column; gap: 8px;"><div style="font-size: 12.5px; color: #94a3b8; font-weight: 600;">2025.10</div><div style="font-weight: 700; font-size: 16px; line-height: 1.4;">Gerald Selasie Gbadam 석∙박사과정이 1저자로 참여한 논문이 Nature Communications 지에 Accept 되었습니다.</div></div>
+      </div>
+      <div class="u-card" style="border-radius: 24px; overflow: hidden; background: #ffffff; box-shadow: 0 16px 44px rgba(11,18,32,0.08); display: flex; flex-direction: column;">
+        <div style="position: relative; height: 180px; overflow: hidden;"><img src="hero.jpg" style="width: 100%; height: 100%; object-fit: cover; display: block;"><div style="position: absolute; left: 14px; top: 14px; padding: 5px 11px; border-radius: 999px; background: #f59e0b; color: #fff; font-size: 11.5px; font-weight: 700;">Recognition</div></div>
+        <div style="padding: 20px 22px 24px; display: flex; flex-direction: column; gap: 8px;"><div style="font-size: 12.5px; color: #94a3b8; font-weight: 600;">2025.12.16</div><div style="font-weight: 700; font-size: 16px; line-height: 1.4;">Gerald Selasie Gbadam 석∙박사과정이 2025년 대학원 연구페스티벌에서 우수 연구자상을 수상하였습니다.</div></div>
+      </div>
+    </div>
+  </div>
+  <div style="padding: 24px 72px 32px 72px; display: flex; justify-content: space-between; font-size: 13px; color: #64748b; border-top: 1px solid #eef2f7;">
+    <div>Room E6-411, Dept. of Energy Science &amp; Engineering, DGIST, Daegu 42988, Republic of Korea</div>
+    <div>© JU HYUCK LEE's Group</div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>
