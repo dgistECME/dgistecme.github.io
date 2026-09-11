@@ -5,6 +5,10 @@
       "name": "Final · Bold Editorial"
     },
     {
+      "id": "page-6",
+      "name": "White + bold M · N · O"
+    },
+    {
       "id": "page-5",
       "name": "White-only J · K · L"
     },
@@ -30,6 +34,33 @@
       "h": 1640,
       "title": "Home · Bold Editorial (적용 중)",
       "page": "page-1"
+    },
+    {
+      "file": "DirectionM.dc.html",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 2360,
+      "title": "M · Overlap Editorial",
+      "page": "page-6"
+    },
+    {
+      "file": "DirectionN.dc.html",
+      "x": 1560,
+      "y": 0,
+      "w": 1440,
+      "h": 1660,
+      "title": "N · Orbit",
+      "page": "page-6"
+    },
+    {
+      "file": "DirectionO.dc.html",
+      "x": 3120,
+      "y": 0,
+      "w": 1440,
+      "h": 1660,
+      "title": "O · Vertical Rail",
+      "page": "page-6"
     },
     {
       "file": "DirectionJ.dc.html",
@@ -150,6 +181,14 @@
       "text": "C · Bold Editorial 적용 완료 → https://dgistecme.github.io/ (애니메이션 A 기본)\n색·폰트·간격은 site/src/styles/global.css 상단 토큰에서 조정.\n이전 디자인 복구: git checkout v1-wix-style (또는 backup/wix-style 브랜치)."
     },
     {
+      "id": "bold-brief",
+      "x": 0,
+      "y": -400,
+      "w": 760,
+      "page": "page-6",
+      "text": "흰 배경 유지, 구성은 강하게.\nM · Overlap Editorial — 150px 초대형 타이포(가운데 줄은 아웃라인)가 기울어진 사진과 겹침, 회색 고스트 숫자 81·35·18, 계단식 연구 목록, 파란 언론 카드. 가장 '디자인된' 느낌.\nN · Orbit — 동심원 링 + 원형 사진, 궤도 노드, 연구 5개를 축 위 노드로, 겹친 원형 숫자. 에너지·운동 모티프. 균형 잡힌 대칭.\nO · Vertical Rail — 좌측 세로 레일에 연구실 이름 회전, 3px 굵은 룰, 흑백 사진 + 흰 타이포 블록, 96px 숫자 스트립, 빨강 'Now hiring' 태그. 가장 그래픽·포스터적.\n\n하나 고르거나 섞어 말하면 이식."
+    },
+    {
       "id": "white-brief",
       "x": 0,
       "y": -400,
@@ -184,6 +223,6 @@
   ],
   "launch": {
     "view": "canvas",
-    "page": "page-5"
+    "page": "page-6"
   }
 }

@@ -7,6 +7,9 @@ Claude Design 캔버스( https://claude.ai/code/artifact/a6db981f-9b66-4d66-8b9a
 |---|---|---|
 | `Main.dc.html` | C · Bold Editorial (다크 네이비) | **현재 사이트 적용 중** |
 | `DirectionF.dc.html` | F · Photo Magazine (세로 대제목 + 사진 모자이크 + 노랑) | 백업 요청됨 — 다음 후보 |
+| `DirectionM.dc.html` | M · Overlap Editorial (순백, 초대형 아웃라인 타이포 + 기울어진 사진 겹침) | 흰 배경·강한 구성 |
+| `DirectionN.dc.html` | N · Orbit (순백, 동심원 링 + 원형 사진) | 흰 배경·강한 구성 |
+| `DirectionO.dc.html` | O · Vertical Rail (순백, 세로 레일 + 굵은 룰 + 흑백 사진) | 흰 배경·강한 구성 |
 | `DirectionJ.dc.html` | J · Hairline Magazine (순백, 회색 룰선, 잡지 3단) | 흰 배경 후보 |
 | `DirectionK.dc.html` | K · Serif Editorial (순백, 세리프 대문장, 여백) | 흰 배경 후보 |
 | `DirectionL.dc.html` | L · Bento Cards (순백, 테두리 카드 그리드) | 흰 배경 후보 |

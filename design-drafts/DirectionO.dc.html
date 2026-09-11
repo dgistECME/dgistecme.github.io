@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Archivo+Black&display=swap">
+  <style>
+    body { margin: 0; background: #ffffff; color: #0b0b0b; font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-size: 15.5px; line-height: 1.55; }
+    a { color: #0b0b0b; text-decoration: none; } a:hover { color: #ff3b1f; }
+  </style>
+</helmet>
+<div style="width: 1440px; background: #ffffff; display: grid; grid-template-columns: 96px 1fr;">
+  <!-- Vertical rail -->
+  <div style="border-right: 3px solid #0b0b0b; display: flex; flex-direction: column; justify-content: space-between; align-items: center; padding: 28px 0; min-height: 100%;">
+    <img src="logo.png" style="width: 36px; display: block;">
+    <div style="writing-mode: vertical-rl; transform: rotate(180deg); font-family: 'Archivo Black', sans-serif; font-size: 28px; letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap;">Energy Conversion Materials Engineering</div>
+    <div style="writing-mode: vertical-rl; transform: rotate(180deg); font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: #6b6b6b;">DGIST · 2018 →</div>
+  </div>
+  <!-- Main column -->
+  <div style="display: flex; flex-direction: column;">
+    <!-- Header -->
+    <div style="display: flex; align-items: center; justify-content: space-between; height: 76px; padding: 0 56px; border-bottom: 3px solid #0b0b0b;">
+      <div style="font-family: 'Archivo Black', sans-serif; font-size: 18px; letter-spacing: 0.02em;">ECME LAB</div>
+      <div style="display: flex; gap: 28px; font-weight: 600; font-size: 14px; letter-spacing: 0.04em; text-transform: uppercase;">
+        <div style="border-bottom: 3px solid #ff3b1f; padding-bottom: 2px;">Home</div><div>Professor</div><div>People</div><div>Research</div><div>Publications</div><div>News</div><div>Contact</div>
+      </div>
+    </div>
+    <!-- Hero: full-height photo with hard type block -->
+    <div style="position: relative; height: 620px; overflow: hidden; border-bottom: 3px solid #0b0b0b;">
+      <img src="hero.jpg" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(1) contrast(1.1);">
+      <div style="position: absolute; left: 0; bottom: 0; background: #ffffff; padding: 28px 40px 28px 56px; border-top: 3px solid #0b0b0b; border-right: 3px solid #0b0b0b; max-width: 760px; display: flex; flex-direction: column; gap: 14px;">
+        <div style="font-family: 'Archivo Black', sans-serif; font-size: 64px; line-height: 0.95; letter-spacing: -0.03em; text-transform: uppercase;">Motion<br>into power<span style="color: #ff3b1f;">.</span></div>
+        <div style="color: #3d3d3d; max-width: 560px;">Prof. Ju-Hyuck Lee's Research Group — piezoelectric &amp; triboelectric nanogenerators, functional polymers, bio-piezoelectric materials for battery-free electronics.</div>
+      </div>
+      <div style="position: absolute; right: 0; top: 0; background: #ff3b1f; color: #ffffff; padding: 18px 24px; font-family: 'Archivo Black', sans-serif; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;">Now hiring · Post-docs &amp; grads</div>
+    </div>
+    <!-- Big number strip -->
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-bottom: 3px solid #0b0b0b;">
+      <div style="padding: 28px 56px; border-right: 3px solid #0b0b0b; display: flex; align-items: baseline; gap: 16px;"><div style="font-family: 'Archivo Black', sans-serif; font-size: 96px; line-height: 0.9; letter-spacing: -0.04em;">81</div><div style="font-weight: 600; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: #6b6b6b;">Papers</div></div>
+      <div style="padding: 28px 40px; border-right: 3px solid #0b0b0b; display: flex; align-items: baseline; gap: 16px;"><div style="font-family: 'Archivo Black', sans-serif; font-size: 96px; line-height: 0.9; letter-spacing: -0.04em;">35</div><div style="font-weight: 600; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: #6b6b6b;">Patents</div></div>
+      <div style="padding: 28px 40px; display: flex; align-items: baseline; gap: 16px;"><div style="font-family: 'Archivo Black', sans-serif; font-size: 96px; line-height: 0.9; letter-spacing: -0.04em; color: #ff3b1f;">18</div><div style="font-weight: 600; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: #6b6b6b;">Members</div></div>
+    </div>
+    <!-- Research + News two columns with thick rules -->
+    <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); border-bottom: 3px solid #0b0b0b;">
+      <div style="grid-column: span 5; padding: 40px 40px 40px 56px; border-right: 3px solid #0b0b0b; display: flex; flex-direction: column; gap: 22px;">
+        <div style="font-family: 'Archivo Black', sans-serif; font-size: 28px; letter-spacing: -0.01em; text-transform: uppercase;">Research</div>
+        <div style="display: flex; flex-direction: column;">
+          <div style="display: grid; grid-template-columns: 44px 1fr; padding: 14px 0; border-top: 1px solid #0b0b0b; font-weight: 600; font-size: 16px;"><div style="color: #ff3b1f; font-family: 'Archivo Black', sans-serif; font-size: 13px;">01</div><div>Energy Harvesting Technology</div></div>
+          <div style="display: grid; grid-template-columns: 44px 1fr; padding: 14px 0; border-top: 1px solid #0b0b0b; font-weight: 600; font-size: 16px;"><div style="color: #ff3b1f; font-family: 'Archivo Black', sans-serif; font-size: 13px;">02</div><div>Synthesis of Functional Polymers</div></div>
+          <div style="display: grid; grid-template-columns: 44px 1fr; padding: 14px 0; border-top: 1px solid #0b0b0b; font-weight: 600; font-size: 16px;"><div style="color: #ff3b1f; font-family: 'Archivo Black', sans-serif; font-size: 13px;">03</div><div>Bio-Piezoelectric Materials</div></div>
+          <div style="display: grid; grid-template-columns: 44px 1fr; padding: 14px 0; border-top: 1px solid #0b0b0b; font-weight: 600; font-size: 16px;"><div style="color: #ff3b1f; font-family: 'Archivo Black', sans-serif; font-size: 13px;">04</div><div>Various Novel Applications</div></div>
+          <div style="display: grid; grid-template-columns: 44px 1fr; padding: 14px 0; border-top: 1px solid #0b0b0b; border-bottom: 1px solid #0b0b0b; font-weight: 600; font-size: 16px;"><div style="color: #ff3b1f; font-family: 'Archivo Black', sans-serif; font-size: 13px;">05</div><div>AI-Integrated Research Platform</div></div>
+        </div>
+      </div>
+      <div style="grid-column: span 7; padding: 40px 56px 40px 40px; display: flex; flex-direction: column; gap: 22px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;"><div style="font-family: 'Archivo Black', sans-serif; font-size: 28px; letter-spacing: -0.01em; text-transform: uppercase;">News</div><a href="#" style="font-weight: 600; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; border-bottom: 2px solid #0b0b0b;">All 53</a></div>
+        <div style="display: flex; flex-direction: column;">
+          <div style="display: grid; grid-template-columns: 120px 1fr; gap: 16px; padding: 14px 0; border-top: 1px solid #0b0b0b;"><div style="font-family: 'Archivo Black', sans-serif; font-size: 12px; letter-spacing: 0.04em;">2026.06.12</div><div>Gerald Selasie Gbadam 석∙박사과정이 2026 NGPT에서 Best Oral Award를 수상하였습니다.</div></div>
+          <div style="display: grid; grid-template-columns: 120px 1fr; gap: 16px; padding: 14px 0; border-top: 1px solid #0b0b0b;"><div style="font-family: 'Archivo Black', sans-serif; font-size: 12px; letter-spacing: 0.04em;">2026.06.12</div><div>류연경 석∙박사과정이 2026 NGPT에서 Best Oral Award를 수상하였습니다.</div></div>
+          <div style="display: grid; grid-template-columns: 120px 1fr; gap: 16px; padding: 14px 0; border-top: 1px solid #0b0b0b;"><div style="font-family: 'Archivo Black', sans-serif; font-size: 12px; letter-spacing: 0.04em;">2025.12.16</div><div>Gerald Selasie Gbadam 석∙박사과정이 2025년 대학원 연구페스티벌에서 우수 연구자상을 수상하였습니다.</div></div>
+          <div style="display: grid; grid-template-columns: 120px 1fr; gap: 16px; padding: 14px 0; border-top: 1px solid #0b0b0b; border-bottom: 1px solid #0b0b0b;"><div style="font-family: 'Archivo Black', sans-serif; font-size: 12px; letter-spacing: 0.04em;">2025.10</div><div>Gerald Selasie Gbadam 석∙박사과정이 1저자로 참여한 논문이 Nature Communications 지에 Accept 되었습니다.</div></div>
+        </div>
+      </div>
+    </div>
+    <!-- Press strip -->
+    <div style="display: grid; grid-template-columns: 300px 1fr; border-bottom: 3px solid #0b0b0b;">
+      <div style="height: 200px; overflow: hidden; border-right: 3px solid #0b0b0b;"><img src="photo1.jpg" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(1);"></div>
+      <div style="padding: 28px 56px 28px 40px; display: flex; flex-direction: column; justify-content: center; gap: 8px;">
+        <div style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #ff3b1f; font-weight: 600;">In the press · 연합뉴스 · 2025.11.03</div>
+        <div style="font-family: 'Archivo Black', sans-serif; font-size: 26px; line-height: 1.2;">"배터리 교체, 충전 No" 마찰전기 이용한 나노발전기 개발</div>
+      </div>
+    </div>
+    <div style="padding: 20px 56px 32px 56px; display: flex; justify-content: space-between; font-size: 13px; color: #6b6b6b;">
+      <div>Room E6-411, Dept. of Energy Science &amp; Engineering, DGIST, Daegu 42988, Republic of Korea</div>
+      <div>© JU HYUCK LEE's Group</div>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

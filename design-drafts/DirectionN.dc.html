@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Manrope:wght@400;500;600&display=swap">
+  <style>
+    body { margin: 0; background: #ffffff; color: #10161f; font-family: 'Manrope', 'Helvetica Neue', Arial, sans-serif; font-size: 15.5px; line-height: 1.6; }
+    a { color: #10161f; text-decoration: none; } a:hover { color: #0a7cff; }
+  </style>
+</helmet>
+<div style="width: 1440px; background: #ffffff; position: relative; overflow: hidden;">
+  <!-- Header -->
+  <div style="display: flex; align-items: center; justify-content: space-between; height: 88px; padding: 0 72px; position: relative; z-index: 3;">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <img src="logo.png" style="width: 34px; display: block;">
+      <div style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.06em;">ECME</div>
+    </div>
+    <div style="display: flex; gap: 6px; font-weight: 600; font-size: 14px;">
+      <div style="padding: 9px 16px; border-radius: 999px; border: 1.5px solid #10161f;">Home</div><div style="padding: 9px 16px;">Professor</div><div style="padding: 9px 16px;">People</div><div style="padding: 9px 16px;">Research</div><div style="padding: 9px 16px;">Publications</div><div style="padding: 9px 16px;">News</div><div style="padding: 9px 16px;">Contact</div>
+    </div>
+  </div>
+  <!-- Hero: concentric rings + circular photo -->
+  <div style="position: relative; height: 760px;">
+    <div style="position: absolute; left: 50%; top: 50%; width: 1500px; height: 1500px; margin-left: -750px; margin-top: -750px; border-radius: 50%; border: 1px solid #e6e9ee;"></div>
+    <div style="position: absolute; left: 50%; top: 50%; width: 1180px; height: 1180px; margin-left: -590px; margin-top: -590px; border-radius: 50%; border: 1px solid #e6e9ee;"></div>
+    <div style="position: absolute; left: 50%; top: 50%; width: 880px; height: 880px; margin-left: -440px; margin-top: -440px; border-radius: 50%; border: 1px dashed #d5dae2;"></div>
+    <div style="position: absolute; left: 50%; top: 50%; width: 600px; height: 600px; margin-left: -300px; margin-top: -300px; border-radius: 50%; border: 1.5px solid #10161f;"></div>
+    <!-- orbit nodes -->
+    <div style="position: absolute; left: calc(50% - 300px - 7px); top: calc(50% - 7px); width: 14px; height: 14px; border-radius: 50%; background: #0a7cff;"></div>
+    <div style="position: absolute; left: calc(50% + 300px - 7px); top: calc(50% - 7px); width: 14px; height: 14px; border-radius: 50%; background: #10161f;"></div>
+    <div style="position: absolute; left: calc(50% - 7px); top: calc(50% - 300px - 7px); width: 14px; height: 14px; border-radius: 50%; background: #10161f;"></div>
+    <!-- photo disc -->
+    <div style="position: absolute; left: 50%; top: 50%; width: 520px; height: 520px; margin-left: -260px; margin-top: -260px; border-radius: 50%; overflow: hidden;">
+      <img src="hero.jpg" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+    </div>
+    <!-- copy left/right -->
+    <div style="position: absolute; left: 72px; top: 120px; width: 360px; display: flex; flex-direction: column; gap: 18px;">
+      <div style="font-family: 'Unbounded', sans-serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #0a7cff;">Prof. Ju-Hyuck Lee's Group · DGIST</div>
+      <div style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 44px; line-height: 1.05; letter-spacing: -0.02em;">Energy in motion.</div>
+      <div style="color: #4b5563;">Piezoelectric and triboelectric nanogenerators that turn everyday movement into electricity.</div>
+    </div>
+    <div style="position: absolute; right: 72px; bottom: 120px; width: 360px; display: flex; flex-direction: column; gap: 18px; text-align: right; align-items: flex-end;">
+      <div style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 44px; line-height: 1.05; letter-spacing: -0.02em;">Materials by design.</div>
+      <div style="color: #4b5563;">Functional polymers, bio-piezoelectric materials and AI-driven discovery for self-powered electronics.</div>
+      <div style="display: flex; gap: 10px;">
+        <div style="padding: 12px 20px; border-radius: 999px; background: #10161f; color: #ffffff; font-weight: 600; font-size: 14px;">Research</div>
+        <div style="padding: 12px 20px; border-radius: 999px; border: 1.5px solid #10161f; font-weight: 600; font-size: 14px;">Join us</div>
+      </div>
+    </div>
+  </div>
+  <!-- Research on a ring: horizontal timeline of nodes -->
+  <div style="padding: 40px 72px 0 72px; position: relative;">
+    <div style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 28px; letter-spacing: -0.01em; margin-bottom: 40px;">Five research directions</div>
+    <div style="position: relative; height: 2px; background: #10161f; margin: 0 40px;"></div>
+    <div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 24px; margin-top: -9px;">
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center;"><div style="width: 16px; height: 16px; border-radius: 50%; background: #ffffff; border: 2px solid #10161f;"></div><div style="font-family: 'Unbounded', sans-serif; font-size: 11px; letter-spacing: 0.1em; color: #0a7cff;">01</div><div style="font-weight: 600; font-size: 15px; max-width: 200px;">Energy Harvesting Technology</div></div>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center;"><div style="width: 16px; height: 16px; border-radius: 50%; background: #ffffff; border: 2px solid #10161f;"></div><div style="font-family: 'Unbounded', sans-serif; font-size: 11px; letter-spacing: 0.1em; color: #0a7cff;">02</div><div style="font-weight: 600; font-size: 15px; max-width: 200px;">Synthesis of Functional Polymers</div></div>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center;"><div style="width: 16px; height: 16px; border-radius: 50%; background: #0a7cff; border: 2px solid #0a7cff;"></div><div style="font-family: 'Unbounded', sans-serif; font-size: 11px; letter-spacing: 0.1em; color: #0a7cff;">03</div><div style="font-weight: 600; font-size: 15px; max-width: 200px;">Bio-Piezoelectric Materials</div></div>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center;"><div style="width: 16px; height: 16px; border-radius: 50%; background: #ffffff; border: 2px solid #10161f;"></div><div style="font-family: 'Unbounded', sans-serif; font-size: 11px; letter-spacing: 0.1em; color: #0a7cff;">04</div><div style="font-weight: 600; font-size: 15px; max-width: 200px;">Various Novel Applications</div></div>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center;"><div style="width: 16px; height: 16px; border-radius: 50%; background: #ffffff; border: 2px solid #10161f;"></div><div style="font-family: 'Unbounded', sans-serif; font-size: 11px; letter-spacing: 0.1em; color: #0a7cff;">05</div><div style="font-weight: 600; font-size: 15px; max-width: 200px;">AI-Integrated Research Platform</div></div>
+    </div>
+  </div>
+  <!-- Stats discs + news -->
+  <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 40px; padding: 88px 72px 80px 72px; align-items: start;">
+    <div style="grid-column: span 5; display: flex; gap: 0; align-items: center;">
+      <div style="width: 200px; height: 200px; border-radius: 50%; background: #10161f; color: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;"><div style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 52px; line-height: 1;">81</div><div style="font-size: 12.5px; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.8;">Papers</div></div>
+      <div style="width: 170px; height: 170px; border-radius: 50%; border: 1.5px solid #10161f; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; margin-left: -28px; background: #ffffff;"><div style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 44px; line-height: 1;">35</div><div style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #4b5563;">Patents</div></div>
+      <div style="width: 140px; height: 140px; border-radius: 50%; background: #0a7cff; color: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; margin-left: -24px;"><div style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 36px; line-height: 1;">18</div><div style="font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.9;">Members</div></div>
+    </div>
+    <div style="grid-column: span 7; display: flex; flex-direction: column; gap: 14px;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline;"><div style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 22px;">Latest</div><a href="#" style="font-weight: 600; font-size: 14px;">All 53 news →</a></div>
+      <div style="display: grid; grid-template-columns: 110px 1fr; gap: 16px; padding: 14px 0; border-top: 1px solid #e6e9ee;"><div style="font-family: 'Unbounded', sans-serif; font-size: 11px; letter-spacing: 0.06em; color: #0a7cff; padding-top: 4px;">2026.06.12</div><div>Gerald Selasie Gbadam 석∙박사과정이 2026 NGPT에서 Best Oral Award를 수상하였습니다.</div></div>
+      <div style="display: grid; grid-template-columns: 110px 1fr; gap: 16px; padding: 14px 0; border-top: 1px solid #e6e9ee;"><div style="font-family: 'Unbounded', sans-serif; font-size: 11px; letter-spacing: 0.06em; color: #0a7cff; padding-top: 4px;">2026.06.12</div><div>류연경 석∙박사과정이 2026 NGPT에서 Best Oral Award를 수상하였습니다.</div></div>
+      <div style="display: grid; grid-template-columns: 110px 1fr; gap: 16px; padding: 14px 0; border-top: 1px solid #e6e9ee; border-bottom: 1px solid #e6e9ee;"><div style="font-family: 'Unbounded', sans-serif; font-size: 11px; letter-spacing: 0.06em; color: #0a7cff; padding-top: 4px;">2025.10</div><div>Gerald Selasie Gbadam 석∙박사과정이 1저자로 참여한 논문이 Nature Communications 지에 Accept 되었습니다.</div></div>
+    </div>
+  </div>
+  <div style="padding: 20px 72px 32px 72px; border-top: 1px solid #e6e9ee; display: flex; justify-content: space-between; font-size: 13px; color: #6b7280;">
+    <div>Room E6-411, Dept. of Energy Science &amp; Engineering, DGIST, Daegu 42988, Republic of Korea</div>
+    <div>© JU HYUCK LEE's Group</div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>
