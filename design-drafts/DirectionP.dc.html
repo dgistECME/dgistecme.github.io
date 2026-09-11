@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Manrope:wght@400;500;600&display=swap">
+  <style>
+    body { margin: 0; background: #ffffff; color: #10161f; font-family: 'Manrope', 'Helvetica Neue', Arial, sans-serif; font-size: 15.5px; line-height: 1.6; }
+    a { color: #10161f; text-decoration: none; } a:hover { color: #0a7cff; }
+    @keyframes p-dash { to { stroke-dashoffset: -600; } }
+    @keyframes p-up { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+    @keyframes p-pop { from { opacity: 0; transform: scale(0.92); } to { opacity: 1; transform: none; } }
+    @keyframes p-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    @keyframes p-pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(10,124,255,0.35); } 60% { box-shadow: 0 0 0 12px rgba(10,124,255,0); } }
+    .p-wave-hot { stroke-dasharray: 18 14; animation: p-dash 14s linear infinite; }
+    .p-photo { animation: p-pop 1.3s cubic-bezier(.2,.7,.2,1) both, p-float 9s ease-in-out 1.3s infinite; }
+    .p-copy > * { animation: p-up .9s cubic-bezier(.2,.7,.2,1) both; }
+    .p-copy > :nth-child(2) { animation-delay: .12s; } .p-copy > :nth-child(3) { animation-delay: .24s; } .p-copy > :nth-child(4) { animation-delay: .36s; }
+    .p-node-hot { animation: p-pulse 2.4s ease-out infinite; }
+    @media (prefers-reduced-motion: reduce) { .p-wave-hot, .p-photo, .p-node-hot { animation: none !important; } }
+  </style>
+</helmet>
+<div style="width: 1440px; background: #ffffff; position: relative; overflow: hidden;">
+  <!-- Header -->
+  <div style="display: flex; align-items: center; justify-content: space-between; height: 88px; padding: 0 72px; position: relative; z-index: 3;">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <img src="logo.png" style="width: 34px; display: block;">
+      <div style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.06em;">ECME</div>
+    </div>
+    <div style="display: flex; gap: 6px; font-weight: 600; font-size: 14px;">
+      <div style="padding: 9px 16px; border-radius: 999px; border: 1.5px solid #10161f;">Home</div><div style="padding: 9px 16px;">Professor</div><div style="padding: 9px 16px;">People</div><div style="padding: 9px 16px;">Research</div><div style="padding: 9px 16px;">Publications</div><div style="padding: 9px 16px;">News</div><div style="padding: 9px 16px;">Contact</div>
+    </div>
+  </div>
+  <!-- Hero: waveform lines behind, pill photo right -->
+  <div style="position: relative; height: 700px;">
+    <svg viewBox="0 0 1440 700" width="1440" height="700" style="position: absolute; left: 0; top: 0;" fill="none">
+      <path d="M-20 420 C 120 300, 240 300, 380 420 S 640 540, 780 420 S 1040 300, 1180 420 S 1440 540, 1580 420" stroke="#e6e9ee" stroke-width="1.5"/>
+      <path d="M-20 460 C 120 340, 240 340, 380 460 S 640 580, 780 460 S 1040 340, 1180 460 S 1440 580, 1580 460" stroke="#e6e9ee" stroke-width="1.5"/>
+      <path d="M-20 380 C 120 260, 240 260, 380 380 S 640 500, 780 380 S 1040 260, 1180 380 S 1440 500, 1580 380" stroke="#e6e9ee" stroke-width="1.5"/>
+      <path class="p-wave-hot" d="M-20 440 C 120 320, 240 320, 380 440 S 640 560, 780 440 S 1040 320, 1180 440 S 1440 560, 1580 440" stroke="#0a7cff" stroke-width="2"/>
+    </svg>
+    <div class="p-copy" style="position: absolute; left: 72px; top: 96px; width: 560px; display: flex; flex-direction: column; gap: 20px;">
+      <div style="font-family: 'Unbounded', sans-serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #0a7cff;">Prof. Ju-Hyuck Lee's Group · DGIST</div>
+      <div style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 56px; line-height: 1.02; letter-spacing: -0.025em;">Every vibration is a power source.</div>
+      <div style="color: #4b5563; font-size: 17px; max-width: 480px;">Piezoelectric and triboelectric nanogenerators, functional polymers and bio-piezoelectric materials — for electronics that never need a battery.</div>
+      <div style="display: flex; gap: 10px;">
+        <div style="padding: 12px 20px; border-radius: 999px; background: #10161f; color: #ffffff; font-weight: 600; font-size: 14px;">Research</div>
+        <div style="padding: 12px 20px; border-radius: 999px; border: 1.5px solid #10161f; font-weight: 600; font-size: 14px;">Join us</div>
+      </div>
+    </div>
+    <div class="p-photo" style="position: absolute; right: 72px; top: 110px; width: 620px; height: 480px; border-radius: 300px; overflow: hidden; border: 1.5px solid #10161f;">
+      <img src="hero.jpg" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+    </div>
+    <div style="position: absolute; right: 72px; top: 610px; display: flex; gap: 28px; font-family: 'Unbounded', sans-serif; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #6b7280;">
+      <div><span style="color: #10161f; font-size: 22px; letter-spacing: -0.02em; margin-right: 6px;">81</span>papers</div>
+      <div><span style="color: #10161f; font-size: 22px; letter-spacing: -0.02em; margin-right: 6px;">35</span>patents</div>
+      <div><span style="color: #0a7cff; font-size: 22px; letter-spacing: -0.02em; margin-right: 6px;">18</span>members</div>
+    </div>
+  </div>
+  <!-- Research nodes riding a wave -->
+  <div style="position: relative; height: 320px; margin: 24px 72px 0 72px;">
+    <div style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 28px; letter-spacing: -0.01em;">Five research directions</div>
+    <svg viewBox="0 0 1296 220" width="1296" height="220" style="position: absolute; left: 0; top: 70px;" fill="none">
+      <path d="M0 140 C 130 60, 260 60, 390 140 S 650 220, 780 140 S 1040 60, 1170 140 S 1296 200, 1296 200" stroke="#10161f" stroke-width="1.5"/>
+    </svg>
+    <div style="position: absolute; left: 0; top: 70px; width: 1296px; height: 220px;">
+      <div style="position: absolute; left: 100px; top: 68px; display: flex; flex-direction: column; align-items: center; gap: 12px; width: 200px; margin-left: -100px;"><div style="width: 16px; height: 16px; border-radius: 50%; background: #ffffff; border: 2px solid #10161f;"></div><div style="font-family: 'Unbounded', sans-serif; font-size: 10px; color: #0a7cff; letter-spacing: 0.1em;">01</div><div style="font-weight: 600; font-size: 14px; text-align: center;">Energy Harvesting Technology</div></div>
+      <div style="position: absolute; left: 390px; top: 132px; display: flex; flex-direction: column; align-items: center; gap: 12px; width: 200px; margin-left: -100px;"><div style="width: 16px; height: 16px; border-radius: 50%; background: #ffffff; border: 2px solid #10161f;"></div><div style="font-family: 'Unbounded', sans-serif; font-size: 10px; color: #0a7cff; letter-spacing: 0.1em;">02</div><div style="font-weight: 600; font-size: 14px; text-align: center;">Synthesis of Functional Polymers</div></div>
+      <div style="position: absolute; left: 640px; top: 176px; display: flex; flex-direction: column; align-items: center; gap: 12px; width: 200px; margin-left: -100px;"><div class="p-node-hot" style="width: 16px; height: 16px; border-radius: 50%; background: #0a7cff; border: 2px solid #0a7cff;"></div><div style="font-family: 'Unbounded', sans-serif; font-size: 10px; color: #0a7cff; letter-spacing: 0.1em;">03</div><div style="font-weight: 600; font-size: 14px; text-align: center;">Bio-Piezoelectric Materials</div></div>
+      <div style="position: absolute; left: 900px; top: 96px; display: flex; flex-direction: column; align-items: center; gap: 12px; width: 200px; margin-left: -100px;"><div style="width: 16px; height: 16px; border-radius: 50%; background: #ffffff; border: 2px solid #10161f;"></div><div style="font-family: 'Unbounded', sans-serif; font-size: 10px; color: #0a7cff; letter-spacing: 0.1em;">04</div><div style="font-weight: 600; font-size: 14px; text-align: center;">Various Novel Applications</div></div>
+      <div style="position: absolute; left: 1170px; top: 132px; display: flex; flex-direction: column; align-items: center; gap: 12px; width: 200px; margin-left: -100px;"><div style="width: 16px; height: 16px; border-radius: 50%; background: #ffffff; border: 2px solid #10161f;"></div><div style="font-family: 'Unbounded', sans-serif; font-size: 10px; color: #0a7cff; letter-spacing: 0.1em;">05</div><div style="font-weight: 600; font-size: 14px; text-align: center;">AI-Integrated Research Platform</div></div>
+    </div>
+  </div>
+  <!-- News + press -->
+  <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 40px; padding: 72px 72px 80px 72px; align-items: start;">
+    <div style="grid-column: span 7; display: flex; flex-direction: column; gap: 14px;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline;"><div style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 22px;">Latest</div><a href="#" style="font-weight: 600; font-size: 14px;">All 53 news →</a></div>
+      <div style="display: grid; grid-template-columns: 110px 1fr; gap: 16px; padding: 14px 0; border-top: 1px solid #e6e9ee;"><div style="font-family: 'Unbounded', sans-serif; font-size: 11px; letter-spacing: 0.06em; color: #0a7cff; padding-top: 4px;">2026.06.12</div><div>Gerald Selasie Gbadam 석∙박사과정이 2026 NGPT에서 Best Oral Award를 수상하였습니다.</div></div>
+      <div style="display: grid; grid-template-columns: 110px 1fr; gap: 16px; padding: 14px 0; border-top: 1px solid #e6e9ee;"><div style="font-family: 'Unbounded', sans-serif; font-size: 11px; letter-spacing: 0.06em; color: #0a7cff; padding-top: 4px;">2026.06.12</div><div>류연경 석∙박사과정이 2026 NGPT에서 Best Oral Award를 수상하였습니다.</div></div>
+      <div style="display: grid; grid-template-columns: 110px 1fr; gap: 16px; padding: 14px 0; border-top: 1px solid #e6e9ee; border-bottom: 1px solid #e6e9ee;"><div style="font-family: 'Unbounded', sans-serif; font-size: 11px; letter-spacing: 0.06em; color: #0a7cff; padding-top: 4px;">2025.10</div><div>Gerald Selasie Gbadam 석∙박사과정이 1저자로 참여한 논문이 Nature Communications 지에 Accept 되었습니다.</div></div>
+    </div>
+    <div style="grid-column: span 5; border-radius: 200px 200px 24px 24px; overflow: hidden; border: 1.5px solid #10161f; display: flex; flex-direction: column;">
+      <div style="height: 220px; overflow: hidden;"><img src="photo1.jpg" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+      <div style="padding: 20px 24px 24px; display: flex; flex-direction: column; gap: 6px;">
+        <div style="font-family: 'Unbounded', sans-serif; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: #0a7cff;">In the press · 연합뉴스 · 2025.11.03</div>
+        <div style="font-weight: 600; font-size: 17px; line-height: 1.35;">"배터리 교체, 충전 No" 마찰전기 이용한 나노발전기 개발</div>
+      </div>
+    </div>
+  </div>
+  <div style="padding: 20px 72px 32px 72px; border-top: 1px solid #e6e9ee; display: flex; justify-content: space-between; font-size: 13px; color: #6b7280;">
+    <div>Room E6-411, Dept. of Energy Science &amp; Engineering, DGIST, Daegu 42988, Republic of Korea</div>
+    <div>© JU HYUCK LEE's Group</div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

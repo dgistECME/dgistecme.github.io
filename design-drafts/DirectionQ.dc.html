@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Manrope:wght@400;500;600&display=swap">
+  <style>
+    body { margin: 0; background: #ffffff; color: #10161f; font-family: 'Manrope', 'Helvetica Neue', Arial, sans-serif; font-size: 15.5px; line-height: 1.6; }
+    a { color: #10161f; text-decoration: none; } a:hover { color: #0a7cff; }
+    @keyframes q-up { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+    @keyframes q-pop { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: none; } }
+    @keyframes q-drift { 0%, 100% { transform: translate(0,0); } 50% { transform: translate(0,-8px); } }
+    .q-hex-photo { animation: q-pop 1.3s cubic-bezier(.2,.7,.2,1) both; }
+    .q-copy > * { animation: q-up .9s cubic-bezier(.2,.7,.2,1) both; }
+    .q-copy > :nth-child(2) { animation-delay: .12s; } .q-copy > :nth-child(3) { animation-delay: .24s; } .q-copy > :nth-child(4) { animation-delay: .36s; }
+    .q-cell { animation: q-pop .7s cubic-bezier(.2,.7,.2,1) both; }
+    .q-cell:nth-child(2) { animation-delay: .08s; } .q-cell:nth-child(3) { animation-delay: .16s; } .q-cell:nth-child(4) { animation-delay: .24s; } .q-cell:nth-child(5) { animation-delay: .32s; } .q-cell:nth-child(6) { animation-delay: .4s; }
+    .q-float-a { animation: q-drift 8s ease-in-out infinite; } .q-float-b { animation: q-drift 11s ease-in-out -4s infinite; }
+    @media (prefers-reduced-motion: reduce) { .q-float-a, .q-float-b { animation: none !important; } }
+  </style>
+</helmet>
+<div style="width: 1440px; background: #ffffff; position: relative; overflow: hidden;">
+  <!-- hex lattice background -->
+  <svg viewBox="0 0 1440 900" width="1440" height="900" style="position: absolute; left: 0; top: 0;" fill="none">
+    <defs>
+      <pattern id="hex" width="84" height="97" patternUnits="userSpaceOnUse" patternTransform="translate(0,0)">
+        <path d="M42 0 L84 24.25 L84 72.75 L42 97 L0 72.75 L0 24.25 Z" stroke="#eef1f5" stroke-width="1.2"/>
+        <path d="M42 97 L84 121.25 L84 169.75 L42 194 L0 169.75 L0 121.25 Z" stroke="#eef1f5" stroke-width="1.2" transform="translate(42,-48.5)"/>
+      </pattern>
+    </defs>
+    <rect x="0" y="0" width="1440" height="900" fill="url(#hex)"/>
+    <rect x="0" y="0" width="1440" height="900" fill="url(#fade)"/>
+    <defs><linearGradient id="fade" x1="0" y1="0" x2="0" y2="1"><stop offset="0.55" stop-color="#ffffff" stop-opacity="0"/><stop offset="1" stop-color="#ffffff" stop-opacity="1"/></linearGradient></defs>
+  </svg>
+  <!-- Header -->
+  <div style="display: flex; align-items: center; justify-content: space-between; height: 88px; padding: 0 72px; position: relative; z-index: 3;">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <img src="logo.png" style="width: 34px; display: block;">
+      <div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 20px; letter-spacing: -0.02em;">ECME Lab</div>
+    </div>
+    <div style="display: flex; gap: 6px; font-weight: 600; font-size: 14px;">
+      <div style="padding: 9px 16px; border: 1.5px solid #10161f; clip-path: polygon(12px 0, 100% 0, calc(100% - 12px) 100%, 0 100%);">Home</div><div style="padding: 9px 16px;">Professor</div><div style="padding: 9px 16px;">People</div><div style="padding: 9px 16px;">Research</div><div style="padding: 9px 16px;">Publications</div><div style="padding: 9px 16px;">News</div><div style="padding: 9px 16px;">Contact</div>
+    </div>
+  </div>
+  <!-- Hero: copy + hexagon photo -->
+  <div style="position: relative; height: 680px; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 40px; padding: 40px 72px 0 72px; align-items: center;">
+    <div class="q-copy" style="grid-column: span 6; display: flex; flex-direction: column; gap: 20px; position: relative; z-index: 2;">
+      <div style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: #0a7cff; font-weight: 700;">Prof. Ju-Hyuck Lee's Group · DGIST</div>
+      <div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 64px; line-height: 0.98; letter-spacing: -0.035em;">Structure is<br>the source.</div>
+      <div style="color: #4b5563; font-size: 17px; max-width: 480px;">From crystal lattices to polymer networks — we design materials whose structure converts motion into electricity. Piezoelectric, triboelectric, bio-piezoelectric.</div>
+      <div style="display: flex; gap: 10px;">
+        <div style="padding: 12px 22px; background: #10161f; color: #ffffff; font-weight: 600; font-size: 14px; clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);">Research</div>
+        <div style="padding: 12px 22px; border: 1.5px solid #10161f; font-weight: 600; font-size: 14px; clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);">Join us</div>
+      </div>
+    </div>
+    <div style="grid-column: span 6; position: relative; height: 560px;">
+      <div class="q-hex-photo" style="position: absolute; left: 60px; top: 20px; width: 520px; height: 560px; clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); overflow: hidden;">
+        <img src="hero.jpg" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+      </div>
+      <div class="q-float-a" style="position: absolute; left: -10px; top: 300px; width: 120px; height: 130px; clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); background: #0a7cff; color: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;"><div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 34px; line-height: 1;">81</div><div style="font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase;">Papers</div></div>
+      <div class="q-float-b" style="position: absolute; left: 520px; top: 60px; width: 110px; height: 120px; clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); background: #10161f; color: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;"><div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 30px; line-height: 1;">35</div><div style="font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase;">Patents</div></div>
+      <div style="position: absolute; left: 540px; top: 400px; width: 100px; height: 110px; clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); background: #ffffff; border: 1.5px solid #10161f; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;"><div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 28px; line-height: 1;">18</div><div style="font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #4b5563;">Members</div></div>
+    </div>
+  </div>
+  <!-- Research: hex cells row -->
+  <div style="padding: 24px 72px 0 72px; position: relative; z-index: 2;">
+    <div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 30px; letter-spacing: -0.02em; margin-bottom: 24px;">Five research directions</div>
+    <div style="display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px;">
+      <div class="q-cell" style="aspect-ratio: 0.9; clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); background: #f3f5f8; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 28px; gap: 6px;"><div style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 11px; color: #0a7cff; letter-spacing: 0.12em; font-weight: 700;">01</div><div style="font-weight: 600; font-size: 14px;">Energy Harvesting Technology</div></div>
+      <div class="q-cell" style="aspect-ratio: 0.9; clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); background: #f3f5f8; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 28px; gap: 6px;"><div style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 11px; color: #0a7cff; letter-spacing: 0.12em; font-weight: 700;">02</div><div style="font-weight: 600; font-size: 14px;">Synthesis of Functional Polymers</div></div>
+      <div class="q-cell" style="aspect-ratio: 0.9; clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); background: #0a7cff; color: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 28px; gap: 6px;"><div style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 11px; letter-spacing: 0.12em; font-weight: 700; opacity: 0.8;">03</div><div style="font-weight: 600; font-size: 14px;">Bio-Piezoelectric Materials</div></div>
+      <div class="q-cell" style="aspect-ratio: 0.9; clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); background: #f3f5f8; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 28px; gap: 6px;"><div style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 11px; color: #0a7cff; letter-spacing: 0.12em; font-weight: 700;">04</div><div style="font-weight: 600; font-size: 14px;">Various Novel Applications</div></div>
+      <div class="q-cell" style="aspect-ratio: 0.9; clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); background: #f3f5f8; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 28px; gap: 6px;"><div style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 11px; color: #0a7cff; letter-spacing: 0.12em; font-weight: 700;">05</div><div style="font-weight: 600; font-size: 14px;">AI-Integrated Research Platform</div></div>
+      <div class="q-cell" style="aspect-ratio: 0.9; clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); background: #10161f; color: #ffffff; display: flex; align-items: center; justify-content: center; text-align: center; padding: 28px; font-weight: 700; font-size: 14px;">All topics →</div>
+    </div>
+  </div>
+  <!-- News + press -->
+  <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 40px; padding: 72px 72px 80px 72px; align-items: start; position: relative; z-index: 2;">
+    <div style="grid-column: span 7; display: flex; flex-direction: column; gap: 14px;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline;"><div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 26px; letter-spacing: -0.02em;">Latest</div><a href="#" style="font-weight: 600; font-size: 14px;">All 53 news →</a></div>
+      <div style="display: grid; grid-template-columns: 110px 1fr; gap: 16px; padding: 14px 0; border-top: 1px solid #e6e9ee;"><div style="font-weight: 700; font-size: 12.5px; color: #0a7cff; padding-top: 2px;">2026.06.12</div><div>Gerald Selasie Gbadam 석∙박사과정이 2026 NGPT에서 Best Oral Award를 수상하였습니다.</div></div>
+      <div style="display: grid; grid-template-columns: 110px 1fr; gap: 16px; padding: 14px 0; border-top: 1px solid #e6e9ee;"><div style="font-weight: 700; font-size: 12.5px; color: #0a7cff; padding-top: 2px;">2026.06.12</div><div>류연경 석∙박사과정이 2026 NGPT에서 Best Oral Award를 수상하였습니다.</div></div>
+      <div style="display: grid; grid-template-columns: 110px 1fr; gap: 16px; padding: 14px 0; border-top: 1px solid #e6e9ee; border-bottom: 1px solid #e6e9ee;"><div style="font-weight: 700; font-size: 12.5px; color: #0a7cff; padding-top: 2px;">2025.10</div><div>Gerald Selasie Gbadam 석∙박사과정이 1저자로 참여한 논문이 Nature Communications 지에 Accept 되었습니다.</div></div>
+    </div>
+    <div style="grid-column: span 5; display: flex; gap: 20px; align-items: center;">
+      <div style="width: 180px; height: 200px; flex: none; clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); overflow: hidden;"><img src="photo1.jpg" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+      <div style="display: flex; flex-direction: column; gap: 6px;">
+        <div style="font-size: 11.5px; letter-spacing: 0.12em; text-transform: uppercase; color: #0a7cff; font-weight: 700;">In the press · 연합뉴스 · 2025.11.03</div>
+        <div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 20px; line-height: 1.3;">"배터리 교체, 충전 No" 마찰전기 이용한 나노발전기 개발</div>
+      </div>
+    </div>
+  </div>
+  <div style="padding: 20px 72px 32px 72px; border-top: 1px solid #e6e9ee; display: flex; justify-content: space-between; font-size: 13px; color: #6b7280; position: relative; z-index: 2;">
+    <div>Room E6-411, Dept. of Energy Science &amp; Engineering, DGIST, Daegu 42988, Republic of Korea</div>
+    <div>© JU HYUCK LEE's Group</div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>
