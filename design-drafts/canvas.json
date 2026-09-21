@@ -5,6 +5,10 @@
       "name": "Final · Bold Editorial"
     },
     {
+      "id": "page-9",
+      "name": "Refined motion V · W · X · Y (reference vein, richer animation)"
+    },
+    {
       "id": "page-8",
       "name": "Reference-inspired S · T · U (bright & vivid)"
     },
@@ -42,6 +46,42 @@
       "h": 1640,
       "title": "Home · Bold Editorial (적용 중)",
       "page": "page-1"
+    },
+    {
+      "file": "DirectionY.dc.html",
+      "x": 4680,
+      "y": 0,
+      "w": 1440,
+      "h": 2040,
+      "title": "Y · Flow Ribbons",
+      "page": "page-9"
+    },
+    {
+      "file": "DirectionX.dc.html",
+      "x": 3120,
+      "y": 0,
+      "w": 1440,
+      "h": 2430,
+      "title": "X · Kinetic Spotlight",
+      "page": "page-9"
+    },
+    {
+      "file": "DirectionW.dc.html",
+      "x": 1560,
+      "y": 0,
+      "w": 1440,
+      "h": 2030,
+      "title": "W · Liquid Glass",
+      "page": "page-9"
+    },
+    {
+      "file": "DirectionV.dc.html",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 1920,
+      "title": "V · Prism Mesh",
+      "page": "page-9"
     },
     {
       "file": "DirectionS.dc.html",
@@ -243,6 +283,14 @@
       "text": "C · Bold Editorial 적용 완료 → https://dgistecme.github.io/ (애니메이션 A 기본)\n색·폰트·간격은 site/src/styles/global.css 상단 토큰에서 조정.\n이전 디자인 복구: git checkout v1-wix-style (또는 backup/wix-style 브랜치)."
     },
     {
+      "id": "motion-brief",
+      "x": 0,
+      "y": -440,
+      "w": 860,
+      "page": "page-9",
+      "text": "레퍼런스 결(밝고 화려) 유지 + 애니메이션을 더 세련되게. 전부 CSS만, 감속 모드(prefers-reduced-motion) 대응.\nV · Prism Mesh — 흰 배경 위 블러 메시 그라데이션이 천천히 유동, 헤드라인 단어별 마스크 상승, 사진·PI 카드에 회전하는 컨익 그라데이션 테두리, 연구 카드 위로 광택(sheen) 스윕, 뉴스는 세로 자동 스크롤(호버 시 정지), 숫자 shimmer.\nW · Liquid Glass — 상단 940px 유동 그라데이션 스테이지 + 대형 글래스 패널(빛줄기 sweep), 사진이 유기적으로 변형(morph)하는 블롭, 부유 글래스 통계 칩, 연구 5개 가로 무한 마퀴, PI 사진 회전 링. 가장 화려.\nX · Kinetic Spotlight — 132px 초대형 타이포 위로 그라데이션 스포트라이트가 지나감, 에너지 펄스 라인이 그려지고 광점이 경로를 따라 이동(offset-path), 사진 와이프 리빌, 다크 벤토 카드 안 원형 프로그레스 링 채우기, People 마퀴. 가장 그래픽적.\nY · Flow Ribbons — 점선 리본 3줄이 배경에서 흘러가며(dash flow) 부드럽게 드리프트, 사진은 기울어진 평행사변형 + 그라데이션 그림자, 연구 5개가 파형 위 노드로 팝인 + 광점 왕복, 뉴스 카드 3D 플립인, 언론 카드 글로우 펄스.\n\n하나 고르거나 섞어 말하면 실제 사이트에 이식 (스크롤 리빌 포함)."
+    },
+    {
       "id": "ref-brief",
       "x": 0,
       "y": -420,
@@ -301,6 +349,6 @@
   ],
   "launch": {
     "view": "canvas",
-    "page": "page-8"
+    "page": "page-9"
   }
 }

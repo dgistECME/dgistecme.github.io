@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap">
+  <style>
+    @property --v-a { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
+    body { margin: 0; background: #ffffff; color: #0f172a; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 15.5px; line-height: 1.6; }
+    a { color: #6d28d9; text-decoration: none; } a:hover { text-decoration: underline; }
+    .v-h { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; letter-spacing: -0.035em; }
+    .v-grad { background: linear-gradient(90deg, #06b6d4, #7c3aed 50%, #f43f5e); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    @keyframes v-mesh1 { 0%,100% { transform: translate(0,0) scale(1); } 33% { transform: translate(120px,60px) scale(1.15); } 66% { transform: translate(-60px,120px) scale(0.95); } }
+    @keyframes v-mesh2 { 0%,100% { transform: translate(0,0) scale(1); } 33% { transform: translate(-140px,80px) scale(1.1); } 66% { transform: translate(80px,-60px) scale(1.2); } }
+    @keyframes v-mesh3 { 0%,100% { transform: translate(0,0) rotate(0deg); } 50% { transform: translate(60px,-120px) rotate(40deg); } }
+    .v-m1 { animation: v-mesh1 22s ease-in-out infinite; } .v-m2 { animation: v-mesh2 26s ease-in-out infinite; } .v-m3 { animation: v-mesh3 30s ease-in-out infinite; }
+    .v-w { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: 0.1em; margin-bottom: -0.1em; }
+    .v-w > span { display: inline-block; transform: translateY(110%); animation: v-rise 1s cubic-bezier(.2,.8,.2,1) forwards; }
+    @keyframes v-rise { to { transform: translateY(0); } }
+    .v-w:nth-of-type(1) > span { animation-delay: .05s; } .v-w:nth-of-type(2) > span { animation-delay: .15s; } .v-w:nth-of-type(3) > span { animation-delay: .25s; } .v-w:nth-of-type(4) > span { animation-delay: .35s; } .v-w:nth-of-type(5) > span { animation-delay: .45s; }
+    @keyframes v-fade { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+    .v-f { animation: v-fade .9s cubic-bezier(.2,.7,.2,1) both; } .v-f2 { animation-delay: .5s; } .v-f3 { animation-delay: .7s; } .v-f4 { animation-delay: .9s; }
+    .v-ring { position: relative; border-radius: 28px; padding: 2px; background: conic-gradient(from var(--v-a), #06b6d4, #7c3aed, #f43f5e, #f59e0b, #06b6d4); animation: v-spin 6s linear infinite; }
+    @keyframes v-spin { to { --v-a: 360deg; } }
+    .v-ring > div { border-radius: 26px; background: #ffffff; }
+    .v-card { position: relative; overflow: hidden; transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s; }
+    .v-card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(115deg, transparent 30%, rgba(255,255,255,0.75) 50%, transparent 70%); transform: translateX(-120%); animation: v-sheen 5s ease-in-out infinite; }
+    .v-card:nth-child(2)::after { animation-delay: .6s; } .v-card:nth-child(3)::after { animation-delay: 1.2s; } .v-card:nth-child(4)::after { animation-delay: 1.8s; } .v-card:nth-child(5)::after { animation-delay: 2.4s; }
+    @keyframes v-sheen { 0% { transform: translateX(-120%); } 35%, 100% { transform: translateX(120%); } }
+    .v-card:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 30px 60px rgba(15,23,42,0.14); }
+    @keyframes v-scrollY { from { transform: translateY(0); } to { transform: translateY(-50%); } }
+    .v-track { animation: v-scrollY 22s linear infinite; }
+    .v-track:hover { animation-play-state: paused; }
+    @keyframes v-shimmer { to { background-position: 200% center; } }
+    .v-num { background: linear-gradient(90deg, #0f172a 0%, #7c3aed 45%, #0f172a 60%); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; color: transparent; animation: v-shimmer 4s linear infinite; }
+    @keyframes v-pulse { 0% { box-shadow: 0 0 0 0 rgba(6,182,212,0.55); } 100% { box-shadow: 0 0 0 14px rgba(6,182,212,0); } }
+    .v-dot { animation: v-pulse 1.8s ease-out infinite; }
+    .v-row { display: grid; grid-template-columns: 120px 1fr; gap: 18px; padding: 20px 26px; border-bottom: 1px solid #f1f5f9; font-size: 15px; }
+    .v-tag { padding: 4px 10px; border-radius: 999px; font-size: 11.5px; font-weight: 700; display: inline-block; }
+    .v-date { font-size: 12.5px; color: #94a3b8; margin-top: 8px; font-weight: 600; }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } .v-w > span { transform: none; } }
+  </style>
+</helmet>
+<div style="width: 1440px; background: #ffffff; position: relative; overflow: hidden;">
+  <div style="position: absolute; inset: 0; height: 900px; overflow: hidden; pointer-events: none; filter: blur(60px); opacity: 0.85;">
+    <div class="v-m1" style="position: absolute; left: -120px; top: -140px; width: 720px; height: 720px; border-radius: 50%; background: radial-gradient(circle at 40% 40%, #a5f3fc, rgba(165,243,252,0) 70%);"></div>
+    <div class="v-m2" style="position: absolute; right: -160px; top: -100px; width: 820px; height: 820px; border-radius: 50%; background: radial-gradient(circle at 50% 50%, #ddd6fe, rgba(221,214,254,0) 70%);"></div>
+    <div class="v-m3" style="position: absolute; left: 520px; top: 260px; width: 640px; height: 640px; border-radius: 45% 55% 50% 50%; background: radial-gradient(circle at 50% 50%, #fecdd3, rgba(254,205,211,0) 70%);"></div>
+    <div style="position: absolute; left: 200px; top: 520px; width: 560px; height: 560px; border-radius: 50%; background: radial-gradient(circle, #fef3c7, rgba(254,243,199,0) 70%);"></div>
+  </div>
+  <div style="position: relative; display: flex; align-items: center; justify-content: space-between; height: 88px; padding: 0 72px;">
+    <div style="display: flex; align-items: center; gap: 12px;"><img src="logo.png" style="width: 36px; display: block;"><div class="v-h" style="font-size: 20px;">ECME <span style="font-weight: 600; color: #64748b;">Lab</span></div></div>
+    <div style="display: flex; gap: 2px; font-weight: 600; font-size: 14px; color: #334155; background: rgba(255,255,255,0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.9); border-radius: 999px; padding: 5px; box-shadow: 0 8px 24px rgba(15,23,42,0.06);">
+      <div style="padding: 8px 16px; border-radius: 999px; background: #0f172a; color: #ffffff;">Home</div><div style="padding: 8px 16px;">Professor</div><div style="padding: 8px 16px;">People</div><div style="padding: 8px 16px;">Research</div><div style="padding: 8px 16px;">Publications</div><div style="padding: 8px 16px;">News</div><div style="padding: 8px 16px;">Contact</div>
+    </div>
+  </div>
+  <div style="position: relative; padding: 72px 72px 0 72px; display: grid; grid-template-columns: repeat(12, minmax(0,1fr)); gap: 40px; align-items: center;">
+    <div style="grid-column: span 7; display: flex; flex-direction: column; gap: 26px;">
+      <div class="v-f" style="display: inline-flex; align-self: flex-start; align-items: center; gap: 10px; padding: 8px 16px 8px 10px; border-radius: 999px; background: rgba(255,255,255,0.75); border: 1px solid rgba(255,255,255,0.95); box-shadow: 0 8px 24px rgba(15,23,42,0.06); font-size: 12.5px; font-weight: 600; color: #334155; backdrop-filter: blur(10px);"><span class="v-dot" style="width: 8px; height: 8px; border-radius: 50%; background: #06b6d4; display: inline-block;"></span>Energy Conversion Materials &amp; Electronics · DGIST</div>
+      <div class="v-h" style="font-size: 82px; line-height: 0.98;">
+        <span class="v-w"><span>Energy</span></span> <span class="v-w"><span>from</span></span><br>
+        <span class="v-w"><span>every</span></span> <span class="v-w"><span class="v-grad">motion,</span></span><br>
+        <span class="v-w"><span>everywhere.</span></span>
+      </div>
+      <div class="v-f v-f2" style="font-size: 18px; color: #475569; max-width: 560px;">Prof. Ju-Hyuck Lee's group designs piezoelectric and triboelectric nanogenerators, functional polymers and bio-piezoelectric materials for self-powered electronics.</div>
+      <div class="v-f v-f3" style="display: flex; gap: 12px; align-items: center;">
+        <div style="padding: 15px 28px; border-radius: 999px; background: #0f172a; color: #ffffff; font-weight: 700; font-size: 15px; box-shadow: 0 16px 34px rgba(15,23,42,0.25);">Explore research</div>
+        <div style="padding: 15px 28px; border-radius: 999px; background: rgba(255,255,255,0.8); border: 1px solid rgba(15,23,42,0.08); font-weight: 700; font-size: 15px; backdrop-filter: blur(10px);">Meet the team</div>
+        <div style="margin-left: 14px; display: flex; align-items: center; gap: 10px; font-size: 13px; color: #64748b; font-weight: 600;"><div style="display: flex;"><img src="member.jpg" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; border: 2px solid #fff; display: block;"><img src="prof.jpg" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; border: 2px solid #fff; margin-left: -10px; display: block;"><div style="width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg,#a5f3fc,#ddd6fe); border: 2px solid #fff; margin-left: -10px;"></div></div>18 researchers</div>
+      </div>
+    </div>
+    <div class="v-f v-f2" style="grid-column: span 5; position: relative; height: 540px;">
+      <div class="v-ring" style="position: absolute; left: 20px; top: 20px; width: 460px; height: 500px; box-shadow: 0 40px 90px rgba(124,58,237,0.22);"><div style="width: 100%; height: 100%; overflow: hidden;"><img src="hero.jpg" style="width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 26px;"></div></div>
+      <div class="v-f v-f4" style="position: absolute; left: -30px; bottom: 40px; padding: 18px 22px; border-radius: 22px; background: rgba(255,255,255,0.85); backdrop-filter: blur(14px); border: 1px solid #ffffff; box-shadow: 0 20px 50px rgba(15,23,42,0.12); display: flex; gap: 26px;">
+        <div><div class="v-h v-num" style="font-size: 30px; line-height: 1;">81</div><div style="font-size: 12px; color: #64748b; font-weight: 600; margin-top: 4px;">Papers</div></div>
+        <div style="width: 1px; background: #e2e8f0;"></div>
+        <div><div class="v-h v-num" style="font-size: 30px; line-height: 1; animation-delay: .5s;">35</div><div style="font-size: 12px; color: #64748b; font-weight: 600; margin-top: 4px;">Patents</div></div>
+        <div style="width: 1px; background: #e2e8f0;"></div>
+        <div><div class="v-h v-num" style="font-size: 30px; line-height: 1; animation-delay: 1s;">53</div><div style="font-size: 12px; color: #64748b; font-weight: 600; margin-top: 4px;">News</div></div>
+      </div>
+      <div class="v-f v-f4" style="position: absolute; right: -20px; top: -10px; padding: 10px 14px; border-radius: 14px; background: #0f172a; color: #fff; font-size: 12.5px; font-weight: 700; box-shadow: 0 16px 34px rgba(15,23,42,0.25); display: flex; align-items: center; gap: 8px;"><span style="width: 7px; height: 7px; border-radius: 50%; background: #34d399; display: inline-block;"></span>Now recruiting · M.S. &amp; Ph.D.</div>
+    </div>
+  </div>
+  <div style="position: relative; padding: 110px 72px 0 72px; display: flex; flex-direction: column; gap: 30px;">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between;">
+      <div><div style="font-size: 12.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #7c3aed; margin-bottom: 10px;">Research</div><div class="v-h" style="font-size: 44px;">Five directions, <span class="v-grad">one goal.</span></div></div>
+      <a href="#" style="font-weight: 700; font-size: 14.5px; color: #0f172a;">All topics →</a>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 16px;">
+      <div class="v-card" style="padding: 26px 22px 24px; border-radius: 26px; background: linear-gradient(160deg, #cffafe, #ffffff 60%); border: 1px solid #cffafe; display: flex; flex-direction: column; gap: 60px;"><div style="width: 46px; height: 46px; border-radius: 16px; background: linear-gradient(135deg,#06b6d4,#22d3ee); box-shadow: 0 10px 24px rgba(6,182,212,0.35);"></div><div><div style="font-size: 11.5px; font-weight: 700; color: #0891b2; letter-spacing: 0.06em;">01</div><div style="font-weight: 700; font-size: 16px; line-height: 1.35; margin-top: 6px;">Energy Harvesting Technology</div></div></div>
+      <div class="v-card" style="padding: 26px 22px 24px; border-radius: 26px; background: linear-gradient(160deg, #ede9fe, #ffffff 60%); border: 1px solid #ede9fe; display: flex; flex-direction: column; gap: 60px;"><div style="width: 46px; height: 46px; border-radius: 16px; background: linear-gradient(135deg,#7c3aed,#a78bfa); box-shadow: 0 10px 24px rgba(124,58,237,0.35);"></div><div><div style="font-size: 11.5px; font-weight: 700; color: #6d28d9; letter-spacing: 0.06em;">02</div><div style="font-weight: 700; font-size: 16px; line-height: 1.35; margin-top: 6px;">Synthesis of Functional Polymers</div></div></div>
+      <div class="v-card" style="padding: 26px 22px 24px; border-radius: 26px; background: linear-gradient(160deg, #d1fae5, #ffffff 60%); border: 1px solid #d1fae5; display: flex; flex-direction: column; gap: 60px;"><div style="width: 46px; height: 46px; border-radius: 16px; background: linear-gradient(135deg,#10b981,#34d399); box-shadow: 0 10px 24px rgba(16,185,129,0.35);"></div><div><div style="font-size: 11.5px; font-weight: 700; color: #047857; letter-spacing: 0.06em;">03</div><div style="font-weight: 700; font-size: 16px; line-height: 1.35; margin-top: 6px;">Bio-Piezoelectric Materials</div></div></div>
+      <div class="v-card" style="padding: 26px 22px 24px; border-radius: 26px; background: linear-gradient(160deg, #fef3c7, #ffffff 60%); border: 1px solid #fef3c7; display: flex; flex-direction: column; gap: 60px;"><div style="width: 46px; height: 46px; border-radius: 16px; background: linear-gradient(135deg,#f59e0b,#fbbf24); box-shadow: 0 10px 24px rgba(245,158,11,0.35);"></div><div><div style="font-size: 11.5px; font-weight: 700; color: #b45309; letter-spacing: 0.06em;">04</div><div style="font-weight: 700; font-size: 16px; line-height: 1.35; margin-top: 6px;">Various Novel Applications</div></div></div>
+      <div class="v-card" style="padding: 26px 22px 24px; border-radius: 26px; background: linear-gradient(160deg, #ffe4e6, #ffffff 60%); border: 1px solid #ffe4e6; display: flex; flex-direction: column; gap: 60px;"><div style="width: 46px; height: 46px; border-radius: 16px; background: linear-gradient(135deg,#f43f5e,#fb7185); box-shadow: 0 10px 24px rgba(244,63,94,0.35);"></div><div><div style="font-size: 11.5px; font-weight: 700; color: #be123c; letter-spacing: 0.06em;">05</div><div style="font-weight: 700; font-size: 16px; line-height: 1.35; margin-top: 6px;">AI-Integrated Research Platform</div></div></div>
+    </div>
+  </div>
+  <div style="position: relative; display: grid; grid-template-columns: repeat(12, minmax(0,1fr)); gap: 40px; padding: 110px 72px 96px 72px; align-items: stretch;">
+    <div style="grid-column: span 7; display: flex; flex-direction: column; gap: 22px;">
+      <div style="display: flex; align-items: flex-end; justify-content: space-between;"><div class="v-h" style="font-size: 36px;">Latest <span class="v-grad">news</span></div><a href="#" style="font-weight: 700; font-size: 14.5px; color: #0f172a;">All 53 →</a></div>
+      <div style="position: relative; height: 380px; overflow: hidden; border-radius: 28px; background: rgba(255,255,255,0.7); border: 1px solid #eef2f7; box-shadow: 0 20px 50px rgba(15,23,42,0.07); -webkit-mask-image: linear-gradient(180deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(180deg, transparent, #000 12%, #000 88%, transparent);">
+        <div class="v-track" style="display: flex; flex-direction: column;">
+          <div class="v-row"><div><div class="v-tag" style="background: #d1fae5; color: #047857;">Award</div><div class="v-date">2026.06.12</div></div><div>Gerald Selasie Gbadam 석∙박사과정이 2026 NGPT에서 Best Oral Award를 수상하였습니다.</div></div>
+          <div class="v-row"><div><div class="v-tag" style="background: #d1fae5; color: #047857;">Award</div><div class="v-date">2026.06.12</div></div><div>류연경 석∙박사과정이 2026 NGPT에서 Best Oral Award를 수상하였습니다.</div></div>
+          <div class="v-row"><div><div class="v-tag" style="background: #ede9fe; color: #6d28d9;">Paper</div><div class="v-date">2025.10</div></div><div>Gerald Selasie Gbadam 석∙박사과정이 1저자로 참여한 논문이 Nature Communications 지에 Accept 되었습니다.</div></div>
+          <div class="v-row"><div><div class="v-tag" style="background: #ffe4e6; color: #be123c;">Press</div><div class="v-date">2025.11.03</div></div><div>"배터리 교체, 충전 No" 마찰전기 이용한 나노발전기 개발 — 연합뉴스 보도</div></div>
+          <div class="v-row"><div><div class="v-tag" style="background: #d1fae5; color: #047857;">Award</div><div class="v-date">2026.06.12</div></div><div>Gerald Selasie Gbadam 석∙박사과정이 2026 NGPT에서 Best Oral Award를 수상하였습니다.</div></div>
+          <div class="v-row"><div><div class="v-tag" style="background: #d1fae5; color: #047857;">Award</div><div class="v-date">2026.06.12</div></div><div>류연경 석∙박사과정이 2026 NGPT에서 Best Oral Award를 수상하였습니다.</div></div>
+          <div class="v-row"><div><div class="v-tag" style="background: #ede9fe; color: #6d28d9;">Paper</div><div class="v-date">2025.10</div></div><div>Gerald Selasie Gbadam 석∙박사과정이 1저자로 참여한 논문이 Nature Communications 지에 Accept 되었습니다.</div></div>
+          <div class="v-row"><div><div class="v-tag" style="background: #ffe4e6; color: #be123c;">Press</div><div class="v-date">2025.11.03</div></div><div>"배터리 교체, 충전 No" 마찰전기 이용한 나노발전기 개발 — 연합뉴스 보도</div></div>
+        </div>
+      </div>
+    </div>
+    <div style="grid-column: span 5; display: flex; flex-direction: column; gap: 22px;">
+      <div class="v-h" style="font-size: 36px;">Principal investigator</div>
+      <div class="v-ring" style="flex: 1; animation-duration: 9s; box-shadow: 0 30px 70px rgba(6,182,212,0.18);"><div style="height: 100%; padding: 28px; display: flex; flex-direction: column; gap: 18px; box-sizing: border-box;">
+        <div style="display: flex; align-items: center; gap: 18px;"><img src="prof.jpg" style="width: 84px; height: 84px; border-radius: 50%; object-fit: cover; display: block; box-shadow: 0 10px 24px rgba(15,23,42,0.15);"><div><div class="v-h" style="font-size: 22px; letter-spacing: -0.02em;">Ju-Hyuck Lee</div><div style="font-size: 13.5px; color: #64748b; font-weight: 600;">Associate Professor · Energy Science &amp; Engineering</div></div></div>
+        <div style="font-size: 15px; color: #475569; line-height: 1.7;">Functional nanomaterials, high-performance piezoelectric &amp; triboelectric generators, self-powered electronics, biomolecule-based energy materials and human-inspired tactile sensors.</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 12.5px; font-weight: 700;"><div style="padding: 6px 12px; border-radius: 999px; background: #cffafe; color: #0e7490;">Ph.D. SKKU 2016</div><div style="padding: 6px 12px; border-radius: 999px; background: #ede9fe; color: #6d28d9;">Postdoc · UC Berkeley &amp; LBNL</div><div style="padding: 6px 12px; border-radius: 999px; background: #ffe4e6; color: #be123c;">DGIST since 2018</div></div>
+        <a href="#" style="margin-top: auto; font-weight: 700; font-size: 14.5px;">Full profile →</a>
+      </div></div>
+    </div>
+  </div>
+  <div style="position: relative; padding: 24px 72px 32px 72px; border-top: 1px solid #eef2f7; display: flex; justify-content: space-between; font-size: 13px; color: #64748b;">
+    <div>Room E6-411, Dept. of Energy Science &amp; Engineering, DGIST, Daegu 42988, Republic of Korea</div>
+    <div>© JU HYUCK LEE's Group</div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

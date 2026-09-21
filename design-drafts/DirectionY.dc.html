@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap">
+  <style>
+    body { margin: 0; background: #fbfbfe; color: #0f1233; font-family: 'DM Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 15.5px; line-height: 1.6; }
+    a { color: #5b4bdb; text-decoration: none; } a:hover { text-decoration: underline; }
+    .y-h { font-family: 'Poppins', sans-serif; font-weight: 800; letter-spacing: -0.03em; }
+    .y-grad { background: linear-gradient(90deg, #22d3ee, #6366f1 45%, #ec4899 80%, #f97316); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .y-rib { fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-dasharray: 18 26; animation: y-flow 4s linear infinite; }
+    @keyframes y-flow { to { stroke-dashoffset: -440; } }
+    .y-rib2 { animation-duration: 6s; stroke-dasharray: 40 30; opacity: 0.8; } .y-rib3 { animation-duration: 8s; stroke-dasharray: 6 18; opacity: 0.6; }
+    .y-drift { animation: y-drift 14s ease-in-out infinite; } .y-drift2 { animation-delay: -7s; }
+    @keyframes y-drift { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-24px); } }
+    @keyframes y-up { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+    .y-up { animation: y-up 1s cubic-bezier(.2,.7,.2,1) both; } .y-d1 { animation-delay: .12s; } .y-d2 { animation-delay: .26s; } .y-d3 { animation-delay: .4s; } .y-d4 { animation-delay: .55s; }
+    .y-photo { clip-path: polygon(8% 0, 100% 0, 92% 100%, 0 100%); }
+    .y-tilt { animation: y-tilt 10s ease-in-out infinite; transform-origin: 50% 50%; }
+    @keyframes y-tilt { 0%,100% { transform: rotate(-1.5deg) translateY(0); } 50% { transform: rotate(1.5deg) translateY(-10px); } }
+    .y-node { position: absolute; width: 22px; height: 22px; border-radius: 50%; border: 4px solid #fff; box-shadow: 0 6px 18px rgba(15,18,51,0.18); animation: y-pop .6s cubic-bezier(.3,1.5,.5,1) both; }
+    @keyframes y-pop { from { transform: scale(0); } to { transform: scale(1); } }
+    .y-trav { position: absolute; left: 0; top: 0; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; background: #fff; border: 3px solid #6366f1; box-shadow: 0 0 0 6px rgba(99,102,241,0.18), 0 0 24px rgba(99,102,241,0.7); offset-path: path('M 0 90 C 160 20, 260 160, 420 90 S 640 10, 840 90 S 1060 170, 1296 90'); animation: y-trav 8s ease-in-out 1.4s infinite; }
+    @keyframes y-trav { 0% { offset-distance: 0%; } 50% { offset-distance: 100%; } 100% { offset-distance: 0%; } }
+    .y-flip { transform-style: preserve-3d; animation: y-flip 1.1s cubic-bezier(.2,.7,.2,1) both; }
+    @keyframes y-flip { from { opacity: 0; transform: perspective(900px) rotateX(-18deg) translateY(30px); } to { opacity: 1; transform: none; } }
+    .y-card { transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s; } .y-card:hover { transform: translateY(-8px); box-shadow: 0 30px 60px rgba(15,18,51,0.14) !important; }
+    .y-glow { animation: y-glow 4s ease-in-out infinite; }
+    @keyframes y-glow { 0%,100% { box-shadow: 0 20px 50px rgba(99,102,241,0.18); } 50% { box-shadow: 0 30px 80px rgba(236,72,153,0.32); } }
+    .y-tag { padding: 4px 10px; border-radius: 999px; font-size: 11.5px; font-weight: 700; display: inline-block; }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } .y-flip, .y-node { opacity: 1; transform: none; } }
+  </style>
+</helmet>
+<div style="width: 1440px; background: #fbfbfe; position: relative; overflow: hidden;">
+  <!-- ribbons -->
+  <svg class="y-drift" width="1440" height="820" viewBox="0 0 1440 820" style="position: absolute; left: 0; top: 130px; pointer-events: none; opacity: 0.7;">
+    <defs>
+      <linearGradient id="yg1" x1="0" x2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset="1" stop-color="#6366f1"/></linearGradient>
+      <linearGradient id="yg2" x1="0" x2="1"><stop offset="0" stop-color="#6366f1"/><stop offset="1" stop-color="#ec4899"/></linearGradient>
+      <linearGradient id="yg3" x1="0" x2="1"><stop offset="0" stop-color="#ec4899"/><stop offset="1" stop-color="#f97316"/></linearGradient>
+    </defs>
+    <path class="y-rib" stroke="url(#yg1)" d="M -40 520 C 240 380, 420 720, 720 560 S 1120 300, 1500 480"/>
+    <path class="y-rib y-rib2" stroke="url(#yg2)" d="M -40 600 C 260 460, 440 800, 760 640 S 1140 380, 1500 560"/>
+    <path class="y-rib y-rib3" stroke="url(#yg3)" d="M -40 680 C 280 540, 460 880, 800 720 S 1160 460, 1500 640"/>
+    <path stroke="url(#yg1)" stroke-width="80" stroke-linecap="round" opacity="0.06" fill="none" d="M -40 560 C 250 420, 430 760, 740 600 S 1130 340, 1500 520"/>
+  </svg>
+  <svg class="y-drift y-drift2" width="1440" height="600" viewBox="0 0 1440 600" style="position: absolute; left: 0; top: -40px; pointer-events: none; opacity: 0.35;">
+    <path class="y-rib y-rib3" stroke="url(#yg2)" d="M -40 120 C 300 20, 540 260, 860 140 S 1240 0, 1500 120"/>
+  </svg>
+  <!-- header -->
+  <div style="position: relative; display: flex; align-items: center; justify-content: space-between; height: 88px; padding: 0 72px;">
+    <div style="display: flex; align-items: center; gap: 12px;"><img src="logo.png" style="width: 34px; display: block;"><div class="y-h" style="font-size: 20px;">ECME Lab</div></div>
+    <div style="display: flex; gap: 2px; font-weight: 600; font-size: 14px; color: #3d4170; background: #ffffff; border: 1px solid #eceefb; border-radius: 999px; padding: 5px; box-shadow: 0 10px 30px rgba(15,18,51,0.06);">
+      <div style="padding: 8px 16px; border-radius: 999px; background: linear-gradient(90deg,#6366f1,#ec4899); color: #ffffff;">Home</div><div style="padding: 8px 16px;">Professor</div><div style="padding: 8px 16px;">People</div><div style="padding: 8px 16px;">Research</div><div style="padding: 8px 16px;">Publications</div><div style="padding: 8px 16px;">News</div><div style="padding: 8px 16px;">Contact</div>
+    </div>
+  </div>
+  <!-- hero -->
+  <div style="position: relative; padding: 70px 72px 0 72px; display: grid; grid-template-columns: repeat(12, minmax(0,1fr)); gap: 40px; align-items: center;">
+    <div style="grid-column: span 6; display: flex; flex-direction: column; gap: 24px;">
+      <div class="y-up" style="display: inline-flex; align-self: flex-start; align-items: center; gap: 10px; padding: 7px 14px; border-radius: 999px; background: #ffffff; border: 1px solid #eceefb; box-shadow: 0 8px 24px rgba(15,18,51,0.06); font-size: 12.5px; font-weight: 700; color: #5b4bdb;">Energy Conversion Materials &amp; Electronics Lab · DGIST</div>
+      <div class="y-h y-up y-d1" style="font-size: 76px; line-height: 1.0;">Where motion<br>becomes<br><span class="y-grad">electricity.</span></div>
+      <div class="y-up y-d2" style="font-size: 18px; color: #4b5085; max-width: 520px;">We build piezoelectric and triboelectric nanogenerators, functional polymers and bio-piezoelectric materials — the building blocks of self-powered electronics.</div>
+      <div class="y-up y-d3" style="display: flex; gap: 12px;">
+        <div style="padding: 15px 28px; border-radius: 999px; background: linear-gradient(90deg,#6366f1,#ec4899); color: #ffffff; font-weight: 700; font-size: 15px; box-shadow: 0 14px 34px rgba(99,102,241,0.35);">Explore research</div>
+        <div style="padding: 15px 28px; border-radius: 999px; background: #ffffff; border: 1px solid #eceefb; font-weight: 700; font-size: 15px;">Join the lab</div>
+      </div>
+      <div class="y-up y-d4" style="display: flex; gap: 36px; padding-top: 10px;">
+        <div><div class="y-h" style="font-size: 34px; line-height: 1;">81</div><div style="font-size: 12.5px; color: #7b7fa8; font-weight: 600; margin-top: 4px;">Papers</div></div>
+        <div><div class="y-h" style="font-size: 34px; line-height: 1;">35</div><div style="font-size: 12.5px; color: #7b7fa8; font-weight: 600; margin-top: 4px;">Patents</div></div>
+        <div><div class="y-h" style="font-size: 34px; line-height: 1;">18</div><div style="font-size: 12.5px; color: #7b7fa8; font-weight: 600; margin-top: 4px;">Members</div></div>
+        <div><div class="y-h" style="font-size: 34px; line-height: 1;">2018</div><div style="font-size: 12.5px; color: #7b7fa8; font-weight: 600; margin-top: 4px;">Founded</div></div>
+      </div>
+    </div>
+    <div class="y-up y-d2" style="grid-column: span 6; position: relative; height: 560px;">
+      <div class="y-tilt" style="position: absolute; left: 20px; top: 20px; width: 600px; height: 520px;">
+        <div class="y-photo" style="position: absolute; inset: 0; background: linear-gradient(135deg,#22d3ee,#6366f1,#ec4899); transform: translate(14px,14px);"></div>
+        <div class="y-photo" style="position: absolute; inset: 0; overflow: hidden;"><img src="hero.jpg" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+      </div>
+      <div class="y-flip" style="position: absolute; right: -10px; bottom: 30px; padding: 16px 20px; border-radius: 20px; background: #ffffff; border: 1px solid #eceefb; box-shadow: 0 20px 50px rgba(15,18,51,0.12); display: flex; align-items: center; gap: 12px; animation-delay: .9s;"><img src="prof.jpg" style="width: 44px; height: 44px; border-radius: 50%; object-fit: cover; display: block;"><div><div style="font-weight: 700; font-size: 14.5px;">Prof. Ju-Hyuck Lee</div><div style="font-size: 12.5px; color: #7b7fa8; font-weight: 600;">Principal investigator</div></div></div>
+    </div>
+  </div>
+  <!-- research flow line -->
+  <div style="position: relative; padding: 120px 72px 0 72px; display: flex; flex-direction: column; gap: 10px;">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between;"><div><div style="font-size: 12.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #6366f1; margin-bottom: 8px;">Research</div><div class="y-h" style="font-size: 42px;">One energy flow, <span class="y-grad">five stations.</span></div></div><a href="#" style="font-weight: 700; font-size: 14.5px;">All topics →</a></div>
+    <div style="position: relative; height: 180px;">
+      <svg width="1296" height="180" viewBox="0 0 1296 180" fill="none" style="position: absolute; left: 0; top: 0; display: block;">
+        <defs><linearGradient id="yg4" x1="0" x2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#6366f1"/><stop offset="1" stop-color="#f97316"/></linearGradient></defs>
+        <path d="M 0 90 C 160 20, 260 160, 420 90 S 640 10, 840 90 S 1060 170, 1296 90" stroke="#e6e8f7" stroke-width="3"/>
+        <path class="y-rib y-rib2" d="M 0 90 C 160 20, 260 160, 420 90 S 640 10, 840 90 S 1060 170, 1296 90" stroke="url(#yg4)" stroke-width="3"/>
+      </svg>
+      <div class="y-trav"></div>
+      <div class="y-node" style="left: 118px; top: 44px; background: #22d3ee; animation-delay: .3s;"></div>
+      <div class="y-node" style="left: 400px; top: 82px; background: #6366f1; animation-delay: .5s;"></div>
+      <div class="y-node" style="left: 634px; top: 40px; background: #10b981; animation-delay: .7s;"></div>
+      <div class="y-node" style="left: 900px; top: 114px; background: #ec4899; animation-delay: .9s;"></div>
+      <div class="y-node" style="left: 1180px; top: 120px; background: #f97316; animation-delay: 1.1s;"></div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 16px; margin-top: -30px;">
+      <div class="y-card y-up" style="padding: 22px 20px; border-radius: 22px; background: #ffffff; border: 1px solid #eceefb; box-shadow: 0 12px 30px rgba(15,18,51,0.06); animation-delay: .4s;"><div style="font-size: 11.5px; font-weight: 700; color: #06b6d4;">01</div><div style="font-weight: 700; font-size: 15.5px; line-height: 1.35; margin-top: 6px;">Energy Harvesting Technology</div></div>
+      <div class="y-card y-up" style="padding: 22px 20px; border-radius: 22px; background: #ffffff; border: 1px solid #eceefb; box-shadow: 0 12px 30px rgba(15,18,51,0.06); animation-delay: .6s;"><div style="font-size: 11.5px; font-weight: 700; color: #6366f1;">02</div><div style="font-weight: 700; font-size: 15.5px; line-height: 1.35; margin-top: 6px;">Synthesis of Functional Polymers</div></div>
+      <div class="y-card y-up" style="padding: 22px 20px; border-radius: 22px; background: #ffffff; border: 1px solid #eceefb; box-shadow: 0 12px 30px rgba(15,18,51,0.06); animation-delay: .8s;"><div style="font-size: 11.5px; font-weight: 700; color: #10b981;">03</div><div style="font-weight: 700; font-size: 15.5px; line-height: 1.35; margin-top: 6px;">Bio-Piezoelectric Materials</div></div>
+      <div class="y-card y-up" style="padding: 22px 20px; border-radius: 22px; background: #ffffff; border: 1px solid #eceefb; box-shadow: 0 12px 30px rgba(15,18,51,0.06); animation-delay: 1s;"><div style="font-size: 11.5px; font-weight: 700; color: #ec4899;">04</div><div style="font-weight: 700; font-size: 15.5px; line-height: 1.35; margin-top: 6px;">Various Novel Applications</div></div>
+      <div class="y-card y-up" style="padding: 22px 20px; border-radius: 22px; background: #ffffff; border: 1px solid #eceefb; box-shadow: 0 12px 30px rgba(15,18,51,0.06); animation-delay: 1.2s;"><div style="font-size: 11.5px; font-weight: 700; color: #f97316;">05</div><div style="font-weight: 700; font-size: 15.5px; line-height: 1.35; margin-top: 6px;">AI-Integrated Research Platform</div></div>
+    </div>
+  </div>
+  <!-- news flip cards + press -->
+  <div style="position: relative; display: grid; grid-template-columns: repeat(12, minmax(0,1fr)); gap: 32px; padding: 110px 72px 96px 72px; align-items: start;">
+    <div style="grid-column: span 7; display: flex; flex-direction: column; gap: 20px;">
+      <div style="display: flex; align-items: flex-end; justify-content: space-between;"><div class="y-h" style="font-size: 34px;">Latest <span class="y-grad">news</span></div><a href="#" style="font-weight: 700; font-size: 14.5px;">All 53 →</a></div>
+      <div class="y-card y-flip" style="display: grid; grid-template-columns: 120px 1fr; gap: 18px; padding: 20px 24px; border-radius: 22px; background: #ffffff; border: 1px solid #eceefb; box-shadow: 0 12px 30px rgba(15,18,51,0.06); animation-delay: .2s;"><div><div class="y-tag" style="background: #dcfce7; color: #15803d;">Award</div><div style="font-size: 12.5px; color: #9a9ec4; margin-top: 8px; font-weight: 600;">2026.06.12</div></div><div>Gerald Selasie Gbadam 석∙박사과정이 2026 NGPT에서 Best Oral Award를 수상하였습니다.</div></div>
+      <div class="y-card y-flip" style="display: grid; grid-template-columns: 120px 1fr; gap: 18px; padding: 20px 24px; border-radius: 22px; background: #ffffff; border: 1px solid #eceefb; box-shadow: 0 12px 30px rgba(15,18,51,0.06); animation-delay: .4s;"><div><div class="y-tag" style="background: #dcfce7; color: #15803d;">Award</div><div style="font-size: 12.5px; color: #9a9ec4; margin-top: 8px; font-weight: 600;">2026.06.12</div></div><div>류연경 석∙박사과정이 2026 NGPT에서 Best Oral Award를 수상하였습니다.</div></div>
+      <div class="y-card y-flip" style="display: grid; grid-template-columns: 120px 1fr; gap: 18px; padding: 20px 24px; border-radius: 22px; background: #ffffff; border: 1px solid #eceefb; box-shadow: 0 12px 30px rgba(15,18,51,0.06); animation-delay: .6s;"><div><div class="y-tag" style="background: #e0e7ff; color: #4338ca;">Paper</div><div style="font-size: 12.5px; color: #9a9ec4; margin-top: 8px; font-weight: 600;">2025.10</div></div><div>Gerald Selasie Gbadam 석∙박사과정이 1저자로 참여한 논문이 Nature Communications 지에 Accept 되었습니다.</div></div>
+      <div class="y-card y-flip" style="display: grid; grid-template-columns: 120px 1fr; gap: 18px; padding: 20px 24px; border-radius: 22px; background: #ffffff; border: 1px solid #eceefb; box-shadow: 0 12px 30px rgba(15,18,51,0.06); animation-delay: .8s;"><div><div class="y-tag" style="background: #fce7f3; color: #be185d;">Recruit</div><div style="font-size: 12.5px; color: #9a9ec4; margin-top: 8px; font-weight: 600;">Opening</div></div><div>석·박사과정 및 학부연구생 모집 중 — Opening 페이지에서 지원 안내 확인</div></div>
+    </div>
+    <div style="grid-column: span 5; display: flex; flex-direction: column; gap: 20px;">
+      <div class="y-h" style="font-size: 34px;">In the press</div>
+      <div class="y-card y-glow y-flip" style="border-radius: 26px; overflow: hidden; background: #ffffff; border: 1px solid #eceefb; display: flex; flex-direction: column; animation-delay: .5s;">
+        <div style="height: 230px; overflow: hidden;"><img src="photo1.jpg" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+        <div style="padding: 20px 24px 24px; display: flex; flex-direction: column; gap: 8px;">
+          <div style="display: flex; gap: 8px; align-items: center;"><div class="y-tag" style="background: #fce7f3; color: #be185d;">연합뉴스</div><div style="font-size: 12.5px; color: #9a9ec4; font-weight: 600;">2025.11.03</div></div>
+          <div style="font-weight: 800; font-size: 18px; line-height: 1.35;">"배터리 교체, 충전 No" 마찰전기 이용한 나노발전기 개발</div>
+          <a href="#" style="font-weight: 700; font-size: 14px; margin-top: 6px;">All 22 articles →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="position: relative; padding: 24px 72px 32px 72px; border-top: 1px solid #eceefb; display: flex; justify-content: space-between; font-size: 13px; color: #7b7fa8;">
+    <div>Room E6-411, Dept. of Energy Science &amp; Engineering, DGIST, Daegu 42988, Republic of Korea</div>
+    <div>© JU HYUCK LEE's Group</div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

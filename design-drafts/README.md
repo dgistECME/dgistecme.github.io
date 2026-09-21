@@ -7,6 +7,10 @@ Claude Design 캔버스( https://claude.ai/code/artifact/a6db981f-9b66-4d66-8b9a
 |---|---|---|
 | `Main.dc.html` | C · Bold Editorial (다크 네이비) | **현재 사이트 적용 중** |
 | `DirectionF.dc.html` | F · Photo Magazine (세로 대제목 + 사진 모자이크 + 노랑) | 백업 요청됨 — 다음 후보 |
+| `DirectionV.dc.html` | V · Prism Mesh (유동 메시 그라데이션, 단어 리빌, 회전 테두리, 세로 뉴스 마퀴) | 레퍼런스 결 + 모션 |
+| `DirectionW.dc.html` | W · Liquid Glass (유동 그라데이션 스테이지, 글래스 패널 빛줄기, 모프 블롭 사진, 가로 마퀴) | 레퍼런스 결 + 모션 |
+| `DirectionX.dc.html` | X · Kinetic Spotlight (초대형 타이포 스포트라이트, 펄스 라인 + 이동 광점, 프로그레스 링) | 레퍼런스 결 + 모션 |
+| `DirectionY.dc.html` | Y · Flow Ribbons (점선 리본 흐름, 평행사변형 사진, 파형 노드 + 왕복 광점, 3D 플립 뉴스) | 레퍼런스 결 + 모션 |
 | `DirectionS.dc.html` | S · Glow Cards (풀블리드 사진 히어로, 그라데이션 제목, 글래스 카드, 컬러 태그) | 레퍼런스 결 |
 | `DirectionT.dc.html` | T · Aurora (파스텔 블롭, 라운드 사진 + 부유 통계 칩, 5색 타일) | 레퍼런스 결 |
 | `DirectionU.dc.html` | U · Spectrum (곡선 사진 카드, 스펙트럼 테두리, 캐러셀) | 레퍼런스 결 |

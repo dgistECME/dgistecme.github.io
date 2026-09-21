@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap">
+  <style>
+    @property --w-a { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
+    body { margin: 0; background: #ffffff; color: #0b1120; font-family: 'Manrope', 'Helvetica Neue', Arial, sans-serif; font-size: 15.5px; line-height: 1.6; }
+    a { color: #ffffff; text-decoration: none; } a:hover { text-decoration: underline; }
+    .w-h { font-family: 'Sora', sans-serif; font-weight: 800; letter-spacing: -0.035em; }
+    .w-bg { background: linear-gradient(120deg, #38bdf8, #818cf8 35%, #e879f9 65%, #fb7185); background-size: 260% 260%; animation: w-flow 18s ease-in-out infinite; }
+    @keyframes w-flow { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+    .w-glass { background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.45); backdrop-filter: blur(18px); box-shadow: 0 30px 80px rgba(20,20,60,0.25), inset 0 1px 0 rgba(255,255,255,0.6); position: relative; overflow: hidden; }
+    .w-glass::before { content: ''; position: absolute; top: -40%; left: -60%; width: 40%; height: 180%; background: linear-gradient(100deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.45) 50%, rgba(255,255,255,0) 100%); transform: rotate(12deg) translateX(0); animation: w-shine 7s ease-in-out infinite; pointer-events: none; }
+    @keyframes w-shine { 0% { left: -60%; } 40%, 100% { left: 140%; } }
+    .w-blob { animation: w-morph 12s ease-in-out infinite; }
+    @keyframes w-morph { 0%,100% { border-radius: 58% 42% 60% 40% / 45% 55% 45% 55%; } 33% { border-radius: 42% 58% 40% 60% / 55% 45% 55% 45%; } 66% { border-radius: 50% 50% 55% 45% / 40% 60% 40% 60%; } }
+    @keyframes w-up { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+    .w-up { animation: w-up 1s cubic-bezier(.2,.7,.2,1) both; } .w-d1 { animation-delay: .15s; } .w-d2 { animation-delay: .3s; } .w-d3 { animation-delay: .45s; } .w-d4 { animation-delay: .6s; } .w-d5 { animation-delay: .75s; }
+    @keyframes w-float { 0%,100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-14px) rotate(2deg); } }
+    .w-fl { animation: w-float 8s ease-in-out infinite; } .w-fl2 { animation-duration: 10s; animation-delay: -4s; } .w-fl3 { animation-duration: 9s; animation-delay: -7s; }
+    @keyframes w-marq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .w-marq { display: flex; gap: 14px; width: max-content; animation: w-marq 30s linear infinite; }
+    .w-marq:hover { animation-play-state: paused; }
+    .w-pill { display: flex; align-items: center; gap: 12px; padding: 14px 22px 14px 14px; border-radius: 999px; background: #ffffff; border: 1px solid #eef2f7; box-shadow: 0 12px 30px rgba(11,17,32,0.08); font-weight: 700; font-size: 15px; white-space: nowrap; }
+    .w-ring { border-radius: 50%; padding: 4px; background: conic-gradient(from var(--w-a), #38bdf8, #818cf8, #e879f9, #fb7185, #38bdf8); animation: w-spin 5s linear infinite; }
+    @keyframes w-spin { to { --w-a: 360deg; } }
+    .w-card { transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s; } .w-card:hover { transform: translateY(-8px); box-shadow: 0 30px 60px rgba(11,17,32,0.14) !important; }
+    .w-tag { padding: 4px 10px; border-radius: 999px; font-size: 11.5px; font-weight: 700; display: inline-block; }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+</helmet>
+<div style="width: 1440px; background: #ffffff; position: relative; overflow: hidden;">
+  <!-- gradient stage -->
+  <div class="w-bg" style="position: relative; height: 940px; overflow: hidden;">
+    <div style="position: absolute; inset: 0; background: radial-gradient(ellipse at 20% 10%, rgba(255,255,255,0.35), rgba(255,255,255,0) 50%), radial-gradient(ellipse at 90% 90%, rgba(255,255,255,0.25), rgba(255,255,255,0) 50%);"></div>
+    <div class="w-fl" style="position: absolute; left: -120px; bottom: -160px; width: 520px; height: 520px; border-radius: 50%; background: radial-gradient(circle, rgba(255,255,255,0.35), rgba(255,255,255,0) 70%);"></div>
+    <!-- header -->
+    <div style="position: relative; display: flex; align-items: center; justify-content: space-between; height: 90px; padding: 0 72px; color: #ffffff;">
+      <div style="display: flex; align-items: center; gap: 12px;"><div style="width: 38px; height: 38px; border-radius: 12px; background: rgba(255,255,255,0.9); display: flex; align-items: center; justify-content: center;"><img src="logo.png" style="width: 26px; display: block;"></div><div class="w-h" style="font-size: 20px;">ECME Lab</div></div>
+      <div class="w-glass" style="display: flex; gap: 2px; font-weight: 700; font-size: 14px; border-radius: 999px; padding: 5px; box-shadow: none;">
+        <div style="padding: 8px 16px; border-radius: 999px; background: #ffffff; color: #4c1d95;">Home</div><div style="padding: 8px 16px;">Professor</div><div style="padding: 8px 16px;">People</div><div style="padding: 8px 16px;">Research</div><div style="padding: 8px 16px;">Publications</div><div style="padding: 8px 16px;">News</div><div style="padding: 8px 16px;">Contact</div>
+      </div>
+    </div>
+    <!-- hero glass panel -->
+    <div class="w-glass w-up" style="position: absolute; left: 72px; right: 72px; top: 140px; height: 700px; border-radius: 40px; display: grid; grid-template-columns: repeat(12, minmax(0,1fr)); gap: 40px; padding: 64px; box-sizing: border-box; align-items: center; color: #ffffff;">
+      <div style="grid-column: span 7; display: flex; flex-direction: column; gap: 24px;">
+        <div class="w-up w-d1" style="display: inline-flex; align-self: flex-start; align-items: center; gap: 10px; padding: 8px 16px; border-radius: 999px; background: rgba(255,255,255,0.22); border: 1px solid rgba(255,255,255,0.5); font-size: 12.5px; font-weight: 700; letter-spacing: 0.04em;">DGIST · ENERGY SCIENCE &amp; ENGINEERING</div>
+        <div class="w-h w-up w-d2" style="font-size: 78px; line-height: 1.0; text-shadow: 0 10px 40px rgba(20,20,60,0.2);">Self-powered<br>electronics,<br><span style="color: #fef3c7;">by design.</span></div>
+        <div class="w-up w-d3" style="font-size: 18px; max-width: 540px; color: rgba(255,255,255,0.92);">Energy Conversion Materials &amp; Electronics Lab — piezoelectric and triboelectric nanogenerators, functional polymers and bio-piezoelectric materials that turn motion into power.</div>
+        <div class="w-up w-d4" style="display: flex; gap: 12px;">
+          <div style="padding: 15px 28px; border-radius: 999px; background: #ffffff; color: #4c1d95; font-weight: 800; font-size: 15px; box-shadow: 0 16px 40px rgba(20,20,60,0.25);">Explore research</div>
+          <div style="padding: 15px 28px; border-radius: 999px; background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.55); font-weight: 700; font-size: 15px;">Join us →</div>
+        </div>
+      </div>
+      <div style="grid-column: span 5; position: relative; height: 560px;">
+        <div class="w-blob w-up w-d2" style="position: absolute; left: 20px; top: 20px; width: 480px; height: 500px; overflow: hidden; box-shadow: 0 40px 100px rgba(20,20,60,0.35);"><img src="hero.jpg" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+        <div class="w-glass w-fl w-up w-d4" style="position: absolute; left: -40px; top: 60px; padding: 16px 20px; border-radius: 22px; display: flex; align-items: center; gap: 14px;"><div class="w-h" style="font-size: 34px; line-height: 1;">81</div><div style="font-size: 12.5px; font-weight: 700; line-height: 1.3; opacity: 0.9;">Peer-reviewed<br>papers</div></div>
+        <div class="w-glass w-fl w-fl2 w-up w-d5" style="position: absolute; right: -30px; top: 200px; padding: 16px 20px; border-radius: 22px; display: flex; align-items: center; gap: 14px;"><div class="w-h" style="font-size: 34px; line-height: 1;">35</div><div style="font-size: 12.5px; font-weight: 700; line-height: 1.3; opacity: 0.9;">Registered<br>patents</div></div>
+        <div class="w-glass w-fl w-fl3 w-up w-d5" style="position: absolute; left: 40px; bottom: -10px; padding: 14px 18px; border-radius: 22px; display: flex; align-items: center; gap: 12px;"><div style="display: flex;"><img src="member.jpg" style="width: 34px; height: 34px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(255,255,255,0.9); display: block;"><img src="prof.jpg" style="width: 34px; height: 34px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(255,255,255,0.9); margin-left: -10px; display: block;"><div style="width: 34px; height: 34px; border-radius: 50%; background: #fef3c7; border: 2px solid rgba(255,255,255,0.9); margin-left: -10px;"></div></div><div style="font-size: 13px; font-weight: 700;">18 members · 5 topics</div></div>
+      </div>
+    </div>
+  </div>
+  <!-- research marquee -->
+  <div style="position: relative; padding: 80px 0 0 0; display: flex; flex-direction: column; gap: 28px;">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; padding: 0 72px;">
+      <div><div style="font-size: 12.5px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #818cf8; margin-bottom: 8px;">Research</div><div class="w-h" style="font-size: 42px;">What we work on</div></div>
+      <a href="#" style="font-weight: 800; font-size: 14.5px; color: #0b1120;">All topics →</a>
+    </div>
+    <div style="overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); padding: 10px 0;">
+      <div class="w-marq">
+        <div class="w-pill"><div style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg,#38bdf8,#818cf8);"></div>Energy Harvesting Technology</div>
+        <div class="w-pill"><div style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg,#818cf8,#e879f9);"></div>Synthesis of Functional Polymers</div>
+        <div class="w-pill"><div style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg,#34d399,#38bdf8);"></div>Bio-Piezoelectric Materials</div>
+        <div class="w-pill"><div style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg,#fbbf24,#fb7185);"></div>Various Novel Applications</div>
+        <div class="w-pill"><div style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg,#e879f9,#fb7185);"></div>AI-Integrated Research Platform</div>
+        <div class="w-pill"><div style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg,#38bdf8,#818cf8);"></div>Energy Harvesting Technology</div>
+        <div class="w-pill"><div style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg,#818cf8,#e879f9);"></div>Synthesis of Functional Polymers</div>
+        <div class="w-pill"><div style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg,#34d399,#38bdf8);"></div>Bio-Piezoelectric Materials</div>
+        <div class="w-pill"><div style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg,#fbbf24,#fb7185);"></div>Various Novel Applications</div>
+        <div class="w-pill"><div style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg,#e879f9,#fb7185);"></div>AI-Integrated Research Platform</div>
+      </div>
+    </div>
+  </div>
+  <!-- news + PI -->
+  <div style="position: relative; display: grid; grid-template-columns: repeat(12, minmax(0,1fr)); gap: 32px; padding: 90px 72px 96px 72px; align-items: stretch;">
+    <div style="grid-column: span 4; display: flex; flex-direction: column; gap: 20px;">
+      <div class="w-h" style="font-size: 34px;">Latest news</div>
+      <div class="w-card" style="padding: 22px 24px; border-radius: 24px; background: #ffffff; border: 1px solid #eef2f7; box-shadow: 0 12px 34px rgba(11,17,32,0.06); display: flex; flex-direction: column; gap: 10px;"><div style="display: flex; gap: 8px; align-items: center;"><div class="w-tag" style="background: #dcfce7; color: #15803d;">Award</div><div style="font-size: 12.5px; color: #94a3b8; font-weight: 700;">2026.06.12</div></div><div style="font-weight: 600;">Gerald Selasie Gbadam 석∙박사과정, 2026 NGPT Best Oral Award 수상</div></div>
+      <div class="w-card" style="padding: 22px 24px; border-radius: 24px; background: #ffffff; border: 1px solid #eef2f7; box-shadow: 0 12px 34px rgba(11,17,32,0.06); display: flex; flex-direction: column; gap: 10px;"><div style="display: flex; gap: 8px; align-items: center;"><div class="w-tag" style="background: #dcfce7; color: #15803d;">Award</div><div style="font-size: 12.5px; color: #94a3b8; font-weight: 700;">2026.06.12</div></div><div style="font-weight: 600;">류연경 석∙박사과정, 2026 NGPT Best Oral Award 수상</div></div>
+      <div class="w-card" style="padding: 22px 24px; border-radius: 24px; background: #ffffff; border: 1px solid #eef2f7; box-shadow: 0 12px 34px rgba(11,17,32,0.06); display: flex; flex-direction: column; gap: 10px;"><div style="display: flex; gap: 8px; align-items: center;"><div class="w-tag" style="background: #e0e7ff; color: #4338ca;">Paper</div><div style="font-size: 12.5px; color: #94a3b8; font-weight: 700;">2025.10</div></div><div style="font-weight: 600;">1저자 논문 Nature Communications 게재 확정</div></div>
+      <a href="#" style="font-weight: 800; font-size: 14.5px; color: #0b1120;">All 53 news →</a>
+    </div>
+    <div style="grid-column: span 4;">
+      <div class="w-h" style="font-size: 34px; margin-bottom: 20px;">In the press</div>
+      <div class="w-card" style="border-radius: 28px; overflow: hidden; background: #ffffff; border: 1px solid #eef2f7; box-shadow: 0 20px 50px rgba(11,17,32,0.1); display: flex; flex-direction: column; height: 396px;">
+        <div style="flex: 1; overflow: hidden;"><img src="photo1.jpg" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+        <div style="padding: 20px 24px 24px; display: flex; flex-direction: column; gap: 8px;">
+          <div style="display: flex; gap: 8px; align-items: center;"><div class="w-tag" style="background: #fce7f3; color: #be185d;">연합뉴스</div><div style="font-size: 12.5px; color: #94a3b8; font-weight: 700;">2025.11.03</div></div>
+          <div style="font-weight: 800; font-size: 17px; line-height: 1.35;">"배터리 교체, 충전 No" 마찰전기 이용한 나노발전기 개발</div>
+        </div>
+      </div>
+    </div>
+    <div style="grid-column: span 4;">
+      <div class="w-h" style="font-size: 34px; margin-bottom: 20px;">Principal investigator</div>
+      <div class="w-bg w-card" style="border-radius: 28px; padding: 3px; box-shadow: 0 24px 60px rgba(129,140,248,0.35); height: 396px; box-sizing: border-box;">
+        <div style="border-radius: 25px; background: #ffffff; height: 100%; box-sizing: border-box; padding: 26px; display: flex; flex-direction: column; gap: 16px;">
+          <div style="display: flex; align-items: center; gap: 16px;"><div class="w-ring"><img src="prof.jpg" style="width: 76px; height: 76px; border-radius: 50%; object-fit: cover; display: block; border: 3px solid #fff;"></div><div><div class="w-h" style="font-size: 21px; letter-spacing: -0.02em;">Ju-Hyuck Lee</div><div style="font-size: 13px; color: #64748b; font-weight: 700;">Associate Professor, DGIST</div></div></div>
+          <div style="font-size: 14.5px; color: #475569; line-height: 1.7;">Ph.D. SKKU (2016) · Postdoc UC Berkeley &amp; LBNL (2016–2018) · DGIST since 2018. Functional nanomaterials, piezo/triboelectric generators, self-powered electronics, tactile sensors.</div>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 12px; font-weight: 800;"><div class="w-tag" style="background: #e0f2fe; color: #0369a1;">Nano Energy ECR Board</div><div class="w-tag" style="background: #ede9fe; color: #6d28d9;">KIM Emerging Innovator 2025</div></div>
+          <a href="#" style="margin-top: auto; font-weight: 800; font-size: 14.5px; color: #4c1d95;">Full profile →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="position: relative; padding: 24px 72px 32px 72px; border-top: 1px solid #eef2f7; display: flex; justify-content: space-between; font-size: 13px; color: #64748b;">
+    <div>Room E6-411, Dept. of Energy Science &amp; Engineering, DGIST, Daegu 42988, Republic of Korea</div>
+    <div>© JU HYUCK LEE's Group</div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>
