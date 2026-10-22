@@ -5,6 +5,10 @@
       "name": "Final · Bold Editorial"
     },
     {
+      "id": "page-13",
+      "name": "Reference-level · AN AO AP AQ (color & motion capped)"
+    },
+    {
       "id": "page-12",
       "name": "Calm fancy · AJ AK AL AM (restrained motion)"
     },
@@ -58,6 +62,42 @@
       "h": 1640,
       "title": "Home · Bold Editorial (적용 중)",
       "page": "page-1"
+    },
+    {
+      "file": "DirectionAN.dc.html",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 2900,
+      "title": "AN · Reference Classic",
+      "page": "page-13"
+    },
+    {
+      "file": "DirectionAO.dc.html",
+      "x": 1560,
+      "y": 0,
+      "w": 1440,
+      "h": 2860,
+      "title": "AO · Clean Split",
+      "page": "page-13"
+    },
+    {
+      "file": "DirectionAP.dc.html",
+      "x": 3120,
+      "y": 0,
+      "w": 1440,
+      "h": 2910,
+      "title": "AP · Centered Statement",
+      "page": "page-13"
+    },
+    {
+      "file": "DirectionAQ.dc.html",
+      "x": 4680,
+      "y": 0,
+      "w": 1440,
+      "h": 2900,
+      "title": "AQ · Sidebar Profile",
+      "page": "page-13"
     },
     {
       "file": "DirectionAJ.dc.html",
@@ -421,6 +461,14 @@
       "text": "C · Bold Editorial 적용 완료 → https://dgistecme.github.io/ (애니메이션 A 기본)\n색·폰트·간격은 site/src/styles/global.css 상단 토큰에서 조정.\n이전 디자인 복구: git checkout v1-wix-style (또는 backup/wix-style 브랜치)."
     },
     {
+      "id": "page-13-brief",
+      "x": 0,
+      "y": -440,
+      "w": 880,
+      "page": "page-13",
+      "text": "'색도 아직 과함' 피드백 반영. 레퍼런스 사이트(dasresearchlab) 실측 토큰을 상한으로 고정.\n색: 흰 바탕 + #f8fafc 밴드, 글자 #0f172a/#64748b, 그라데이션은 파랑→보라(#3b82f6→#8b5cf6) 하나만 — 섹션 제목 글자·메인 버튼·작은 배지에만. 태그만 초록/파랑/빨강 작은 색.\n글꼴 Inter 하나, 카드 라운드 15px + 옅은 그림자. 애니메이션: 첫 로드 fadeInUp 1회 + 호버뿐, 반복 0개.\nAN · Reference Classic — 레퍼런스와 가장 가까움: 사진 배너 + 어두운 오버레이 + 가운데 흰 제목, 그라데이션 섹션 제목, 사진 뉴스 카드 3개, 아이콘 연구 카드 5개, PI 카드.\nAO · Clean Split — 좌 제목/우 사진, 연구는 아이콘 목록, 날짜 뉴스 목록 + 언론 카드, 좌우 PI.\nAP · Centered Statement — 가운데 큰 제목 아래 사진 + 겹친 통계 카드, 흰/회색 교차 섹션, 3+2 연구 카드.\nAQ · Sidebar Profile — 왼쪽 프로필 열(교수님·연락처·메뉴) + 오른쪽 본문, 2열 연구 카드, 뉴스 타임라인. 학술 프로필 느낌.\n\n하나 고르거나 섞어 말하면 실제 사이트에 이식."
+    },
+    {
       "id": "page-12-brief",
       "x": 0,
       "y": -440,
@@ -511,6 +559,6 @@
   ],
   "launch": {
     "view": "canvas",
-    "page": "page-12"
+    "page": "page-13"
   }
 }

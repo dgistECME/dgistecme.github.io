@@ -5,6 +5,10 @@ Claude Design 캔버스( https://claude.ai/code/artifact/a6db981f-9b66-4d66-8b9a
 
 | 파일 | 방향 | 상태 |
 |---|---|---|
+| `DirectionAN.dc.html` | AN · Reference Classic (레퍼런스 최근접, 사진 배너 오버레이, 사진 뉴스 카드) | 레퍼런스 수준 (색·모션 상한) |
+| `DirectionAO.dc.html` | AO · Clean Split (좌우 분할 히어로, 아이콘 연구 목록) | 레퍼런스 수준 (색·모션 상한) |
+| `DirectionAP.dc.html` | AP · Centered Statement (가운데 제목 + 사진 + 겹친 통계) | 레퍼런스 수준 (색·모션 상한) |
+| `DirectionAQ.dc.html` | AQ · Sidebar Profile (왼쪽 프로필 열, 뉴스 타임라인) | 레퍼런스 수준 (색·모션 상한) |
 | `DirectionAJ.dc.html` | AJ · Gradient Glass Editorial (메시 그라데이션 + 유리 카드, 세리프, 절제 모션) | 절제된 화려함 |
 | `DirectionAK.dc.html` | AK · Bright Photo Magazine (사진 콜라주 + 색면, 잡지 섹션, 무한 루프 없음) | 절제된 화려함 |
 | `DirectionAL.dc.html` | AL · Soft Clay 3D (파스텔 점토 조형, 둥근 서체, 절제 모션) | 절제된 화려함 |

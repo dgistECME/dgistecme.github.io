@@ -1,0 +1,177 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+  <style>
+    body { margin: 0; background: #ffffff; color: #0f172a; font-family: 'Inter', Arial, sans-serif; font-size: 15.5px; line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    .aq-root * { box-sizing: border-box; }
+    .aq-grad { background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .aq-line { height: 3px; background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%); }
+    .aq-top { display: grid; grid-template-columns: 380px 1fr; }
+    .aq-side { background: #f8fafc; border-right: 1px solid rgba(15,23,42,.07); padding: 44px 40px 48px; }
+    .aq-brand { display: flex; align-items: center; gap: 14px; }
+    .aq-brand img { height: 52px; }
+    .aq-brand b { display: block; font-size: 22px; font-weight: 900; letter-spacing: -.02em; line-height: 1.1; }
+    .aq-brand small { display: block; font-size: 12.5px; color: #64748b; font-weight: 500; line-height: 1.4; margin-top: 4px; }
+    .aq-card { background: #fff; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,.08); transition: box-shadow .25s, transform .25s; }
+    .aq-card:hover { box-shadow: 0 10px 30px rgba(0,0,0,.1); transform: translateY(-4px); }
+    .aq-pi { margin-top: 32px; padding: 22px; display: flex; gap: 18px; align-items: center; }
+    .aq-pi img { width: 84px; height: 106px; object-fit: cover; border-radius: 12px; display: block; flex: none; }
+    .aq-pi b { display: block; font-size: 18px; font-weight: 800; letter-spacing: -.01em; }
+    .aq-pi span { display: block; font-size: 13px; color: #64748b; line-height: 1.5; }
+    .aq-contact { margin: 26px 0 0; padding: 0; list-style: none; font-size: 13.5px; color: #1e293b; }
+    .aq-contact li { display: flex; gap: 12px; align-items: flex-start; padding: 7px 0; line-height: 1.5; }
+    .aq-ico { width: 18px; height: 18px; flex: none; margin-top: 1px; fill: none; stroke: #3b82f6; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .aq-menu { margin: 30px 0 0; padding: 22px 0 0; list-style: none; border-top: 1px solid rgba(15,23,42,.08); }
+    .aq-menu a { display: flex; justify-content: space-between; align-items: center; padding: 9px 14px; border-radius: 50px; font-size: 14.5px; font-weight: 500; color: #64748b; transition: color .2s, background .2s; }
+    .aq-menu a:hover { color: #4338ca; background: #fff; }
+    .aq-menu a.on { background: #e0e7ff; color: #4338ca; font-weight: 600; }
+    .aq-main { padding: 64px 72px 72px; }
+    .aq-pill { display: inline-block; padding: 6px 16px; border-radius: 50px; background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%); color: #fff; font-size: 12.5px; font-weight: 600; letter-spacing: .04em; }
+    .aq-btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; border-radius: 50px; font-weight: 600; font-size: 15px; transition: box-shadow .25s, transform .25s, color .2s, border-color .2s; }
+    .aq-btn:hover { transform: translateY(-2px); }
+    .aq-primary { background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%); color: #fff; box-shadow: 0 5px 20px rgba(0,0,0,.08); }
+    .aq-primary:hover { box-shadow: 0 10px 30px rgba(0,0,0,.1); }
+    .aq-ghost { border: 1px solid rgba(15,23,42,.12); color: #1e293b; background: #fff; }
+    .aq-ghost:hover { border-color: #4338ca; color: #4338ca; }
+    .aq-in { opacity: 0; animation: aq-up 1s ease forwards; }
+    .aq-d1 { animation-delay: .1s; } .aq-d2 { animation-delay: .2s; } .aq-d3 { animation-delay: .3s; } .aq-d4 { animation-delay: .4s; } .aq-d5 { animation-delay: .5s; }
+    @keyframes aq-up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .aq-stats { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .aq-stat { padding: 0 24px; border-left: 1px solid rgba(15,23,42,.1); }
+    .aq-stat:first-child { border-left: none; padding-left: 0; }
+    .aq-stat b { display: block; font-size: 34px; font-weight: 900; letter-spacing: -.02em; line-height: 1.1; color: #0f172a; }
+    .aq-stat span { font-size: 13.5px; color: #64748b; font-weight: 500; }
+    .aq-sec { padding: 84px 120px; }
+    .aq-alt { background: #f8fafc; }
+    .aq-head { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 36px; }
+    .aq-head h2 { margin: 0 0 6px; font-size: 36px; font-weight: 900; letter-spacing: -.02em; line-height: 1.15; display: inline-block; }
+    .aq-head p { margin: 0; color: #64748b; font-size: 15.5px; }
+    .aq-link { font-size: 14.5px; font-weight: 600; color: #4338ca; }
+    .aq-rgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    .aq-r { display: flex; gap: 22px; align-items: flex-start; padding: 28px 30px; }
+    .aq-r svg { width: 30px; height: 30px; flex: none; margin-top: 2px; fill: none; stroke: #4338ca; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .aq-r h3 { margin: 0 0 4px; font-size: 18px; font-weight: 800; letter-spacing: -.01em; }
+    .aq-r p { margin: 0; font-size: 14.5px; color: #64748b; }
+    .aq-num { font-size: 12.5px; font-weight: 700; color: #64748b; letter-spacing: .08em; }
+    .aq-tl { position: relative; margin-left: 8px; padding-left: 40px; border-left: 2px solid rgba(15,23,42,.08); }
+    .aq-ev { position: relative; padding: 0 0 30px; display: grid; grid-template-columns: 150px 1fr; gap: 24px; align-items: baseline; }
+    .aq-ev:last-child { padding-bottom: 0; }
+    .aq-ev::before { content: ''; position: absolute; left: -48px; top: 7px; width: 14px; height: 14px; border-radius: 50%; background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%); box-shadow: 0 0 0 4px #fff; }
+    .aq-date { font-size: 14px; font-weight: 600; color: #64748b; }
+    .aq-ev h4 { margin: 6px 0 0; font-size: 16.5px; font-weight: 700; color: #1e293b; line-height: 1.5; transition: color .2s; }
+    .aq-ev:hover h4 { color: #4338ca; }
+    .aq-tag { font-size: 11.5px; font-weight: 700; padding: 3px 11px; border-radius: 50px; letter-spacing: .03em; }
+    .aq-award { color: #198754; background: rgba(25,135,84,.1); }
+    .aq-paper { color: #0d6efd; background: rgba(13,110,253,.1); }
+    .aq-press { color: #dc3545; background: rgba(220,53,69,.1); }
+    .aq-chips { display: flex; flex-wrap: wrap; gap: 12px; }
+    .aq-chip { padding: 10px 22px; border-radius: 50px; background: #fff; border: 1px solid rgba(15,23,42,.1); font-size: 15px; font-weight: 600; color: #64748b; transition: color .2s, border-color .2s; }
+    .aq-chip:hover { color: #4338ca; border-color: #4338ca; }
+    .aq-foot { border-top: 1px solid rgba(15,23,42,.1); padding: 38px 120px 42px; display: flex; justify-content: space-between; align-items: center; }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } .aq-in { opacity: 1; } }
+  </style>
+</helmet>
+<div class="aq-root" style="width:1440px; position:relative; overflow:hidden; background:#fff">
+  <div class="aq-line"></div>
+
+  <!-- TOP: sidebar profile + main -->
+  <div class="aq-top">
+    <aside class="aq-side">
+      <div class="aq-brand"><img src="logo.png" alt="ECME logo"><div><b>ECME Lab</b><small>Energy Conversion Materials<br>&amp; Electronics Lab</small></div></div>
+
+      <div class="aq-card aq-pi">
+        <img src="prof.jpg" alt="Prof. Ju-Hyuck Lee">
+        <div><b>Ju-Hyuck Lee</b><span>Associate Professor</span><span>Dept. of Energy Science &amp; Engineering, DGIST</span></div>
+      </div>
+
+      <ul class="aq-contact">
+        <li><svg class="aq-ico" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><a href="#" style="color:#4338ca; font-weight:600">jhlee85@dgist.ac.kr</a></li>
+        <li><svg class="aq-ico" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Room E6-411, Dept. of Energy Science &amp; Engineering, DGIST, Daegu 42988, Republic of Korea</span></li>
+      </ul>
+
+      <ul class="aq-menu">
+        <li><a class="on" href="#">Home<span>→</span></a></li>
+        <li><a href="#">Professor</a></li>
+        <li><a href="#">People</a></li>
+        <li><a href="#">Research</a></li>
+        <li><a href="#">Publications</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </aside>
+
+    <main class="aq-main">
+      <div class="aq-in aq-d1"><span class="aq-pill">DGIST · Energy Science &amp; Engineering</span></div>
+      <h1 class="aq-in aq-d2" style="margin:22px 0 0; font-size:54px; line-height:1.1; font-weight:900; letter-spacing:-.03em; color:#0f172a">Materials that turn motion<br>into <span class="aq-grad">electricity</span>.</h1>
+      <p class="aq-in aq-d3" style="margin:20px 0 0; width:760px; font-size:17.5px; color:#64748b; line-height:1.65">We study piezoelectric &amp; triboelectric nanogenerators, functional polymers and bio-piezoelectric materials — building self-powered electronics and human-inspired tactile sensors.</p>
+      <div class="aq-in aq-d4" style="margin-top:30px; display:flex; gap:12px">
+        <a class="aq-btn aq-primary" href="#">Explore Research
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="aq-btn aq-ghost" href="#">Publications</a>
+      </div>
+      <div class="aq-in aq-d5" style="margin-top:44px; display:grid; grid-template-columns:600px 1fr; gap:36px; align-items:end">
+        <img src="hero.jpg" alt="ECME Lab group photo" style="width:600px; height:303px; object-fit:cover; border-radius:15px; display:block; box-shadow:0 5px 20px rgba(0,0,0,.08)">
+        <div>
+          <img src="photo1.jpg" alt="ECME Lab at a ceremony" style="width:100%; height:150px; object-fit:cover; border-radius:15px; display:block; box-shadow:0 5px 20px rgba(0,0,0,.08)">
+          <p style="margin:14px 0 0; font-size:13.5px; color:#64748b">ECME Lab, DGIST</p>
+        </div>
+      </div>
+      <div class="aq-stats aq-in aq-d5" style="margin-top:44px; padding-top:32px; border-top:1px solid rgba(15,23,42,.1)">
+        <div class="aq-stat"><b>81</b><span>Papers</span></div>
+        <div class="aq-stat"><b>35</b><span>Patents</span></div>
+        <div class="aq-stat"><b>18</b><span>Members</span></div>
+        <div class="aq-stat"><b>53</b><span>News</span></div>
+      </div>
+    </main>
+  </div>
+
+  <!-- RESEARCH -->
+  <div class="aq-sec aq-alt" style="border-top:1px solid rgba(15,23,42,.07)">
+    <div class="aq-head"><div><h2 class="aq-grad">Research</h2><p>Five directions in energy conversion materials and electronics</p></div><a class="aq-link" href="#">All research →</a></div>
+    <div class="aq-rgrid">
+      <a class="aq-card aq-r" href="#"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg><div><span class="aq-num">01</span><h3>Energy Harvesting Technology</h3><p>Piezoelectric and triboelectric nanogenerators.</p></div></a>
+      <a class="aq-card aq-r" href="#"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M8.5 6h7M7.3 8.2l3.4 7.6M16.7 8.2l-3.4 7.6"/></svg><div><span class="aq-num">02</span><h3>Synthesis of Functional Polymers</h3><p>Functional polymers for energy conversion devices.</p></div></a>
+      <a class="aq-card aq-r" href="#"><svg viewBox="0 0 24 24"><path d="M7 3c0 6 10 6 10 12s-10 3-10 6M17 3c0 6-10 6-10 12M8 7h8M8 17h8"/></svg><div><span class="aq-num">03</span><h3>Bio-Piezoelectric Materials</h3><p>Piezoelectricity in bio-derived materials.</p></div></a>
+      <a class="aq-card aq-r" href="#"><svg viewBox="0 0 24 24"><path d="M9 11V5a1.5 1.5 0 0 1 3 0v5M12 10V4a1.5 1.5 0 0 1 3 0v6M15 10V6a1.5 1.5 0 0 1 3 0v7a7 7 0 0 1-7 7h-.5a6 6 0 0 1-4.6-2.2L3.5 14.5a1.6 1.6 0 0 1 2.3-2.2L9 15"/></svg><div><span class="aq-num">04</span><h3>Various Novel Applications</h3><p>Self-powered electronics and human-inspired tactile sensors.</p></div></a>
+      <a class="aq-card aq-r" href="#" style="grid-column:span 2"><svg viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><rect x="9.5" y="9.5" width="5" height="5" rx="1"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg><div><span class="aq-num">05</span><h3>AI-Integrated Research Platform</h3><p>AI integrated into materials and device research.</p></div></a>
+    </div>
+  </div>
+
+  <!-- NEWS TIMELINE -->
+  <div class="aq-sec">
+    <div class="aq-head"><div><h2 class="aq-grad">News</h2><p>Awards, publications and press</p></div><a class="aq-link" href="#">All news →</a></div>
+    <div class="aq-tl">
+      <a class="aq-ev" href="#"><span class="aq-date">2026.06.12</span><div><span class="aq-tag aq-award">AWARD</span><h4>Gerald Selasie Gbadam · 류연경 석∙박사과정, 2026 NGPT Best Oral Award 수상</h4></div></a>
+      <a class="aq-ev" href="#"><span class="aq-date">2026.06.12</span><div><span class="aq-tag aq-award">AWARD</span><h4>곽수정 석∙박사과정 · 최다은 석사과정, 2026 NGPT Best Poster Award 수상</h4></div></a>
+      <a class="aq-ev" href="#"><span class="aq-date">2025.12.16</span><div><span class="aq-tag aq-award">AWARD</span><h4>Gerald Selasie Gbadam 석∙박사과정, 2025 대학원 연구페스티벌 우수 연구자상</h4></div></a>
+      <a class="aq-ev" href="#"><span class="aq-date">2025.11.03</span><div><span class="aq-tag aq-press">PRESS · 연합뉴스</span><h4>"배터리 교체, 충전 No" 마찰전기 이용한 나노발전기 개발</h4></div></a>
+      <a class="aq-ev" href="#"><span class="aq-date">2025.10</span><div><span class="aq-tag aq-paper">PAPER</span><h4>Gerald Selasie Gbadam 석∙박사과정 1저자 논문 Nature Communications 게재 확정</h4></div></a>
+      <a class="aq-ev" href="#"><span class="aq-date">2025.06.19</span><div><span class="aq-tag aq-paper">PAPER</span><h4>주현서 석∙박사과정 1저자 논문 Advanced Materials 게재 확정</h4></div></a>
+    </div>
+  </div>
+
+  <!-- PUBLICATIONS TEASER -->
+  <div class="aq-sec aq-alt" style="padding-top:72px; padding-bottom:76px">
+    <div class="aq-head" style="margin-bottom:28px"><div><h2 class="aq-grad">Publications</h2><p>81 papers and 35 patents, published in journals including</p></div><a class="aq-link" href="#">Full list →</a></div>
+    <div class="aq-chips">
+      <span class="aq-chip">Nature Communications</span><span class="aq-chip">Advanced Materials</span><span class="aq-chip">Nano Energy</span><span class="aq-chip">Advanced Science</span><span class="aq-chip">J. Mater. Chem. A</span><span class="aq-chip">Nano Trends</span>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="aq-foot">
+    <div class="aq-brand"><img src="logo.png" alt="ECME logo" style="height:40px"><div><b style="font-size:17px">ECME Lab</b><small>Room E6-411, Dept. of Energy Science &amp; Engineering, DGIST, Daegu 42988, Republic of Korea</small></div></div>
+    <div style="font-size:13.5px; color:#64748b; text-align:right">© JU HYUCK LEE's Group</div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>
