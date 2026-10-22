@@ -1,0 +1,296 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Caveat:wght@600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+  <style>
+    body { margin: 0; background: #fff7ec; color: #3a2a48; font-family: 'DM Sans', 'Noto Sans KR', 'Helvetica Neue', Arial, sans-serif; font-size: 15.5px; line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    .ag-root { width: 1440px; position: relative; overflow: hidden; background: #fff7ec; }
+    .ag-grain { position: absolute; inset: 0; pointer-events: none; z-index: 50; opacity: .5; mix-blend-mode: multiply; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3'/><feColorMatrix values='0 0 0 0 .55 0 0 0 0 .45 0 0 0 0 .35 0 0 0 .09 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); }
+    .ag-h { font-family: 'Fredoka', 'Noto Sans KR', sans-serif; font-weight: 600; letter-spacing: -0.015em; }
+    .ag-hand { font-family: 'Caveat', cursive; font-weight: 700; }
+    .ag-paper { background: #fffdf8; border-radius: 6px; box-shadow: 0 1px 0 rgba(255,255,255,.9) inset, 0 3px 4px rgba(120,70,40,.10), 0 16px 30px -12px rgba(120,70,40,.28); }
+    .ag-ds { filter: drop-shadow(0 -4px 6px rgba(110,60,50,.16)) drop-shadow(0 -14px 18px rgba(110,60,50,.10)); }
+    .ag-tape { position: absolute; width: 110px; height: 30px; background: rgba(255,226,140,.72); box-shadow: 0 2px 4px rgba(120,70,40,.12); -webkit-mask-image: linear-gradient(90deg, transparent 0 3px, #000 3px calc(100% - 3px), transparent calc(100% - 3px)); }
+    /* layers float */
+    .ag-l { position: absolute; left: -90px; width: 1620px; bottom: 0; }
+    .ag-f1 { animation: ag-f 16s ease-in-out infinite alternate; }
+    .ag-f2 { animation: ag-f 12s ease-in-out infinite alternate-reverse; }
+    .ag-f3 { animation: ag-f 9s ease-in-out infinite alternate; }
+    .ag-f4 { animation: ag-f 7s ease-in-out infinite alternate-reverse; }
+    @keyframes ag-f { from { transform: translate(-30px, 0px); } to { transform: translate(40px, 8px); } }
+    /* sun */
+    .ag-sun { animation: ag-rise 2.6s cubic-bezier(.2,.8,.2,1) backwards; }
+    @keyframes ag-rise { from { transform: translate(0px, 220px); } to { transform: translate(0px, 0px); } }
+    .ag-rays { transform-box: view-box; transform-origin: 260px 260px; animation: ag-spin 60s linear infinite; }
+    @keyframes ag-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    .ag-glow { animation: ag-glow 4s ease-in-out infinite; }
+    @keyframes ag-glow { 0%,100% { opacity: .55; transform: scale(1); } 50% { opacity: .9; transform: scale(1.06); } }
+    .ag-cloud { position: absolute; filter: drop-shadow(0 6px 8px rgba(120,70,60,.14)); animation: ag-cloud 26s ease-in-out infinite alternate; }
+    @keyframes ag-cloud { from { transform: translateX(-40px); } to { transform: translateX(60px); } }
+    /* entrances */
+    .ag-in { animation: ag-in 1.1s cubic-bezier(.2,.8,.2,1.1) backwards; }
+    @keyframes ag-in { from { opacity: 0; transform: translateY(40px) rotate(-4deg); } to { opacity: 1; } }
+    .ag-d1 { animation-delay: .2s; } .ag-d2 { animation-delay: .4s; } .ag-d3 { animation-delay: .6s; } .ag-d4 { animation-delay: .8s; }
+    .ag-swayP { transform-origin: 50% 0; animation: ag-swayP 6s ease-in-out infinite; }
+    @keyframes ag-swayP { 0%,100% { transform: rotate(3deg); } 50% { transform: rotate(5deg); } }
+    .ag-swayQ { transform-origin: 50% 0; animation: ag-swayQ 7s ease-in-out infinite; }
+    @keyframes ag-swayQ { 0%,100% { transform: rotate(-3deg); } 50% { transform: rotate(-1.2deg); } }
+    /* nav */
+    .ag-nav { display: flex; gap: 4px; padding: 6px; border-radius: 14px; font-weight: 700; font-size: 14px; }
+    .ag-nav div { padding: 8px 15px; border-radius: 9px; color: #5a4668; transition: transform .25s; }
+    .ag-nav div:hover { transform: translateY(-2px) rotate(-2deg); background: #ffe3ec; }
+    .ag-btn { display: inline-block; padding: 15px 26px; border-radius: 12px; font-weight: 700; font-size: 15px; transition: transform .2s, box-shadow .2s; }
+    .ag-btn:hover { transform: translate(-2px,-2px); }
+    /* stats */
+    .ag-stat { position: relative; padding: 26px 26px 22px; border-radius: 18px; transition: transform .35s cubic-bezier(.2,.8,.2,1.2); }
+    .ag-stat { box-shadow: 12px 12px 0 -1px var(--ag-back), 14px 22px 26px -12px rgba(120,70,40,.35), 0 3px 4px rgba(120,70,40,.10); }
+    .ag-stat:hover { transform: translateY(-6px) rotate(-1.5deg); }
+    /* hanging tags */
+    .ag-hang { position: absolute; width: 220px; transform-origin: 50% 0; animation: ag-sway 5s ease-in-out infinite; filter: drop-shadow(0 6px 5px rgba(110,60,50,.16)) drop-shadow(0 20px 22px rgba(110,60,50,.16)); }
+    @keyframes ag-sway { 0%,100% { transform: rotate(-3.5deg); } 50% { transform: rotate(3.5deg); } }
+    .ag-tag { position: relative; height: 270px; padding: 64px 22px 22px; box-sizing: border-box; clip-path: polygon(22% 0, 78% 0, 100% 16%, 100% 100%, 0 100%, 0 16%); display: flex; flex-direction: column; }
+    .ag-hole { position: absolute; left: 50%; top: 20px; width: 18px; height: 18px; margin-left: -9px; border-radius: 50%; background: #fff7ec; box-shadow: inset 0 2px 3px rgba(80,40,30,.3); }
+    /* news */
+    .ag-note { position: relative; display: grid; grid-template-columns: 118px 1fr; gap: 18px; align-items: center; padding: 16px 22px 16px 0; transition: transform .3s cubic-bezier(.2,.8,.2,1.2); }
+    .ag-note:hover { transform: translateX(8px) rotate(0deg) !important; }
+    .ag-date { align-self: stretch; display: flex; flex-direction: column; justify-content: center; padding-left: 20px; clip-path: polygon(0 0, 88% 0, 100% 50%, 88% 100%, 0 100%); border-radius: 6px 0 0 6px; margin: -16px 0; }
+    .ag-chip { display: inline-block; padding: 5px 12px; border-radius: 6px; font-size: 12.5px; font-weight: 700; box-shadow: 0 3px 6px -2px rgba(120,70,40,.25); }
+    .ag-sticker { display: inline-block; padding: 10px 18px; border-radius: 999px; font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 17px; box-shadow: 0 0 0 4px #fffdf8, 0 8px 16px -6px rgba(120,70,40,.35); transition: transform .3s cubic-bezier(.2,.8,.2,1.4); }
+    .ag-sticker:hover { transform: scale(1.08) rotate(0deg) !important; }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+</helmet>
+<div class="ag-root">
+  <div class="ag-grain"></div>
+
+  <!-- HERO -->
+  <div style="position: relative; height: 880px; background: linear-gradient(180deg, #e3e6ff 0%, #f6e3f4 38%, #ffe2cf 70%, #ffeccf 100%); overflow: hidden;">
+    <!-- clouds -->
+    <svg class="ag-cloud" style="left: 120px; top: 120px;" width="180" height="80" viewBox="0 0 180 80"><path d="M18 70C2 70 2 46 20 44C20 22 48 14 62 30C70 8 108 6 118 30C134 18 160 28 156 48C176 50 176 70 158 70Z" fill="#fff"/></svg>
+    <svg class="ag-cloud" style="left: 760px; top: 96px; animation-duration: 32s; animation-direction: alternate-reverse;" width="140" height="62" viewBox="0 0 180 80"><path d="M18 70C2 70 2 46 20 44C20 22 48 14 62 30C70 8 108 6 118 30C134 18 160 28 156 48C176 50 176 70 158 70Z" fill="#fff"/></svg>
+    <svg class="ag-cloud" style="left: 1240px; top: 560px; animation-duration: 22s;" width="150" height="66" viewBox="0 0 180 80"><path d="M18 70C2 70 2 46 20 44C20 22 48 14 62 30C70 8 108 6 118 30C134 18 160 28 156 48C176 50 176 70 158 70Z" fill="#fff"/></svg>
+
+    <!-- sun -->
+    <div class="ag-sun" style="position: absolute; left: 600px; top: 250px; width: 520px; height: 520px;">
+      <div class="ag-glow" style="position: absolute; inset: 40px; border-radius: 50%; background: radial-gradient(circle, rgba(255,214,120,.8), rgba(255,214,120,0) 70%);"></div>
+      <svg width="520" height="520" viewBox="0 0 520 520" style="position: absolute; inset: 0; overflow: visible;">
+        <g class="ag-rays" fill="#ffd77a" style="filter: drop-shadow(0 4px 4px rgba(200,120,40,.2));">
+          <path d="M260 6 274 72H246Z"/><path d="M260 6 274 72H246Z" transform="rotate(30 260 260)"/><path d="M260 6 274 72H246Z" transform="rotate(60 260 260)"/><path d="M260 6 274 72H246Z" transform="rotate(90 260 260)"/><path d="M260 6 274 72H246Z" transform="rotate(120 260 260)"/><path d="M260 6 274 72H246Z" transform="rotate(150 260 260)"/><path d="M260 6 274 72H246Z" transform="rotate(180 260 260)"/><path d="M260 6 274 72H246Z" transform="rotate(210 260 260)"/><path d="M260 6 274 72H246Z" transform="rotate(240 260 260)"/><path d="M260 6 274 72H246Z" transform="rotate(270 260 260)"/><path d="M260 6 274 72H246Z" transform="rotate(300 260 260)"/><path d="M260 6 274 72H246Z" transform="rotate(330 260 260)"/>
+        </g>
+        <circle cx="260" cy="260" r="172" fill="#fff1c2" style="filter: drop-shadow(0 6px 10px rgba(200,120,40,.18));"/>
+        <circle cx="260" cy="260" r="138" fill="#ffdd85" style="filter: drop-shadow(0 6px 10px rgba(200,120,40,.22));"/>
+        <defs><radialGradient id="ag-sg" cx=".38" cy=".34" r=".75"><stop offset="0" stop-color="#ffe9a8"/><stop offset=".6" stop-color="#ffb84d"/><stop offset="1" stop-color="#ff8f5a"/></radialGradient></defs>
+        <circle cx="260" cy="260" r="104" fill="url(#ag-sg)" style="filter: drop-shadow(0 8px 12px rgba(200,90,40,.3));"/>
+      </svg>
+    </div>
+
+    <!-- paper hills -->
+    <svg class="ag-l ag-ds ag-f1" height="380" viewBox="0 0 1620 380" preserveAspectRatio="none"><path d="M0 110C180 40 360 30 560 96S940 190 1120 104S1460 20 1620 70V380H0Z" fill="#cdbdfb"/></svg>
+    <svg class="ag-l ag-ds ag-f2" height="310" viewBox="0 0 1620 310" preserveAspectRatio="none"><path d="M0 70C220 140 420 150 640 80S1040 10 1240 74S1520 140 1620 96V310H0Z" fill="#ffb5cf"/></svg>
+    <svg class="ag-l ag-ds ag-f3" height="240" viewBox="0 0 1620 240" preserveAspectRatio="none"><path d="M0 96C160 40 340 30 520 80S860 150 1060 90S1420 20 1620 64V240H0Z" fill="#ffcf9a"/></svg>
+    <svg class="ag-l ag-ds ag-f4" height="170" viewBox="0 0 1620 170" preserveAspectRatio="none"><path d="M0 50C200 110 400 120 620 64S1000 10 1220 60S1520 100 1620 72V170H0Z" fill="#a8e6cf"/></svg>
+    <svg class="ag-l ag-ds" height="100" viewBox="0 0 1620 100" preserveAspectRatio="none" style="left: 0; width: 1440px;"><path d="M0 46C240 10 480 6 720 36S1200 70 1440 30V100H0Z" fill="#fff7ec" transform="scale(1.125 1)"/></svg>
+
+    <!-- header -->
+    <div style="position: relative; z-index: 5; display: flex; align-items: center; justify-content: space-between; padding: 26px 64px 0;">
+      <div class="ag-paper" style="display: flex; align-items: center; gap: 12px; padding: 10px 18px 10px 12px; border-radius: 14px; transform: rotate(-1.5deg);">
+        <img src="logo.png" style="height: 34px; display: block;">
+        <div><div class="ag-h" style="font-size: 20px; line-height: 1;">ECME Lab</div><div style="font-size: 11.5px; font-weight: 700; color: #9a7f9f; letter-spacing: .06em;">DGIST</div></div>
+      </div>
+      <div class="ag-paper ag-nav"><div style="background: #ff8fab; color: #fff; box-shadow: 0 4px 0 #e06d8b;">Home</div><div>Professor</div><div>People</div><div>Research</div><div>Publications</div><div>News</div><div>Contact</div></div>
+    </div>
+
+    <!-- headline card -->
+    <div class="ag-in" style="position: absolute; z-index: 6; left: 72px; top: 150px; width: 640px;">
+      <div class="ag-paper" style="position: relative; padding: 44px 48px 42px; border-radius: 10px; transform: rotate(-1.6deg);">
+        <div class="ag-tape" style="left: -26px; top: 16px; transform: rotate(-38deg);"></div>
+        <div class="ag-tape" style="right: -28px; top: 14px; transform: rotate(36deg); background: rgba(255,170,200,.7);"></div>
+        <div style="display: inline-block; padding: 6px 14px; border-radius: 6px; background: #e8e0ff; color: #6a4fc4; font-weight: 700; font-size: 13px; transform: rotate(1deg);">Energy Conversion Materials &amp; Electronics Lab</div>
+        <div class="ag-h" style="font-size: 70px; line-height: 1.02; margin-top: 20px; color: #3a2a48;">Energy, cut from<br><span style="position: relative; display: inline-block;"><span style="position: absolute; left: -8px; right: -10px; bottom: 6px; height: 26px; background: #ffcf9a; border-radius: 4px; transform: rotate(-1.5deg); box-shadow: 0 3px 5px rgba(120,70,40,.2);"></span><span style="position: relative;">every motion.</span></span></div>
+        <div style="font-size: 17px; color: #6b5878; margin-top: 22px; max-width: 520px;">Piezoelectric &amp; triboelectric nanogenerators, functional polymers and bio-piezoelectric materials — crafted into self-powered electronics and human-inspired tactile sensors.</div>
+        <div style="display: flex; gap: 14px; margin-top: 28px;">
+          <div class="ag-btn" style="background: #6a4fc4; color: #fff; box-shadow: 4px 4px 0 #3a2a48;">Explore research</div>
+          <div class="ag-btn" style="background: #fff; color: #3a2a48; box-shadow: 4px 4px 0 #ffb5cf, 0 0 0 2px #3a2a48 inset;">Join the lab →</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- polaroid -->
+    <div class="ag-in ag-d2" style="position: absolute; z-index: 6; right: 92px; top: 132px; width: 420px;">
+      <div class="ag-swayP">
+        <div class="ag-paper" style="position: relative; padding: 16px 16px 58px; border-radius: 4px; background: #fff;">
+          <div class="ag-tape" style="left: 50%; margin-left: -60px; top: -16px; width: 120px; transform: rotate(-3deg); background: rgba(168,230,207,.8);"></div>
+          <img src="hero.jpg" style="width: 100%; height: 300px; object-fit: cover; display: block; border-radius: 2px;">
+          <div class="ag-hand" style="position: absolute; left: 0; right: 0; bottom: 12px; text-align: center; font-size: 28px; color: #5a4668;">ECME Lab · DGIST ♡</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS on paper -->
+  <div style="position: relative; z-index: 7; display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 36px; padding: 0 84px; margin-top: -40px;">
+    <div class="ag-paper ag-stat ag-in ag-d1" style="--ag-back: #ffb5cf; transform: rotate(-2deg);"><div class="ag-h" style="font-size: 60px; line-height: 1; color: #e0567c;">81</div><div style="font-weight: 700; font-size: 16px; margin-top: 8px;">Papers</div><div class="ag-hand" style="font-size: 20px; color: #9a7f9f; line-height: 1.1;">and counting</div></div>
+    <div class="ag-paper ag-stat ag-in ag-d2" style="--ag-back: #ffcf9a; transform: rotate(1.5deg);"><div class="ag-h" style="font-size: 60px; line-height: 1; color: #e08a2c;">35</div><div style="font-weight: 700; font-size: 16px; margin-top: 8px;">Patents</div><div class="ag-hand" style="font-size: 20px; color: #9a7f9f; line-height: 1.1;">ideas made real</div></div>
+    <div class="ag-paper ag-stat ag-in ag-d3" style="--ag-back: #a8e6cf; transform: rotate(-1deg);"><div class="ag-h" style="font-size: 60px; line-height: 1; color: #2f9e78;">18</div><div style="font-weight: 700; font-size: 16px; margin-top: 8px;">Members</div><div class="ag-hand" style="font-size: 20px; color: #9a7f9f; line-height: 1.1;">one team</div></div>
+    <div class="ag-paper ag-stat ag-in ag-d4" style="--ag-back: #cdbdfb; transform: rotate(2deg);"><div class="ag-h" style="font-size: 60px; line-height: 1; color: #6a4fc4;">53</div><div style="font-weight: 700; font-size: 16px; margin-top: 8px;">News items</div><div class="ag-hand" style="font-size: 20px; color: #9a7f9f; line-height: 1.1;">see below</div></div>
+  </div>
+
+  <!-- RESEARCH: hanging tags -->
+  <div style="position: relative; padding: 100px 0 0;">
+    <div style="text-align: center; padding: 0 72px;">
+      <div class="ag-hand" style="font-size: 30px; color: #e0567c; line-height: 1;">what we make</div>
+      <div class="ag-h" style="font-size: 52px; line-height: 1.1;">Five research threads</div>
+    </div>
+    <div style="position: relative; height: 420px; margin-top: 24px;">
+      <svg width="1440" height="120" viewBox="0 0 1440 120" style="position: absolute; left: 0; top: 0;"><path d="M-20 30Q720 110 1460 30" fill="none" stroke="#b08a6e" stroke-width="2.5" stroke-dasharray="1 0"/><g fill="#e0567c"><circle cx="216" cy="51" r="5"/><circle cx="468" cy="65" r="5"/><circle cx="720" cy="70" r="5"/><circle cx="972" cy="65" r="5"/><circle cx="1224" cy="51" r="5"/></g></svg>
+      <div class="ag-hang" style="left: 106px; top: 51px; animation-delay: -1s;">
+        <div style="width: 2px; height: 30px; background: #b08a6e; margin: 0 auto;"></div>
+        <div class="ag-tag" style="background: #ffb5cf;"><div class="ag-hole"></div>
+          <div class="ag-hand" style="font-size: 40px; line-height: 1; color: #b83a60;">01</div>
+          <svg width="44" height="44" viewBox="0 0 24 24" style="margin-top: 8px;"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z" fill="#fff"/></svg>
+          <div class="ag-h" style="font-size: 21px; line-height: 1.2; margin-top: auto;">Energy Harvesting Technology</div>
+        </div>
+      </div>
+      <div class="ag-hang" style="left: 358px; top: 65px; animation-delay: -2.2s; animation-duration: 5.6s;">
+        <div style="width: 2px; height: 30px; background: #b08a6e; margin: 0 auto;"></div>
+        <div class="ag-tag" style="background: #ffcf9a;"><div class="ag-hole"></div>
+          <div class="ag-hand" style="font-size: 40px; line-height: 1; color: #b5651a;">02</div>
+          <svg width="48" height="44" viewBox="0 0 28 24" style="margin-top: 8px;"><g fill="none" stroke="#fff" stroke-width="2.4"><path d="M4 8l4-2.5 4 2.5v5l-4 2.5L4 13z"/><path d="M16 11l4-2.5 4 2.5v5l-4 2.5-4-2.5z"/><path d="M12 10.5h4"/></g></svg>
+          <div class="ag-h" style="font-size: 21px; line-height: 1.2; margin-top: auto;">Synthesis of Functional Polymers</div>
+        </div>
+      </div>
+      <div class="ag-hang" style="left: 610px; top: 70px; animation-delay: -3.1s; animation-duration: 4.6s;">
+        <div style="width: 2px; height: 30px; background: #b08a6e; margin: 0 auto;"></div>
+        <div class="ag-tag" style="background: #a8e6cf;"><div class="ag-hole"></div>
+          <div class="ag-hand" style="font-size: 40px; line-height: 1; color: #23785b;">03</div>
+          <svg width="44" height="44" viewBox="0 0 24 24" style="margin-top: 8px;"><g fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M7 3c0 6 10 6 10 12s-10 6-10 6"/><path d="M17 3c0 6-10 6-10 12s10 6 10 6"/><path d="M8.5 7h7M8.5 17h7"/></g></svg>
+          <div class="ag-h" style="font-size: 21px; line-height: 1.2; margin-top: auto;">Bio-Piezoelectric Materials</div>
+        </div>
+      </div>
+      <div class="ag-hang" style="left: 862px; top: 65px; animation-delay: -.4s; animation-duration: 5.3s;">
+        <div style="width: 2px; height: 30px; background: #b08a6e; margin: 0 auto;"></div>
+        <div class="ag-tag" style="background: #a9d6ff;"><div class="ag-hole"></div>
+          <div class="ag-hand" style="font-size: 40px; line-height: 1; color: #2a6aa8;">04</div>
+          <svg width="44" height="44" viewBox="0 0 24 24" style="margin-top: 8px;"><g fill="#fff"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="4"/><rect x="3" y="13" width="8" height="8" rx="4"/><rect x="13" y="13" width="8" height="8" rx="2"/></g></svg>
+          <div class="ag-h" style="font-size: 21px; line-height: 1.2; margin-top: auto;">Various Novel Applications</div>
+        </div>
+      </div>
+      <div class="ag-hang" style="left: 1114px; top: 51px; animation-delay: -1.7s; animation-duration: 6s;">
+        <div style="width: 2px; height: 30px; background: #b08a6e; margin: 0 auto;"></div>
+        <div class="ag-tag" style="background: #cdbdfb;"><div class="ag-hole"></div>
+          <div class="ag-hand" style="font-size: 40px; line-height: 1; color: #5a3fb0;">05</div>
+          <svg width="44" height="44" viewBox="0 0 24 24" style="margin-top: 8px;"><g fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><rect x="6" y="6" width="12" height="12" rx="3"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></g><circle cx="12" cy="12" r="2" fill="#fff"/></svg>
+          <div class="ag-h" style="font-size: 21px; line-height: 1.2; margin-top: auto;">AI-Integrated Research Platform</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NEWS + PI -->
+  <div style="position: relative; display: grid; grid-template-columns: repeat(12, minmax(0,1fr)); gap: 48px; padding: 70px 72px 0;">
+    <div style="grid-column: span 7;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 24px;">
+        <div><div class="ag-hand" style="font-size: 28px; color: #2f9e78; line-height: 1;">fresh off the press</div><div class="ag-h" style="font-size: 44px; line-height: 1.1;">News</div></div>
+        <a href="#" style="font-weight: 700; font-size: 15px; color: #6a4fc4;">All 53 →</a>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <div class="ag-paper ag-note" style="transform: rotate(-.5deg);"><div class="ag-date" style="background: #a8e6cf;"><div style="font-size: 11px; font-weight: 700; color: #23785b; letter-spacing: .08em;">AWARD</div><div class="ag-h" style="font-size: 16px;">2026.06.12</div></div><div>Gerald Selasie Gbadam · 류연경 석∙박사과정, 2026 NGPT Best Oral Award 수상</div></div>
+        <div class="ag-paper ag-note" style="transform: rotate(.4deg);"><div class="ag-date" style="background: #a8e6cf;"><div style="font-size: 11px; font-weight: 700; color: #23785b; letter-spacing: .08em;">AWARD</div><div class="ag-h" style="font-size: 16px;">2026.06.12</div></div><div>곽수정 석∙박사과정 · 최다은 석사과정, 2026 NGPT Best Poster Award 수상</div></div>
+        <div class="ag-paper ag-note" style="transform: rotate(-.3deg);"><div class="ag-date" style="background: #ffcf9a;"><div style="font-size: 11px; font-weight: 700; color: #b5651a; letter-spacing: .08em;">AWARD</div><div class="ag-h" style="font-size: 16px;">2025.12.16</div></div><div>Gerald Selasie Gbadam 석∙박사과정, 2025 대학원 연구페스티벌 우수 연구자상</div></div>
+        <div class="ag-paper ag-note" style="transform: rotate(.5deg);"><div class="ag-date" style="background: #cdbdfb;"><div style="font-size: 11px; font-weight: 700; color: #5a3fb0; letter-spacing: .08em;">PAPER</div><div class="ag-h" style="font-size: 16px;">2025.10</div></div><div>Gerald Selasie Gbadam 석∙박사과정 1저자 논문 Nature Communications 게재 확정</div></div>
+        <div class="ag-paper ag-note" style="transform: rotate(-.4deg);"><div class="ag-date" style="background: #cdbdfb;"><div style="font-size: 11px; font-weight: 700; color: #5a3fb0; letter-spacing: .08em;">PAPER</div><div class="ag-h" style="font-size: 16px;">2025.06.19</div></div><div>주현서 석∙박사과정 1저자 논문 Advanced Materials 게재 확정</div></div>
+        <div class="ag-paper ag-note" style="transform: rotate(.6deg); background: #fff3f6;"><div class="ag-date" style="background: #ffb5cf;"><div style="font-size: 11px; font-weight: 700; color: #b83a60; letter-spacing: .08em;">PRESS</div><div class="ag-h" style="font-size: 16px;">2025.11.03</div></div><div><span style="font-weight: 700;">"배터리 교체, 충전 No" 마찰전기 이용한 나노발전기 개발</span><span style="color: #9a7f9f;"> — 연합뉴스</span></div></div>
+      </div>
+    </div>
+
+    <div style="grid-column: span 5; position: relative;">
+      <div class="ag-hand" style="font-size: 28px; color: #6a4fc4; line-height: 1;">meet our PI</div>
+      <div class="ag-h" style="font-size: 44px; line-height: 1.1; margin-bottom: 24px;">Professor</div>
+      <div style="display: flex; gap: 22px; align-items: flex-start;">
+        <div class="ag-swayQ" style="flex: none; width: 200px;">
+          <div class="ag-paper" style="position: relative; padding: 12px 12px 46px; background: #fff; border-radius: 4px;">
+            <div class="ag-tape" style="left: 50%; margin-left: -45px; top: -14px; width: 90px; transform: rotate(4deg); background: rgba(255,170,200,.75);"></div>
+            <img src="prof.jpg" style="width: 100%; height: 210px; object-fit: cover; display: block; border-radius: 2px;">
+            <div class="ag-hand" style="position: absolute; left: 0; right: 0; bottom: 8px; text-align: center; font-size: 24px; color: #5a4668;">Prof. Lee</div>
+          </div>
+        </div>
+        <div style="padding-top: 6px;">
+          <div class="ag-h" style="font-size: 28px; line-height: 1.15;">Ju-Hyuck Lee</div>
+          <div style="font-size: 14px; color: #6b5878; font-weight: 500; margin-top: 4px;">Associate Professor<br>Dept. of Energy Science &amp; Engineering, DGIST</div>
+          <div style="margin-top: 14px; font-size: 13.5px; line-height: 1.75; color: #5a4668;">
+            <div><b style="color: #e0567c;">2016</b> · Ph.D., SKKU</div>
+            <div><b style="color: #e08a2c;">2016–18</b> · Postdoc, UC Berkeley &amp; LBNL</div>
+            <div><b style="color: #2f9e78;">2018–</b> · DGIST</div>
+          </div>
+          <div style="margin-top: 12px; font-size: 13.5px; font-weight: 700; color: #6a4fc4;">✉ jhlee85@dgist.ac.kr</div>
+        </div>
+      </div>
+      <div class="ag-paper" style="position: relative; margin-top: 30px; padding: 24px 24px 20px; border-radius: 12px; background: #fffaf0; transform: rotate(-.8deg);">
+        <div class="ag-tape" style="right: 30px; top: -14px; width: 90px; transform: rotate(-4deg);"></div>
+        <div class="ag-hand" style="font-size: 26px; line-height: 1; color: #b5651a; margin-bottom: 12px;">honors</div>
+        <div style="display: flex; flex-direction: column; gap: 8px; align-items: flex-start;">
+          <span class="ag-chip" style="background: #e8e0ff; color: #5a3fb0; transform: rotate(-1deg);">Nano Energy Early Career Researcher Board (2025–)</span>
+          <span class="ag-chip" style="background: #ffe0ea; color: #b83a60; transform: rotate(.8deg);">KIM Emerging Innovator in Materials (2025)</span>
+          <span class="ag-chip" style="background: #dff5ea; color: #23785b; transform: rotate(-.6deg);">2025 Energies Award (MDPI)</span>
+          <span class="ag-chip" style="background: #ffeccf; color: #b5651a; transform: rotate(1deg);">IEEE-ISAF Young Investigator Award (2022)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PEOPLE + JOURNALS -->
+  <div style="position: relative; display: grid; grid-template-columns: 560px 1fr; gap: 64px; align-items: center; padding: 100px 72px 0;">
+    <div style="position: relative; height: 430px;">
+      <div class="ag-paper" style="position: absolute; left: 10px; top: 20px; width: 470px; padding: 16px 16px 56px; background: #fff; border-radius: 4px; transform: rotate(-3deg);">
+        <div class="ag-tape" style="left: -20px; top: 10px; transform: rotate(-35deg); background: rgba(169,214,255,.8);"></div>
+        <div class="ag-tape" style="right: -22px; bottom: 30px; transform: rotate(-35deg); background: rgba(169,214,255,.8);"></div>
+        <img src="photo1.jpg" style="width: 100%; height: 300px; object-fit: cover; display: block; border-radius: 2px;">
+        <div class="ag-hand" style="position: absolute; left: 0; right: 0; bottom: 12px; text-align: center; font-size: 28px; color: #5a4668;">celebrating together</div>
+      </div>
+      <div class="ag-swayP" style="position: absolute; right: 0; top: 230px; width: 150px;">
+        <div class="ag-paper" style="position: relative; padding: 10px 10px 36px; background: #fff; border-radius: 4px;">
+          <div class="ag-tape" style="left: 50%; margin-left: -35px; top: -12px; width: 70px; height: 24px; transform: rotate(-5deg); background: rgba(205,189,251,.8);"></div>
+          <img src="member.jpg" style="width: 100%; height: 140px; object-fit: cover; display: block; border-radius: 2px;">
+          <div class="ag-hand" style="position: absolute; left: 0; right: 0; bottom: 6px; text-align: center; font-size: 20px; color: #5a4668;">join us!</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="ag-hand" style="font-size: 28px; color: #e08a2c; line-height: 1;">our people</div>
+      <div class="ag-h" style="font-size: 48px; line-height: 1.08;">18 makers of<br>self-powered things</div>
+      <div style="font-size: 16.5px; color: #6b5878; margin-top: 16px; max-width: 560px;">Graduate students and researchers turning motion, touch and vibration into electricity — published in</div>
+      <div style="display: flex; flex-wrap: wrap; gap: 16px 14px; margin-top: 22px;">
+        <span class="ag-sticker" style="background: #ffb5cf; color: #7a1f3d; transform: rotate(-3deg);">Nature Communications</span>
+        <span class="ag-sticker" style="background: #cdbdfb; color: #3e2690; transform: rotate(2deg);">Advanced Materials</span>
+        <span class="ag-sticker" style="background: #a8e6cf; color: #145c43; transform: rotate(-1deg);">Nano Energy</span>
+        <span class="ag-sticker" style="background: #ffcf9a; color: #7d4510; transform: rotate(3deg);">Advanced Science</span>
+        <span class="ag-sticker" style="background: #a9d6ff; color: #174a7a; transform: rotate(-2deg);">J. Mater. Chem. A</span>
+        <span class="ag-sticker" style="background: #fff1a8; color: #6e5a0c; transform: rotate(1.5deg);">Nano Trends</span>
+      </div>
+      <div style="display: flex; gap: 14px; margin-top: 30px;">
+        <div class="ag-btn" style="background: #ff8fab; color: #fff; box-shadow: 4px 4px 0 #3a2a48;">Meet the people</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER hills -->
+  <div style="position: relative; height: 300px; margin-top: 60px; overflow: hidden;">
+    <svg class="ag-l ag-ds ag-f2" height="280" viewBox="0 0 1620 280" preserveAspectRatio="none"><path d="M0 80C200 20 420 20 640 70S1040 140 1260 76S1520 30 1620 50V280H0Z" fill="#cdbdfb"/></svg>
+    <svg class="ag-l ag-ds ag-f3" height="210" viewBox="0 0 1620 210" preserveAspectRatio="none"><path d="M0 50C240 110 460 110 700 56S1120 10 1340 60S1560 80 1620 70V210H0Z" fill="#ffcf9a"/></svg>
+    <svg class="ag-l ag-ds ag-f4" height="150" viewBox="0 0 1620 150" preserveAspectRatio="none"><path d="M0 40C220 10 460 6 700 34S1160 70 1400 30S1580 20 1620 30V150H0Z" fill="#ffb5cf"/></svg>
+    <div style="position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; display: flex; justify-content: space-between; align-items: center; padding: 0 72px 34px; font-size: 14px; color: #4a2a3e; font-weight: 500;">
+      <div style="display: flex; align-items: center; gap: 12px;"><img src="logo.png" style="height: 28px; display: block;"><span>Room E6-411, Dept. of Energy Science &amp; Engineering, DGIST, Daegu 42988, Republic of Korea</span></div>
+      <div style="font-weight: 700;">© JU HYUCK LEE's Group</div>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

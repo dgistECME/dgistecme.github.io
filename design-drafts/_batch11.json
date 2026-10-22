@@ -1,0 +1,14 @@
+{
+  "page_id": "page-11",
+  "page_name": "Batch 3 · AD AE AF AG AH AI (six concepts)",
+  "group": "6가지 콘셉트",
+  "brief": "콘셉트 6개 — 서로 완전히 다른 방향. 전부 CSS/SVG, 감속 모드 대응.\nAD · Liquid Chrome — gooey 필터 액체금속 블롭이 합쳐졌다 갈라짐, 블롭 모양으로 변하는 사진, 크롬 글자 위 무지개 스윕, 출렁이는 물방울 연구 카드, 액체 경계 푸터.\nAE · Isometric Lab World — 아이소메트릭 섬 일러스트: ECME LAB 건물, 밟을 때 빛나는 나노발전기 타일, 웨어러블 패치, 촉각 센서에서 배터리로 에너지 점이 흐름. 연구 5개는 떠 있는 작은 섬.\nAF · Lab OS Dashboard — 홈페이지를 'ECME OS'로: 신호등 창, 실시간 오실로스코프(piezo 스파이크/tribo 사인파), 시계+주소 위젯, 링 게이지, 터미널 타이핑, 알림처럼 들어오는 뉴스, 저널 Dock.\nAG · Paper Cut Layers — 종이 언덕 5겹이 시차를 두고 떠다니고 종이 태양이 떠오름, 테이프 붙인 헤드라인 카드, 폴라로이드 사진, 줄에 매달려 흔들리는 연구 태그.\nAH · Ripple Dot Grid — 점 720개가 압전 진동처럼 동심원 물결로 퍼짐(cyan→violet→coral), 초대형 미니멀 타이포, 순서대로 켜지는 연구 그리드. 가장 정갈.\nAI · Spotlight Gallery — 글자별 웨이브 컬러 헤드라인, 기울어진 사진·숫자 카드 필름스트립 자동 스크롤, 뒤집히는 컬러 연구 카드, 펼쳐지는 뉴스 카드 덱. 가장 컬러풀.\n\n하나 고르거나 섞어 말하면 실제 사이트에 이식.",
+  "items": [
+    {"file": "DirectionAD.dc.html", "title": "AD · Liquid Chrome", "h": 3050, "readme": "gooey 액체금속 블롭, 블롭 사진, 크롬 글자, 물방울 카드"},
+    {"file": "DirectionAE.dc.html", "title": "AE · Isometric Lab World", "h": 2940, "readme": "아이소메트릭 섬, 에너지 흐름, 연구 섬"},
+    {"file": "DirectionAF.dc.html", "title": "AF · Lab OS Dashboard", "h": 2430, "readme": "글래스 OS 창, 오실로스코프, 게이지, 터미널, 알림 뉴스"},
+    {"file": "DirectionAG.dc.html", "title": "AG · Paper Cut Layers", "h": 3220, "readme": "종이 언덕 시차, 종이 태양, 폴라로이드, 매달린 태그"},
+    {"file": "DirectionAH.dc.html", "title": "AH · Ripple Dot Grid", "h": 3350, "readme": "점 물결 필드, 미니멀 타이포, 순차 점등 그리드"},
+    {"file": "DirectionAI.dc.html", "title": "AI · Spotlight Gallery", "h": 3270, "readme": "글자 웨이브, 필름스트립, 플립 카드, 카드 덱"}
+  ]
+}

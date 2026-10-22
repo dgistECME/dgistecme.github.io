@@ -5,6 +5,12 @@ Claude Design 캔버스( https://claude.ai/code/artifact/a6db981f-9b66-4d66-8b9a
 
 | 파일 | 방향 | 상태 |
 |---|---|---|
+| `DirectionAD.dc.html` | AD · Liquid Chrome (gooey 액체금속 블롭, 블롭 사진, 크롬 글자, 물방울 카드) | 6가지 콘셉트 |
+| `DirectionAE.dc.html` | AE · Isometric Lab World (아이소메트릭 섬, 에너지 흐름, 연구 섬) | 6가지 콘셉트 |
+| `DirectionAF.dc.html` | AF · Lab OS Dashboard (글래스 OS 창, 오실로스코프, 게이지, 터미널, 알림 뉴스) | 6가지 콘셉트 |
+| `DirectionAG.dc.html` | AG · Paper Cut Layers (종이 언덕 시차, 종이 태양, 폴라로이드, 매달린 태그) | 6가지 콘셉트 |
+| `DirectionAH.dc.html` | AH · Ripple Dot Grid (점 물결 필드, 미니멀 타이포, 순차 점등 그리드) | 6가지 콘셉트 |
+| `DirectionAI.dc.html` | AI · Spotlight Gallery (글자 웨이브, 필름스트립, 플립 카드, 카드 덱) | 6가지 콘셉트 |
 | `Main.dc.html` | C · Bold Editorial (다크 네이비) | **현재 사이트 적용 중** |
 | `DirectionF.dc.html` | F · Photo Magazine (세로 대제목 + 사진 모자이크 + 노랑) | 백업 요청됨 — 다음 후보 |
 | `DirectionZ.dc.html` | Z · Holo Prism (크롬 헤드라인, 3D 기울기 홀로 포일 카드, 유리 구슬) | Fancy |

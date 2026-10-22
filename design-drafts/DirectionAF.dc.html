@@ -1,0 +1,332 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+  <style>
+    body { margin: 0; background: #f4f0ff; color: #1b1640; font-family: 'Space Grotesk', 'Noto Sans KR', 'Helvetica Neue', Arial, sans-serif; font-size: 15px; line-height: 1.55; }
+    a { color: inherit; text-decoration: none; }
+    .af-root { width: 1440px; position: relative; overflow: hidden; background: linear-gradient(135deg, #fce7f6 0%, #ede9fe 30%, #dbeafe 55%, #d1fae5 80%, #fef3c7 100%); }
+    .af-blob { position: absolute; border-radius: 50%; filter: blur(70px); opacity: .75; pointer-events: none; }
+    .af-drift { animation: af-drift 18s ease-in-out infinite; }
+    .af-drift2 { animation: af-drift 22s ease-in-out infinite reverse; }
+    @keyframes af-drift { 0%,100% { transform: translate(0,0) scale(1); } 33% { transform: translate(80px,-60px) scale(1.12); } 66% { transform: translate(-60px,50px) scale(.92); } }
+    .af-dots { position: absolute; inset: 0; pointer-events: none; background-image: radial-gradient(rgba(60,40,140,.13) 1px, transparent 1.4px); background-size: 26px 26px; -webkit-mask-image: linear-gradient(180deg, #000, transparent 70%); mask-image: linear-gradient(180deg, #000, transparent 70%); }
+    .af-mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+    .af-glass { position: relative; background: rgba(255,255,255,.58); -webkit-backdrop-filter: blur(22px) saturate(170%); backdrop-filter: blur(22px) saturate(170%); border: 1px solid rgba(255,255,255,.85); border-radius: 22px; box-shadow: 0 34px 70px -28px rgba(76,52,170,.38), 0 2px 0 rgba(255,255,255,.9) inset; }
+    .af-bar { height: 42px; display: flex; align-items: center; gap: 8px; padding: 0 16px; border-bottom: 1px solid rgba(120,100,200,.12); }
+    .af-bar .af-t { flex: 1; text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #6a6396; font-weight: 500; margin-right: 52px; }
+    .af-dot { width: 12px; height: 12px; border-radius: 50%; box-shadow: inset 0 -1px 2px rgba(0,0,0,.15); }
+    .af-r { background: #ff6b8b; } .af-y { background: #ffc94d; } .af-g { background: #3ee08f; }
+    .af-grad { background: linear-gradient(95deg, #7c3aed, #ec4899 35%, #f59e0b 60%, #06b6d4 85%, #7c3aed); background-size: 250% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: af-flow 8s ease-in-out infinite; }
+    @keyframes af-flow { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+    .af-pop { animation: af-pop 1s cubic-bezier(.2,.8,.2,1) backwards; }
+    @keyframes af-pop { from { opacity: 0; transform: translateY(28px) scale(.96); } to { opacity: 1; transform: none; } }
+    .af-d1 { animation-delay: .15s; } .af-d2 { animation-delay: .3s; } .af-d3 { animation-delay: .45s; } .af-d4 { animation-delay: .6s; } .af-d5 { animation-delay: .75s; } .af-d6 { animation-delay: .9s; }
+    .af-win { transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s; }
+    .af-win:hover { transform: translateY(-6px); box-shadow: 0 44px 90px -30px rgba(76,52,170,.5), 0 2px 0 rgba(255,255,255,.9) inset; }
+    .af-menu { display: flex; gap: 4px; font-size: 14px; font-weight: 600; }
+    .af-menu div { padding: 6px 13px; border-radius: 9px; color: #3b3566; }
+    .af-menu div:hover { background: rgba(124,58,237,.12); }
+    .af-btn { padding: 14px 24px; border-radius: 14px; font-weight: 700; font-size: 14.5px; display: inline-flex; align-items: center; gap: 10px; }
+    /* scope */
+    .af-scroll { animation: af-scroll 2.4s linear infinite; }
+    .af-scroll2 { animation: af-scroll 3.6s linear infinite; }
+    @keyframes af-scroll { from { transform: translateX(0); } to { transform: translateX(-160px); } }
+    .af-blink { animation: af-blink 1.2s steps(2, start) infinite; }
+    @keyframes af-blink { to { visibility: hidden; } }
+    .af-pulse { animation: af-pulse 2s ease-in-out infinite; }
+    @keyframes af-pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(62,224,143,.55); } 50% { box-shadow: 0 0 0 7px rgba(62,224,143,0); } }
+    /* gauges */
+    .af-ring { stroke-dasharray: 239; animation: af-ring 1.8s cubic-bezier(.3,.7,.2,1) backwards; }
+    @keyframes af-ring { from { stroke-dashoffset: 239; } to { stroke-dashoffset: 0; } }
+    .af-orbit { transform-box: view-box; transform-origin: 48px 48px; animation: af-rot 6s linear infinite; }
+    .af-orbit2 { animation-duration: 8s; animation-direction: reverse; }
+    @keyframes af-rot { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    .af-spark { stroke-dasharray: 220; animation: af-draw 2.2s ease-out backwards; }
+    @keyframes af-draw { from { stroke-dashoffset: 220; } to { stroke-dashoffset: 0; } }
+    /* clock */
+    .af-hand { transform-box: view-box; transform-origin: 70px 70px; }
+    .af-sec { animation: af-rot 60s linear infinite; animation-delay: -21s; }
+    .af-min { animation: af-rot 3600s linear infinite; animation-delay: -1500s; }
+    .af-hr { animation: af-rot 43200s linear infinite; animation-delay: -36500s; }
+    /* terminal */
+    .af-term { background: linear-gradient(160deg, rgba(30,22,74,.92), rgba(44,26,96,.9)); border-radius: 16px; padding: 22px 24px; color: #e9e4ff; font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 2; box-shadow: inset 0 0 0 1px rgba(255,255,255,.08); }
+    .af-line { display: block; overflow: hidden; white-space: nowrap; animation: af-type .7s steps(36) backwards; }
+    @keyframes af-type { from { width: 0; } }
+    .af-tile { border-radius: 18px; padding: 20px 18px; background: rgba(255,255,255,.7); border: 1px solid #fff; display: flex; flex-direction: column; gap: 14px; transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s; box-shadow: 0 14px 30px -18px rgba(76,52,170,.35); }
+    .af-tile:hover { transform: translateY(-6px) scale(1.02); box-shadow: 0 26px 46px -20px rgba(76,52,170,.5); }
+    .af-ico { width: 54px; height: 54px; border-radius: 15px; display: grid; place-items: center; box-shadow: 0 10px 20px -8px rgba(76,52,170,.5), inset 0 1px 0 rgba(255,255,255,.6); }
+    .af-bob { animation: af-bob 4s ease-in-out infinite; }
+    @keyframes af-bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+    /* notifications */
+    .af-note { display: grid; grid-template-columns: 40px 1fr; gap: 14px; padding: 14px 16px; border-radius: 18px; background: rgba(255,255,255,.78); border: 1px solid #fff; box-shadow: 0 16px 30px -20px rgba(76,52,170,.45); animation: af-slide .9s cubic-bezier(.2,.9,.25,1.15) backwards; }
+    @keyframes af-slide { from { opacity: 0; transform: translateX(110%); } to { opacity: 1; transform: none; } }
+    .af-nico { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; color: #fff; font-weight: 700; font-size: 17px; }
+    .af-badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 11px; border-radius: 10px; font-size: 12.5px; font-weight: 600; background: rgba(255,255,255,.8); border: 1px solid rgba(124,58,237,.15); }
+    /* dock */
+    .af-dock { display: flex; gap: 10px; padding: 10px; border-radius: 24px; }
+    .af-app { padding: 12px 18px; border-radius: 16px; font-weight: 700; font-size: 14px; background: rgba(255,255,255,.75); border: 1px solid #fff; transition: transform .3s cubic-bezier(.2,.8,.2,1); white-space: nowrap; }
+    .af-app:hover { transform: translateY(-10px) scale(1.12); }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+</helmet>
+<div class="af-root">
+  <div class="af-blob af-drift" style="left: -120px; top: -100px; width: 620px; height: 620px; background: #f9a8d4;"></div>
+  <div class="af-blob af-drift2" style="right: -140px; top: 160px; width: 680px; height: 680px; background: #a5b4fc;"></div>
+  <div class="af-blob af-drift" style="left: 380px; top: 1100px; width: 700px; height: 600px; background: #99f6e4; animation-delay: -7s;"></div>
+  <div class="af-blob af-drift2" style="right: 60px; top: 1800px; width: 600px; height: 600px; background: #fde68a; animation-delay: -11s;"></div>
+  <div class="af-blob af-drift" style="left: -100px; top: 2200px; width: 560px; height: 520px; background: #c4b5fd; animation-delay: -4s;"></div>
+  <div class="af-dots"></div>
+
+  <!-- menu bar -->
+  <div class="af-glass" style="margin: 18px 24px 0; height: 54px; border-radius: 16px; display: flex; align-items: center; justify-content: space-between; padding: 0 18px;">
+    <div style="display: flex; align-items: center; gap: 22px;">
+      <div style="display: flex; align-items: center; gap: 10px;"><img src="logo.png" style="height: 30px; display: block;"><div style="font-weight: 700; font-size: 17px; letter-spacing: -.01em;">ECME<span style="color: #8b5cf6;">&nbsp;OS</span></div></div>
+      <div class="af-menu"><div style="background: #1b1640; color: #fff;">Home</div><div>Professor</div><div>People</div><div>Research</div><div>Publications</div><div>News</div><div>Contact</div></div>
+    </div>
+    <div class="af-mono" style="display: flex; align-items: center; gap: 16px; font-size: 12.5px; color: #4b4578; font-weight: 500;">
+      <span style="display: inline-flex; align-items: center; gap: 7px;"><span class="af-pulse" style="width: 8px; height: 8px; border-radius: 50%; background: #3ee08f;"></span>self-powered</span>
+      <svg width="18" height="14" viewBox="0 0 18 14"><path d="M1 5a12 12 0 0 1 16 0M4 8a7.5 7.5 0 0 1 10 0M7 11a3 3 0 0 1 4 0" fill="none" stroke="#4b4578" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <svg width="26" height="13" viewBox="0 0 26 13"><rect x="1" y="1" width="21" height="11" rx="3" fill="none" stroke="#4b4578" stroke-width="1.5"/><rect x="3" y="3" width="17" height="7" rx="1.5" fill="#3ee08f"/><rect x="23" y="4.5" width="2" height="4" rx="1" fill="#4b4578"/></svg>
+      <span>DGIST · Daegu</span>
+    </div>
+  </div>
+
+  <!-- desktop -->
+  <div style="position: relative; display: grid; grid-template-columns: repeat(12, minmax(0,1fr)); gap: 24px; padding: 30px 48px 0;">
+
+    <!-- main window -->
+    <div class="af-glass af-win af-pop" style="grid-column: span 8; display: flex; flex-direction: column;">
+      <div class="af-bar"><span class="af-dot af-r"></span><span class="af-dot af-y"></span><span class="af-dot af-g"></span><span class="af-t">~/ecme-lab/welcome.app</span></div>
+      <div style="display: grid; grid-template-columns: 1fr 360px; gap: 28px; padding: 34px 34px 34px 38px; flex: 1;">
+        <div style="display: flex; flex-direction: column;">
+          <div class="af-mono" style="display: inline-flex; align-self: flex-start; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 10px; background: rgba(124,58,237,.1); color: #6d28d9; font-size: 12px; font-weight: 700;">● Energy Conversion Materials &amp; Electronics Lab</div>
+          <div style="font-size: 62px; line-height: 1.0; font-weight: 700; letter-spacing: -.045em; margin-top: 22px;">Electronics<br>that power<br><span class="af-grad">themselves.</span></div>
+          <div style="font-size: 16.5px; color: #4b4578; margin-top: 22px; max-width: 430px;">Piezoelectric &amp; triboelectric nanogenerators, functional polymers and bio-piezoelectric materials — toward self-powered electronics and human-inspired tactile sensors.</div>
+          <div style="display: flex; gap: 12px; margin-top: auto; padding-top: 26px;">
+            <div class="af-btn" style="background: #1b1640; color: #fff; box-shadow: 0 16px 30px -12px rgba(27,22,64,.6);">Open research <span class="af-mono">⌘R</span></div>
+            <div class="af-btn" style="background: rgba(255,255,255,.85); border: 1px solid #fff;">Join the lab →</div>
+          </div>
+        </div>
+        <div style="position: relative;">
+          <div style="position: absolute; inset: 0; border-radius: 18px; overflow: hidden; box-shadow: 0 24px 48px -20px rgba(76,52,170,.55);"><img src="hero.jpg" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+          <div class="af-glass af-bob" style="position: absolute; left: -30px; bottom: 26px; padding: 10px 14px; border-radius: 14px; display: flex; align-items: center; gap: 10px;"><div style="display: flex;"><img src="prof.jpg" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; border: 2px solid #fff; display: block;"><img src="member.jpg" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; border: 2px solid #fff; margin-left: -9px; display: block;"></div><div style="font-size: 13px; font-weight: 700;">18 members online</div></div>
+          <div class="af-glass af-mono" style="position: absolute; right: 12px; top: 12px; padding: 5px 10px; border-radius: 9px; font-size: 11px; font-weight: 700; color: #6d28d9;">hero.jpg</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- right column: scope + clock -->
+    <div style="grid-column: span 4; display: flex; flex-direction: column; gap: 24px;">
+      <div class="af-glass af-win af-pop af-d1">
+        <div class="af-bar"><span class="af-dot af-r"></span><span class="af-dot af-y"></span><span class="af-dot af-g"></span><span class="af-t">scope — nanogenerator</span></div>
+        <div style="padding: 16px 18px 18px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; font-size: 12px; font-weight: 600; color: #4b4578; margin-bottom: 10px;">
+            <span class="af-mono" style="display: inline-flex; align-items: center; gap: 6px;"><span class="af-pulse" style="width: 7px; height: 7px; border-radius: 50%; background: #3ee08f;"></span>LIVE</span>
+            <span style="display: flex; gap: 12px;"><span><span style="display: inline-block; width: 14px; height: 3px; border-radius: 2px; background: #ec4899; vertical-align: middle;"></span> piezo</span><span><span style="display: inline-block; width: 14px; height: 3px; border-radius: 2px; background: #06b6d4; vertical-align: middle;"></span> tribo</span></span>
+          </div>
+          <div style="border-radius: 14px; overflow: hidden; background: linear-gradient(180deg, #ffffff, #f3efff); border: 1px solid #ece6ff;">
+            <svg width="100%" height="168" viewBox="0 0 396 168" preserveAspectRatio="none" style="display: block;">
+              <defs>
+                <pattern id="af-grid" width="33" height="28" patternUnits="userSpaceOnUse"><path d="M33 0V28M0 28H33" fill="none" stroke="#e4dcfb" stroke-width="1"/></pattern>
+                <path id="af-pk" d="M0,84 L28,84 L34,26 L40,128 L46,66 L52,96 L58,80 L80,84 L108,84 L114,138 L120,40 L126,100 L132,74 L138,88 L160,84"/>
+                <path id="af-sn" d="M0,84 C27,54 53,54 80,84 S133,114 160,84"/>
+              </defs>
+              <rect width="396" height="168" fill="url(#af-grid)"/>
+              <line x1="0" y1="84" x2="396" y2="84" stroke="#cfc3f5" stroke-width="1" stroke-dasharray="4 4"/>
+              <g class="af-scroll2" fill="none" stroke="#06b6d4" stroke-width="2.4" stroke-linecap="round" opacity=".85">
+                <use href="#af-sn" x="0"/><use href="#af-sn" x="160"/><use href="#af-sn" x="320"/><use href="#af-sn" x="480"/>
+              </g>
+              <g class="af-scroll" fill="none" stroke="#ec4899" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round" style="filter: drop-shadow(0 0 4px rgba(236,72,153,.6));">
+                <use href="#af-pk" x="0"/><use href="#af-pk" x="160"/><use href="#af-pk" x="320"/><use href="#af-pk" x="480"/>
+              </g>
+            </svg>
+          </div>
+          <div class="af-mono" style="display: flex; justify-content: space-between; font-size: 11px; color: #8a83b8; margin-top: 10px;"><span>CH1 · press / release</span><span>CH2 · contact / separate</span></div>
+        </div>
+      </div>
+
+      <div class="af-glass af-win af-pop af-d2" style="flex: 1;">
+        <div class="af-bar"><span class="af-dot af-r"></span><span class="af-dot af-y"></span><span class="af-dot af-g"></span><span class="af-t">clock — location</span></div>
+        <div style="display: grid; grid-template-columns: 140px 1fr; gap: 20px; padding: 20px; align-items: center;">
+          <svg width="140" height="140" viewBox="0 0 140 140" style="display: block;">
+            <defs><linearGradient id="af-cg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c4b5fd"/><stop offset=".5" stop-color="#f9a8d4"/><stop offset="1" stop-color="#99f6e4"/></linearGradient></defs>
+            <circle cx="70" cy="70" r="66" fill="url(#af-cg)"/>
+            <circle cx="70" cy="70" r="58" fill="#fff"/>
+            <g stroke="#b9addf" stroke-width="2" stroke-linecap="round">
+              <line x1="70" y1="17" x2="70" y2="24"/><line x1="70" y1="116" x2="70" y2="123"/><line x1="17" y1="70" x2="24" y2="70"/><line x1="116" y1="70" x2="123" y2="70"/>
+              <line x1="96.5" y1="24.1" x2="94" y2="28.4"/><line x1="115.9" y1="43.5" x2="111.6" y2="46"/><line x1="115.9" y1="96.5" x2="111.6" y2="94"/><line x1="96.5" y1="115.9" x2="94" y2="111.6"/><line x1="43.5" y1="115.9" x2="46" y2="111.6"/><line x1="24.1" y1="96.5" x2="28.4" y2="94"/><line x1="24.1" y1="43.5" x2="28.4" y2="46"/><line x1="43.5" y1="24.1" x2="46" y2="28.4"/>
+            </g>
+            <line class="af-hand af-hr" x1="70" y1="70" x2="70" y2="40" stroke="#1b1640" stroke-width="5" stroke-linecap="round"/>
+            <line class="af-hand af-min" x1="70" y1="70" x2="70" y2="26" stroke="#4b4578" stroke-width="3.5" stroke-linecap="round"/>
+            <line class="af-hand af-sec" x1="70" y1="80" x2="70" y2="22" stroke="#ec4899" stroke-width="1.8" stroke-linecap="round"/>
+            <circle cx="70" cy="70" r="4.5" fill="#ec4899"/>
+          </svg>
+          <div>
+            <div class="af-mono" style="font-size: 11px; font-weight: 700; color: #8b5cf6; letter-spacing: .08em;">KST · DAEGU</div>
+            <div style="font-size: 20px; font-weight: 700; line-height: 1.2; margin-top: 6px;">Room E6-411</div>
+            <div style="font-size: 13px; color: #4b4578; margin-top: 6px; line-height: 1.5;">Dept. of Energy Science &amp; Engineering, DGIST, Daegu 42988, Republic of Korea</div>
+            <div class="af-badge" style="margin-top: 12px;">✉ jhlee85@dgist.ac.kr</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- stats gauges -->
+    <div class="af-glass af-win af-pop af-d3" style="grid-column: span 3; padding: 20px 22px; display: flex; align-items: center; gap: 18px;">
+      <svg width="96" height="96" viewBox="0 0 96 96" style="flex: none; display: block;">
+        <defs><linearGradient id="af-g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8b5cf6"/><stop offset="1" stop-color="#ec4899"/></linearGradient></defs>
+        <circle cx="48" cy="48" r="38" fill="none" stroke="#ece6ff" stroke-width="9"/>
+        <circle class="af-ring" cx="48" cy="48" r="38" fill="none" stroke="url(#af-g1)" stroke-width="9" stroke-linecap="round" transform="rotate(-90 48 48)" style="animation-delay: .5s;"/>
+        <g class="af-orbit"><circle cx="48" cy="4" r="4" fill="#fff" stroke="#ec4899" stroke-width="2"/></g>
+        <text x="48" y="56" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="25" fill="#1b1640">81</text>
+      </svg>
+      <div><div style="font-weight: 700; font-size: 18px;">Papers</div><div class="af-mono" style="font-size: 11.5px; color: #8a83b8;">publications/</div>
+        <svg width="110" height="26" viewBox="0 0 110 26" style="display: block; margin-top: 8px;"><path class="af-spark" d="M2 22 L16 18 L28 20 L42 13 L56 15 L70 9 L84 10 L98 4 L108 3" fill="none" stroke="#8b5cf6" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="animation-delay: .6s;"/></svg></div>
+    </div>
+    <div class="af-glass af-win af-pop af-d4" style="grid-column: span 3; padding: 20px 22px; display: flex; align-items: center; gap: 18px;">
+      <svg width="96" height="96" viewBox="0 0 96 96" style="flex: none; display: block;">
+        <defs><linearGradient id="af-g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#06b6d4"/><stop offset="1" stop-color="#6366f1"/></linearGradient></defs>
+        <circle cx="48" cy="48" r="38" fill="none" stroke="#e0f2fe" stroke-width="9"/>
+        <circle class="af-ring" cx="48" cy="48" r="38" fill="none" stroke="url(#af-g2)" stroke-width="9" stroke-linecap="round" transform="rotate(-90 48 48)" style="animation-delay: .65s;"/>
+        <g class="af-orbit af-orbit2"><circle cx="48" cy="4" r="4" fill="#fff" stroke="#06b6d4" stroke-width="2"/></g>
+        <text x="48" y="56" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="25" fill="#1b1640">35</text>
+      </svg>
+      <div><div style="font-weight: 700; font-size: 18px;">Patents</div><div class="af-mono" style="font-size: 11.5px; color: #8a83b8;">patents/</div>
+        <svg width="110" height="26" viewBox="0 0 110 26" style="display: block; margin-top: 8px;"><path class="af-spark" d="M2 20 L14 21 L26 16 L40 17 L52 12 L66 14 L80 8 L94 9 L108 4" fill="none" stroke="#06b6d4" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="animation-delay: .75s;"/></svg></div>
+    </div>
+    <div class="af-glass af-win af-pop af-d5" style="grid-column: span 3; padding: 20px 22px; display: flex; align-items: center; gap: 18px;">
+      <svg width="96" height="96" viewBox="0 0 96 96" style="flex: none; display: block;">
+        <defs><linearGradient id="af-g3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#10b981"/><stop offset="1" stop-color="#a3e635"/></linearGradient></defs>
+        <circle cx="48" cy="48" r="38" fill="none" stroke="#dcfce7" stroke-width="9"/>
+        <circle class="af-ring" cx="48" cy="48" r="38" fill="none" stroke="url(#af-g3)" stroke-width="9" stroke-linecap="round" transform="rotate(-90 48 48)" style="animation-delay: .8s;"/>
+        <g class="af-orbit"><circle cx="48" cy="4" r="4" fill="#fff" stroke="#10b981" stroke-width="2"/></g>
+        <text x="48" y="56" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="25" fill="#1b1640">18</text>
+      </svg>
+      <div><div style="font-weight: 700; font-size: 18px;">Members</div><div class="af-mono" style="font-size: 11.5px; color: #8a83b8;">people/</div>
+        <div style="display: flex; margin-top: 10px;"><img src="prof.jpg" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover; border: 2px solid #fff; display: block;"><img src="member.jpg" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover; border: 2px solid #fff; margin-left: -8px; display: block;"><div style="width: 28px; height: 28px; border-radius: 50%; border: 2px solid #fff; margin-left: -8px; background: #dcfce7; font-size: 10px; font-weight: 700; display: grid; place-items: center; color: #047857;">18</div></div></div>
+    </div>
+    <div class="af-glass af-win af-pop af-d6" style="grid-column: span 3; padding: 20px 22px; display: flex; align-items: center; gap: 18px;">
+      <svg width="96" height="96" viewBox="0 0 96 96" style="flex: none; display: block;">
+        <defs><linearGradient id="af-g4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f59e0b"/><stop offset="1" stop-color="#ec4899"/></linearGradient></defs>
+        <circle cx="48" cy="48" r="38" fill="none" stroke="#fef3c7" stroke-width="9"/>
+        <circle class="af-ring" cx="48" cy="48" r="38" fill="none" stroke="url(#af-g4)" stroke-width="9" stroke-linecap="round" transform="rotate(-90 48 48)" style="animation-delay: .95s;"/>
+        <g class="af-orbit af-orbit2"><circle cx="48" cy="4" r="4" fill="#fff" stroke="#f59e0b" stroke-width="2"/></g>
+        <text x="48" y="56" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="25" fill="#1b1640">53</text>
+      </svg>
+      <div><div style="font-weight: 700; font-size: 18px;">News</div><div class="af-mono" style="font-size: 11.5px; color: #8a83b8;">news/</div>
+        <svg width="110" height="26" viewBox="0 0 110 26" style="display: block; margin-top: 8px;"><path class="af-spark" d="M2 21 L16 17 L28 19 L42 14 L56 16 L70 10 L84 12 L98 6 L108 5" fill="none" stroke="#f59e0b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="animation-delay: .9s;"/></svg></div>
+    </div>
+
+    <!-- research window -->
+    <div class="af-glass af-win af-pop af-d3" style="grid-column: span 12; margin-top: 30px;">
+      <div class="af-bar"><span class="af-dot af-r"></span><span class="af-dot af-y"></span><span class="af-dot af-g"></span><span class="af-t">research — zsh — 5 directories</span></div>
+      <div style="display: grid; grid-template-columns: 500px 1fr; gap: 26px; padding: 26px;">
+        <div class="af-term">
+          <div style="color: #a5b4fc;"><span style="color: #3ee08f;">ecme@dgist</span>:<span style="color: #f9a8d4;">~/research</span>$ ls -1 topics/</div>
+          <span class="af-line" style="width: 36ch; animation-delay: .9s;"><span style="color: #f9a8d4;">01</span>  Energy Harvesting Technology</span>
+          <span class="af-line" style="width: 36ch; animation-delay: 1.5s;"><span style="color: #fde68a;">02</span>  Synthesis of Functional Polymers</span>
+          <span class="af-line" style="width: 36ch; animation-delay: 2.1s;"><span style="color: #99f6e4;">03</span>  Bio-Piezoelectric Materials</span>
+          <span class="af-line" style="width: 36ch; animation-delay: 2.7s;"><span style="color: #a5b4fc;">04</span>  Various Novel Applications</span>
+          <span class="af-line" style="width: 36ch; animation-delay: 3.3s;"><span style="color: #c4b5fd;">05</span>  AI-Integrated Research Platform</span>
+          <div style="color: #a5b4fc;"><span style="color: #3ee08f;">ecme@dgist</span>:<span style="color: #f9a8d4;">~/research</span>$ <span class="af-blink" style="display: inline-block; width: 9px; height: 17px; background: #e9e4ff; vertical-align: -3px;"></span></div>
+        </div>
+        <div style="display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 18px;">
+            <div><div class="af-mono" style="font-size: 12px; font-weight: 700; color: #8b5cf6; letter-spacing: .08em;">RESEARCH</div><div style="font-size: 36px; font-weight: 700; letter-spacing: -.035em; line-height: 1.1;">Five directions, <span class="af-grad">one energy loop.</span></div></div>
+            <a href="#" style="font-weight: 700; font-size: 14px; color: #6d28d9;">Open folder →</a>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 14px; flex: 1;">
+            <div class="af-tile"><div class="af-ico af-bob" style="background: linear-gradient(135deg, #f9a8d4, #ec4899);"><svg width="26" height="26" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z" fill="#fff"/></svg></div><div style="font-weight: 700; font-size: 15.5px; line-height: 1.3;">Energy Harvesting Technology</div><div class="af-mono" style="font-size: 11px; color: #8a83b8; margin-top: auto;">PENG · TENG</div></div>
+            <div class="af-tile"><div class="af-ico af-bob" style="background: linear-gradient(135deg, #fde68a, #f59e0b); animation-delay: -.8s;"><svg width="28" height="26" viewBox="0 0 28 24"><g fill="none" stroke="#fff" stroke-width="2"><path d="M4 8l4-2.5 4 2.5v5l-4 2.5L4 13z"/><path d="M16 11l4-2.5 4 2.5v5l-4 2.5-4-2.5z"/><path d="M12 10.5h4"/></g></svg></div><div style="font-weight: 700; font-size: 15.5px; line-height: 1.3;">Synthesis of Functional Polymers</div><div class="af-mono" style="font-size: 11px; color: #8a83b8; margin-top: auto;">polymers/</div></div>
+            <div class="af-tile"><div class="af-ico af-bob" style="background: linear-gradient(135deg, #99f6e4, #10b981); animation-delay: -1.6s;"><svg width="26" height="26" viewBox="0 0 24 24"><g fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M7 3c0 6 10 6 10 12s-10 6-10 6"/><path d="M17 3c0 6-10 6-10 12s10 6 10 6" opacity=".7"/><path d="M8.5 7h7M8.5 17h7"/></g></svg></div><div style="font-weight: 700; font-size: 15.5px; line-height: 1.3;">Bio-Piezoelectric Materials</div><div class="af-mono" style="font-size: 11px; color: #8a83b8; margin-top: auto;">bio-piezo/</div></div>
+            <div class="af-tile"><div class="af-ico af-bob" style="background: linear-gradient(135deg, #a5b4fc, #6366f1); animation-delay: -2.4s;"><svg width="26" height="26" viewBox="0 0 24 24"><g fill="#fff"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="4"/><rect x="3" y="13" width="8" height="8" rx="4"/><rect x="13" y="13" width="8" height="8" rx="2" opacity=".7"/></g></svg></div><div style="font-weight: 700; font-size: 15.5px; line-height: 1.3;">Various Novel Applications</div><div class="af-mono" style="font-size: 11px; color: #8a83b8; margin-top: auto;">applications/</div></div>
+            <div class="af-tile"><div class="af-ico af-bob" style="background: linear-gradient(135deg, #c4b5fd, #7c3aed); animation-delay: -3.2s;"><svg width="26" height="26" viewBox="0 0 24 24"><g fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><rect x="6" y="6" width="12" height="12" rx="3"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></g><circle cx="12" cy="12" r="2" fill="#fff"/></svg></div><div style="font-weight: 700; font-size: 15.5px; line-height: 1.3;">AI-Integrated Research Platform</div><div class="af-mono" style="font-size: 11px; color: #8a83b8; margin-top: auto;">ai-platform/</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- notification center -->
+    <div style="grid-column: span 5; margin-top: 30px; display: flex; flex-direction: column; gap: 12px;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 6px;">
+        <div><div class="af-mono" style="font-size: 12px; font-weight: 700; color: #8b5cf6; letter-spacing: .08em;">NOTIFICATION CENTER</div><div style="font-size: 36px; font-weight: 700; letter-spacing: -.035em; line-height: 1.1;">Latest news</div></div>
+        <a href="#" style="font-weight: 700; font-size: 14px; color: #6d28d9;">All 53 →</a>
+      </div>
+      <div class="af-note" style="animation-delay: 1s;"><div class="af-nico" style="background: linear-gradient(135deg, #34d399, #10b981);">★</div><div><div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 700; color: #8a83b8;"><span>AWARD</span><span class="af-mono">2026.06.12</span></div><div style="font-size: 14px; font-weight: 500; margin-top: 2px;">Gerald Selasie Gbadam · 류연경 석∙박사과정, 2026 NGPT Best Oral Award 수상</div></div></div>
+      <div class="af-note" style="animation-delay: 1.25s;"><div class="af-nico" style="background: linear-gradient(135deg, #34d399, #10b981);">★</div><div><div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 700; color: #8a83b8;"><span>AWARD</span><span class="af-mono">2026.06.12</span></div><div style="font-size: 14px; font-weight: 500; margin-top: 2px;">곽수정 석∙박사과정 · 최다은 석사과정, 2026 NGPT Best Poster Award 수상</div></div></div>
+      <div class="af-note" style="animation-delay: 1.5s;"><div class="af-nico" style="background: linear-gradient(135deg, #fbbf24, #f59e0b);">✦</div><div><div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 700; color: #8a83b8;"><span>AWARD</span><span class="af-mono">2025.12.16</span></div><div style="font-size: 14px; font-weight: 500; margin-top: 2px;">Gerald Selasie Gbadam 석∙박사과정, 2025 대학원 연구페스티벌 우수 연구자상</div></div></div>
+      <div class="af-note" style="animation-delay: 1.75s;"><div class="af-nico" style="background: linear-gradient(135deg, #a78bfa, #7c3aed);">¶</div><div><div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 700; color: #8a83b8;"><span>PAPER</span><span class="af-mono">2025.10</span></div><div style="font-size: 14px; font-weight: 500; margin-top: 2px;">Gerald Selasie Gbadam 석∙박사과정 1저자 논문 Nature Communications 게재 확정</div></div></div>
+      <div class="af-note" style="animation-delay: 2s;"><div class="af-nico" style="background: linear-gradient(135deg, #a78bfa, #7c3aed);">¶</div><div><div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 700; color: #8a83b8;"><span>PAPER</span><span class="af-mono">2025.06.19</span></div><div style="font-size: 14px; font-weight: 500; margin-top: 2px;">주현서 석∙박사과정 1저자 논문 Advanced Materials 게재 확정</div></div></div>
+      <div class="af-note" style="animation-delay: 2.25s; background: linear-gradient(120deg, rgba(255,255,255,.9), rgba(252,231,246,.9));"><div class="af-nico" style="background: linear-gradient(135deg, #f472b6, #ec4899);">◉</div><div><div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 700; color: #be185d;"><span>PRESS · 연합뉴스</span><span class="af-mono">2025.11.03</span></div><div style="font-size: 14px; font-weight: 700; margin-top: 2px;">"배터리 교체, 충전 No" 마찰전기 이용한 나노발전기 개발</div></div></div>
+    </div>
+
+    <!-- professor.app + photos -->
+    <div style="grid-column: span 7; margin-top: 30px; display: flex; flex-direction: column; gap: 24px;">
+      <div class="af-glass af-win">
+        <div class="af-bar"><span class="af-dot af-r"></span><span class="af-dot af-y"></span><span class="af-dot af-g"></span><span class="af-t">Professor.app</span></div>
+        <div style="display: grid; grid-template-columns: 190px 1fr; gap: 28px; padding: 28px;">
+          <div>
+            <div style="padding: 4px; border-radius: 22px; background: linear-gradient(135deg, #c4b5fd, #f9a8d4, #99f6e4);"><img src="prof.jpg" style="width: 100%; height: 220px; object-fit: cover; border-radius: 18px; display: block;"></div>
+            <div class="af-badge" style="margin-top: 14px; font-size: 12px;">✉ jhlee85@dgist.ac.kr</div>
+          </div>
+          <div>
+            <div class="af-mono" style="font-size: 12px; font-weight: 700; color: #8b5cf6; letter-spacing: .08em;">PRINCIPAL INVESTIGATOR</div>
+            <div style="font-size: 34px; font-weight: 700; letter-spacing: -.035em; line-height: 1.15; margin-top: 4px;">Ju-Hyuck Lee</div>
+            <div style="font-size: 14.5px; color: #4b4578; font-weight: 500;">Associate Professor · Dept. of Energy Science &amp; Engineering, DGIST</div>
+            <div class="af-mono" style="margin-top: 16px; font-size: 12.5px; line-height: 1.9; color: #3b3566; padding: 12px 16px; border-radius: 14px; background: rgba(255,255,255,.65); border: 1px solid #fff;">
+              <div><span style="color: #ec4899;">2016</span>  Ph.D., SKKU</div>
+              <div><span style="color: #06b6d4;">2016–2018</span>  Postdoc, UC Berkeley &amp; LBNL</div>
+              <div><span style="color: #8b5cf6;">2018–</span>  DGIST</div>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px;">
+              <span class="af-badge"><span style="color: #8b5cf6;">◆</span> Nano Energy Early Career Researcher Board (2025–)</span>
+              <span class="af-badge"><span style="color: #ec4899;">◆</span> KIM Emerging Innovator in Materials (2025)</span>
+              <span class="af-badge"><span style="color: #06b6d4;">◆</span> 2025 Energies Award (MDPI)</span>
+              <span class="af-badge"><span style="color: #f59e0b;">◆</span> IEEE-ISAF Young Investigator Award (2022)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="af-glass af-win" style="display: flex; flex-direction: column;">
+        <div class="af-bar"><span class="af-dot af-r"></span><span class="af-dot af-y"></span><span class="af-dot af-g"></span><span class="af-t">Photos — people</span></div>
+        <div style="padding: 16px; flex: 1; display: grid; grid-template-columns: 1fr 200px; gap: 16px;">
+          <div style="border-radius: 14px; overflow: hidden; height: 250px;"><img src="photo1.jpg" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+          <div style="display: flex; flex-direction: column; justify-content: space-between; padding: 6px 4px;">
+            <div style="font-size: 22px; font-weight: 700; letter-spacing: -.03em; line-height: 1.2;">18 researchers,<br><span class="af-grad">one lab.</span></div>
+            <div style="font-size: 13px; color: #4b4578;">Graduate students and researchers in Energy Science &amp; Engineering at DGIST.</div>
+            <a href="#" style="font-weight: 700; font-size: 14px; color: #6d28d9;">Meet the people →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- dock: journals -->
+  <div style="position: relative; padding: 56px 48px 0; text-align: center;">
+    <div class="af-mono" style="font-size: 12px; font-weight: 700; color: #8b5cf6; letter-spacing: .12em; margin-bottom: 14px;">PUBLISHED IN</div>
+    <div class="af-glass af-dock" style="display: inline-flex;">
+      <div class="af-app" style="color: #be185d;">Nature Communications</div>
+      <div class="af-app" style="color: #6d28d9;">Advanced Materials</div>
+      <div class="af-app" style="color: #0e7490;">Nano Energy</div>
+      <div class="af-app" style="color: #047857;">Advanced Science</div>
+      <div class="af-app" style="color: #b45309;">J. Mater. Chem. A</div>
+      <div class="af-app" style="color: #4338ca;">Nano Trends</div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <div class="af-glass" style="margin: 48px 24px 24px; border-radius: 16px; padding: 16px 22px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: #4b4578;">
+    <div style="display: flex; align-items: center; gap: 12px;"><img src="logo.png" style="height: 24px; display: block;"><span>Room E6-411, Dept. of Energy Science &amp; Engineering, DGIST, Daegu 42988, Republic of Korea</span></div>
+    <div class="af-mono" style="font-size: 12px;">© JU HYUCK LEE's Group</div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

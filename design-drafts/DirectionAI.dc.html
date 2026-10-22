@@ -1,0 +1,211 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap">
+  <style>
+    body { margin: 0; background: #ffffff; color: #0d1330; font-family: 'DM Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.55; }
+    a { color: #0d1330; text-decoration: none; }
+    .ai-root { width: 1440px; position: relative; overflow: hidden; background: #ffffff; }
+    .ai-h { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; letter-spacing: -0.045em; line-height: .95; }
+    .ai-nav { display: flex; gap: 4px; padding: 6px; border-radius: 999px; background: #f2f4fb; font-weight: 700; font-size: 14px; }
+    .ai-nav div { padding: 9px 17px; border-radius: 999px; color: #3b4266; }
+    .ai-nav .ai-on { background: #2b5bff; color: #fff; }
+    .ai-pill { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 999px; font-weight: 700; font-size: 13.5px; }
+    /* letter wave */
+    .ai-wave span { display: inline-block; animation: ai-wave 3.2s ease-in-out infinite; }
+    .ai-wave .ai-sp { width: .26em; }
+    @keyframes ai-wave { 0%, 40%, 100% { transform: translateY(0) rotate(0deg); } 18% { transform: translateY(-22px) rotate(-4deg); } }
+    @keyframes ai-up { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: translateY(0); } }
+    .ai-up { animation: ai-up .9s cubic-bezier(.2,.7,.2,1) both; } .ai-d1 { animation-delay: .15s; } .ai-d2 { animation-delay: .3s; } .ai-d3 { animation-delay: .45s; }
+    .ai-bub { width: 118px; height: 118px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; animation: ai-bob 5s ease-in-out infinite; }
+    .ai-bub b { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 40px; line-height: 1; letter-spacing: -0.04em; }
+    .ai-bub span { font-size: 12.5px; font-weight: 700; margin-top: 4px; }
+    @keyframes ai-bob { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-12px) rotate(4deg); } }
+    /* filmstrip */
+    .ai-strip { position: relative; height: 520px; overflow: hidden; }
+    .ai-track { position: absolute; left: 0; top: 40px; display: flex; gap: 28px; width: max-content; animation: ai-scroll 46s linear infinite; }
+    @keyframes ai-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .ai-card { position: relative; flex: none; width: 310px; height: 420px; border-radius: 34px; overflow: hidden; box-shadow: 0 26px 50px rgba(13,19,48,.16); }
+    .ai-t1 { transform: rotate(-4deg) translateY(10px); } .ai-t2 { transform: rotate(3deg) translateY(-6px); } .ai-t3 { transform: rotate(-1.5deg) translateY(16px); } .ai-t4 { transform: rotate(5deg); }
+    .ai-card img { position: absolute; top: 0; left: -20%; width: 140%; height: 100%; object-fit: cover; display: block; animation: ai-par 7s ease-in-out infinite alternate; }
+    @keyframes ai-par { from { transform: translateX(-7%) scale(1.04); } to { transform: translateX(7%) scale(1.04); } }
+    .ai-lab { position: absolute; left: 18px; bottom: 18px; padding: 8px 14px; border-radius: 999px; font-weight: 700; font-size: 13px; background: #fff; color: #0d1330; }
+    .ai-blk { display: flex; flex-direction: column; justify-content: space-between; padding: 30px; box-sizing: border-box; }
+    .ai-blk .ai-h { font-size: 120px; }
+    /* journals */
+    .ai-jr { padding: 12px 22px; border-radius: 999px; font-weight: 700; font-size: 16px; border: 2px solid #0d1330; white-space: nowrap; }
+    /* flip cards */
+    .ai-flip { perspective: 1200px; height: 310px; }
+    .ai-inner { position: relative; height: 100%; transform-style: preserve-3d; animation: ai-flip 8s cubic-bezier(.6,0,.3,1) infinite; }
+    @keyframes ai-flip { 0%, 35% { transform: rotateY(0deg); } 45%, 80% { transform: rotateY(180deg); } 90%, 100% { transform: rotateY(360deg); } }
+    .ai-flip:hover .ai-inner { animation: none; transform: rotateY(180deg); transition: transform .7s; }
+    .ai-face { position: absolute; inset: 0; border-radius: 30px; padding: 26px; box-sizing: border-box; backface-visibility: hidden; -webkit-backface-visibility: hidden; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; }
+    .ai-back { transform: rotateY(180deg); }
+    .ai-face .ai-no { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 64px; line-height: .9; letter-spacing: -0.05em; }
+    .ai-face .ai-tt { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 25px; line-height: 1.08; letter-spacing: -0.03em; }
+    .ai-face .ai-ds { font-size: 19px; font-weight: 500; line-height: 1.4; }
+    .ai-shape { position: absolute; right: -30px; top: -30px; width: 150px; height: 150px; border-radius: 50%; opacity: .35; }
+    /* news deck */
+    .ai-deck { position: relative; height: 650px; }
+    .ai-nc { position: absolute; left: 0; right: 0; top: var(--t); height: 230px; border-radius: 26px; padding: 22px 28px; box-sizing: border-box; transform: rotate(var(--r)); box-shadow: 0 -8px 30px rgba(13,19,48,.10); animation: ai-fan 1.3s cubic-bezier(.2,.8,.2,1) both; animation-delay: var(--dl); }
+    @keyframes ai-fan { from { transform: translateY(calc(var(--t) * -1)) rotate(0deg); } to { transform: translateY(0px) rotate(var(--r)); } }
+    .ai-nc .ai-meta { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 13px; }
+    .ai-nc .ai-meta i { font-style: normal; padding: 4px 11px; border-radius: 999px; background: rgba(255,255,255,.85); color: #0d1330; }
+    .ai-nc .ai-nt { font-size: 17.5px; font-weight: 700; margin-top: 12px; letter-spacing: -0.01em; }
+    .ai-nc:hover { transform: rotate(0deg) translateY(-10px); transition: transform .3s; }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+</helmet>
+<div class="ai-root">
+  <!-- header -->
+  <div style="position: relative; display: flex; align-items: center; justify-content: space-between; height: 96px; padding: 0 64px;">
+    <div style="display: flex; align-items: center; gap: 12px;"><img src="logo.png" style="width: 36px; display: block;"><div class="ai-h" style="font-size: 23px; letter-spacing: -0.03em;">ECME<span style="color: #2b5bff;">.</span>lab</div></div>
+    <div class="ai-nav"><div class="ai-on">Home</div><div>Professor</div><div>People</div><div>Research</div><div>Publications</div><div>News</div><div>Contact</div></div>
+    <div class="ai-pill" style="background: #ffd23f; padding: 12px 22px; font-size: 14px;">Join us →</div>
+  </div>
+
+  <!-- hero -->
+  <div style="position: relative; padding: 46px 64px 0;">
+    <div class="ai-up" style="display: flex; gap: 10px;">
+      <div class="ai-pill" style="background: #e6edff; color: #2b5bff;">● Energy Conversion Materials &amp; Electronics Lab</div>
+      <div class="ai-pill" style="background: #fff1e6; color: #e8600b;">DGIST · Energy Science &amp; Engineering</div>
+    </div>
+    <div class="ai-h ai-wave" style="font-size: 164px; line-height: 1.02; margin-top: 30px;"><span style="color:#2b5bff;animation-delay:0.00s">E</span><span style="color:#2868f0;animation-delay:0.07s">n</span><span style="color:#2575e1;animation-delay:0.14s">e</span><span style="color:#2282d2;animation-delay:0.21s">r</span><span style="color:#1f8fc3;animation-delay:0.28s">g</span><span style="color:#1c9cb4;animation-delay:0.35s">y</span><span class="ai-sp"> </span><span style="color:#16b596;animation-delay:0.49s">f</span><span style="color:#1ebe86;animation-delay:0.56s">r</span><span style="color:#3abc74;animation-delay:0.63s">o</span><span style="color:#57bb61;animation-delay:0.70s">m</span><br><span style="color:#74ba4f;animation-delay:0.77s">e</span><span style="color:#90b83d;animation-delay:0.84s">v</span><span style="color:#adb72b;animation-delay:0.91s">e</span><span style="color:#cab618;animation-delay:0.98s">r</span><span style="color:#e6b406;animation-delay:1.05s">y</span><span class="ai-sp"> </span><span style="color:#f3a706;animation-delay:1.19s">m</span><span style="color:#f5a009;animation-delay:1.26s">o</span><span style="color:#f7980c;animation-delay:1.33s">t</span><span style="color:#f99110;animation-delay:1.40s">i</span><span style="color:#fb8913;animation-delay:1.47s">o</span><span style="color:#fd8217;animation-delay:1.54s">n</span><span style="color:#ff7a1a;animation-delay:1.61s">.</span></div>
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 40px;">
+      <div class="ai-up ai-d2" style="max-width: 560px;">
+        <div style="font-size: 20px; color: #3b4266; line-height: 1.5;">Piezoelectric &amp; triboelectric nanogenerators, functional polymers and bio-piezoelectric materials — powering self-powered electronics and human-inspired tactile sensors.</div>
+        <div style="display: flex; gap: 12px; margin-top: 28px;"><div class="ai-pill" style="background: #0d1330; color: #fff; padding: 17px 30px; font-size: 15px;">Explore research</div><div class="ai-pill" style="background: #3ee6b0; color: #0d1330; padding: 17px 30px; font-size: 15px;">Meet the people</div></div>
+      </div>
+      <div style="display: flex; gap: 16px;">
+        <div class="ai-bub" style="background: #2b5bff; color: #fff;"><b>81</b><span>papers</span></div>
+        <div class="ai-bub" style="background: #ffd23f; animation-delay: -1.2s;"><b>35</b><span>patents</span></div>
+        <div class="ai-bub" style="background: #ff7a1a; color: #fff; animation-delay: -2.4s;"><b>18</b><span>members</span></div>
+        <div class="ai-bub" style="background: #3ee6b0; animation-delay: -3.6s;"><b>53</b><span>news</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- filmstrip -->
+  <div class="ai-strip" style="margin-top: 36px;">
+    <div class="ai-track">
+      <div class="ai-card ai-t1"><img src="hero.jpg" style="object-position: 50% 60%;"><div class="ai-lab">Spring at DGIST</div></div>
+      <div class="ai-card ai-t2 ai-blk" style="background: #2b5bff; color: #fff;"><div style="font-weight: 700; font-size: 15px;">Peer-reviewed</div><div><div class="ai-h">81</div><div style="font-weight: 700; font-size: 18px;">papers published</div></div></div>
+      <div class="ai-card ai-t3"><img src="photo1.jpg"><div class="ai-lab" style="background: #ffd23f;">Lab events</div></div>
+      <div class="ai-card ai-t4"><img src="prof.jpg" style="object-position: 50% 30%;"><div class="ai-lab">Prof. Ju-Hyuck Lee</div></div>
+      <div class="ai-card ai-t1 ai-blk" style="background: #ffd23f;"><div style="font-weight: 700; font-size: 15px;">Intellectual property</div><div><div class="ai-h">35</div><div style="font-weight: 700; font-size: 18px;">patents</div></div></div>
+      <div class="ai-card ai-t2"><img src="member.jpg" style="object-position: 50% 30%;"><div class="ai-lab" style="background: #3ee6b0;">Our researchers</div></div>
+      <div class="ai-card ai-t3"><img src="hero.jpg" style="object-position: 80% 40%;"><div class="ai-lab" style="background: #ff7a1a; color: #fff;">18 members</div></div>
+      <div class="ai-card ai-t4 ai-blk" style="background: #3ee6b0;"><div style="font-weight: 700; font-size: 15px;">Latest</div><div><div class="ai-h" style="font-size: 52px; line-height: 1;">Nature<br>Comm.</div><div style="font-weight: 700; font-size: 18px; margin-top: 10px;">2025 · first-author paper</div></div></div>
+      <div class="ai-card ai-t2 ai-blk" style="background: #ff7a1a; color: #fff;"><div style="font-weight: 700; font-size: 15px;">Press · 연합뉴스 · 2025.11.03</div><div><div class="ai-h" style="font-size: 36px; line-height: 1.14; letter-spacing: -0.03em;">"배터리 교체, 충전 No" 마찰전기 이용한 나노발전기 개발</div><div style="font-weight: 700; font-size: 15px; margin-top: 14px;">Read article →</div></div></div><div class="ai-card ai-t1"><img src="hero.jpg" style="object-position: 50% 60%;"><div class="ai-lab">Spring at DGIST</div></div>
+      <div class="ai-card ai-t2 ai-blk" style="background: #2b5bff; color: #fff;"><div style="font-weight: 700; font-size: 15px;">Peer-reviewed</div><div><div class="ai-h">81</div><div style="font-weight: 700; font-size: 18px;">papers published</div></div></div>
+      <div class="ai-card ai-t3"><img src="photo1.jpg"><div class="ai-lab" style="background: #ffd23f;">Lab events</div></div>
+      <div class="ai-card ai-t4"><img src="prof.jpg" style="object-position: 50% 30%;"><div class="ai-lab">Prof. Ju-Hyuck Lee</div></div>
+      <div class="ai-card ai-t1 ai-blk" style="background: #ffd23f;"><div style="font-weight: 700; font-size: 15px;">Intellectual property</div><div><div class="ai-h">35</div><div style="font-weight: 700; font-size: 18px;">patents</div></div></div>
+      <div class="ai-card ai-t2"><img src="member.jpg" style="object-position: 50% 30%;"><div class="ai-lab" style="background: #3ee6b0;">Our researchers</div></div>
+      <div class="ai-card ai-t3"><img src="hero.jpg" style="object-position: 80% 40%;"><div class="ai-lab" style="background: #ff7a1a; color: #fff;">18 members</div></div>
+      <div class="ai-card ai-t4 ai-blk" style="background: #3ee6b0;"><div style="font-weight: 700; font-size: 15px;">Latest</div><div><div class="ai-h" style="font-size: 52px; line-height: 1;">Nature<br>Comm.</div><div style="font-weight: 700; font-size: 18px; margin-top: 10px;">2025 · first-author paper</div></div></div>
+      <div class="ai-card ai-t2 ai-blk" style="background: #ff7a1a; color: #fff;"><div style="font-weight: 700; font-size: 15px;">Press · 연합뉴스 · 2025.11.03</div><div><div class="ai-h" style="font-size: 36px; line-height: 1.14; letter-spacing: -0.03em;">"배터리 교체, 충전 No" 마찰전기 이용한 나노발전기 개발</div><div style="font-weight: 700; font-size: 15px; margin-top: 14px;">Read article →</div></div></div>
+    </div>
+  </div>
+
+  <!-- journals -->
+  <div style="position: relative; padding: 10px 64px 0; display: flex; align-items: center; gap: 12px; flex-wrap: nowrap;">
+    <div style="font-weight: 700; font-size: 14px; color: #6b7194; margin-right: 8px; white-space: nowrap;">Published in</div>
+    <div class="ai-jr" style="background: #2b5bff; border-color: #2b5bff; color: #fff;">Nature Communications</div>
+    <div class="ai-jr">Advanced Materials</div>
+    <div class="ai-jr" style="background: #ffd23f; border-color: #ffd23f;">Nano Energy</div>
+    <div class="ai-jr">Advanced Science</div>
+    <div class="ai-jr" style="background: #3ee6b0; border-color: #3ee6b0;">J. Mater. Chem. A</div>
+    <div class="ai-jr">Nano Trends</div>
+  </div>
+
+  <!-- research -->
+  <div style="position: relative; padding: 96px 64px 0;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 36px;">
+      <div class="ai-h" style="font-size: 84px;">Research in<br><span style="color: #2b5bff;">five</span> <span style="color: #ff7a1a;">colors</span><span style="color: #ffd23f;">.</span></div>
+      <div style="font-size: 16px; color: #6b7194; max-width: 300px; text-align: right;">Cards flip to reveal each direction. Hover to hold one open. <b style="color: #0d1330;">All topics →</b></div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 18px;">
+      <div class="ai-flip"><div class="ai-inner" style="animation-delay: -0.5s;">
+        <div class="ai-face" style="background: #2b5bff; color: #fff;"><div class="ai-shape" style="background: #ffd23f;"></div><div class="ai-no">01</div><div class="ai-tt">Energy Harvesting Technology</div></div>
+        <div class="ai-face ai-back" style="background: #0d1330; color: #fff;"><div style="font-weight: 700; font-size: 13px; color: #8fa8ff;">01 · Energy Harvesting</div><div class="ai-ds">Piezoelectric &amp; triboelectric nanogenerators that turn motion into power.</div></div>
+      </div></div>
+      <div class="ai-flip"><div class="ai-inner" style="animation-delay: -5s;">
+        <div class="ai-face" style="background: #ffd23f;"><div class="ai-shape" style="background: #ff7a1a; border-radius: 30px; transform: rotate(20deg);"></div><div class="ai-no">02</div><div class="ai-tt">Synthesis of Functional Polymers</div></div>
+        <div class="ai-face ai-back" style="background: #2b5bff; color: #fff;"><div style="font-weight: 700; font-size: 13px; color: #ffd23f;">02 · Functional Polymers</div><div class="ai-ds">Electroactive polymers designed for flexible energy devices.</div></div>
+      </div></div>
+      <div class="ai-flip"><div class="ai-inner" style="animation-delay: -8s;">
+        <div class="ai-face" style="background: #ff7a1a; color: #fff;"><div class="ai-shape" style="background: #3ee6b0;"></div><div class="ai-no">03</div><div class="ai-tt">Bio-Piezoelectric Materials</div></div>
+        <div class="ai-face ai-back" style="background: #2b5bff; color: #fff;"><div style="font-weight: 700; font-size: 13px; color: #ffd23f;">03 · Bio-Piezoelectric</div><div class="ai-ds">Piezoelectric responses from bio-derived materials.</div></div>
+      </div></div>
+      <div class="ai-flip"><div class="ai-inner" style="animation-delay: -4.5s;">
+        <div class="ai-face" style="background: #3ee6b0;"><div class="ai-shape" style="background: #2b5bff; border-radius: 30px; transform: rotate(-15deg);"></div><div class="ai-no">04</div><div class="ai-tt">Various Novel Applications</div></div>
+        <div class="ai-face ai-back" style="background: #ff7a1a; color: #fff;"><div style="font-weight: 700; font-size: 13px; color: #ffe2cc;">04 · Novel Applications</div><div class="ai-ds">Self-powered electronics and human-inspired tactile sensors.</div></div>
+      </div></div>
+      <div class="ai-flip"><div class="ai-inner" style="animation-delay: -7.5s;">
+        <div class="ai-face" style="background: #0d1330; color: #fff;"><div class="ai-shape" style="background: #ff7a1a;"></div><div class="ai-no" style="color: #3ee6b0;">05</div><div class="ai-tt">AI-Integrated Research Platform</div></div>
+        <div class="ai-face ai-back" style="background: #ffd23f;"><div style="font-weight: 700; font-size: 13px; color: #b5410a;">05 · AI Platform</div><div class="ai-ds">Data-driven tools woven into the research workflow.</div></div>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- news deck + PI -->
+  <div style="position: relative; padding: 100px 64px 0; display: grid; grid-template-columns: 1fr 440px; gap: 48px; align-items: stretch;">
+    <div>
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 34px;"><div class="ai-h" style="font-size: 84px;">Fresh <span style="color: #ff7a1a;">news</span></div><a href="#" style="font-weight: 700; font-size: 15px;">All 53 →</a></div>
+      <div class="ai-deck">
+        <div class="ai-nc" style="--t: 0px; --r: -0.7deg; --dl: .6s; background: #2b5bff; color: #fff;"><div class="ai-meta"><i>Award</i>2026.06.12</div><div class="ai-nt">Gerald Selasie Gbadam · 류연경 석∙박사과정, 2026 NGPT Best Oral Award 수상</div></div>
+        <div class="ai-nc" style="--t: 104px; --r: 0.6deg; --dl: .7s; background: #ffd23f;"><div class="ai-meta"><i>Award</i>2026.06.12</div><div class="ai-nt">곽수정 석∙박사과정 · 최다은 석사과정, 2026 NGPT Best Poster Award 수상</div></div>
+        <div class="ai-nc" style="--t: 208px; --r: -0.5deg; --dl: .8s; background: #3ee6b0;"><div class="ai-meta"><i>Award</i>2025.12.16</div><div class="ai-nt">Gerald Selasie Gbadam 석∙박사과정, 2025 대학원 연구페스티벌 우수 연구자상</div></div>
+        <div class="ai-nc" style="--t: 312px; --r: 0.7deg; --dl: .9s; background: #ff7a1a; color: #fff;"><div class="ai-meta"><i>Paper</i>2025.10</div><div class="ai-nt">Gerald Selasie Gbadam 석∙박사과정 1저자 논문 Nature Communications 게재 확정</div></div>
+        <div class="ai-nc" style="--t: 416px; --r: -0.4deg; --dl: 1s; background: #ffffff; border: 2px solid #0d1330; box-shadow: 0 -8px 30px rgba(13,19,48,.10), 0 24px 50px rgba(13,19,48,.12);">
+          <div class="ai-meta"><i style="background: #0d1330; color: #fff;">Paper</i>2025.06.19</div><div class="ai-nt">주현서 석∙박사과정 1저자 논문 Advanced Materials 게재 확정</div>
+          <div style="display: flex; align-items: center; gap: 12px; margin-top: 34px; font-weight: 700; font-size: 14px; color: #6b7194;"><span style="display: inline-block; width: 34px; height: 34px; border-radius: 50%; background: #ffd23f;"></span><span style="display: inline-block; width: 34px; height: 34px; border-radius: 50%; background: #3ee6b0; margin-left: -22px;"></span><span style="display: inline-block; width: 34px; height: 34px; border-radius: 50%; background: #2b5bff; margin-left: -22px;"></span>5 of 53 news items · press in the filmstrip ↑</div>
+        </div>
+      </div>
+    </div>
+    <!-- PI card -->
+    <div style="position: relative; border-radius: 36px; overflow: hidden; background: #2b5bff; color: #fff; padding: 34px 32px; box-sizing: border-box;">
+      <div style="position: absolute; right: -70px; top: -70px; width: 240px; height: 240px; border-radius: 50%; background: #ffd23f;"></div>
+      <div style="position: absolute; right: 34px; top: 200px; width: 70px; height: 70px; border-radius: 22px; background: #3ee6b0; transform: rotate(18deg);"></div>
+      <div style="position: relative; display: flex; gap: 22px; align-items: flex-end;">
+        <div style="width: 170px; height: 210px; border-radius: 100px 100px 26px 26px; overflow: hidden; border: 5px solid #fff; box-shadow: 0 24px 50px rgba(13,19,48,.3); flex: none;"><img src="prof.jpg" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+        <div class="ai-pill" style="background: #fff; color: #2b5bff; margin-bottom: 6px;">PI</div>
+      </div>
+      <div class="ai-h" style="position: relative; font-size: 54px; margin-top: 24px;">Ju-Hyuck Lee</div>
+      <div style="position: relative; font-size: 15.5px; color: #dce5ff; margin-top: 10px;">Associate Professor · Dept. of Energy Science &amp; Engineering, DGIST</div>
+      <div style="position: relative; margin-top: 20px; font-size: 14.5px; line-height: 1.5;">
+        <div style="display: flex; gap: 14px; padding: 9px 0; border-top: 1px solid rgba(255,255,255,.25);"><b style="width: 76px; color: #ffd23f;">2018–</b>DGIST</div>
+        <div style="display: flex; gap: 14px; padding: 9px 0; border-top: 1px solid rgba(255,255,255,.25);"><b style="width: 76px; color: #ffd23f;">2016–18</b>Postdoc, UC Berkeley &amp; LBNL</div>
+        <div style="display: flex; gap: 14px; padding: 9px 0; border-top: 1px solid rgba(255,255,255,.25); border-bottom: 1px solid rgba(255,255,255,.25);"><b style="width: 76px; color: #ffd23f;">2016</b>Ph.D., SKKU</div>
+      </div>
+      <div style="position: relative; display: flex; flex-wrap: wrap; gap: 7px; margin-top: 18px;">
+        <div class="ai-pill" style="background: #fff; color: #2b5bff; font-size: 12.5px; padding: 7px 13px;">Nano Energy Early Career Researcher Board (2025–)</div>
+        <div class="ai-pill" style="background: #ffd23f; color: #0d1330; font-size: 12.5px; padding: 7px 13px;">KIM Emerging Innovator in Materials (2025)</div>
+        <div class="ai-pill" style="background: #3ee6b0; color: #0d1330; font-size: 12.5px; padding: 7px 13px;">2025 Energies Award (MDPI)</div>
+        <div class="ai-pill" style="background: #ff7a1a; color: #fff; font-size: 12.5px; padding: 7px 13px;">IEEE-ISAF Young Investigator Award (2022)</div>
+      </div>
+      <div style="position: relative; display: flex; justify-content: space-between; align-items: center; margin-top: 24px;"><div class="ai-pill" style="background: #0d1330; color: #fff; padding: 13px 22px; font-size: 14px;">Full profile →</div><div style="font-weight: 700; font-size: 14px;">jhlee85@dgist.ac.kr</div></div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <div style="position: relative; margin-top: 100px; background: #2b5bff; color: #fff; padding: 64px 64px 34px; overflow: hidden;">
+    <div style="position: absolute; right: -40px; top: -120px; width: 300px; height: 300px; border-radius: 50%; background: #ffd23f;"></div>
+    <div style="position: absolute; right: 230px; top: 90px; width: 90px; height: 90px; border-radius: 26px; background: #3ee6b0; transform: rotate(-14deg);"></div>
+    <div class="ai-h" style="position: relative; font-size: 84px;">Let's make motion matter<span style="color: #ffd23f;">.</span></div>
+    <div style="position: relative; display: flex; justify-content: space-between; align-items: center; margin-top: 56px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.3); font-size: 14px; color: rgba(255,255,255,.85);">
+      <div>Room E6-411, Dept. of Energy Science &amp; Engineering, DGIST, Daegu 42988, Republic of Korea</div>
+      <div style="font-weight: 700;">© JU HYUCK LEE's Group</div>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>
