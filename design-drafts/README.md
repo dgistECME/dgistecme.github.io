@@ -5,6 +5,10 @@ Claude Design 캔버스( https://claude.ai/code/artifact/a6db981f-9b66-4d66-8b9a
 
 | 파일 | 방향 | 상태 |
 |---|---|---|
+| `DirectionAJ.dc.html` | AJ · Gradient Glass Editorial (메시 그라데이션 + 유리 카드, 세리프, 절제 모션) | 절제된 화려함 |
+| `DirectionAK.dc.html` | AK · Bright Photo Magazine (사진 콜라주 + 색면, 잡지 섹션, 무한 루프 없음) | 절제된 화려함 |
+| `DirectionAL.dc.html` | AL · Soft Clay 3D (파스텔 점토 조형, 둥근 서체, 절제 모션) | 절제된 화려함 |
+| `DirectionAM.dc.html` | AM · Premium Academic (명문대 연구실 결, 세리프, 무한 루프 없음) | 절제된 화려함 |
 | `DirectionAD.dc.html` | AD · Liquid Chrome (gooey 액체금속 블롭, 블롭 사진, 크롬 글자, 물방울 카드) | 6가지 콘셉트 |
 | `DirectionAE.dc.html` | AE · Isometric Lab World (아이소메트릭 섬, 에너지 흐름, 연구 섬) | 6가지 콘셉트 |
 | `DirectionAF.dc.html` | AF · Lab OS Dashboard (글래스 OS 창, 오실로스코프, 게이지, 터미널, 알림 뉴스) | 6가지 콘셉트 |

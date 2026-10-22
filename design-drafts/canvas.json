@@ -5,6 +5,10 @@
       "name": "Final · Bold Editorial"
     },
     {
+      "id": "page-12",
+      "name": "Calm fancy · AJ AK AL AM (restrained motion)"
+    },
+    {
       "id": "page-11",
       "name": "Batch 3 · AD AE AF AG AH AI (six concepts)"
     },
@@ -54,6 +58,42 @@
       "h": 1640,
       "title": "Home · Bold Editorial (적용 중)",
       "page": "page-1"
+    },
+    {
+      "file": "DirectionAJ.dc.html",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 3050,
+      "title": "AJ · Gradient Glass Editorial",
+      "page": "page-12"
+    },
+    {
+      "file": "DirectionAK.dc.html",
+      "x": 1560,
+      "y": 0,
+      "w": 1440,
+      "h": 3470,
+      "title": "AK · Bright Photo Magazine",
+      "page": "page-12"
+    },
+    {
+      "file": "DirectionAL.dc.html",
+      "x": 3120,
+      "y": 0,
+      "w": 1440,
+      "h": 2930,
+      "title": "AL · Soft Clay 3D",
+      "page": "page-12"
+    },
+    {
+      "file": "DirectionAM.dc.html",
+      "x": 4680,
+      "y": 0,
+      "w": 1440,
+      "h": 2970,
+      "title": "AM · Premium Academic",
+      "page": "page-12"
     },
     {
       "file": "DirectionAD.dc.html",
@@ -381,6 +421,14 @@
       "text": "C · Bold Editorial 적용 완료 → https://dgistecme.github.io/ (애니메이션 A 기본)\n색·폰트·간격은 site/src/styles/global.css 상단 토큰에서 조정.\n이전 디자인 복구: git checkout v1-wix-style (또는 backup/wix-style 브랜치)."
     },
     {
+      "id": "page-12-brief",
+      "x": 0,
+      "y": -440,
+      "w": 880,
+      "page": "page-12",
+      "text": "'애니메이션 과함' 피드백 반영. 화려함은 색·레이아웃·사진·타이포로, 움직임은 최소.\n모션 규칙: 첫 로드 한 번 페이드업(≤0.9s) + 호버 리프트 + 상시 움직임 최대 1개(20초 이상, 아주 느리게). 마퀴·회전·입자·깜빡임 없음.\nAJ · Gradient Glass Editorial — 하늘·라일락·피치 메시 그라데이션 위 유리 카드, Fraunces 세리프 + 산세리프, 이탤릭 그라데이션 강조어. 상시 움직임: 배경 그라데이션 28초 표류 하나.\nAK · Bright Photo Magazine — 사진 콜라주 + 코발트·코랄·노랑 색면, 잡지식 01·02·03 섹션, 색 탭 연구 목록, 피처 뉴스. 상시 움직임 없음.\nAL · Soft Clay 3D — 파스텔 점토 조형(발전기 적층 슬랩, 구, 번개 타일), 점토 통계 코인, 둥근 Nunito. 상시 움직임: 구 하나 26초 표류.\nAM · Premium Academic — 해외 명문대 연구실 사이트 결: 흰 바탕 + 인디고/코랄, Newsreader 세리프, 와이드 사진 + 통계 바, 5열 연구, 저널 띠, 타임라인 PI. 상시 움직임 없음. 가장 신뢰감.\n\n하나 고르거나 섞어 말하면 실제 사이트에 이식."
+    },
+    {
       "id": "page-11-brief",
       "x": 0,
       "y": -440,
@@ -463,6 +511,6 @@
   ],
   "launch": {
     "view": "canvas",
-    "page": "page-11"
+    "page": "page-12"
   }
 }

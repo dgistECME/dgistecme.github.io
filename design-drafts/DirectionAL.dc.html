@@ -1,0 +1,263 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&display=swap">
+  <style>
+    body { margin: 0; background: #f6f1e9; color: #2b2840; font-family: 'Nunito', 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    .al-root { width: 1440px; position: relative; overflow: hidden; background:
+      radial-gradient(760px 560px at 88% 10%, rgba(250,214,222,.75), rgba(250,214,222,0) 70%),
+      radial-gradient(700px 600px at 0% 46%, rgba(214,230,250,.8), rgba(214,230,250,0) 70%),
+      radial-gradient(700px 520px at 100% 74%, rgba(206,240,224,.7), rgba(206,240,224,0) 70%),
+      #f6f1e9; }
+    .al-h { font-weight: 900; letter-spacing: -0.03em; color: #2b2840; }
+    .al-clay { box-shadow: inset 5px 7px 12px rgba(255,255,255,.8), inset -7px -9px 16px rgba(70,45,20,.09), 14px 22px 40px rgba(120,96,70,.15), 3px 5px 10px rgba(120,96,70,.07); }
+    .al-soft { box-shadow: inset 3px 4px 8px rgba(255,255,255,.85), inset -4px -5px 10px rgba(70,45,20,.07), 8px 12px 24px rgba(120,96,70,.12); }
+    .al-ball { position: absolute; border-radius: 50%; box-shadow: inset -12px -16px 26px rgba(60,40,20,.10), inset 8px 8px 16px rgba(255,255,255,.55), 18px 28px 44px rgba(120,96,70,.20); }
+    .al-slab { position: absolute; height: 92px; border-radius: 46px; }
+    .al-tag { position: absolute; padding: 9px 16px 9px 12px; border-radius: 999px; background: #fffdf9; font-size: 13.5px; font-weight: 800; color: #2b2840; display: flex; align-items: center; gap: 8px; white-space: nowrap; }
+    .al-tag i { width: 12px; height: 12px; border-radius: 50%; display: block; }
+    .al-nav { display: flex; gap: 4px; padding: 6px; border-radius: 999px; background: #efe8dd; box-shadow: inset 4px 5px 10px rgba(120,96,70,.13), inset -4px -4px 10px rgba(255,255,255,.9); font-weight: 800; font-size: 14.5px; }
+    .al-nav a { padding: 9px 17px; border-radius: 999px; color: #6b6577; transition: color .25s, background .25s; }
+    .al-nav a:hover { color: #2b2840; background: rgba(255,255,255,.6); }
+    .al-btn { display: inline-block; padding: 17px 30px; border-radius: 999px; font-weight: 900; font-size: 16px; transition: transform .3s cubic-bezier(.2,.7,.2,1), box-shadow .3s; }
+    .al-btn:hover { transform: translateY(-4px); }
+    .al-card { transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s; }
+    .al-card:hover { transform: translateY(-6px); box-shadow: inset 5px 7px 12px rgba(255,255,255,.8), inset -7px -9px 16px rgba(70,45,20,.09), 20px 32px 54px rgba(120,96,70,.20), 3px 5px 10px rgba(120,96,70,.07); }
+    .al-chip { padding: 12px 22px; border-radius: 999px; background: #fffdf9; font-weight: 800; font-size: 15px; color: #4a4558; transition: transform .3s, color .3s; }
+    .al-chip:hover { transform: translateY(-3px); color: #2b2840; }
+    .al-eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; color: #8a8296; }
+    .al-eyebrow i { width: 26px; height: 10px; border-radius: 6px; display: block; }
+    .al-date { display: inline-block; padding: 5px 12px; border-radius: 999px; font-size: 13px; font-weight: 900; }
+    @keyframes al-up { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+    .al-up { animation: al-up .8s cubic-bezier(.2,.7,.2,1) both; } .al-d1 { animation-delay: .1s; } .al-d2 { animation-delay: .2s; } .al-d3 { animation-delay: .3s; } .al-d4 { animation-delay: .42s; }
+    @keyframes al-drift { 0%,100% { transform: translate(0,0); } 50% { transform: translate(-14px,18px); } }
+    .al-drift { animation: al-drift 26s ease-in-out infinite; }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+</helmet>
+<div class="al-root">
+
+  <!-- header -->
+  <div style="position: relative; display: flex; align-items: center; justify-content: space-between; height: 104px; padding: 0 72px;">
+    <div style="display: flex; align-items: center; gap: 14px;">
+      <div class="al-soft" style="width: 52px; height: 52px; border-radius: 18px; background: #fffdf9; display: flex; align-items: center; justify-content: center;"><img src="logo.png" style="height: 32px; display: block;"></div>
+      <div><div class="al-h" style="font-size: 21px; line-height: 1;">ECME Lab</div><div style="font-size: 12.5px; font-weight: 700; color: #8a8296; margin-top: 3px;">DGIST · Energy Science &amp; Engineering</div></div>
+    </div>
+    <div class="al-nav"><a href="#" style="background: #fffdf9; color: #2b2840; box-shadow: 3px 4px 10px rgba(120,96,70,.14);">Home</a><a href="#">Professor</a><a href="#">People</a><a href="#">Research</a><a href="#">Publications</a><a href="#">News</a><a href="#">Contact</a></div>
+    <a href="#" class="al-btn al-clay" style="padding: 13px 24px; font-size: 14.5px; background: #f8e199;">Join us →</a>
+  </div>
+
+  <!-- hero -->
+  <div style="position: relative; display: grid; grid-template-columns: 640px 1fr; gap: 20px; padding: 16px 72px 0; height: 676px;">
+    <div style="padding-top: 24px;">
+      <div class="al-up al-soft" style="display: inline-flex; align-items: center; gap: 10px; padding: 9px 18px 9px 10px; border-radius: 999px; background: #fffdf9; font-size: 14px; font-weight: 800; color: #5d576b;"><span style="width: 22px; height: 22px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #fff, #a8e2c8 45%, #6fc6a0); display: block;"></span>Energy Conversion Materials &amp; Electronics Lab</div>
+      <div class="al-h al-up al-d1" style="font-size: 78px; line-height: 1.02; margin-top: 28px;">Soft materials<br>that turn <span style="position: relative; display: inline-block;"><span style="position: absolute; left: -6px; right: -6px; bottom: 6px; height: 26px; border-radius: 14px; background: #f8e199;"></span><span style="position: relative;">motion</span></span><br>into <span style="position: relative; display: inline-block;"><span style="position: absolute; left: -6px; right: -6px; bottom: 6px; height: 26px; border-radius: 14px; background: #b9d4f3;"></span><span style="position: relative;">power.</span></span></div>
+      <div class="al-up al-d2" style="font-size: 19px; line-height: 1.6; color: #5d576b; margin-top: 26px; max-width: 540px; font-weight: 600;">Piezoelectric &amp; triboelectric nanogenerators, functional polymers and bio-piezoelectric materials — for self-powered electronics and human-inspired tactile sensors.</div>
+      <div class="al-up al-d3" style="display: flex; gap: 14px; margin-top: 32px;">
+        <a href="#" class="al-btn al-clay" style="background: #2b2840; color: #fff; box-shadow: inset 4px 5px 10px rgba(255,255,255,.18), inset -5px -6px 12px rgba(0,0,0,.35), 14px 22px 40px rgba(43,40,64,.28);">Explore research</a>
+        <a href="#" class="al-btn al-clay" style="background: #fffdf9;">Meet the people</a>
+      </div>
+      <div class="al-up al-d4" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 44px; max-width: 580px;">
+        <div class="al-clay al-card" style="border-radius: 26px; background: linear-gradient(160deg, #d4e5f8, #b9d4f3); padding: 16px 18px;"><div class="al-h" style="font-size: 34px; line-height: 1;">81</div><div style="font-size: 13.5px; font-weight: 800; color: #4c6a92; margin-top: 4px;">papers</div></div>
+        <div class="al-clay al-card" style="border-radius: 26px; background: linear-gradient(160deg, #fcecb9, #f8e199); padding: 16px 18px;"><div class="al-h" style="font-size: 34px; line-height: 1;">35</div><div style="font-size: 13.5px; font-weight: 800; color: #8f7020; margin-top: 4px;">patents</div></div>
+        <div class="al-clay al-card" style="border-radius: 26px; background: linear-gradient(160deg, #fad6dc, #f6c1c8); padding: 16px 18px;"><div class="al-h" style="font-size: 34px; line-height: 1;">18</div><div style="font-size: 13.5px; font-weight: 800; color: #9c4b58; margin-top: 4px;">members</div></div>
+        <div class="al-clay al-card" style="border-radius: 26px; background: linear-gradient(160deg, #cfeee0, #b5e6cf); padding: 16px 18px;"><div class="al-h" style="font-size: 34px; line-height: 1;">53</div><div style="font-size: 13.5px; font-weight: 800; color: #357a5b; margin-top: 4px;">news</div></div>
+      </div>
+    </div>
+
+    <!-- clay sculpture -->
+    <div class="al-up al-d2" style="position: relative; height: 620px;">
+      <div style="position: absolute; left: 70px; top: 508px; width: 520px; height: 70px; border-radius: 50%; background: radial-gradient(closest-side, rgba(120,96,70,.22), rgba(120,96,70,0));"></div>
+      <!-- pedestal -->
+      <div class="al-slab" style="left: 110px; top: 430px; width: 440px; height: 100px; border-radius: 50px; background: linear-gradient(180deg, #d6cdf5, #c3b7ef); box-shadow: 0 22px 0 #a596e2, inset 6px 8px 14px rgba(255,255,255,.65), inset -8px -6px 16px rgba(70,45,120,.10), 0 44px 50px rgba(120,96,70,.22);"></div>
+      <!-- stack -->
+      <div class="al-slab" style="left: 140px; top: 346px; width: 380px; background: linear-gradient(180deg, #cfe2f8, #b2cff2); box-shadow: 0 18px 0 #86ade0, inset 6px 8px 14px rgba(255,255,255,.7), inset -8px -6px 14px rgba(40,70,120,.10), 0 30px 34px rgba(120,96,70,.16);"></div>
+      <div class="al-slab" style="left: 160px; top: 266px; width: 340px; background-color: #f8e199; background-image: radial-gradient(circle, rgba(214,170,50,.45) 3px, transparent 3.5px), linear-gradient(180deg, #fbeab4, #f6db86); background-size: 22px 22px, 100% 100%; background-position: 11px 11px, 0 0; box-shadow: 0 18px 0 #e2bb4c, inset 6px 8px 14px rgba(255,255,255,.7), inset -8px -6px 14px rgba(140,100,20,.10), 0 30px 34px rgba(120,96,70,.16);"></div>
+      <div class="al-slab" style="left: 180px; top: 186px; width: 300px; background: linear-gradient(180deg, #fbd3d9, #f4b8c1); box-shadow: 0 18px 0 #e3909e, inset 6px 8px 14px rgba(255,255,255,.7), inset -8px -6px 14px rgba(140,50,70,.10), 0 30px 34px rgba(120,96,70,.16);"></div>
+      <div class="al-slab" style="left: 215px; top: 110px; width: 230px; height: 86px; background: linear-gradient(180deg, #d2f0e2, #b0e3cb); box-shadow: 0 16px 0 #7fc8a6, inset 6px 8px 14px rgba(255,255,255,.7), inset -8px -6px 14px rgba(30,100,70,.10), 0 28px 30px rgba(120,96,70,.16);"></div>
+      <!-- bolt tile on top -->
+      <div class="al-clay" style="position: absolute; left: 282px; top: 12px; width: 96px; height: 96px; border-radius: 30px; background: linear-gradient(150deg, #fff4cf, #f8dc80); display: flex; align-items: center; justify-content: center;">
+        <svg width="48" height="56" viewBox="0 0 48 56"><path d="M28 3 L7 32 H22 L18 53 L41 22 H26 Z" fill="#fffdf9" stroke="#e7b93d" stroke-width="3" stroke-linejoin="round"/></svg>
+      </div>
+      <!-- spheres -->
+      <div class="al-ball al-drift" style="left: 520px; top: 0px; width: 140px; height: 140px; background: radial-gradient(circle at 34% 30%, #ffffff 0%, #d7e7fa 24%, #a9c8ef 70%, #8fb3e4 100%);"></div>
+      <div class="al-ball" style="left: 40px; top: 80px; width: 92px; height: 92px; background: radial-gradient(circle at 34% 30%, #ffffff 0%, #fde3e7 26%, #f4b8c1 72%, #e89aa8 100%);"></div>
+      <div class="al-ball" style="left: 590px; top: 300px; width: 66px; height: 66px; background: radial-gradient(circle at 34% 30%, #ffffff 0%, #d6f3e5 26%, #a8e2c8 72%, #82d0ad 100%);"></div>
+      <div class="al-ball" style="left: 60px; top: 380px; width: 44px; height: 44px; background: radial-gradient(circle at 34% 30%, #ffffff 0%, #fdf0c6 26%, #f8e199 72%, #ecc95b 100%);"></div>
+      <!-- torus -->
+      <div style="position: absolute; left: 470px; top: 170px; width: 92px; height: 92px; border-radius: 50%; border: 26px solid #d6cdf5; box-sizing: border-box; box-shadow: inset -6px -8px 12px rgba(70,45,120,.14), inset 5px 6px 10px rgba(255,255,255,.7), -5px -6px 10px rgba(255,255,255,.4) , 12px 18px 30px rgba(120,96,70,.18);"></div>
+      <!-- labels -->
+      <div class="al-tag al-soft" style="left: 0px; top: 222px;"><i style="background: #f4b8c1;"></i>Triboelectric</div>
+      <div class="al-tag al-soft" style="left: 548px; top: 408px;"><i style="background: #f8e199;"></i>Piezoelectric</div>
+      <div class="al-tag al-soft" style="left: 16px; top: 312px;"><i style="background: #b9d4f3;"></i>Functional polymers</div>
+      <div class="al-tag al-soft" style="left: 400px; top: 550px;"><i style="background: #a8e2c8;"></i>Self-powered electronics</div>
+    </div>
+  </div>
+
+  <!-- photo band -->
+  <div style="position: relative; padding: 40px 72px 0;">
+    <div style="display: grid; grid-template-columns: 1fr 420px; gap: 28px; height: 380px;">
+      <div class="al-clay al-card" style="position: relative; border-radius: 44px; padding: 14px; background: #fffdf9;">
+        <div style="position: absolute; inset: 14px; border-radius: 32px; overflow: hidden;"><img src="hero.jpg" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+        <div class="al-soft" style="position: absolute; left: 38px; bottom: 36px; padding: 14px 20px; border-radius: 22px; background: rgba(255,253,249,.94); display: flex; align-items: center; gap: 14px;">
+          <div style="display: flex;"><img src="prof.jpg" style="width: 38px; height: 38px; border-radius: 50%; object-fit: cover; border: 3px solid #fffdf9; display: block;"><img src="member.jpg" style="width: 38px; height: 38px; border-radius: 50%; object-fit: cover; border: 3px solid #fffdf9; margin-left: -12px; display: block;"><div style="width: 38px; height: 38px; border-radius: 50%; border: 3px solid #fffdf9; margin-left: -12px; background: #f8e199; font-size: 12px; font-weight: 900; display: flex; align-items: center; justify-content: center;">18</div></div>
+          <div><div style="font-weight: 900; font-size: 15px; line-height: 1.2;">18 members, one lab</div><div style="font-size: 13px; font-weight: 700; color: #8a8296;">Room E6-411 · DGIST</div></div>
+        </div>
+      </div>
+      <div class="al-clay al-card" style="position: relative; border-radius: 44px; padding: 14px; background: linear-gradient(160deg, #fbdde2, #f6c1c8);">
+        <div style="position: absolute; left: 14px; right: 14px; top: 14px; height: 248px; border-radius: 32px; overflow: hidden;"><img src="photo1.jpg" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+        <div style="position: absolute; left: 34px; right: 34px; bottom: 26px;">
+          <div class="al-h" style="font-size: 24px; line-height: 1.15;">Life in the lab</div>
+          <div style="font-size: 14.5px; font-weight: 700; color: #8c4a56; margin-top: 4px;">Ceremonies, conferences &amp; milestones →</div>
+        </div>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 12px; margin-top: 34px; flex-wrap: wrap;">
+      <div class="al-eyebrow" style="margin-right: 10px;"><i style="background: #b9d4f3;"></i>Published in</div>
+      <span class="al-chip al-soft">Nature Communications</span><span class="al-chip al-soft">Advanced Materials</span><span class="al-chip al-soft">Nano Energy</span><span class="al-chip al-soft">Advanced Science</span><span class="al-chip al-soft">J. Mater. Chem. A</span><span class="al-chip al-soft">Nano Trends</span>
+    </div>
+  </div>
+
+  <!-- research -->
+  <div style="position: relative; padding: 84px 72px 0;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 34px;">
+      <div><div class="al-eyebrow"><i style="background: #f8e199;"></i>Research</div><div class="al-h" style="font-size: 52px; line-height: 1.05; margin-top: 12px;">Five themes, shaped by hand.</div></div>
+      <a href="#" style="font-weight: 900; font-size: 15.5px; padding-bottom: 8px;">All research topics →</a>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 20px;">
+      <div class="al-clay al-card" style="border-radius: 34px; background: #fffdf9; padding: 24px 24px 26px; height: 270px; box-sizing: border-box; display: flex; flex-direction: column;">
+        <div style="position: relative; width: 96px; height: 96px;">
+          <div class="al-clay" style="position: absolute; inset: 0; border-radius: 30px; background: linear-gradient(150deg, #fff1c4, #f6d978); display: flex; align-items: center; justify-content: center;"><svg width="40" height="46" viewBox="0 0 48 56"><path d="M28 3 L7 32 H22 L18 53 L41 22 H26 Z" fill="#fffdf9" stroke="#e2b23a" stroke-width="3.5" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div style="font-size: 13px; font-weight: 900; color: #c9a43c; margin-top: auto;">01</div>
+        <div class="al-h" style="font-size: 20px; line-height: 1.2; margin-top: 4px;">Energy Harvesting Technology</div>
+        <div style="font-size: 14px; font-weight: 600; color: #7a7386; margin-top: 8px; line-height: 1.5;">Piezoelectric &amp; triboelectric nanogenerators</div>
+      </div>
+      <div class="al-clay al-card" style="border-radius: 34px; background: #fffdf9; padding: 24px 24px 26px; height: 270px; box-sizing: border-box; display: flex; flex-direction: column;">
+        <div style="position: relative; width: 120px; height: 96px;">
+          <div class="al-ball" style="left: 0; top: 30px; width: 46px; height: 46px; background: radial-gradient(circle at 34% 30%, #fff, #e6e0fa 28%, #c3b7ef 74%, #a898e4);"></div>
+          <div class="al-ball" style="left: 34px; top: 8px; width: 50px; height: 50px; background: radial-gradient(circle at 34% 30%, #fff, #e6e0fa 28%, #c3b7ef 74%, #a898e4);"></div>
+          <div class="al-ball" style="left: 70px; top: 34px; width: 44px; height: 44px; background: radial-gradient(circle at 34% 30%, #fff, #e6e0fa 28%, #c3b7ef 74%, #a898e4);"></div>
+        </div>
+        <div style="font-size: 13px; font-weight: 900; color: #9a8bd8; margin-top: auto;">02</div>
+        <div class="al-h" style="font-size: 20px; line-height: 1.2; margin-top: 4px;">Synthesis of Functional Polymers</div>
+        <div style="font-size: 14px; font-weight: 600; color: #7a7386; margin-top: 8px; line-height: 1.5;">Functional polymers for energy conversion</div>
+      </div>
+      <div class="al-clay al-card" style="border-radius: 34px; background: #fffdf9; padding: 24px 24px 26px; height: 270px; box-sizing: border-box; display: flex; flex-direction: column;">
+        <div style="position: relative; width: 96px; height: 96px;">
+          <div class="al-clay" style="position: absolute; left: 10px; top: 6px; width: 78px; height: 78px; border-radius: 6px 60px 6px 60px; background: linear-gradient(150deg, #dff5ea, #9fdcbf);"></div>
+          <div style="position: absolute; left: 22px; top: 44px; width: 54px; height: 5px; border-radius: 3px; background: rgba(255,255,255,.85); transform: rotate(-45deg);"></div>
+        </div>
+        <div style="font-size: 13px; font-weight: 900; color: #5fb48d; margin-top: auto;">03</div>
+        <div class="al-h" style="font-size: 20px; line-height: 1.2; margin-top: 4px;">Bio-Piezoelectric Materials</div>
+        <div style="font-size: 14px; font-weight: 600; color: #7a7386; margin-top: 8px; line-height: 1.5;">Piezoelectric materials from biological sources</div>
+      </div>
+      <div class="al-clay al-card" style="border-radius: 34px; background: #fffdf9; padding: 24px 24px 26px; height: 270px; box-sizing: border-box; display: flex; flex-direction: column;">
+        <div style="position: relative; width: 96px; height: 96px;">
+          <div style="position: absolute; left: 4px; top: 4px; width: 88px; height: 88px; border-radius: 50%; border: 22px solid #f4b8c1; box-sizing: border-box; box-shadow: inset -5px -7px 10px rgba(140,50,70,.14), inset 4px 5px 8px rgba(255,255,255,.7), 10px 16px 26px rgba(120,96,70,.18);"></div>
+          <div class="al-ball" style="left: 34px; top: 34px; width: 28px; height: 28px; background: radial-gradient(circle at 34% 30%, #fff, #fdf0c6 28%, #f8e199 74%, #e8c450);"></div>
+        </div>
+        <div style="font-size: 13px; font-weight: 900; color: #d98493; margin-top: auto;">04</div>
+        <div class="al-h" style="font-size: 20px; line-height: 1.2; margin-top: 4px;">Various Novel Applications</div>
+        <div style="font-size: 14px; font-weight: 600; color: #7a7386; margin-top: 8px; line-height: 1.5;">Self-powered electronics &amp; tactile sensors</div>
+      </div>
+      <div class="al-clay al-card" style="border-radius: 34px; background: #fffdf9; padding: 24px 24px 26px; height: 270px; box-sizing: border-box; display: flex; flex-direction: column;">
+        <div style="position: relative; width: 96px; height: 96px;">
+          <div class="al-clay" style="position: absolute; inset: 0; border-radius: 30px; background: linear-gradient(150deg, #dceafb, #a9c8ef);"></div>
+          <svg style="position: absolute; inset: 0;" width="96" height="96" viewBox="0 0 96 96"><g stroke="#fffdf9" stroke-width="4" stroke-linecap="round"><line x1="30" y1="32" x2="66" y2="32"/><line x1="30" y1="32" x2="48" y2="64"/><line x1="66" y1="32" x2="48" y2="64"/></g><g fill="#fffdf9"><circle cx="30" cy="32" r="9"/><circle cx="66" cy="32" r="9"/><circle cx="48" cy="64" r="11" fill="#2b2840"/></g></svg>
+        </div>
+        <div style="font-size: 13px; font-weight: 900; color: #6f97cf; margin-top: auto;">05</div>
+        <div class="al-h" style="font-size: 20px; line-height: 1.2; margin-top: 4px;">AI-Integrated Research Platform</div>
+        <div style="font-size: 14px; font-weight: 600; color: #7a7386; margin-top: 8px; line-height: 1.5;">AI woven into the research workflow</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- news + PI -->
+  <div style="position: relative; display: grid; grid-template-columns: 1fr 480px; gap: 36px; padding: 84px 72px 0;">
+    <div>
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 26px;">
+        <div><div class="al-eyebrow"><i style="background: #f4b8c1;"></i>News</div><div class="al-h" style="font-size: 44px; line-height: 1.05; margin-top: 12px;">Fresh from the lab</div></div>
+        <a href="#" style="font-weight: 900; font-size: 15.5px; padding-bottom: 6px;">All 53 news →</a>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <div class="al-soft al-card" style="display: grid; grid-template-columns: 122px 1fr; gap: 14px; align-items: center; padding: 14px 22px; border-radius: 22px; background: #fffdf9;"><span class="al-date" style="background: #fcecb9; color: #8f7020;">2026.06.12</span><div style="font-weight: 700; font-size: 15.5px;">Gerald Selasie Gbadam · 류연경 석∙박사과정, 2026 NGPT Best Oral Award 수상</div></div>
+        <div class="al-soft al-card" style="display: grid; grid-template-columns: 122px 1fr; gap: 14px; align-items: center; padding: 14px 22px; border-radius: 22px; background: #fffdf9;"><span class="al-date" style="background: #fcecb9; color: #8f7020;">2026.06.12</span><div style="font-weight: 700; font-size: 15.5px;">곽수정 석∙박사과정 · 최다은 석사과정, 2026 NGPT Best Poster Award 수상</div></div>
+        <div class="al-soft al-card" style="display: grid; grid-template-columns: 122px 1fr; gap: 14px; align-items: center; padding: 14px 22px; border-radius: 22px; background: #fffdf9;"><span class="al-date" style="background: #fad6dc; color: #9c4b58;">2025.12.16</span><div style="font-weight: 700; font-size: 15.5px;">Gerald Selasie Gbadam 석∙박사과정, 2025 대학원 연구페스티벌 우수 연구자상</div></div>
+        <div class="al-soft al-card" style="display: grid; grid-template-columns: 122px 1fr; gap: 14px; align-items: center; padding: 14px 22px; border-radius: 22px; background: #fffdf9;"><span class="al-date" style="background: #d4e5f8; color: #4c6a92;">2025.10</span><div style="font-weight: 700; font-size: 15.5px;">Gerald Selasie Gbadam 석∙박사과정 1저자 논문 Nature Communications 게재 확정</div></div>
+        <div class="al-soft al-card" style="display: grid; grid-template-columns: 122px 1fr; gap: 14px; align-items: center; padding: 14px 22px; border-radius: 22px; background: #fffdf9;"><span class="al-date" style="background: #d4e5f8; color: #4c6a92;">2025.06.19</span><div style="font-weight: 700; font-size: 15.5px;">주현서 석∙박사과정 1저자 논문 Advanced Materials 게재 확정</div></div>
+      </div>
+      <!-- press -->
+      <div class="al-clay al-card" style="margin-top: 22px; display: flex; align-items: center; gap: 22px; padding: 22px 26px; border-radius: 30px; background: linear-gradient(150deg, #dff5ea, #b5e6cf);">
+        <div class="al-soft" style="width: 64px; height: 64px; border-radius: 22px; background: #fffdf9; display: flex; align-items: center; justify-content: center; flex: none;"><svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="#357a5b" stroke-width="2.4" stroke-linejoin="round"><rect x="4" y="5" width="18" height="20" rx="3"/><path d="M22 10h4v12a3 3 0 0 1-3 3h-1"/><line x1="8" y1="11" x2="18" y2="11"/><line x1="8" y1="16" x2="18" y2="16"/><line x1="8" y1="20" x2="14" y2="20"/></svg></div>
+        <div style="flex: 1;"><div style="font-size: 13px; font-weight: 900; color: #357a5b;">PRESS · 연합뉴스 · 2025.11.03</div><div style="font-weight: 900; font-size: 18px; line-height: 1.35; margin-top: 3px;">"배터리 교체, 충전 No" 마찰전기 이용한 나노발전기 개발</div></div>
+        <div style="font-weight: 900; font-size: 22px; color: #357a5b;">→</div>
+      </div>
+    </div>
+
+    <!-- PI -->
+    <div>
+      <div class="al-eyebrow"><i style="background: #a8e2c8;"></i>Principal Investigator</div>
+      <div class="al-clay" style="margin-top: 22px; border-radius: 40px; background: #fffdf9; padding: 30px; position: relative;">
+        <div style="display: flex; gap: 22px; align-items: center;">
+          <div style="position: relative; width: 132px; height: 150px; flex: none;">
+            <div class="al-clay" style="position: absolute; inset: 0; border-radius: 66px 66px 30px 30px; background: linear-gradient(160deg, #d4e5f8, #a9c8ef);"></div>
+            <img src="prof.jpg" style="position: absolute; left: 8px; top: 8px; width: 116px; height: 134px; object-fit: cover; border-radius: 58px 58px 24px 24px; display: block;">
+          </div>
+          <div>
+            <div class="al-h" style="font-size: 30px; line-height: 1.05;">Ju-Hyuck Lee</div>
+            <div style="font-size: 14.5px; font-weight: 700; color: #6b6577; margin-top: 8px; line-height: 1.45;">Associate Professor<br>Dept. of Energy Science &amp; Engineering, DGIST</div>
+          </div>
+        </div>
+        <div style="margin-top: 22px; display: flex; flex-direction: column; gap: 8px;">
+          <div style="display: grid; grid-template-columns: 104px 1fr; align-items: center; gap: 12px;"><span class="al-date" style="background: #b5e6cf; color: #2f6c50; text-align: center;">2018 –</span><div style="font-weight: 700; font-size: 15px;">DGIST</div></div>
+          <div style="display: grid; grid-template-columns: 104px 1fr; align-items: center; gap: 12px;"><span class="al-date" style="background: #d4e5f8; color: #4c6a92; text-align: center;">2016 – 18</span><div style="font-weight: 700; font-size: 15px;">Postdoc, UC Berkeley &amp; LBNL</div></div>
+          <div style="display: grid; grid-template-columns: 104px 1fr; align-items: center; gap: 12px;"><span class="al-date" style="background: #fad6dc; color: #9c4b58; text-align: center;">2016</span><div style="font-weight: 700; font-size: 15px;">Ph.D., SKKU</div></div>
+        </div>
+        <div style="margin-top: 24px; padding: 20px; border-radius: 26px; background: #f3ede3; box-shadow: inset 4px 5px 10px rgba(120,96,70,.12), inset -4px -4px 10px rgba(255,255,255,.9);">
+          <div style="font-size: 12.5px; font-weight: 900; letter-spacing: .12em; color: #8a8296; margin-bottom: 10px;">HONORS</div>
+          <div style="display: flex; flex-direction: column; gap: 8px; font-size: 14.5px; font-weight: 700;">
+            <div style="display: flex; gap: 10px; align-items: center;"><i style="width: 10px; height: 10px; border-radius: 50%; background: #f8e199; flex: none;"></i>Nano Energy Early Career Researcher Board (2025–)</div>
+            <div style="display: flex; gap: 10px; align-items: center;"><i style="width: 10px; height: 10px; border-radius: 50%; background: #f4b8c1; flex: none;"></i>KIM Emerging Innovator in Materials (2025)</div>
+            <div style="display: flex; gap: 10px; align-items: center;"><i style="width: 10px; height: 10px; border-radius: 50%; background: #a8e2c8; flex: none;"></i>2025 Energies Award (MDPI)</div>
+            <div style="display: flex; gap: 10px; align-items: center;"><i style="width: 10px; height: 10px; border-radius: 50%; background: #b9d4f3; flex: none;"></i>IEEE-ISAF Young Investigator Award (2022)</div>
+          </div>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 24px;">
+          <a href="#" class="al-btn al-clay" style="padding: 13px 24px; font-size: 14.5px; background: #2b2840; color: #fff; box-shadow: inset 4px 5px 10px rgba(255,255,255,.18), inset -5px -6px 12px rgba(0,0,0,.35), 10px 16px 30px rgba(43,40,64,.24);">Full profile →</a>
+          <div style="font-weight: 800; font-size: 14.5px; color: #6b6577;">jhlee85@dgist.ac.kr</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <div style="position: relative; padding: 84px 72px 48px;">
+    <div class="al-clay" style="position: relative; border-radius: 48px; background: linear-gradient(150deg, #d9e8fa, #b9d4f3); padding: 44px 56px 30px; overflow: hidden;">
+      <div class="al-ball" style="right: -30px; top: -56px; width: 170px; height: 170px; background: radial-gradient(circle at 34% 30%, #ffffff 0%, #fdf0c6 24%, #f8e199 70%, #ecc95b 100%);"></div>
+      <div class="al-ball" style="right: 130px; top: 92px; width: 56px; height: 56px; background: radial-gradient(circle at 34% 30%, #ffffff 0%, #fde3e7 26%, #f4b8c1 72%, #e89aa8 100%);"></div>
+      <div style="position: relative; display: flex; justify-content: space-between; align-items: flex-end;">
+        <div>
+          <div class="al-h" style="font-size: 48px; line-height: 1.05;">Come shape energy with us.</div>
+          <div style="font-size: 17px; font-weight: 700; color: #4c6a92; margin-top: 10px;">Interested in joining? Get in touch — jhlee85@dgist.ac.kr</div>
+        </div>
+        <a href="#" class="al-btn al-clay" style="background: #fffdf9; margin-right: 210px;">Contact the lab →</a>
+      </div>
+      <div style="position: relative; margin-top: 44px; padding-top: 22px; border-top: 2px solid rgba(76,106,146,.18); display: flex; justify-content: space-between; align-items: center; font-size: 14px; font-weight: 700; color: #4c6a92;">
+        <div style="display: flex; align-items: center; gap: 12px;"><img src="logo.png" style="height: 26px; display: block;">Room E6-411, Dept. of Energy Science &amp; Engineering, DGIST, Daegu 42988, Republic of Korea</div>
+        <div>© JU HYUCK LEE's Group</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

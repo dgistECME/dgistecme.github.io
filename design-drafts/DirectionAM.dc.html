@@ -1,0 +1,239 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600;700&display=swap">
+  <style>
+    body { margin: 0; background: #ffffff; color: #0f1222; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 15.5px; line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    .am-root { width: 1440px; position: relative; overflow: hidden; background: #ffffff; }
+    .am-serif { font-family: 'Newsreader', Georgia, serif; font-weight: 500; letter-spacing: -0.015em; }
+    .am-label { font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #4f3cff; display: flex; align-items: center; gap: 12px; }
+    .am-label b { color: #ff6a3d; font-weight: 700; }
+    .am-label i { width: 28px; height: 1.5px; background: #4f3cff; display: block; }
+    .am-nav { display: flex; gap: 34px; font-size: 14.5px; font-weight: 500; color: #4a4f63; }
+    .am-nav a { position: relative; padding: 32px 0 30px; transition: color .2s; }
+    .am-nav a:hover { color: #4f3cff; }
+    .am-nav a.on { color: #0f1222; font-weight: 600; }
+    .am-nav a.on::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: #4f3cff; }
+    .am-btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 24px; border-radius: 4px; font-weight: 600; font-size: 14.5px; transition: background .2s, color .2s, box-shadow .25s, transform .25s; }
+    .am-btn:hover { transform: translateY(-2px); }
+    .am-primary { background: #4f3cff; color: #fff; box-shadow: 0 10px 24px rgba(79,60,255,.25); }
+    .am-primary:hover { background: #3d2be6; box-shadow: 0 14px 30px rgba(79,60,255,.32); }
+    .am-ghost { border: 1px solid #d4d7e2; color: #0f1222; }
+    .am-ghost:hover { border-color: #4f3cff; color: #4f3cff; }
+    .am-col { padding: 28px 26px 26px; border-left: 1px solid #e6e8ef; position: relative; transition: background .25s; }
+    .am-col:first-child { border-left: none; padding-left: 0; }
+    .am-col::before { content: ''; position: absolute; left: 0; right: 0; top: -2px; height: 2px; background: #4f3cff; transform: scaleX(0); transform-origin: left; transition: transform .35s cubic-bezier(.2,.7,.2,1); }
+    .am-col:hover::before { transform: scaleX(1); }
+    .am-col:hover .am-more { color: #4f3cff; }
+    .am-more { font-size: 13.5px; font-weight: 600; color: #8a8fa3; transition: color .2s; }
+    .am-jr { background: #fff; padding: 26px 26px 22px; display: flex; flex-direction: column; justify-content: space-between; height: 128px; box-sizing: border-box; transition: box-shadow .25s, transform .25s; }
+    .am-jr:hover { transform: translateY(-3px); box-shadow: 0 16px 34px rgba(15,18,34,.08); position: relative; z-index: 1; }
+    .am-row { display: grid; grid-template-columns: 96px 64px 1fr 16px; gap: 16px; align-items: baseline; padding: 15px 0; border-top: 1px solid #e6e8ef; transition: background .2s; }
+    .am-row:hover { background: #f8f7ff; }
+    .am-ppl { transition: box-shadow .25s, transform .25s, border-color .25s; } .am-ppl:hover { transform: translateY(-3px); border-color: #cfc9ff; box-shadow: 0 16px 34px rgba(15,18,34,.08); }
+    .am-row:hover .am-arr { color: #4f3cff; transform: translateX(3px); }
+    .am-arr { color: #c3c6d3; transition: color .2s, transform .2s; }
+    .am-tag { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 3px 8px; border-radius: 3px; text-align: center; }
+    .am-date { font-size: 13.5px; font-weight: 600; color: #6b7086; font-variant-numeric: tabular-nums; }
+    @keyframes am-up { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+    .am-up { animation: am-up .8s cubic-bezier(.2,.7,.2,1) both; } .am-d1 { animation-delay: .1s; } .am-d2 { animation-delay: .22s; } .am-d3 { animation-delay: .36s; }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+</helmet>
+<div class="am-root">
+
+  <!-- utility bar -->
+  <div style="height: 40px; background: #f5f4ff; border-bottom: 1px solid #e9e7fb; display: flex; align-items: center; justify-content: space-between; padding: 0 72px; font-size: 12.5px; color: #5a5f78; font-weight: 500;">
+    <div><span style="color: #4f3cff; font-weight: 700;">DGIST</span> &nbsp;·&nbsp; Department of Energy Science &amp; Engineering</div>
+    <div style="display: flex; gap: 22px;"><span>Room E6-411</span><span>jhlee85@dgist.ac.kr</span></div>
+  </div>
+
+  <!-- header -->
+  <div style="display: flex; align-items: center; justify-content: space-between; height: 86px; padding: 0 72px; border-bottom: 1px solid #eceef4;">
+    <div style="display: flex; align-items: center; gap: 14px;">
+      <img src="logo.png" style="height: 40px; display: block;">
+      <div style="border-left: 1px solid #e0e2ea; padding-left: 14px;">
+        <div class="am-serif" style="font-size: 23px; line-height: 1; font-weight: 600;">ECME Lab</div>
+        <div style="font-size: 11.5px; color: #6b7086; margin-top: 4px; font-weight: 500;">Energy Conversion Materials &amp; Electronics</div>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 40px;">
+      <div class="am-nav"><a href="#" class="on">Home</a><a href="#">Professor</a><a href="#">People</a><a href="#">Research</a><a href="#">Publications</a><a href="#">News</a><a href="#">Contact</a></div>
+      <a href="#" class="am-btn am-primary" style="padding: 11px 20px; font-size: 14px;">Join the lab</a>
+    </div>
+  </div>
+
+  <!-- hero text -->
+  <div style="display: grid; grid-template-columns: 7fr 5fr; gap: 72px; align-items: end; padding: 60px 72px 44px;">
+    <div>
+      <div class="am-label am-up"><i></i>Energy Conversion Materials &amp; Electronics Lab</div>
+      <h1 class="am-serif am-up am-d1" style="font-size: 68px; line-height: 1.04; margin: 22px 0 0; font-weight: 500; letter-spacing: -0.025em;">Materials that turn everyday <em style="font-style: italic; color: #4f3cff;">motion</em> into <span style="background: linear-gradient(transparent 68%, #ffd9cb 68%, #ffd9cb 92%, transparent 92%);">electricity.</span></h1>
+    </div>
+    <div class="am-up am-d2" style="padding-bottom: 8px;">
+      <p style="margin: 0; font-size: 17.5px; line-height: 1.65; color: #474c62;">We study piezoelectric &amp; triboelectric nanogenerators, functional polymers and bio-piezoelectric materials — toward self-powered electronics and human-inspired tactile sensors.</p>
+      <div style="display: flex; gap: 12px; margin-top: 28px;">
+        <a href="#" class="am-btn am-primary">Explore research <span>→</span></a>
+        <a href="#" class="am-btn am-ghost">Publications</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- hero photo + caption bar -->
+  <div class="am-up am-d3" style="position: relative; padding: 0 72px;">
+    <div style="position: relative; height: 430px; border-radius: 6px; overflow: hidden; box-shadow: 0 30px 70px rgba(15,18,34,.14);">
+      <img src="hero.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: center 40%; display: block;">
+      <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,18,34,0) 60%, rgba(15,18,34,.38));"></div>
+      <div style="position: absolute; left: 32px; bottom: 76px; color: #fff; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 10px;"><span style="width: 8px; height: 8px; background: #ff6a3d; display: block;"></span>The ECME group under the spring cherry blossoms, DGIST</div>
+    </div>
+    <div style="position: relative; margin: -52px 56px 0; background: #fff; border-radius: 6px; box-shadow: 0 20px 50px rgba(15,18,34,.10), 0 1px 0 #eceef4; display: grid; grid-template-columns: 1.3fr repeat(4, 1fr); align-items: stretch;">
+      <div style="padding: 26px 32px; border-right: 1px solid #eceef4;"><div style="font-size: 12px; font-weight: 700; letter-spacing: .14em; color: #8a8fa3;">THE LAB AT A GLANCE</div><div class="am-serif" style="font-size: 20px; line-height: 1.3; margin-top: 6px;">Since 2018 at DGIST</div></div>
+      <div style="padding: 24px 30px; border-right: 1px solid #eceef4;"><div class="am-serif" style="font-size: 44px; line-height: 1; color: #4f3cff;">81</div><div style="font-size: 13px; color: #6b7086; font-weight: 500; margin-top: 6px;">Papers</div></div>
+      <div style="padding: 24px 30px; border-right: 1px solid #eceef4;"><div class="am-serif" style="font-size: 44px; line-height: 1; color: #4f3cff;">35</div><div style="font-size: 13px; color: #6b7086; font-weight: 500; margin-top: 6px;">Patents</div></div>
+      <div style="padding: 24px 30px; border-right: 1px solid #eceef4;"><div class="am-serif" style="font-size: 44px; line-height: 1; color: #4f3cff;">18</div><div style="font-size: 13px; color: #6b7086; font-weight: 500; margin-top: 6px;">Members</div></div>
+      <div style="padding: 24px 30px;"><div class="am-serif" style="font-size: 44px; line-height: 1; color: #ff6a3d;">53</div><div style="font-size: 13px; color: #6b7086; font-weight: 500; margin-top: 6px;">News items</div></div>
+    </div>
+  </div>
+
+  <!-- research -->
+  <div style="padding: 84px 72px 0;">
+    <div style="display: grid; grid-template-columns: 7fr 5fr; gap: 72px; align-items: end; margin-bottom: 32px;">
+      <div><div class="am-label"><b>01</b><i></i>Research</div><h2 class="am-serif" style="font-size: 50px; line-height: 1.08; margin: 18px 0 0;">Five research directions</h2></div>
+      <p style="margin: 0; font-size: 16px; color: #5a5f78; line-height: 1.65;">From nanogenerator physics and polymer synthesis to bio-derived piezoelectrics, novel applications and an AI-integrated platform for research.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); border-top: 2px solid #0f1222; border-bottom: 1px solid #e6e8ef;">
+      <div class="am-col">
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#4f3cff" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><circle cx="22" cy="22" r="19"/><path d="M24 9 L14 24 H21 L19 35 L30 19 H23 Z"/></svg>
+        <div style="font-size: 12.5px; font-weight: 700; color: #ff6a3d; margin-top: 20px; font-variant-numeric: tabular-nums;">01</div>
+        <div class="am-serif" style="font-size: 23px; line-height: 1.2; margin-top: 6px;">Energy Harvesting Technology</div>
+        <div style="font-size: 14px; color: #5a5f78; margin-top: 12px; line-height: 1.6; min-height: 66px;">Piezoelectric and triboelectric nanogenerators that convert mechanical motion into electricity.</div>
+        <div class="am-more" style="margin-top: 12px;">Learn more →</div>
+      </div>
+      <div class="am-col">
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#4f3cff" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M8 14 L14 10.5 L20 14 V21 L14 24.5 L8 21 Z"/><path d="M20 21 L26 24.5 V31.5 L20 35 L14 31.5 V24.5"/><path d="M26 24.5 L32 21 L38 24.5 V31.5 L32 35 L26 31.5"/><circle cx="32" cy="12" r="3"/><path d="M20 14 L29.5 12.8"/></svg>
+        <div style="font-size: 12.5px; font-weight: 700; color: #ff6a3d; margin-top: 20px;">02</div>
+        <div class="am-serif" style="font-size: 23px; line-height: 1.2; margin-top: 6px;">Synthesis of Functional Polymers</div>
+        <div style="font-size: 14px; color: #5a5f78; margin-top: 12px; line-height: 1.6; min-height: 66px;">Designing and synthesizing functional polymers for energy conversion devices.</div>
+        <div class="am-more" style="margin-top: 12px;">Learn more →</div>
+      </div>
+      <div class="am-col">
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#4f3cff" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M8 36 C8 18 20 8 37 7 C37 25 27 36 8 36 Z"/><path d="M8 36 L27 17"/><path d="M17 27 L17 21"/><path d="M22 22 L28 22"/></svg>
+        <div style="font-size: 12.5px; font-weight: 700; color: #ff6a3d; margin-top: 20px;">03</div>
+        <div class="am-serif" style="font-size: 23px; line-height: 1.2; margin-top: 6px;">Bio-Piezoelectric Materials</div>
+        <div style="font-size: 14px; color: #5a5f78; margin-top: 12px; line-height: 1.6; min-height: 66px;">Piezoelectric responses from biologically derived materials.</div>
+        <div class="am-more" style="margin-top: 12px;">Learn more →</div>
+      </div>
+      <div class="am-col">
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#4f3cff" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><rect x="11" y="11" width="22" height="22" rx="3"/><rect x="17" y="17" width="10" height="10" rx="1.5"/><path d="M16 11 V6 M22 11 V6 M28 11 V6 M16 33 V38 M22 33 V38 M28 33 V38 M11 16 H6 M11 22 H6 M11 28 H6 M33 16 H38 M33 22 H38 M33 28 H38"/></svg>
+        <div style="font-size: 12.5px; font-weight: 700; color: #ff6a3d; margin-top: 20px;">04</div>
+        <div class="am-serif" style="font-size: 23px; line-height: 1.2; margin-top: 6px;">Various Novel Applications</div>
+        <div style="font-size: 14px; color: #5a5f78; margin-top: 12px; line-height: 1.6; min-height: 66px;">Self-powered electronics and human-inspired tactile sensors.</div>
+        <div class="am-more" style="margin-top: 12px;">Learn more →</div>
+      </div>
+      <div class="am-col">
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#4f3cff" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><circle cx="10" cy="12" r="3.5"/><circle cx="10" cy="32" r="3.5"/><circle cx="34" cy="22" r="3.5"/><circle cx="22" cy="8" r="3"/><circle cx="22" cy="36" r="3"/><circle cx="22" cy="22" r="4.5"/><path d="M13 13.5 L18 19.5 M13 30.5 L18 24.5 M26.5 22 H30.5 M22 11 V17.5 M22 26.5 V33"/></svg>
+        <div style="font-size: 12.5px; font-weight: 700; color: #ff6a3d; margin-top: 20px;">05</div>
+        <div class="am-serif" style="font-size: 23px; line-height: 1.2; margin-top: 6px;">AI-Integrated Research Platform</div>
+        <div style="font-size: 14px; color: #5a5f78; margin-top: 12px; line-height: 1.6; min-height: 66px;">AI tools integrated into the materials and device research workflow.</div>
+        <div class="am-more" style="margin-top: 12px;">Learn more →</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- selected publications strip -->
+  <div style="margin-top: 80px; background: #f6f6fb; border-top: 1px solid #ecedf4; border-bottom: 1px solid #ecedf4; padding: 48px 72px;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 24px;">
+      <div><div class="am-label"><b>02</b><i></i>Selected publications</div><h2 class="am-serif" style="font-size: 36px; line-height: 1.12; margin: 14px 0 0;"><span style="color: #4f3cff;">81 papers</span> and 35 patents</h2></div>
+      <a href="#" style="font-size: 14.5px; font-weight: 600; color: #4f3cff; padding-bottom: 6px;">Full publication list →</a>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 1px; background: #e3e5ee; border: 1px solid #e3e5ee; border-radius: 6px; overflow: hidden;"><div class="am-jr"><div class="am-serif" style="font-size: 21px; font-style: italic; line-height: 1.15;">Nature Communications</div><div style="display: flex; justify-content: space-between; font-size: 12px; color: #8a8fa3; font-weight: 500;"><span>Journal</span><span style="color: #4f3cff; font-weight: 700;">2025</span></div></div><div class="am-jr"><div class="am-serif" style="font-size: 21px; font-style: italic; line-height: 1.15;">Advanced Materials</div><div style="display: flex; justify-content: space-between; font-size: 12px; color: #8a8fa3; font-weight: 500;"><span>Journal</span><span style="color: #4f3cff; font-weight: 700;">2025</span></div></div><div class="am-jr"><div class="am-serif" style="font-size: 21px; font-style: italic; line-height: 1.15;">Nano Energy</div><div style="display: flex; justify-content: space-between; font-size: 12px; color: #8a8fa3; font-weight: 500;"><span>Journal</span><span>&nbsp;</span></div></div><div class="am-jr"><div class="am-serif" style="font-size: 21px; font-style: italic; line-height: 1.15;">Advanced Science</div><div style="display: flex; justify-content: space-between; font-size: 12px; color: #8a8fa3; font-weight: 500;"><span>Journal</span><span>&nbsp;</span></div></div><div class="am-jr"><div class="am-serif" style="font-size: 21px; font-style: italic; line-height: 1.15;">J. Mater. Chem. A</div><div style="display: flex; justify-content: space-between; font-size: 12px; color: #8a8fa3; font-weight: 500;"><span>Journal</span><span>&nbsp;</span></div></div><div class="am-jr"><div class="am-serif" style="font-size: 21px; font-style: italic; line-height: 1.15;">Nano Trends</div><div style="display: flex; justify-content: space-between; font-size: 12px; color: #8a8fa3; font-weight: 500;"><span>Journal</span><span>&nbsp;</span></div></div></div>
+  </div>
+
+  <!-- news + PI -->
+  <div style="display: grid; grid-template-columns: 1fr 440px; gap: 56px; padding: 80px 72px 0;">
+    <div>
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 24px;">
+        <div><div class="am-label"><b>03</b><i></i>News</div><h2 class="am-serif" style="font-size: 44px; line-height: 1.1; margin: 18px 0 0;">Recent news</h2></div>
+        <a href="#" style="font-size: 14.5px; font-weight: 600; color: #4f3cff; padding-bottom: 8px;">All 53 items →</a>
+      </div>
+      <div style="border-bottom: 1px solid #e6e8ef;">
+        <div class="am-row"><div class="am-date">2026.06.12</div><div class="am-tag" style="background: #fff0ea; color: #d9481c;">Award</div><div style="font-size: 15.5px; font-weight: 500;">Gerald Selasie Gbadam · 류연경 석∙박사과정, 2026 NGPT Best Oral Award 수상</div><div class="am-arr">→</div></div>
+        <div class="am-row"><div class="am-date">2026.06.12</div><div class="am-tag" style="background: #fff0ea; color: #d9481c;">Award</div><div style="font-size: 15.5px; font-weight: 500;">곽수정 석∙박사과정 · 최다은 석사과정, 2026 NGPT Best Poster Award 수상</div><div class="am-arr">→</div></div>
+        <div class="am-row"><div class="am-date">2025.12.16</div><div class="am-tag" style="background: #fff0ea; color: #d9481c;">Award</div><div style="font-size: 15.5px; font-weight: 500;">Gerald Selasie Gbadam 석∙박사과정, 2025 대학원 연구페스티벌 우수 연구자상</div><div class="am-arr">→</div></div>
+        <div class="am-row"><div class="am-date">2025.10</div><div class="am-tag" style="background: #efedff; color: #4f3cff;">Paper</div><div style="font-size: 15.5px; font-weight: 500;">Gerald Selasie Gbadam 석∙박사과정 1저자 논문 <em class="am-serif" style="font-size: 17px;">Nature Communications</em> 게재 확정</div><div class="am-arr">→</div></div>
+        <div class="am-row"><div class="am-date">2025.06.19</div><div class="am-tag" style="background: #efedff; color: #4f3cff;">Paper</div><div style="font-size: 15.5px; font-weight: 500;">주현서 석∙박사과정 1저자 논문 <em class="am-serif" style="font-size: 17px;">Advanced Materials</em> 게재 확정</div><div class="am-arr">→</div></div>
+      </div>
+      <!-- press -->
+      <div style="margin-top: 28px; display: grid; grid-template-columns: 4px 1fr auto; gap: 24px; align-items: center; padding: 24px 28px 24px 0; background: linear-gradient(90deg, #fff6f2, #ffffff); border-radius: 0 6px 6px 0;">
+        <div style="align-self: stretch; background: #ff6a3d;"></div>
+        <div><div style="font-size: 12px; font-weight: 700; letter-spacing: .14em; color: #d9481c;">IN THE PRESS · 연합뉴스 · 2025.11.03</div><div style="font-size: 20px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.35; margin-top: 6px;">"배터리 교체, 충전 No" 마찰전기 이용한 나노발전기 개발</div></div>
+        <a href="#" class="am-btn am-ghost" style="background: #fff; padding: 11px 18px; font-size: 13.5px;">Read →</a>
+      </div>
+      <!-- people teaser -->
+      <a href="#" class="am-ppl" style="margin-top: 20px; display: grid; grid-template-columns: 220px 1fr; border: 1px solid #e6e8ef; border-radius: 6px; overflow: hidden; background: #fff;">
+        <img src="photo1.jpg" style="width: 220px; height: 150px; object-fit: cover; display: block;">
+        <div style="padding: 24px 28px; display: flex; flex-direction: column; justify-content: center;">
+          <div style="font-size: 12px; font-weight: 700; letter-spacing: .14em; color: #8a8fa3;">PEOPLE</div>
+          <div class="am-serif" style="font-size: 26px; line-height: 1.15; margin-top: 6px;">18 researchers, one lab.</div>
+          <div class="am-more" style="margin-top: 10px; color: #4f3cff;">Meet the team →</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- PI card -->
+    <div>
+      <div class="am-label" style="margin-bottom: 24px;"><b>04</b><i></i>Principal Investigator</div>
+      <div style="border: 1px solid #e6e8ef; border-radius: 6px; overflow: hidden; box-shadow: 0 24px 60px rgba(15,18,34,.08); background: #fff;">
+        <div style="display: grid; grid-template-columns: 150px 1fr; background: linear-gradient(135deg, #f3f1ff, #ffffff 70%);">
+          <img src="prof.jpg" style="width: 150px; height: 190px; object-fit: cover; display: block;">
+          <div style="padding: 24px 26px 20px; display: flex; flex-direction: column;">
+            <div class="am-serif" style="font-size: 32px; line-height: 1.05; font-weight: 600;">Ju-Hyuck Lee</div>
+            <div style="font-size: 14px; color: #474c62; margin-top: 10px; line-height: 1.5;">Associate Professor<br>Dept. of Energy Science &amp; Engineering, DGIST</div>
+            <a href="#" style="margin-top: auto; font-size: 13.5px; font-weight: 600; color: #4f3cff;">jhlee85@dgist.ac.kr</a>
+          </div>
+        </div>
+        <div style="padding: 22px 28px 4px;">
+          <div style="font-size: 12px; font-weight: 700; letter-spacing: .14em; color: #8a8fa3; margin-bottom: 14px;">CAREER</div>
+          <div style="position: relative; padding-left: 24px;">
+            <div style="position: absolute; left: 5px; top: 8px; bottom: 8px; width: 1px; background: #d9dbe6;"></div>
+            <div style="position: relative; display: grid; grid-template-columns: 96px 1fr; padding: 4px 0 12px;"><span style="position: absolute; left: -24px; top: 9px; width: 11px; height: 11px; border-radius: 50%; background: #4f3cff; box-shadow: 0 0 0 4px #efedff;"></span><span class="am-date" style="color: #4f3cff;">2018 – now</span><span style="font-size: 14.5px; font-weight: 500;">DGIST, Energy Science &amp; Engineering</span></div>
+            <div style="position: relative; display: grid; grid-template-columns: 96px 1fr; padding: 4px 0 12px;"><span style="position: absolute; left: -24px; top: 9px; width: 11px; height: 11px; border-radius: 50%; background: #fff; border: 1.5px solid #9aa0b5; box-sizing: border-box;"></span><span class="am-date">2016 – 2018</span><span style="font-size: 14.5px; font-weight: 500;">Postdoc, UC Berkeley &amp; LBNL</span></div>
+            <div style="position: relative; display: grid; grid-template-columns: 96px 1fr; padding: 4px 0 4px;"><span style="position: absolute; left: -24px; top: 9px; width: 11px; height: 11px; border-radius: 50%; background: #fff; border: 1.5px solid #9aa0b5; box-sizing: border-box;"></span><span class="am-date">2016</span><span style="font-size: 14.5px; font-weight: 500;">Ph.D., SKKU</span></div>
+          </div>
+        </div>
+        <div style="padding: 16px 28px 24px;">
+          <div style="font-size: 12px; font-weight: 700; letter-spacing: .14em; color: #8a8fa3; margin-bottom: 8px;">SELECTED HONORS</div>
+          <div style="display: grid; grid-template-columns: 1fr auto; font-size: 14px; border-top: 1px solid #eceef4;">
+            <div style="padding: 8px 0; border-bottom: 1px solid #eceef4; font-weight: 500;">Nano Energy Early Career Researcher Board</div><div style="padding: 8px 0; border-bottom: 1px solid #eceef4; color: #6b7086; font-variant-numeric: tabular-nums;">2025–</div>
+            <div style="padding: 8px 0; border-bottom: 1px solid #eceef4; font-weight: 500;">KIM Emerging Innovator in Materials</div><div style="padding: 8px 0; border-bottom: 1px solid #eceef4; color: #6b7086;">2025</div>
+            <div style="padding: 8px 0; border-bottom: 1px solid #eceef4; font-weight: 500;">Energies Award (MDPI)</div><div style="padding: 8px 0; border-bottom: 1px solid #eceef4; color: #6b7086;">2025</div>
+            <div style="padding: 8px 0; font-weight: 500;">IEEE-ISAF Young Investigator Award</div><div style="padding: 8px 0; color: #6b7086;">2022</div>
+          </div>
+          <a href="#" class="am-btn am-primary" style="margin-top: 20px; width: 100%; box-sizing: border-box; justify-content: center;">Full profile →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <div style="margin-top: 84px; background: #f7f7fa; border-top: 1px solid #eceef4; padding: 40px 72px 26px;">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <div style="display: flex; align-items: center; gap: 18px;"><img src="logo.png" style="height: 38px; display: block;"><div><div class="am-serif" style="font-size: 21px; font-weight: 600; line-height: 1.1;">ECME Lab</div><div style="font-size: 13.5px; color: #5a5f78; margin-top: 4px;">Room E6-411, Dept. of Energy Science &amp; Engineering, DGIST, Daegu 42988, Republic of Korea</div></div></div>
+      <div style="display: flex; gap: 24px; font-size: 14px; color: #33374b;"><a href="#">Professor</a><a href="#">People</a><a href="#">Research</a><a href="#">Publications</a><a href="#">News</a><a href="#" style="color: #4f3cff; font-weight: 600;">jhlee85@dgist.ac.kr</a></div>
+    </div>
+    <div style="margin-top: 28px; padding-top: 16px; border-top: 1px solid #e3e5ee; display: flex; justify-content: space-between; font-size: 13px; color: #8a8fa3;">
+      <div>Energy Conversion Materials &amp; Electronics Lab · DGIST</div>
+      <div>© JU HYUCK LEE's Group</div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

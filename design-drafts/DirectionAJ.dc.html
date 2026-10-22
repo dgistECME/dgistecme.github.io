@@ -1,0 +1,215 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Manrope:wght@400;500;600;700&display=swap">
+  <style>
+    body { margin: 0; background: #f5f6fc; color: #1b1d36; font-family: 'Manrope', 'Helvetica Neue', Arial, sans-serif; font-size: 15.5px; line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    .aj-root { width: 1440px; position: relative; overflow: hidden; background: #f4f5fb; }
+    .aj-mesh { position: absolute; inset: -60px; pointer-events: none;
+      background:
+        radial-gradient(620px 520px at 12% 6%, rgba(147,197,253,.75), transparent 70%),
+        radial-gradient(560px 480px at 88% 10%, rgba(216,180,254,.65), transparent 70%),
+        radial-gradient(700px 520px at 70% 38%, rgba(253,200,170,.55), transparent 70%),
+        radial-gradient(640px 560px at 8% 55%, rgba(196,181,253,.45), transparent 70%),
+        radial-gradient(720px 560px at 92% 72%, rgba(165,213,252,.55), transparent 70%),
+        radial-gradient(640px 520px at 25% 92%, rgba(254,205,180,.55), transparent 70%);
+      animation: aj-drift 28s ease-in-out infinite alternate; }
+    @keyframes aj-drift { from { transform: translate(0,0); } to { transform: translate(36px,-28px); } }
+    .aj-serif { font-family: 'Fraunces', Georgia, serif; font-weight: 400; letter-spacing: -0.015em; }
+    .aj-glass { background: rgba(255,255,255,.58); backdrop-filter: blur(22px) saturate(140%); -webkit-backdrop-filter: blur(22px) saturate(140%); border: 1px solid rgba(255,255,255,.85); box-shadow: 0 1px 0 rgba(255,255,255,.9) inset, 0 2px 6px rgba(40,44,90,.04), 0 18px 48px rgba(60,64,130,.10); }
+    .aj-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #6a6e99; }
+    .aj-grad-text { background: linear-gradient(95deg, #4f7cf7 0%, #9b6cf0 45%, #f08a6c 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .aj-keyline { padding: 2px; border-radius: 34px; background: linear-gradient(135deg, #8fb8ff, #c9a7ff 45%, #ffc0a0); box-shadow: 0 40px 90px rgba(80,70,160,.20), 0 8px 20px rgba(80,70,160,.08); }
+    .aj-nav { display: flex; gap: 2px; padding: 5px; border-radius: 999px; font-size: 14px; font-weight: 600; color: #3b3e63; }
+    .aj-nav div { padding: 8px 17px; border-radius: 999px; transition: background .25s; }
+    .aj-nav div:hover { background: rgba(255,255,255,.8); }
+    .aj-card { border-radius: 24px; transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s, background .35s; }
+    .aj-card:hover { transform: translateY(-5px); background: rgba(255,255,255,.75); box-shadow: 0 1px 0 rgba(255,255,255,.9) inset, 0 4px 10px rgba(40,44,90,.05), 0 28px 60px rgba(60,64,130,.16); }
+    .aj-glyph { width: 52px; height: 52px; border-radius: 16px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 24px rgba(90,80,170,.22), inset 0 1px 0 rgba(255,255,255,.5); }
+    .aj-btn { display: inline-block; padding: 15px 28px; border-radius: 999px; font-weight: 700; font-size: 14.5px; transition: transform .25s, box-shadow .25s; }
+    .aj-btn:hover { transform: translateY(-2px); }
+    .aj-pill { display: inline-block; padding: 5px 12px; border-radius: 999px; font-size: 12px; font-weight: 600; background: rgba(255,255,255,.7); border: 1px solid rgba(255,255,255,.95); color: #474a72; }
+    .aj-news { display: grid; grid-template-columns: 120px 1fr 24px; gap: 20px; align-items: center; padding: 15px 24px; border-radius: 18px; }
+    .aj-news + .aj-news { margin-top: 10px; }
+    @keyframes aj-up { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+    .aj-up { animation: aj-up .85s cubic-bezier(.2,.7,.2,1) both; } .aj-d1 { animation-delay: .1s; } .aj-d2 { animation-delay: .2s; } .aj-d3 { animation-delay: .32s; } .aj-d4 { animation-delay: .45s; }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+</helmet>
+<div class="aj-root" style="width:1440px; position:relative; overflow:hidden;">
+  <div class="aj-mesh"></div>
+
+  <!-- header -->
+  <div style="position: relative; display: flex; align-items: center; justify-content: space-between; height: 96px; padding: 0 80px;">
+    <div style="display: flex; align-items: center; gap: 14px;">
+      <img src="logo.png" style="width: 34px; display: block;">
+      <div><div class="aj-serif" style="font-size: 22px; line-height: 1;">ECME Lab</div><div style="font-size: 11px; font-weight: 600; letter-spacing: .12em; color: #7a7ea8; margin-top: 3px;">DGIST · ENERGY SCIENCE &amp; ENGINEERING</div></div>
+    </div>
+    <div class="aj-nav aj-glass"><div style="background: #1b1d36; color: #fff;">Home</div><div>Professor</div><div>People</div><div>Research</div><div>Publications</div><div>News</div><div>Contact</div></div>
+  </div>
+
+  <!-- hero -->
+  <div style="position: relative; display: grid; grid-template-columns: 560px 1fr; gap: 56px; padding: 40px 80px 0; align-items: center;">
+    <div>
+      <div class="aj-up aj-pill" style="padding: 6px 14px;"><span style="display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: linear-gradient(135deg,#6b8ff8,#f08a6c); margin-right: 8px; vertical-align: 1px;"></span>Energy Conversion Materials &amp; Electronics Lab</div>
+      <div class="aj-serif aj-up aj-d1" style="font-size: 78px; line-height: 1.02; margin-top: 26px; font-weight: 300;">Materials that<br>turn <em class="aj-grad-text" style="font-weight: 400;">motion</em><br>into power.</div>
+      <div class="aj-up aj-d2" style="font-size: 17.5px; color: #4a4d74; margin-top: 26px; max-width: 470px;">Piezoelectric &amp; triboelectric nanogenerators, functional polymers and bio-piezoelectric materials — toward self-powered electronics and human-inspired tactile sensors.</div>
+      <div class="aj-up aj-d3" style="display: flex; gap: 12px; margin-top: 34px;">
+        <a class="aj-btn" href="#" style="background: #1b1d36; color: #fff; box-shadow: 0 16px 34px rgba(27,29,54,.25);">Explore research</a>
+        <a class="aj-btn aj-glass" href="#" style="color: #1b1d36;">Meet the people →</a>
+      </div>
+    </div>
+    <div class="aj-up aj-d2" style="position: relative;">
+      <div class="aj-keyline"><div style="border-radius: 32px; overflow: hidden; height: 430px;"><img src="hero.jpg" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div></div>
+      <div class="aj-glass" style="position: absolute; left: -40px; bottom: -36px; border-radius: 20px; padding: 16px 20px; display: flex; align-items: center; gap: 14px;">
+        <div style="display: flex;"><img src="prof.jpg" style="width: 38px; height: 38px; border-radius: 50%; object-fit: cover; border: 2px solid #fff; display: block;"><img src="member.jpg" style="width: 38px; height: 38px; border-radius: 50%; object-fit: cover; border: 2px solid #fff; margin-left: -12px; display: block;"></div>
+        <div><div style="font-weight: 700; font-size: 14px;">18 members</div><div style="font-size: 12.5px; color: #6a6e99;">Room E6-411 · DGIST, Daegu</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- stats -->
+  <div class="aj-up aj-d4" style="position: relative; padding: 76px 80px 0;">
+    <div class="aj-glass" style="border-radius: 28px; display: grid; grid-template-columns: repeat(4, 1fr);">
+      <div style="padding: 30px 36px; border-right: 1px solid rgba(120,120,180,.14);"><div class="aj-serif aj-grad-text" style="font-size: 56px; line-height: 1;">81</div><div style="font-size: 14px; color: #5a5d86; font-weight: 600; margin-top: 8px;">Papers published</div></div>
+      <div style="padding: 30px 36px; border-right: 1px solid rgba(120,120,180,.14);"><div class="aj-serif aj-grad-text" style="font-size: 56px; line-height: 1;">35</div><div style="font-size: 14px; color: #5a5d86; font-weight: 600; margin-top: 8px;">Patents</div></div>
+      <div style="padding: 30px 36px; border-right: 1px solid rgba(120,120,180,.14);"><div class="aj-serif aj-grad-text" style="font-size: 56px; line-height: 1;">18</div><div style="font-size: 14px; color: #5a5d86; font-weight: 600; margin-top: 8px;">Lab members</div></div>
+      <div style="padding: 30px 36px;"><div class="aj-serif aj-grad-text" style="font-size: 56px; line-height: 1;">53</div><div style="font-size: 14px; color: #5a5d86; font-weight: 600; margin-top: 8px;">News items</div></div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 28px; justify-content: center; margin-top: 34px; flex-wrap: wrap;">
+      <span class="aj-eyebrow">Published in</span>
+      <span class="aj-serif" style="font-size: 19px; color: #4a4d74; font-style: italic;">Nature Communications</span><span style="color: #b8b3dc;">·</span>
+      <span class="aj-serif" style="font-size: 19px; color: #4a4d74; font-style: italic;">Advanced Materials</span><span style="color: #b8b3dc;">·</span>
+      <span class="aj-serif" style="font-size: 19px; color: #4a4d74; font-style: italic;">Nano Energy</span><span style="color: #b8b3dc;">·</span>
+      <span class="aj-serif" style="font-size: 19px; color: #4a4d74; font-style: italic;">Advanced Science</span><span style="color: #b8b3dc;">·</span>
+      <span class="aj-serif" style="font-size: 19px; color: #4a4d74; font-style: italic;">J. Mater. Chem. A</span><span style="color: #b8b3dc;">·</span>
+      <span class="aj-serif" style="font-size: 19px; color: #4a4d74; font-style: italic;">Nano Trends</span>
+    </div>
+  </div>
+
+  <!-- research -->
+  <div style="position: relative; padding: 92px 80px 0;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 28px;">
+      <div><div class="aj-eyebrow">Research</div><div class="aj-serif" style="font-size: 54px; line-height: 1.05; margin-top: 12px; font-weight: 300;">Five directions, <em class="aj-grad-text">one</em> purpose.</div></div>
+      <a href="#" style="font-weight: 700; font-size: 14.5px; color: #4a4d74;">All research topics →</a>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 20px;">
+      <div class="aj-card aj-glass" style="grid-column: span 3; padding: 34px; min-height: 176px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+          <div class="aj-glyph" style="background: linear-gradient(135deg,#7fa8ff,#a98bf5);"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3 6 15h6l-1 8 8-12h-6z"/></svg></div>
+          <div class="aj-serif" style="font-size: 20px; color: #a5a8cc; font-style: italic;">01</div>
+        </div>
+        <div><div class="aj-serif" style="font-size: 30px; line-height: 1.15;">Energy Harvesting Technology</div><div style="font-size: 14.5px; color: #5a5d86; margin-top: 8px;">Piezoelectric &amp; triboelectric nanogenerators</div></div>
+      </div>
+      <div class="aj-card aj-glass" style="grid-column: span 3; padding: 34px; min-height: 176px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+          <div class="aj-glyph" style="background: linear-gradient(135deg,#b48cf6,#f59bb8);"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><circle cx="5" cy="13" r="2.5"/><circle cx="13" cy="7" r="2.5"/><circle cx="21" cy="13" r="2.5"/><circle cx="13" cy="19" r="2.5"/><path d="M7 11.5 11 8.5M15 8.5l4 3M19 14.5l-4 3M11 17.5l-4-3"/></svg></div>
+          <div class="aj-serif" style="font-size: 20px; color: #a5a8cc; font-style: italic;">02</div>
+        </div>
+        <div><div class="aj-serif" style="font-size: 30px; line-height: 1.15;">Synthesis of Functional Polymers</div><div style="font-size: 14.5px; color: #5a5d86; margin-top: 8px;">Functional polymers for energy conversion</div></div>
+      </div>
+      <div class="aj-card aj-glass" style="grid-column: span 2; padding: 30px; min-height: 176px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+          <div class="aj-glyph" style="background: linear-gradient(135deg,#f6a98a,#f3c27a);"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M8 3c0 5 10 5 10 10S8 18 8 23M18 3c0 5-10 5-10 10s10 5 10 10M9 8h8M9 18h8"/></svg></div>
+          <div class="aj-serif" style="font-size: 20px; color: #a5a8cc; font-style: italic;">03</div>
+        </div>
+        <div class="aj-serif" style="font-size: 25px; line-height: 1.2;">Bio-Piezoelectric Materials</div>
+      </div>
+      <div class="aj-card aj-glass" style="grid-column: span 2; padding: 30px; min-height: 176px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+          <div class="aj-glyph" style="background: linear-gradient(135deg,#79c3f5,#7fa8ff);"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="15" y="4" width="7" height="7" rx="2"/><rect x="4" y="15" width="7" height="7" rx="2"/><circle cx="18.5" cy="18.5" r="3.5"/></svg></div>
+          <div class="aj-serif" style="font-size: 20px; color: #a5a8cc; font-style: italic;">04</div>
+        </div>
+        <div class="aj-serif" style="font-size: 25px; line-height: 1.2;">Various Novel Applications</div>
+      </div>
+      <div class="aj-card aj-glass" style="grid-column: span 2; padding: 30px; min-height: 176px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+          <div class="aj-glyph" style="background: linear-gradient(135deg,#9b8cf7,#79c3f5);"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="14" height="14" rx="3"/><path d="M10 2v4M16 2v4M10 20v4M16 20v4M2 10h4M2 16h4M20 10h4M20 16h4"/><circle cx="13" cy="13" r="2"/></svg></div>
+          <div class="aj-serif" style="font-size: 20px; color: #a5a8cc; font-style: italic;">05</div>
+        </div>
+        <div class="aj-serif" style="font-size: 25px; line-height: 1.2;">AI-Integrated Research Platform</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- news + press -->
+  <div style="position: relative; display: grid; grid-template-columns: 1fr 380px; gap: 40px; padding: 92px 80px 0;">
+    <div>
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 28px;">
+        <div><div class="aj-eyebrow">News</div><div class="aj-serif" style="font-size: 46px; line-height: 1.05; margin-top: 12px; font-weight: 300;">Recent <em class="aj-grad-text">highlights</em></div></div>
+        <a href="#" style="font-weight: 700; font-size: 14.5px; color: #4a4d74;">All 53 news →</a>
+      </div>
+      <div class="aj-news aj-card aj-glass"><div><div style="font-size: 13px; font-weight: 700; color: #6a6e99;">2026.06.12</div><div style="font-size: 11px; font-weight: 700; letter-spacing: .1em; color: #c06a4c; margin-top: 4px;">AWARD</div></div><div style="font-size: 15.5px; font-weight: 500;">Gerald Selasie Gbadam · 류연경 석∙박사과정, 2026 NGPT Best Oral Award 수상</div><div style="color: #a5a8cc;">→</div></div>
+      <div class="aj-news aj-card aj-glass"><div><div style="font-size: 13px; font-weight: 700; color: #6a6e99;">2026.06.12</div><div style="font-size: 11px; font-weight: 700; letter-spacing: .1em; color: #c06a4c; margin-top: 4px;">AWARD</div></div><div style="font-size: 15.5px; font-weight: 500;">곽수정 석∙박사과정 · 최다은 석사과정, 2026 NGPT Best Poster Award 수상</div><div style="color: #a5a8cc;">→</div></div>
+      <div class="aj-news aj-card aj-glass"><div><div style="font-size: 13px; font-weight: 700; color: #6a6e99;">2025.12.16</div><div style="font-size: 11px; font-weight: 700; letter-spacing: .1em; color: #c06a4c; margin-top: 4px;">AWARD</div></div><div style="font-size: 15.5px; font-weight: 500;">Gerald Selasie Gbadam 석∙박사과정, 2025 대학원 연구페스티벌 우수 연구자상</div><div style="color: #a5a8cc;">→</div></div>
+      <div class="aj-news aj-card aj-glass"><div><div style="font-size: 13px; font-weight: 700; color: #6a6e99;">2025.10</div><div style="font-size: 11px; font-weight: 700; letter-spacing: .1em; color: #6b62d8; margin-top: 4px;">PAPER</div></div><div style="font-size: 15.5px; font-weight: 500;">Gerald Selasie Gbadam 석∙박사과정 1저자 논문 Nature Communications 게재 확정</div><div style="color: #a5a8cc;">→</div></div>
+      <div class="aj-news aj-card aj-glass"><div><div style="font-size: 13px; font-weight: 700; color: #6a6e99;">2025.06.19</div><div style="font-size: 11px; font-weight: 700; letter-spacing: .1em; color: #6b62d8; margin-top: 4px;">PAPER</div></div><div style="font-size: 15.5px; font-weight: 500;">주현서 석∙박사과정 1저자 논문 Advanced Materials 게재 확정</div><div style="color: #a5a8cc;">→</div></div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 20px; padding-top: 104px;">
+      <div class="aj-card aj-glass" style="border-radius: 24px; overflow: hidden;">
+        <div style="height: 180px; overflow: hidden;"><img src="photo1.jpg" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+        <div style="padding: 22px 24px 24px;">
+          <div class="aj-eyebrow" style="font-size: 11px;">Press · 연합뉴스 · 2025.11.03</div>
+          <div style="font-size: 17px; font-weight: 700; line-height: 1.45; margin-top: 8px;">"배터리 교체, 충전 No" 마찰전기 이용한 나노발전기 개발</div>
+        </div>
+      </div>
+      <div class="aj-glass" style="border-radius: 24px; padding: 24px; background: linear-gradient(135deg, rgba(255,255,255,.7), rgba(255,255,255,.45));">
+        <div class="aj-serif" style="font-size: 22px; line-height: 1.3;">Join the lab</div>
+        <div style="font-size: 14px; color: #5a5d86; margin-top: 6px;">Room E6-411, Dept. of Energy Science &amp; Engineering, DGIST</div>
+        <div style="font-size: 14px; font-weight: 700; margin-top: 12px;" class="aj-grad-text">jhlee85@dgist.ac.kr</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PI -->
+  <div style="position: relative; padding: 92px 80px 0;">
+    <div class="aj-glass" style="border-radius: 34px; padding: 38px; display: grid; grid-template-columns: 270px 1fr 1fr; gap: 48px; align-items: center;">
+      <div class="aj-keyline" style="border-radius: 28px;"><div style="border-radius: 26px; overflow: hidden; height: 330px;"><img src="prof.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%; display: block;"></div></div>
+      <div>
+        <div class="aj-eyebrow">Principal Investigator</div>
+        <div class="aj-serif" style="font-size: 52px; line-height: 1.05; margin-top: 14px; font-weight: 300;">Ju-Hyuck <em class="aj-grad-text">Lee</em></div>
+        <div style="font-size: 15.5px; color: #4a4d74; margin-top: 12px; font-weight: 600;">Associate Professor<br>Dept. of Energy Science &amp; Engineering, DGIST</div>
+        <div style="margin-top: 28px; border-top: 1px solid rgba(120,120,180,.18);">
+          <div style="display: grid; grid-template-columns: 110px 1fr; padding: 12px 0; border-bottom: 1px solid rgba(120,120,180,.18); font-size: 14.5px;"><span style="font-weight: 700; color: #6a6e99;">2018 –</span><span>DGIST</span></div>
+          <div style="display: grid; grid-template-columns: 110px 1fr; padding: 12px 0; border-bottom: 1px solid rgba(120,120,180,.18); font-size: 14.5px;"><span style="font-weight: 700; color: #6a6e99;">2016 – 2018</span><span>Postdoc, UC Berkeley &amp; LBNL</span></div>
+          <div style="display: grid; grid-template-columns: 110px 1fr; padding: 12px 0; border-bottom: 1px solid rgba(120,120,180,.18); font-size: 14.5px;"><span style="font-weight: 700; color: #6a6e99;">2016</span><span>Ph.D., SKKU</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="aj-eyebrow">Honors</div>
+        <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 16px;">
+          <div class="aj-card" style="padding: 14px 18px; border-radius: 16px; background: rgba(255,255,255,.65); border: 1px solid #fff; font-size: 14.5px; font-weight: 600;"><span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #7fa8ff; margin-right: 10px;"></span>Nano Energy Early Career Researcher Board (2025–)</div>
+          <div class="aj-card" style="padding: 14px 18px; border-radius: 16px; background: rgba(255,255,255,.65); border: 1px solid #fff; font-size: 14.5px; font-weight: 600;"><span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #b48cf6; margin-right: 10px;"></span>KIM Emerging Innovator in Materials (2025)</div>
+          <div class="aj-card" style="padding: 14px 18px; border-radius: 16px; background: rgba(255,255,255,.65); border: 1px solid #fff; font-size: 14.5px; font-weight: 600;"><span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #f6a98a; margin-right: 10px;"></span>2025 Energies Award (MDPI)</div>
+          <div class="aj-card" style="padding: 14px 18px; border-radius: 16px; background: rgba(255,255,255,.65); border: 1px solid #fff; font-size: 14.5px; font-weight: 600;"><span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #79c3f5; margin-right: 10px;"></span>IEEE-ISAF Young Investigator Award (2022)</div>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 24px;">
+          <span style="font-size: 14px; color: #5a5d86;">jhlee85@dgist.ac.kr</span>
+          <a href="#" style="font-weight: 700; font-size: 14.5px;">Full profile →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <div style="position: relative; margin-top: 88px; padding: 30px 80px 34px; border-top: 1px solid rgba(255,255,255,.9); background: rgba(255,255,255,.4); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <div style="display: flex; align-items: center; gap: 12px;"><img src="logo.png" style="width: 26px; display: block;"><span class="aj-serif" style="font-size: 18px;">ECME Lab</span></div>
+      <div style="display: flex; gap: 26px; font-size: 13.5px; font-weight: 600; color: #4a4d74;"><span>Professor</span><span>People</span><span>Research</span><span>Publications</span><span>News</span><span>Contact</span></div>
+    </div>
+    <div style="display: flex; justify-content: space-between; margin-top: 22px; font-size: 13px; color: #6a6e99;">
+      <div>Room E6-411, Dept. of Energy Science &amp; Engineering, DGIST, Daegu 42988, Republic of Korea</div>
+      <div>© JU HYUCK LEE's Group</div>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

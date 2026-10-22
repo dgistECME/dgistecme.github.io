@@ -1,0 +1,12 @@
+{
+  "page_id": "page-12",
+  "page_name": "Calm fancy · AJ AK AL AM (restrained motion)",
+  "group": "절제된 화려함",
+  "brief": "'애니메이션 과함' 피드백 반영. 화려함은 색·레이아웃·사진·타이포로, 움직임은 최소.\n모션 규칙: 첫 로드 한 번 페이드업(≤0.9s) + 호버 리프트 + 상시 움직임 최대 1개(20초 이상, 아주 느리게). 마퀴·회전·입자·깜빡임 없음.\nAJ · Gradient Glass Editorial — 하늘·라일락·피치 메시 그라데이션 위 유리 카드, Fraunces 세리프 + 산세리프, 이탤릭 그라데이션 강조어. 상시 움직임: 배경 그라데이션 28초 표류 하나.\nAK · Bright Photo Magazine — 사진 콜라주 + 코발트·코랄·노랑 색면, 잡지식 01·02·03 섹션, 색 탭 연구 목록, 피처 뉴스. 상시 움직임 없음.\nAL · Soft Clay 3D — 파스텔 점토 조형(발전기 적층 슬랩, 구, 번개 타일), 점토 통계 코인, 둥근 Nunito. 상시 움직임: 구 하나 26초 표류.\nAM · Premium Academic — 해외 명문대 연구실 사이트 결: 흰 바탕 + 인디고/코랄, Newsreader 세리프, 와이드 사진 + 통계 바, 5열 연구, 저널 띠, 타임라인 PI. 상시 움직임 없음. 가장 신뢰감.\n\n하나 고르거나 섞어 말하면 실제 사이트에 이식.",
+  "items": [
+    {"file": "DirectionAJ.dc.html", "title": "AJ · Gradient Glass Editorial", "h": 3050, "readme": "메시 그라데이션 + 유리 카드, 세리프, 절제 모션"},
+    {"file": "DirectionAK.dc.html", "title": "AK · Bright Photo Magazine", "h": 3470, "readme": "사진 콜라주 + 색면, 잡지 섹션, 무한 루프 없음"},
+    {"file": "DirectionAL.dc.html", "title": "AL · Soft Clay 3D", "h": 2930, "readme": "파스텔 점토 조형, 둥근 서체, 절제 모션"},
+    {"file": "DirectionAM.dc.html", "title": "AM · Premium Academic", "h": 2970, "readme": "명문대 연구실 결, 세리프, 무한 루프 없음"}
+  ]
+}
