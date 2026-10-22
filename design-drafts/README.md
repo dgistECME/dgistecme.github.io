@@ -1,5 +1,8 @@
 # design-drafts — 홈 디자인 초안 백업
 
+**전체 넘겨보기:** `viewer.html` (← → 이동, R 다시 재생, F 맞춤 전환). 로컬 서버로 열기: `python -m http.server 4400` 후 http://localhost:4400/viewer.html
+목록 원본은 `drafts.json`, 갤러리·뷰어는 `python _gallery.py`로 다시 생성.
+
 Claude Design 캔버스( https://claude.ai/code/artifact/a6db981f-9b66-4d66-8b9a-1751acf8f164 )의 원본 아트보드.
 각 `*.dc.html`은 브라우저에서 바로 열어 볼 수 있음. `*.png`는 1440px 렌더.
 
