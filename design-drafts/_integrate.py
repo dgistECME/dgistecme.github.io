@@ -43,15 +43,14 @@ def card(it):
 cards = ''.join(card(it) for it in items)
 marker = items[0]['title']
 
-# gallery: new group right after the live one
-ip = S / 'index.html'; h = ip.read_text(encoding='utf-8')
-if marker not in h:
-    h = h.replace('(최신)</h2>', '</h2>')  # previous "latest" group loses the tag
-    i = h.index('</div>', h.index('<h2>적용 중')) + len('</div>')
-    h = h[:i] + f'<h2>{b["group"]} (최신)</h2><div class="grid">{cards}</div>' + h[i:]
-    total = h.count('class="card"')
-    h = re.sub(r'\d+안', f'{total}안', h)
-ip.write_text(h, encoding='utf-8')
+# gallery + viewer: new group right after the live one in drafts.json, then regenerate both pages
+dj = S / 'drafts.json'; data = json.loads(dj.read_text(encoding='utf-8'))
+if not any(g['name'] == b['group'] for g in data['groups']):
+    data['groups'].insert(1, {'name': b['group'], 'items': [
+        {'file': it['file'], 'title': it['title'], 'desc': it['readme']} for it in items]})
+    dj.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding='utf-8')
+subprocess.run([sys.executable, str(S / '_gallery.py')], check=True)
+total = sum(len(g['items']) for g in data['groups'])
 
 # review board: first group under "② 판단 대기"
 rp = S / 'review.html'; r = rp.read_text(encoding='utf-8')
@@ -69,4 +68,4 @@ if marker not in t:
     i = t.index('| `', t.index('|---|'))
     t = t[:i] + rows + t[i:]
 md.write_text(t, encoding='utf-8')
-print('integrated', len(items), 'artboards; gallery total', h.count('class="card"'))
+print('integrated', len(items), 'artboards; gallery total', total)

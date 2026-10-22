@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ECME 디자인 뷰어 · {{COUNT}}안</title>
+<style>
+  :root { --bg:#f4f6f9; --panel:#fff; --ink:#0f172a; --mute:#64748b; --line:#e5e9f0; --acc:#4338ca; --accbg:#eef0ff; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink); font-family: system-ui, -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; }
+  body { display: grid; grid-template-columns: 300px 1fr; grid-template-rows: auto 1fr; height: 100vh; overflow: hidden; }
+  header { grid-column: 1 / -1; display: flex; align-items: center; gap: 14px; padding: 10px 16px; background: var(--panel); border-bottom: 1px solid var(--line); min-width: 0; }
+  header h1 { font-size: 15px; margin: 0; white-space: nowrap; }
+  .cur { min-width: 0; flex: 1; }
+  .cur b { font-size: 15px; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .cur span { font-size: 12.5px; color: var(--mute); display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .btns { display: flex; gap: 6px; align-items: center; flex: none; }
+  button, .a { font: inherit; font-size: 13px; padding: 7px 12px; border-radius: 8px; border: 1px solid var(--line); background: #fff; color: var(--ink); cursor: pointer; text-decoration: none; white-space: nowrap; }
+  button:hover, .a:hover { border-color: #c7cdda; background: #f8fafc; }
+  button.on { background: var(--accbg); border-color: #c9cdfb; color: var(--acc); }
+  .count { font-size: 13px; color: var(--mute); font-variant-numeric: tabular-nums; min-width: 56px; text-align: center; }
+  select { display: none; font: inherit; font-size: 13px; padding: 7px; border-radius: 8px; border: 1px solid var(--line); max-width: 100%; }
+  nav { overflow-y: auto; background: var(--panel); border-right: 1px solid var(--line); padding: 8px 0 24px; }
+  nav h2 { font-size: 11.5px; letter-spacing: .05em; color: var(--mute); margin: 16px 16px 6px; font-weight: 700; }
+  nav a { display: block; padding: 7px 16px; font-size: 13.5px; color: var(--ink); text-decoration: none; border-left: 3px solid transparent; }
+  nav a small { display: block; font-size: 11.5px; color: var(--mute); margin-top: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  nav a:hover { background: #f8fafc; }
+  nav a.sel { background: var(--accbg); border-left-color: var(--acc); color: var(--acc); font-weight: 600; }
+  main { position: relative; overflow: hidden; min-width: 0; }
+  #wrap { position: absolute; inset: 0; overflow-x: auto; overflow-y: scroll; }
+  #stage { transform-origin: 0 0; background: #fff; box-shadow: 0 0 0 1px var(--line); }
+  iframe { display: block; border: 0; width: 1440px; background: #fff; }
+  .hint { position: absolute; right: 14px; bottom: 12px; font-size: 12px; color: var(--mute); background: rgba(255,255,255,.9); padding: 6px 10px; border-radius: 8px; border: 1px solid var(--line); pointer-events: none; }
+  @media (max-width: 900px) {
+    body { grid-template-columns: 1fr; }
+    nav { display: none; }
+    select { display: block; }
+    header { flex-wrap: wrap; }
+    .btns { flex-wrap: wrap; }
+    #fit, #open { display: none; }
+    header h1, .hint { display: none; }
+    .cur { flex-basis: 100%; order: 3; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>ECME 디자인 뷰어</h1>
+  <select id="pick" aria-label="디자인 선택"></select>
+  <div class="cur"><b id="ttl"></b><span id="dsc"></span></div>
+  <div class="btns">
+    <button id="prev" title="이전 (←)">← 이전</button>
+    <span class="count" id="cnt"></span>
+    <button id="next" title="다음 (→)">다음 →</button>
+    <button id="replay" title="애니메이션 다시 재생 (R)">↻ 다시 재생</button>
+    <button id="fit" class="on" title="화면 맞춤 / 실제 크기 (F)">화면 맞춤</button>
+    <a class="a" id="open" target="_blank" title="새 탭에서 실제 크기로">새 탭 ↗</a>
+  </div>
+</header>
+<nav id="list" aria-label="디자인 목록"></nav>
+<main>
+  <div id="wrap"><div id="stage"><iframe id="frame" title="디자인 미리보기"></iframe></div></div>
+  <div class="hint">← → 이동 · R 다시 재생 · F 맞춤 전환</div>
+</main>
+<script>
+const ITEMS = /*ITEMS*/[];
+const $ = (id) => document.getElementById(id);
+const frame = $('frame'), stage = $('stage'), wrap = $('wrap');
+let i = 0, fit = true;
+
+// sidebar + mobile select, grouped
+let lastGroup = null, og = null;
+ITEMS.forEach((it, n) => {
+  if (it.group !== lastGroup) {
+    lastGroup = it.group;
+    const h = document.createElement('h2'); h.textContent = it.group; $('list').appendChild(h);
+    og = document.createElement('optgroup'); og.label = it.group; $('pick').appendChild(og);
+  }
+  const a = document.createElement('a');
+  a.href = '#' + it.file.replace('.dc.html', '');
+  a.innerHTML = '<span></span><small></small>';
+  a.firstChild.textContent = it.title; a.lastChild.textContent = it.desc || it.file;
+  a.onclick = (e) => { e.preventDefault(); go(n); };
+  it.el = a; $('list').appendChild(a);
+  const o = document.createElement('option'); o.value = n; o.textContent = it.title; og.appendChild(o);
+});
+$('pick').onchange = (e) => go(+e.target.value);
+
+// The iframe is as tall as the whole design, so the only scrollbar is the viewer's own.
+// (Opened as a local file, browsers may block reading the frame; then the frame keeps its own scrollbar.)
+let pageH = null;
+function measure() {
+  try {
+    const d = frame.contentDocument;
+    d.documentElement.style.overflow = 'hidden';
+    pageH = Math.max(600, d.documentElement.scrollHeight);
+  } catch (e) { pageH = null; }
+  layout();
+}
+function layout() {
+  const w = wrap.clientWidth;
+  const s = fit ? Math.min(1, w / 1440) : 1;
+  if (pageH === null) { frame.style.height = Math.ceil(wrap.clientHeight / s) + 'px'; stage.style.transform = 'scale(' + s + ')'; stage.style.marginRight = (1440 * s - 1440) + 'px'; stage.style.marginBottom = (wrap.clientHeight - wrap.clientHeight / s) + 'px'; return; }
+  frame.style.height = pageH + 'px';
+  stage.style.width = '1440px';
+  stage.style.transform = 'scale(' + s + ')';
+  // shrink the layout box to the scaled size so scrolling matches what is visible
+  stage.style.marginRight = (1440 * s - 1440) + 'px';
+  stage.style.marginBottom = (pageH * s - pageH) + 'px';
+}
+
+function go(n) {
+  i = (n + ITEMS.length) % ITEMS.length;
+  const it = ITEMS[i];
+  frame.src = it.file;
+  $('ttl').textContent = it.title + '  ·  ' + it.group;
+  $('dsc').textContent = it.desc || it.file;
+  $('cnt').textContent = (i + 1) + ' / ' + ITEMS.length;
+  $('open').href = it.file;
+  $('pick').value = i;
+  ITEMS.forEach((x) => x.el.classList.toggle('sel', x === it));
+  it.el.scrollIntoView({ block: 'nearest' });
+  history.replaceState(null, '', '#' + it.file.replace('.dc.html', ''));
+  try { localStorage.setItem('ecme-viewer', i); } catch (e) {}
+  wrap.scrollTo(0, 0);
+}
+
+function key(e) {
+  if (e.target.tagName === 'SELECT') return;
+  if (e.key === 'ArrowRight' || e.key === 'PageDown') { go(i + 1); e.preventDefault(); }
+  else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { go(i - 1); e.preventDefault(); }
+  else if (e.key === 'r' || e.key === 'R') $('replay').click();
+  else if (e.key === 'f' || e.key === 'F') $('fit').click();
+}
+document.addEventListener('keydown', key);
+// keys keep working after clicking inside the preview (same origin)
+frame.addEventListener('load', () => {
+  try { frame.contentWindow.document.addEventListener('keydown', key); } catch (e) {}
+  measure(); setTimeout(measure, 800); // fonts/images can change the height
+});
+
+$('prev').onclick = () => go(i - 1);
+$('next').onclick = () => go(i + 1);
+$('replay').onclick = () => { try { frame.contentWindow.location.reload(); } catch (e) { frame.src = ITEMS[i].file; } };
+$('fit').onclick = () => { fit = !fit; $('fit').classList.toggle('on', fit); $('fit').textContent = fit ? '화면 맞춤' : '실제 크기'; layout(); };
+new ResizeObserver(layout).observe(wrap);
+
+const hashIndex = () => ITEMS.findIndex((it) => '#' + it.file.replace('.dc.html', '') === location.hash);
+window.addEventListener('hashchange', () => { const h = hashIndex(); if (h >= 0 && h !== i) go(h); });
+const fromHash = hashIndex();
+let saved = 0; try { saved = +localStorage.getItem('ecme-viewer') || 0; } catch (e) {}
+go(fromHash >= 0 ? fromHash : (saved < ITEMS.length ? saved : 0));
+layout();
+</script>
+</body>
+</html>
