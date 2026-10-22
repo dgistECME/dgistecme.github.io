@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@500;600;700;800&display=swap">
+  <style>
+    body { margin: 0; background: #ffffff; color: #0d0d12; font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-size: 15.5px; line-height: 1.6; }
+    a { color: #0d0d12; text-decoration: none; }
+    .ac-root { width: 1440px; position: relative; overflow: hidden; background: #ffffff; }
+    .ac-display { font-family: 'Anton', 'Impact', sans-serif; font-weight: 400; letter-spacing: -0.01em; text-transform: uppercase; }
+    .ac-photo { background-image: url(hero.jpg); background-size: 140% auto; background-position: 0% 40%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: ac-pan 18s ease-in-out infinite alternate; }
+    @keyframes ac-pan { to { background-position: 100% 60%; } }
+    .ac-reveal { clip-path: inset(100% 0 0 0); animation: ac-rev 1.3s cubic-bezier(.7,0,.2,1) .2s forwards; }
+    @keyframes ac-rev { to { clip-path: inset(-10% 0 -10% 0); } }
+    @keyframes ac-up { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+    .ac-up { animation: ac-up 1s cubic-bezier(.2,.7,.2,1) both; } .ac-d1 { animation-delay: .7s; } .ac-d2 { animation-delay: .85s; } .ac-d3 { animation-delay: 1s; }
+    .ac-band { position: relative; padding: 18px 0; overflow: hidden; }
+    .ac-track { display: flex; gap: 40px; width: max-content; align-items: center; animation: ac-marq 28s linear infinite; }
+    .ac-track.rev { animation-direction: reverse; animation-duration: 34s; }
+    @keyframes ac-marq { to { transform: translateX(-50%); } }
+    .ac-band span { font-family: 'Anton', sans-serif; font-size: 40px; text-transform: uppercase; white-space: nowrap; }
+    .ac-star { display: inline-block; animation: ac-spin 6s linear infinite; }
+    @keyframes ac-spin { to { transform: rotate(360deg); } }
+    .ac-row { display: grid; grid-template-columns: 90px 1fr 260px 60px; gap: 24px; align-items: center; padding: 26px 0; border-top: 1.5px solid #0d0d12; position: relative; overflow: hidden; transition: padding .4s cubic-bezier(.2,.7,.2,1); }
+    .ac-row::before { content: ''; position: absolute; inset: 0; background: var(--c); transform: translateY(101%); transition: transform .45s cubic-bezier(.7,0,.2,1); z-index: 0; }
+    .ac-row:hover::before, .ac-row.on::before { transform: none; }
+    .ac-row > * { position: relative; z-index: 1; }
+    .ac-row.on { color: #fff; }
+    .ac-row .ac-arrow { font-size: 30px; transition: transform .4s; } .ac-row:hover .ac-arrow, .ac-row.on .ac-arrow { transform: rotate(-45deg); }
+    .ac-thumb { height: 120px; border-radius: 18px; overflow: hidden; opacity: 0; transform: scale(.85) rotate(-4deg); transition: all .45s cubic-bezier(.2,.7,.2,1); }
+    .ac-row:hover .ac-thumb, .ac-row.on .ac-thumb { opacity: 1; transform: none; }
+    .ac-on-cycle { animation: ac-cyc 10s steps(1) infinite; }
+    .ac-card { border-radius: 26px; overflow: hidden; position: relative; transition: transform .45s cubic-bezier(.2,.7,.2,1), box-shadow .45s; }
+    .ac-card:hover { transform: translateY(-10px) rotate(-1deg); box-shadow: 0 34px 70px rgba(13,13,18,.18); }
+    .ac-tag { padding: 4px 10px; border-radius: 999px; font-size: 11.5px; font-weight: 800; display: inline-block; text-transform: uppercase; letter-spacing: .04em; }
+    .ac-blink { animation: ac-blink 1.2s steps(2) infinite; } @keyframes ac-blink { 50% { opacity: 0; } }
+    .ac-stick { position: absolute; border-radius: 999px; animation: ac-float 8s ease-in-out infinite; }
+    @keyframes ac-float { 0%,100% { transform: translateY(0) rotate(var(--r)); } 50% { transform: translateY(-18px) rotate(calc(var(--r) + 6deg)); } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } .ac-reveal { clip-path: none; } }
+  </style>
+</helmet>
+<div class="ac-root">
+  <!-- header -->
+  <div style="position: relative; display: flex; align-items: center; justify-content: space-between; height: 84px; padding: 0 56px; border-bottom: 1.5px solid #0d0d12;">
+    <div style="display: flex; align-items: center; gap: 12px;"><img src="logo.png" style="width: 32px; display: block;"><div style="font-weight: 800; font-size: 18px; letter-spacing: -0.02em;">ECME LAB · DGIST</div></div>
+    <div style="display: flex; gap: 30px; font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: .04em;"><div style="text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 2px;">Home</div><div>Professor</div><div>People</div><div>Research</div><div>Publications</div><div>News</div><div>Contact</div></div>
+    <div style="display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 13px;"><span class="ac-blink" style="width: 9px; height: 9px; border-radius: 50%; background: #22c55e; display: inline-block;"></span>RECRUITING</div>
+  </div>
+  <!-- giant type -->
+  <div style="position: relative; padding: 30px 56px 0;">
+    <div class="ac-stick" style="--r: -12deg; left: 980px; top: 70px; padding: 12px 22px; background: #c4f542; font-weight: 800; font-size: 16px; z-index: 3;">⚡ Self-powered electronics</div>
+    <div class="ac-stick" style="--r: 8deg; left: 120px; top: 360px; padding: 12px 22px; background: #ff5cae; color: #fff; font-weight: 800; font-size: 16px; z-index: 3; animation-delay: -3s;">Nanogenerators ✦</div>
+    <div class="ac-stick" style="--r: -4deg; left: 1150px; top: 330px; padding: 12px 22px; background: #5b8cff; color: #fff; font-weight: 800; font-size: 16px; z-index: 3; animation-delay: -5s;">Since 2018</div>
+    <div class="ac-reveal"><div class="ac-display ac-photo" style="font-size: 430px; line-height: .86; text-align: center; letter-spacing: -0.02em;">ECME</div></div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; padding: 30px 0 0; align-items: end;">
+      <div class="ac-up ac-d1" style="font-weight: 800; font-size: 22px; line-height: 1.25; letter-spacing: -0.02em;">Energy Conversion<br>Materials &amp; Electronics Lab</div>
+      <div class="ac-up ac-d2" style="font-size: 16.5px; color: #3c3c48;">Prof. Ju-Hyuck Lee's group at DGIST turns motion, touch and vibration into electricity with piezoelectric &amp; triboelectric nanogenerators.</div>
+      <div class="ac-up ac-d3" style="display: flex; gap: 10px; justify-content: flex-end;">
+        <div style="padding: 16px 28px; border-radius: 999px; background: #0d0d12; color: #fff; font-weight: 800; font-size: 14.5px;">EXPLORE RESEARCH ↗</div>
+        <div style="padding: 16px 28px; border-radius: 999px; border: 1.5px solid #0d0d12; font-weight: 800; font-size: 14.5px;">JOIN US</div>
+      </div>
+    </div>
+  </div>
+  <!-- dual slanted marquee -->
+  <div style="position: relative; height: 270px; margin-top: 60px;">
+    <div class="ac-band" style="position: absolute; left: -40px; right: -40px; top: 20px; background: #c4f542; transform: rotate(-3deg);"><div class="ac-track"><span>Nature Communications</span><span class="ac-star">✦</span><span>Advanced Materials</span><span class="ac-star">✦</span><span>Nano Energy</span><span class="ac-star">✦</span><span>Advanced Science</span><span class="ac-star">✦</span><span>J. Mater. Chem. A</span><span class="ac-star">✦</span><span>Nature Communications</span><span class="ac-star">✦</span><span>Advanced Materials</span><span class="ac-star">✦</span><span>Nano Energy</span><span class="ac-star">✦</span><span>Advanced Science</span><span class="ac-star">✦</span><span>J. Mater. Chem. A</span><span class="ac-star">✦</span></div></div>
+    <div class="ac-band" style="position: absolute; left: -40px; right: -40px; top: 150px; background: #0d0d12; color: #fff; transform: rotate(2deg);"><div class="ac-track rev"><span>81 Papers</span><span style="color: #ff5cae;">●</span><span>35 Patents</span><span style="color: #5b8cff;">●</span><span>18 Members</span><span style="color: #c4f542;">●</span><span>53 News</span><span style="color: #ff5cae;">●</span><span>81 Papers</span><span style="color: #5b8cff;">●</span><span>35 Patents</span><span style="color: #c4f542;">●</span><span>18 Members</span><span style="color: #ff5cae;">●</span><span>53 News</span><span style="color: #5b8cff;">●</span></div></div>
+  </div>
+  <!-- research list -->
+  <div style="position: relative; padding: 70px 56px 0;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 26px;"><div class="ac-display" style="font-size: 96px; line-height: .9;">Research</div><div style="font-weight: 800; font-size: 14.5px;">ALL TOPICS ↗</div></div>
+    <div class="ac-row" style="--c: #5b8cff;"><div class="ac-display" style="font-size: 40px;">01</div><div style="font-weight: 800; font-size: 30px; letter-spacing: -0.03em;">Energy Harvesting Technology</div><div class="ac-thumb"><img src="hero.jpg" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div><div class="ac-arrow">→</div></div>
+    <div class="ac-row on" style="--c: #ff5cae;"><div class="ac-display" style="font-size: 40px;">02</div><div style="font-weight: 800; font-size: 30px; letter-spacing: -0.03em;">Synthesis of Functional Polymers</div><div class="ac-thumb"><img src="photo1.jpg" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div><div class="ac-arrow">→</div></div>
+    <div class="ac-row" style="--c: #22c55e;"><div class="ac-display" style="font-size: 40px;">03</div><div style="font-weight: 800; font-size: 30px; letter-spacing: -0.03em;">Bio-Piezoelectric Materials</div><div class="ac-thumb"><img src="hero.jpg" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div><div class="ac-arrow">→</div></div>
+    <div class="ac-row" style="--c: #f59e0b;"><div class="ac-display" style="font-size: 40px;">04</div><div style="font-weight: 800; font-size: 30px; letter-spacing: -0.03em;">Various Novel Applications</div><div class="ac-thumb"><img src="photo1.jpg" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div><div class="ac-arrow">→</div></div>
+    <div class="ac-row" style="--c: #8b5cf6; border-bottom: 1.5px solid #0d0d12;"><div class="ac-display" style="font-size: 40px;">05</div><div style="font-weight: 800; font-size: 30px; letter-spacing: -0.03em;">AI-Integrated Research Platform</div><div class="ac-thumb"><img src="hero.jpg" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div><div class="ac-arrow">→</div></div>
+  </div>
+  <!-- news cards -->
+  <div style="position: relative; padding: 100px 56px 90px;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 26px;"><div class="ac-display" style="font-size: 96px; line-height: .9;">News</div><div style="font-weight: 800; font-size: 14.5px;">ALL 53 ↗</div></div>
+    <div style="display: grid; grid-template-columns: repeat(12, minmax(0,1fr)); gap: 18px; align-items: stretch;">
+      <div class="ac-card" style="grid-column: span 5; min-height: 420px; background: #0d0d12;"><img src="photo1.jpg" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; opacity: .85;"><div style="position: absolute; left: 0; right: 0; bottom: 0; padding: 28px; background: linear-gradient(180deg, rgba(13,13,18,0), rgba(13,13,18,.85)); color: #fff;"><span class="ac-tag" style="background: #ff5cae; color: #fff;">Press · 연합뉴스</span><div style="font-weight: 800; font-size: 24px; letter-spacing: -0.02em; margin-top: 12px; line-height: 1.3;">"배터리 교체, 충전 No" 마찰전기 이용한 나노발전기 개발</div><div style="font-size: 13px; opacity: .8; margin-top: 6px;">2025.11.03</div></div></div>
+      <div class="ac-card" style="grid-column: span 4; background: #c4f542; padding: 30px; display: flex; flex-direction: column; justify-content: space-between;"><span class="ac-tag" style="background: #0d0d12; color: #c4f542; align-self: flex-start;">Award · 2026.06.12</span><div><div class="ac-display" style="font-size: 64px; line-height: .92;">4 awards<br>at NGPT</div><div style="font-weight: 600; margin-top: 14px; font-size: 15px;">Best Oral — Gerald Selasie Gbadam, 류연경 · Best Poster — 곽수정, 최다은</div></div></div>
+      <div style="grid-column: span 3; display: flex; flex-direction: column; gap: 18px;">
+        <div class="ac-card" style="flex: 1; background: #5b8cff; color: #fff; padding: 24px; display: flex; flex-direction: column; justify-content: space-between;"><span class="ac-tag" style="background: rgba(255,255,255,.2); color: #fff; align-self: flex-start;">Paper · 2025.10</span><div style="font-weight: 800; font-size: 19px; line-height: 1.3;">1저자 논문 Nature Communications 게재 확정</div></div>
+        <div class="ac-card" style="flex: 1; background: #f3f3f6; padding: 24px; display: flex; flex-direction: column; justify-content: space-between;"><span class="ac-tag" style="background: #0d0d12; color: #fff; align-self: flex-start;">Paper · 2025.06</span><div style="font-weight: 800; font-size: 19px; line-height: 1.3;">1저자 논문 Advanced Materials 게재 확정</div></div>
+      </div>
+    </div>
+  </div>
+  <!-- footer -->
+  <div style="position: relative; background: #0d0d12; color: #fff; padding: 46px 56px 34px;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+      <div class="ac-display" style="font-size: 72px; line-height: .9;">Let's build<br><span style="color: #c4f542;">self-powered</span> things.</div>
+      <div style="text-align: right; font-size: 13.5px; color: #b5b5c3; line-height: 1.8;">Room E6-411, Dept. of Energy Science &amp; Engineering<br>DGIST, Daegu 42988, Republic of Korea<br>jhlee85@dgist.ac.kr · © JU HYUCK LEE's Group</div>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

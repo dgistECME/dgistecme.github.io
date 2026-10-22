@@ -5,6 +5,10 @@
       "name": "Final · Bold Editorial"
     },
     {
+      "id": "page-10",
+      "name": "Fancy Z · AA · AB · AC (showpiece motion)"
+    },
+    {
       "id": "page-9",
       "name": "Refined motion V · W · X · Y (reference vein, richer animation)"
     },
@@ -46,6 +50,42 @@
       "h": 1640,
       "title": "Home · Bold Editorial (적용 중)",
       "page": "page-1"
+    },
+    {
+      "file": "DirectionZ.dc.html",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 2640,
+      "title": "Z · Holo Prism",
+      "page": "page-10"
+    },
+    {
+      "file": "DirectionAA.dc.html",
+      "x": 1560,
+      "y": 0,
+      "w": 1440,
+      "h": 2130,
+      "title": "AA · Exploded Device",
+      "page": "page-10"
+    },
+    {
+      "file": "DirectionAB.dc.html",
+      "x": 3120,
+      "y": 0,
+      "w": 1440,
+      "h": 2090,
+      "title": "AB · Energy Field",
+      "page": "page-10"
+    },
+    {
+      "file": "DirectionAC.dc.html",
+      "x": 4680,
+      "y": 0,
+      "w": 1440,
+      "h": 2910,
+      "title": "AC · Cinematic Type",
+      "page": "page-10"
     },
     {
       "file": "DirectionY.dc.html",
@@ -283,6 +323,14 @@
       "text": "C · Bold Editorial 적용 완료 → https://dgistecme.github.io/ (애니메이션 A 기본)\n색·폰트·간격은 site/src/styles/global.css 상단 토큰에서 조정.\n이전 디자인 복구: git checkout v1-wix-style (또는 backup/wix-style 브랜치)."
     },
     {
+      "id": "fancy-brief",
+      "x": 0,
+      "y": -440,
+      "w": 880,
+      "page": "page-10",
+      "text": "더 fancy하게 — 각 안마다 '보여주는' 시그니처 모션 하나. 전부 CSS/SVG, 감속 모드 대응.\nZ · Holo Prism — 홀로그램 포일. 크롬처럼 색이 흐르는 헤드라인, 3D로 천천히 기울어지는 사진 카드 + 무지개 포일 반사 + 광택 스윕, 주위를 떠다니는 유리 구슬, 저널명 마퀴, 홀로그램 테두리 카드.\nAA · Exploded Device — 연구 자체를 모티프로. 전극/압전 고분자/전극/기판 4층이 3D로 분해됐다 합쳐지며 쌍극자가 깜빡이고 전하 불꽃이 튀어오름, 아래 출력 전압 파형이 실시간으로 그려짐. 연구 5개는 자동으로 하나씩 펼쳐지는 컬러 아코디언.\nAB · Energy Field — 원형 사진 허브로 색색의 입자 60여 개가 빨려 들어감(에너지 수집), 회전 그라데이션 링 + 궤도를 도는 키워드 칩, 'self-powered / wearable / bio-friendly / intelligent' 단어 회전, 0부터 올라가는 숫자 카운터, 그려지는 뉴스 타임라인.\nAC · Cinematic Type — 430px 'ECME' 글자 안에 연구실 사진이 천천히 팬, 아래에서 위로 리빌, 떠다니는 스티커, 기울어진 라임/블랙 이중 마퀴, 호버하면 색이 차오르는 연구 목록 + 사진 팝업, 컬러 블록 뉴스. 가장 대담·포스터적.\n\n하나 고르거나 섞어 말하면 실제 사이트에 이식."
+    },
+    {
       "id": "motion-brief",
       "x": 0,
       "y": -440,
@@ -349,6 +397,6 @@
   ],
   "launch": {
     "view": "canvas",
-    "page": "page-9"
+    "page": "page-10"
   }
 }

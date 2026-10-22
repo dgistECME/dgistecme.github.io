@@ -7,6 +7,10 @@ Claude Design 캔버스( https://claude.ai/code/artifact/a6db981f-9b66-4d66-8b9a
 |---|---|---|
 | `Main.dc.html` | C · Bold Editorial (다크 네이비) | **현재 사이트 적용 중** |
 | `DirectionF.dc.html` | F · Photo Magazine (세로 대제목 + 사진 모자이크 + 노랑) | 백업 요청됨 — 다음 후보 |
+| `DirectionZ.dc.html` | Z · Holo Prism (크롬 헤드라인, 3D 기울기 홀로 포일 카드, 유리 구슬) | Fancy |
+| `DirectionAA.dc.html` | AA · Exploded Device (나노발전기 4층 3D 분해, 전압 파형, 자동 아코디언) | Fancy |
+| `DirectionAB.dc.html` | AB · Energy Field (입자 흡수 허브, 단어 회전, 숫자 카운터, 타임라인) | Fancy |
+| `DirectionAC.dc.html` | AC · Cinematic Type (사진 채운 430px ECME, 이중 기울기 마퀴, 컬러 블록) | Fancy |
 | `DirectionV.dc.html` | V · Prism Mesh (유동 메시 그라데이션, 단어 리빌, 회전 테두리, 세로 뉴스 마퀴) | 레퍼런스 결 + 모션 |
 | `DirectionW.dc.html` | W · Liquid Glass (유동 그라데이션 스테이지, 글래스 패널 빛줄기, 모프 블롭 사진, 가로 마퀴) | 레퍼런스 결 + 모션 |
 | `DirectionX.dc.html` | X · Kinetic Spotlight (초대형 타이포 스포트라이트, 펄스 라인 + 이동 광점, 프로그레스 링) | 레퍼런스 결 + 모션 |
@@ -35,6 +39,10 @@ Claude Design 캔버스( https://claude.ai/code/artifact/a6db981f-9b66-4d66-8b9a
 | `DirectionA.dc.html` | A · Classic Academic (네이비+금색) | 탈락 |
 | `DirectionB.dc.html` | B · Clean Modern (흰 배경, 둥근 카드) | 탈락 |
 | `Previous.dc.html` | Wix 원본 재현 | 사이트 태그 `v1-wix-style` |
+
+## 도구
+- `_shot.py` — 아트보드 PNG 렌더 (`python _shot.py DirectionZ ...`, design/ 폴더 기준)
+- `_payload.py` — 캔버스 payload에 수정된 아트보드 반영 (`python _payload.py DirectionZ.dc.html ...`)
 
 ## F 디자인 토큰 (이식용)
 - 배경 `#ffffff`, 잉크 `#141414`, 포인트 `#ffd400` (진한 노랑 텍스트 `#b59400`), 회색 `#666666` / `#e9e9e9`
