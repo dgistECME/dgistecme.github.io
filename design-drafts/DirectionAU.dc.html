@@ -1,0 +1,219 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+  <style>
+    body { margin: 0; background: #ffffff; color: #0f172a; font-family: 'Inter', sans-serif; font-size: 15.5px; line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    .au-root * { box-sizing: border-box; }
+    .au-wrap { width: 1200px; margin: 0 auto; }
+    .au-grad { background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .au-nav { height: 76px; display: flex; align-items: center; justify-content: space-between; }
+    .au-brand { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 17px; letter-spacing: -.01em; line-height: 1.25; }
+    .au-brand img { height: 40px; display: block; }
+    .au-brand small { display: block; font-size: 11.5px; font-weight: 500; color: #64748b; letter-spacing: 0; }
+    .au-links { display: flex; gap: 30px; font-size: 14.5px; font-weight: 500; color: #64748b; }
+    .au-links a { transition: color .2s; }
+    .au-links a:hover, .au-links a.on { color: #4338ca; }
+    .au-links a.on { font-weight: 600; }
+    .au-pill { display: inline-block; padding: 6px 16px; border-radius: 50px; background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%); color: #fff; font-size: 12.5px; font-weight: 600; letter-spacing: .04em; }
+    .au-btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 30px; border-radius: 50px; font-weight: 600; font-size: 15px; transition: box-shadow .25s, transform .25s, color .2s, border-color .2s; }
+    .au-btn:hover { transform: translateY(-2px); }
+    .au-primary { background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%); color: #fff; box-shadow: 0 5px 20px rgba(0,0,0,.08); }
+    .au-primary:hover { box-shadow: 0 10px 30px rgba(0,0,0,.1); }
+    .au-ghost { border: 1px solid rgba(15,23,42,.12); color: #1e293b; background: #fff; }
+    .au-ghost:hover { border-color: #4338ca; color: #4338ca; }
+    .au-in { animation: au-up 1s ease both; }
+    .au-d1 { animation-delay: .1s; } .au-d2 { animation-delay: .2s; } .au-d3 { animation-delay: .3s; } .au-d4 { animation-delay: .4s; } .au-d5 { animation-delay: .5s; }
+    @keyframes au-up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .au-card { background: #fff; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,.08); transition: box-shadow .25s, transform .25s; }
+    .au-card:hover { box-shadow: 0 10px 30px rgba(0,0,0,.1); transform: translateY(-4px); }
+    .au-band { background: #f8fafc; }
+    .au-top { display: grid; grid-template-columns: 720px 1fr; gap: 24px; padding: 40px 0 56px; }
+    .au-intro { padding: 48px 52px 40px; display: flex; flex-direction: column; }
+    .au-intro:hover { transform: none; }
+    .au-intro h1 { margin: 22px 0 0; font-size: 50px; line-height: 1.1; font-weight: 900; letter-spacing: -.03em; color: #0f172a; }
+    .au-intro p { margin: 20px 0 0; font-size: 16.5px; color: #64748b; line-height: 1.65; max-width: 580px; }
+    .au-stats { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: auto; padding-top: 24px; border-top: 1px solid rgba(15,23,42,.08); }
+    .au-stats div { padding-left: 20px; border-left: 1px solid rgba(15,23,42,.08); }
+    .au-stats div:first-child { padding-left: 0; border-left: none; }
+    .au-stats b { display: block; font-size: 30px; font-weight: 900; letter-spacing: -.02em; line-height: 1.1; color: #0f172a; }
+    .au-stats span { font-size: 13px; color: #64748b; font-weight: 500; }
+    .au-side { display: grid; grid-template-rows: auto 1fr; gap: 24px; }
+    .au-photo { overflow: hidden; }
+    .au-photo img { width: 100%; height: 250px; object-fit: cover; display: block; }
+    .au-photo div { padding: 14px 22px; display: flex; justify-content: space-between; font-size: 13px; color: #64748b; }
+    .au-photo div b { color: #1e293b; font-weight: 700; }
+    .au-latest { padding: 26px 28px; display: flex; flex-direction: column; }
+    .au-lbl { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #64748b; margin: 0; }
+    .au-meta { display: flex; align-items: center; gap: 10px; }
+    .au-tag { font-size: 11px; font-weight: 700; padding: 2px 10px; border-radius: 50px; letter-spacing: .04em; }
+    .au-award { color: #198754; background: rgba(25,135,84,.1); }
+    .au-paper { color: #0d6efd; background: rgba(13,110,253,.1); }
+    .au-press { color: #dc3545; background: rgba(220,53,69,.1); }
+    .au-date { font-size: 13px; color: #64748b; font-weight: 500; }
+    .au-latest h4 { margin: 12px 0 0; font-size: 17px; font-weight: 700; line-height: 1.5; color: #0f172a; }
+    .au-more { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: #4338ca; }
+    .au-sec { padding: 60px 0; }
+    .au-head { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 30px; }
+    .au-head h2 { margin: 0 0 6px; font-size: 36px; font-weight: 900; letter-spacing: -.02em; line-height: 1.15; display: inline-block; }
+    .au-head p { margin: 0; color: #64748b; font-size: 15.5px; }
+    .au-res { display: grid; grid-template-columns: repeat(6, 1fr); gap: 24px; }
+    .au-r { grid-column: span 2; padding: 26px 28px; display: flex; gap: 18px; align-items: flex-start; }
+    .au-r.au-half { grid-column: span 3; }
+    .au-tile { width: 50px; height: 50px; border-radius: 12px; background: #e0e7ff; display: flex; align-items: center; justify-content: center; flex: none; }
+    .au-tile svg { width: 24px; height: 24px; fill: none; stroke: #4338ca; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .au-r small { display: block; font-size: 12px; font-weight: 700; color: #64748b; letter-spacing: .1em; }
+    .au-r h3 { margin: 2px 0 6px; font-size: 17.5px; font-weight: 800; color: #0f172a; letter-spacing: -.01em; line-height: 1.35; }
+    .au-r p { margin: 0; color: #64748b; font-size: 14px; line-height: 1.55; }
+    .au-three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .au-box { padding: 30px 30px 28px; display: flex; flex-direction: column; }
+    .au-box-h { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+    .au-box-h h3 { margin: 0; font-size: 19px; font-weight: 800; color: #0f172a; }
+    .au-pi { display: flex; gap: 16px; align-items: center; }
+    .au-pi img { width: 76px; height: 76px; border-radius: 15px; object-fit: cover; object-position: 50% 20%; display: block; }
+    .au-pi b { display: block; font-size: 20px; font-weight: 800; color: #0d6efd; letter-spacing: -.01em; }
+    .au-pi span { display: block; font-size: 14px; color: #1e293b; font-weight: 600; }
+    .au-pi em { display: block; font-style: normal; font-size: 13px; color: #64748b; }
+    .au-list { list-style: none; margin: 18px 0 0; padding: 0; }
+    .au-list li { font-size: 14px; color: #1e293b; padding: 7px 0; border-top: 1px solid rgba(15,23,42,.06); display: flex; justify-content: space-between; gap: 12px; }
+    .au-list li span { color: #64748b; white-space: nowrap; }
+    .au-jl { display: flex; flex-wrap: wrap; gap: 8px; }
+    .au-jl span { font-size: 13px; font-weight: 600; color: #1e293b; padding: 6px 14px; border-radius: 50px; border: 1px solid rgba(15,23,42,.1); }
+    .au-big { display: flex; gap: 28px; margin-top: 22px; padding-top: 18px; border-top: 1px solid rgba(15,23,42,.06); }
+    .au-big b { display: block; font-size: 30px; font-weight: 900; letter-spacing: -.02em; line-height: 1.1; color: #0f172a; }
+    .au-big span { font-size: 13px; color: #64748b; font-weight: 500; }
+    .au-ct { display: flex; gap: 12px; align-items: flex-start; font-size: 14.5px; color: #1e293b; line-height: 1.6; padding: 12px 0; border-top: 1px solid rgba(15,23,42,.06); }
+    .au-ct:first-of-type { border-top: none; padding-top: 0; }
+    .au-ct svg { flex: none; margin-top: 2px; }
+    .au-foot-row { margin-top: auto; padding-top: 18px; }
+    .au-news { list-style: none; margin: 0; padding: 0; border-top: 1px solid rgba(15,23,42,.08); }
+    .au-news a { display: grid; grid-template-columns: 130px 90px 1fr 24px; align-items: center; gap: 16px; padding: 18px 8px; border-bottom: 1px solid rgba(15,23,42,.08); transition: color .2s; }
+    .au-news a:hover h4 { color: #4338ca; }
+    .au-news h4 { margin: 0; font-size: 15.5px; font-weight: 600; color: #1e293b; line-height: 1.5; transition: color .2s; }
+    .au-news .au-tag { justify-self: start; }
+    .au-foot { border-top: 1px solid rgba(15,23,42,.08); padding: 36px 0 40px; }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+</helmet>
+<div class="au-root" style="width:1440px; position:relative; overflow:hidden; background:#fff">
+
+  <!-- NAV -->
+  <div style="border-bottom: 1px solid rgba(15,23,42,.06)">
+    <div class="au-wrap au-nav">
+      <a class="au-brand" href="#"><img src="logo.png" alt="ECME logo"><div>ECME Lab<small>Energy Conversion Materials &amp; Electronics</small></div></a>
+      <nav class="au-links"><a class="on" href="#">Home</a><a href="#">Professor</a><a href="#">People</a><a href="#">Research</a><a href="#">Publications</a><a href="#">News</a><a href="#">Contact</a></nav>
+    </div>
+  </div>
+
+  <!-- TOP GRID -->
+  <div class="au-band">
+    <div class="au-wrap au-top">
+      <div class="au-card au-intro">
+        <div class="au-in au-d1"><span class="au-pill">DGIST · Energy Science &amp; Engineering</span></div>
+        <h1 class="au-in au-d2">Energy Conversion<br>Materials &amp; <span class="au-grad">Electronics</span></h1>
+        <p class="au-in au-d3">ECME Lab studies piezoelectric &amp; triboelectric nanogenerators, functional polymers and bio-piezoelectric materials — toward self-powered electronics and human-inspired tactile sensors.</p>
+        <div class="au-in au-d4" style="margin:30px 0 40px; display:flex; gap:12px">
+          <a class="au-btn au-primary" href="#">Explore Research
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="au-btn au-ghost" href="#">Meet the Team</a>
+        </div>
+        <div class="au-stats au-in au-d5">
+          <div><b>81</b><span>Papers</span></div>
+          <div><b>35</b><span>Patents</span></div>
+          <div><b>18</b><span>Members</span></div>
+          <div><b>53</b><span>News</span></div>
+        </div>
+      </div>
+      <div class="au-side">
+        <div class="au-card au-photo au-in au-d3">
+          <img src="hero.jpg" alt="ECME Lab group photo">
+          <div><b>ECME Lab</b><span>DGIST, Daegu</span></div>
+        </div>
+        <a class="au-card au-latest au-in au-d4" href="#">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px"><p class="au-lbl">Latest</p><div class="au-meta"><span class="au-tag au-award">AWARD</span><span class="au-date">2026.06.12</span></div></div>
+          <h4>Gerald Selasie Gbadam · 류연경 석∙박사과정, 2026 NGPT Best Oral Award 수상</h4>
+          <span class="au-more" style="margin-top:auto; padding-top:14px">Read more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4338ca" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESEARCH -->
+  <section class="au-sec">
+    <div class="au-wrap">
+      <div class="au-head"><div><h2 class="au-grad">Research Areas</h2><p>Five directions in energy conversion materials and electronics</p></div><a class="au-more" href="#">All research →</a></div>
+      <div class="au-res">
+        <div class="au-card au-r"><div class="au-tile"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></div><div><small>01</small><h3>Energy Harvesting Technology</h3><p>Piezoelectric and triboelectric nanogenerators.</p></div></div>
+        <div class="au-card au-r"><div class="au-tile"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M8.5 6h7M7.3 8.2l3.4 7.6M16.7 8.2l-3.4 7.6"/></svg></div><div><small>02</small><h3>Synthesis of Functional Polymers</h3><p>Functional polymers for energy devices.</p></div></div>
+        <div class="au-card au-r"><div class="au-tile"><svg viewBox="0 0 24 24"><path d="M5 20c0-9 6-15 15-15 0 9-6 15-15 15z"/><path d="M5 20l9-9"/></svg></div><div><small>03</small><h3>Bio-Piezoelectric Materials</h3><p>Piezoelectricity in bio-derived materials.</p></div></div>
+        <div class="au-card au-r au-half"><div class="au-tile"><svg viewBox="0 0 24 24"><path d="M9 11V5a1.5 1.5 0 0 1 3 0v5M12 10V4a1.5 1.5 0 0 1 3 0v6M15 10V6a1.5 1.5 0 0 1 3 0v7a7 7 0 0 1-7 7h-.5a6 6 0 0 1-4.6-2.2L3.5 14.5a1.6 1.6 0 0 1 2.3-2.2L9 15"/></svg></div><div><small>04</small><h3>Various Novel Applications</h3><p>Self-powered electronics and human-inspired tactile sensors.</p></div></div>
+        <div class="au-card au-r au-half"><div class="au-tile"><svg viewBox="0 0 24 24"><circle cx="5" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/><path d="M6.6 7.4l3.8 3.4M6.6 16.6l3.8-3.4M14 12h3"/></svg></div><div><small>05</small><h3>AI-Integrated Research Platform</h3><p>AI in the materials and device research workflow.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PI / PUBLICATIONS / CONTACT -->
+  <section class="au-sec au-band">
+    <div class="au-wrap au-three">
+      <div class="au-card au-box">
+        <div class="au-box-h"><div class="au-tile"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></div><h3>Professor</h3></div>
+        <div class="au-pi"><img src="prof.jpg" alt="Prof. Ju-Hyuck Lee"><div><b>Ju-Hyuck Lee</b><span>Associate Professor</span><em>Dept. of Energy Science &amp; Engineering, DGIST</em></div></div>
+        <ul class="au-list">
+          <li>DGIST<span>2018–</span></li>
+          <li>Postdoc, UC Berkeley &amp; LBNL<span>2016–2018</span></li>
+          <li>Ph.D., SKKU<span>2016</span></li>
+          <li>IEEE-ISAF Young Investigator Award<span>2022</span></li>
+        </ul>
+        <div class="au-foot-row"><a class="au-more" href="#">Full profile →</a></div>
+      </div>
+      <div class="au-card au-box">
+        <div class="au-box-h"><div class="au-tile"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h9l5 5v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M14 3v5h5M8 13h8M8 17h5"/></svg></div><h3>Publications</h3></div>
+        <p class="au-lbl" style="margin-bottom:12px">Published in</p>
+        <div class="au-jl"><span>Nature Communications</span><span>Advanced Materials</span><span>Nano Energy</span><span>Advanced Science</span><span>J. Mater. Chem. A</span><span>Nano Trends</span></div>
+        <div class="au-big"><div><b>81</b><span>papers</span></div><div><b>35</b><span>patents</span></div></div>
+        <div class="au-foot-row"><a class="au-more" href="#">All publications →</a></div>
+      </div>
+      <div class="au-card au-box">
+        <div class="au-box-h"><div class="au-tile"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div><h3>Contact</h3></div>
+        <div class="au-ct"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 7h2M13 7h2M9 11h2M13 11h2M10 21v-4h4v4"/></svg><span>Room E6-411, Dept. of Energy Science &amp; Engineering, DGIST</span></div>
+        <div class="au-ct"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Daegu 42988, Republic of Korea</span></div>
+        <div class="au-ct"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><a href="#" style="color:#4338ca; font-weight:600">jhlee85@dgist.ac.kr</a></div>
+        <div class="au-foot-row"><a class="au-btn au-ghost" href="#" style="padding:10px 22px; font-size:14px">Contact page</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWS -->
+  <section class="au-sec">
+    <div class="au-wrap">
+      <div class="au-head"><div><h2 class="au-grad">News</h2><p>Awards, publications and press</p></div><a class="au-more" href="#">All news →</a></div>
+      <div class="au-news">
+        <a href="#"><span class="au-date">2026.06.12</span><span class="au-tag au-award">AWARD</span><h4>Gerald Selasie Gbadam · 류연경 석∙박사과정, 2026 NGPT Best Oral Award 수상</h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4338ca" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#"><span class="au-date">2026.06.12</span><span class="au-tag au-award">AWARD</span><h4>곽수정 석∙박사과정 · 최다은 석사과정, 2026 NGPT Best Poster Award 수상</h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4338ca" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#"><span class="au-date">2025.12.16</span><span class="au-tag au-award">AWARD</span><h4>Gerald Selasie Gbadam 석∙박사과정, 2025 대학원 연구페스티벌 우수 연구자상</h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4338ca" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#"><span class="au-date">2025.11.03</span><span class="au-tag au-press">PRESS</span><h4>연합뉴스 · “배터리 교체, 충전 No” 마찰전기 이용한 나노발전기 개발</h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4338ca" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#"><span class="au-date">2025.10</span><span class="au-tag au-paper">PAPER</span><h4>Gerald Selasie Gbadam 석∙박사과정 1저자 논문 Nature Communications 게재 확정</h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4338ca" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#"><span class="au-date">2025.06.19</span><span class="au-tag au-paper">PAPER</span><h4>주현서 석∙박사과정 1저자 논문 Advanced Materials 게재 확정</h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4338ca" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="au-foot">
+    <div class="au-wrap" style="display:flex; justify-content:space-between; align-items:center">
+      <div class="au-brand"><img src="logo.png" alt="ECME logo"><div>ECME Lab<small>Room E6-411, Dept. of Energy Science &amp; Engineering, DGIST, Daegu 42988, Republic of Korea</small></div></div>
+      <div style="text-align:right; font-size:13.5px; color:#64748b"><a href="#" style="color:#4338ca; font-weight:600">jhlee85@dgist.ac.kr</a><br>© JU HYUCK LEE's Group</div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+</body>
+</html>

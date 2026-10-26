@@ -1,0 +1,13 @@
+{
+  "page_id": "page-13",
+  "page_name": "Reference-level · AN–AU (color & motion capped)",
+  "group": "레퍼런스 수준 (색·모션 상한)",
+  "brief": "",
+  "brief_append": "추가 4안 (같은 색·모션 상한):\nAR · Research Tabs — 왼쪽 제목/오른쪽 사진, 연구 5개를 탭으로 전환하는 패널(첫 탭 열림) + 나머지 4개 카드, 아이콘 통계 띠.\nAS · News-first — 얇은 히어로(제목 + 통계 2×2) 다음 바로 'What's New': 큰 사진 뉴스 + 뉴스 4줄, 5열 연구, PI + Join 카드.\nAT · Photo Band — 상단에 사진 3장 띠(행사·단체·교수님), 가운데 제목 + 얇은 통계 리본, 연구 5카드, 수상/논문·언론 2단 뉴스, 가로 타임라인 PI.\nAU · Card Stack — 큰 소개 카드 + 오른쪽 사진·최신 소식 카드, 3+2 연구 카드, 교수님·논문·연락처 3카드, 날짜 뉴스 목록.",
+  "items": [
+    {"file": "DirectionAR.dc.html", "title": "AR · Research Tabs", "h": 2890, "readme": "연구 탭 패널, 좌 제목/우 사진, 아이콘 통계 띠"},
+    {"file": "DirectionAS.dc.html", "title": "AS · News-first", "h": 2350, "readme": "얇은 히어로 + 큰 사진 뉴스 우선, PI + Join 카드"},
+    {"file": "DirectionAT.dc.html", "title": "AT · Photo Band", "h": 2900, "readme": "상단 사진 3장 띠, 가운데 제목, 2단 뉴스"},
+    {"file": "DirectionAU.dc.html", "title": "AU · Card Stack", "h": 2570, "readme": "큰 소개 카드 + 사진·최신 카드, 3카드 요약"}
+  ]
+}

@@ -32,6 +32,26 @@
      "file": "DirectionAQ.dc.html",
      "title": "AQ · Sidebar Profile",
      "desc": "왼쪽 프로필 열, 뉴스 타임라인"
+    },
+    {
+     "file": "DirectionAR.dc.html",
+     "title": "AR · Research Tabs",
+     "desc": "연구 탭 패널, 좌 제목/우 사진, 아이콘 통계 띠"
+    },
+    {
+     "file": "DirectionAS.dc.html",
+     "title": "AS · News-first",
+     "desc": "얇은 히어로 + 큰 사진 뉴스 우선, PI + Join 카드"
+    },
+    {
+     "file": "DirectionAT.dc.html",
+     "title": "AT · Photo Band",
+     "desc": "상단 사진 3장 띠, 가운데 제목, 2단 뉴스"
+    },
+    {
+     "file": "DirectionAU.dc.html",
+     "title": "AU · Card Stack",
+     "desc": "큰 소개 카드 + 사진·최신 카드, 3카드 요약"
     }
    ]
   },

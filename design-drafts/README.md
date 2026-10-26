@@ -8,6 +8,10 @@ Claude Design 캔버스( https://claude.ai/code/artifact/a6db981f-9b66-4d66-8b9a
 
 | 파일 | 방향 | 상태 |
 |---|---|---|
+| `DirectionAR.dc.html` | AR · Research Tabs (연구 탭 패널, 좌 제목/우 사진, 아이콘 통계 띠) | 레퍼런스 수준 (색·모션 상한) |
+| `DirectionAS.dc.html` | AS · News-first (얇은 히어로 + 큰 사진 뉴스 우선, PI + Join 카드) | 레퍼런스 수준 (색·모션 상한) |
+| `DirectionAT.dc.html` | AT · Photo Band (상단 사진 3장 띠, 가운데 제목, 2단 뉴스) | 레퍼런스 수준 (색·모션 상한) |
+| `DirectionAU.dc.html` | AU · Card Stack (큰 소개 카드 + 사진·최신 카드, 3카드 요약) | 레퍼런스 수준 (색·모션 상한) |
 | `DirectionAN.dc.html` | AN · Reference Classic (레퍼런스 최근접, 사진 배너 오버레이, 사진 뉴스 카드) | 레퍼런스 수준 (색·모션 상한) |
 | `DirectionAO.dc.html` | AO · Clean Split (좌우 분할 히어로, 아이콘 연구 목록) | 레퍼런스 수준 (색·모션 상한) |
 | `DirectionAP.dc.html` | AP · Centered Statement (가운데 제목 + 사진 + 겹친 통계) | 레퍼런스 수준 (색·모션 상한) |
