@@ -12,6 +12,8 @@ const full = title
   ? `${title} | ECME LAB · ${SITE.nameKo}`
   : `ECME LAB — Energy Conversion Materials Engineering | ${SITE.nameKo}`;
 const canonical = new URL(Astro.url.pathname, SITE.url).href;
+// Temporary preview builds (NOINDEX=1) must stay out of search results.
+const noindex = !!process.env.NOINDEX;
 const ogImage = new URL(img(home.banner)!, SITE.url).href;
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -59,7 +61,7 @@ const jsonLd = {
     <meta name="description" content={description} />
     <meta name="keywords" content={SITE.keywords} />
     <meta name="author" content={`${SITE.professor} (${SITE.professorKo}), ${SITE.department}`} />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
     <link rel="canonical" href={canonical} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="ECME LAB · DGIST" />
