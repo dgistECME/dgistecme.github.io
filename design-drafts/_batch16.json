@@ -1,0 +1,27 @@
+{
+ "page_id": "page-7",
+ "page_name": "",
+ "group": "Orbit 계열 (기하 모티프 + 애니메이션)",
+ "brief": "",
+ "brief_append": "절제판 3안 (색은 레퍼런스 수준, 상시 움직임 1개): NA · Orbit Refined (원형 단체사진 중심 + 궤도 위 연구 5칩, 노드 100초 공전) — 전체 사이트 후보로 선정. NB · Orbit Split (분할 히어로 + 궤도 다이어그램 연구 섹션). NC · Energy Loop (연구를 하나의 고리로 연결한 다이어그램).",
+ "items": [
+  {
+   "file": "DirectionNA.dc.html",
+   "title": "NA · Orbit Refined",
+   "h": 2850,
+   "readme": "원형 사진 중심 궤도 + 연구 5칩, 절제 모션, 전체 사이트 후보"
+  },
+  {
+   "file": "DirectionNB.dc.html",
+   "title": "NB · Orbit Split",
+   "h": 2890,
+   "readme": "분할 히어로 + 궤도 다이어그램 연구"
+  },
+  {
+   "file": "DirectionNC.dc.html",
+   "title": "NC · Energy Loop",
+   "h": 2900,
+   "readme": "연구를 하나의 고리로 잇는 다이어그램"
+  }
+ ]
+}

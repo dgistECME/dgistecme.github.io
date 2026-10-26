@@ -1,0 +1,27 @@
+{
+ "page_id": "page-13",
+ "page_name": "",
+ "group": "레퍼런스 수준 (색·모션 상한)",
+ "brief": "",
+ "brief_append": "추가 3안: AV · Research First (연구 5개가 첫 화면 바로 아래 주인공, 단체사진 + 통계, 6건 뉴스) — 전체 사이트 후보로 선정. AW · Editorial Photo-left (사진 왼쪽 히어로, 대표 논문 띠, 키워드 칩 연구 목록). AX · Lab Portal (회색 띠 위 3카드: 연구·사진/통계·뉴스, 페이지 바로가기 타일).",
+ "items": [
+  {
+   "file": "DirectionAV.dc.html",
+   "title": "AV · Research First",
+   "h": 2870,
+   "readme": "연구 5개를 히어로 바로 아래 주인공으로, 전체 사이트 후보"
+  },
+  {
+   "file": "DirectionAW.dc.html",
+   "title": "AW · Editorial Photo-left",
+   "h": 2890,
+   "readme": "사진 왼쪽 히어로, 대표 논문 띠, 키워드 칩"
+  },
+  {
+   "file": "DirectionAX.dc.html",
+   "title": "AX · Lab Portal",
+   "h": 2330,
+   "readme": "3카드 포털 히어로, 페이지 바로가기 타일"
+  }
+ ]
+}

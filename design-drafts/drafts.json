@@ -52,6 +52,21 @@
      "file": "DirectionAU.dc.html",
      "title": "AU · Card Stack",
      "desc": "큰 소개 카드 + 사진·최신 카드, 3카드 요약"
+    },
+    {
+     "file": "DirectionAV.dc.html",
+     "title": "AV · Research First",
+     "desc": "연구 5개를 히어로 바로 아래 주인공으로, 전체 사이트 후보"
+    },
+    {
+     "file": "DirectionAW.dc.html",
+     "title": "AW · Editorial Photo-left",
+     "desc": "사진 왼쪽 히어로, 대표 논문 띠, 키워드 칩"
+    },
+    {
+     "file": "DirectionAX.dc.html",
+     "title": "AX · Lab Portal",
+     "desc": "3카드 포털 히어로, 페이지 바로가기 타일"
     }
    ]
   },
@@ -207,6 +222,21 @@
      "file": "DirectionR.dc.html",
      "title": "R · Signal Field",
      "desc": "점 필드 + 신호 링 퍼짐 + 통계 바"
+    },
+    {
+     "file": "DirectionNA.dc.html",
+     "title": "NA · Orbit Refined",
+     "desc": "원형 사진 중심 궤도 + 연구 5칩, 절제 모션, 전체 사이트 후보"
+    },
+    {
+     "file": "DirectionNB.dc.html",
+     "title": "NB · Orbit Split",
+     "desc": "분할 히어로 + 궤도 다이어그램 연구"
+    },
+    {
+     "file": "DirectionNC.dc.html",
+     "title": "NC · Energy Loop",
+     "desc": "연구를 하나의 고리로 잇는 다이어그램"
     }
    ]
   },

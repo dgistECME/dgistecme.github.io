@@ -1,0 +1,319 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+  <style>
+    body { margin: 0; background: #ffffff; color: #0f172a; font-family: 'Inter', 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif; font-size: 15.5px; line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    .av-root * { box-sizing: border-box; }
+    .av-wrap { width: 1200px; margin: 0 auto; }
+    .av-grad { background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+    /* header (shared on every subpage) */
+    .av-nav { height: 80px; display: flex; align-items: center; justify-content: space-between; }
+    .av-brand { display: flex; align-items: center; gap: 12px; }
+    .av-brand img { height: 42px; display: block; }
+    .av-brand b { display: block; font-size: 18px; font-weight: 800; letter-spacing: -.01em; line-height: 1.2; }
+    .av-brand span { display: block; font-size: 12px; color: #64748b; font-weight: 500; }
+    .av-links { display: flex; gap: 30px; font-size: 14.5px; font-weight: 500; color: #1e293b; }
+    .av-links a { transition: color .2s; }
+    .av-links a:hover, .av-links a.on { color: #4338ca; }
+    .av-links a.on { font-weight: 700; }
+
+    /* atoms */
+    .av-pill { display: inline-block; padding: 6px 16px; border-radius: 50px; background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%); color: #fff; font-size: 12.5px; font-weight: 600; letter-spacing: .04em; }
+    .av-btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; border-radius: 50px; font-weight: 600; font-size: 15px; transition: box-shadow .25s, transform .25s, color .2s, border-color .2s; }
+    .av-btn:hover { transform: translateY(-2px); }
+    .av-primary { background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%); color: #fff; box-shadow: 0 5px 20px rgba(0,0,0,.08); }
+    .av-primary:hover { box-shadow: 0 10px 30px rgba(0,0,0,.1); }
+    .av-ghost { border: 1px solid rgba(15,23,42,.12); color: #1e293b; background: #fff; }
+    .av-ghost:hover { border-color: #4338ca; color: #4338ca; }
+    .av-link { font-size: 14px; font-weight: 600; color: #4338ca; display: inline-flex; align-items: center; gap: 6px; }
+    .av-card { background: #fff; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,.08); transition: box-shadow .3s, transform .3s; }
+    .av-card:hover { box-shadow: 0 10px 30px rgba(0,0,0,.1); transform: translateY(-4px); }
+    .av-static:hover { transform: none; box-shadow: 0 5px 20px rgba(0,0,0,.08); }
+    .av-tile { width: 52px; height: 52px; border-radius: 13px; background: #e0e7ff; display: flex; align-items: center; justify-content: center; flex: none; }
+    .av-tile svg { width: 25px; height: 25px; fill: none; stroke: #4338ca; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .av-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #64748b; }
+    .av-tag { display: inline-block; font-size: 11.5px; font-weight: 700; padding: 3px 11px; border-radius: 50px; letter-spacing: .03em; }
+    .av-award { color: #198754; background: rgba(25,135,84,.1); }
+    .av-paper { color: #0d6efd; background: rgba(13,110,253,.1); }
+    .av-press { color: #dc3545; background: rgba(220,53,69,.1); }
+    .av-date { font-size: 13px; color: #64748b; font-weight: 500; }
+    .av-in { opacity: 0; animation: av-up 1s ease forwards; }
+    .av-d1 { animation-delay: .1s; } .av-d2 { animation-delay: .2s; } .av-d3 { animation-delay: .3s; } .av-d4 { animation-delay: .4s; } .av-d5 { animation-delay: .5s; } .av-d6 { animation-delay: .6s; }
+    @keyframes av-up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* section heads (= page-title band pattern on subpages) */
+    .av-sec { padding: 54px 0; }
+    .av-band { background: #f8fafc; }
+    .av-head { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 28px; }
+    .av-head h2 { margin: 6px 0 0; font-size: 38px; font-weight: 900; letter-spacing: -.02em; line-height: 1.15; display: inline-block; }
+    .av-head p { margin: 8px 0 0; color: #64748b; font-size: 16px; }
+
+    /* hero intro */
+    .av-intro { display: grid; grid-template-columns: 700px 1fr; gap: 56px; align-items: end; padding: 50px 0 40px; }
+    .av-intro h1 { margin: 20px 0 0; font-size: 54px; line-height: 1.07; font-weight: 900; letter-spacing: -.035em; color: #0f172a; }
+    .av-intro-r { border-left: 1px solid rgba(15,23,42,.1); padding-left: 36px; }
+    .av-intro-r p { margin: 0 0 26px; font-size: 16.5px; color: #64748b; line-height: 1.7; }
+    .av-intro-r div { display: flex; gap: 12px; }
+
+    /* research as hero visual */
+    .av-rs { padding: 34px 0 48px; }
+    .av-rs-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+    .av-rgrid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
+    .av-rcard { padding: 28px 24px 24px; display: flex; flex-direction: column; min-height: 244px; }
+    .av-rnum { display: flex; justify-content: space-between; align-items: flex-start; }
+    .av-rnum span { font-size: 13px; font-weight: 800; color: #64748b; letter-spacing: .08em; }
+    .av-rcard h3 { margin: 22px 0 8px; font-size: 18.5px; font-weight: 800; line-height: 1.3; letter-spacing: -.01em; color: #0f172a; }
+    .av-rcard p { margin: 0; font-size: 14px; color: #64748b; line-height: 1.6; flex: 1; }
+    .av-rcard .av-link { margin-top: 18px; }
+
+    /* about + stats */
+    .av-about { display: grid; grid-template-columns: 760px 1fr; gap: 52px; align-items: center; }
+    .av-photo { overflow: hidden; }
+    .av-photo img { width: 760px; height: 384px; object-fit: cover; display: block; }
+    .av-cap { display: flex; justify-content: space-between; align-items: center; padding: 14px 22px; font-size: 13px; color: #64748b; }
+    .av-cap b { color: #1e293b; font-weight: 700; }
+    .av-about h2 { margin: 6px 0 0; font-size: 38px; font-weight: 900; letter-spacing: -.02em; line-height: 1.15; display: inline-block; }
+    .av-about p { margin: 14px 0 24px; color: #64748b; font-size: 15.5px; line-height: 1.7; }
+    .av-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .av-stat { padding: 20px 22px; }
+    .av-stat b { display: block; font-size: 38px; font-weight: 900; letter-spacing: -.02em; line-height: 1.05; color: #0f172a; }
+    .av-stat span { display: block; margin-top: 4px; font-size: 13.5px; color: #64748b; font-weight: 500; }
+
+    /* news */
+    .av-news { display: grid; grid-template-columns: 400px 1fr 1fr; grid-template-rows: auto auto auto; gap: 22px; }
+    .av-feat { grid-row: span 3; overflow: hidden; display: flex; flex-direction: column; }
+    .av-feat img { width: 100%; height: 240px; object-fit: cover; display: block; }
+    .av-feat-b { padding: 24px 26px 26px; display: flex; flex-direction: column; flex: 1; }
+    .av-feat h3 { margin: 12px 0 0; font-size: 21px; font-weight: 800; line-height: 1.45; letter-spacing: -.01em; color: #0f172a; flex: 1; }
+    .av-meta { display: flex; align-items: center; gap: 10px; }
+    .av-ni { padding: 22px 24px; display: flex; flex-direction: column; }
+    .av-ni h3 { margin: 10px 0 0; font-size: 15.5px; font-weight: 700; line-height: 1.5; color: #0f172a; }
+    .av-wide { grid-column: span 2; display: grid; grid-template-columns: 52px 1fr auto; gap: 20px; align-items: center; }
+    .av-wide .av-tile svg { stroke: #dc3545; }
+    .av-wide .av-tile { background: rgba(220,53,69,.1); }
+    .av-wide h3 { margin-top: 6px; font-size: 17px; font-weight: 800; }
+
+    /* PI */
+    .av-pi { display: grid; grid-template-columns: 290px 1fr; gap: 48px; align-items: start; }
+    .av-pi-l p { margin: 12px 0 26px; color: #64748b; font-size: 15.5px; line-height: 1.7; }
+    .av-pi-l h2 { margin: 6px 0 0; font-size: 38px; font-weight: 900; letter-spacing: -.02em; line-height: 1.15; display: inline-block; }
+    .av-pic { display: grid; grid-template-columns: 170px 1fr 1fr; gap: 32px; padding: 30px 32px; }
+    .av-pic img { width: 170px; height: 215px; object-fit: cover; border-radius: 15px; display: block; }
+    .av-pic h3 { margin: 0; font-size: 30px; font-weight: 800; color: #0d6efd; letter-spacing: -.01em; line-height: 1.2; }
+    .av-role { margin: 6px 0 2px; font-weight: 600; color: #1e293b; }
+    .av-dept { color: #64748b; font-size: 14px; }
+    .av-mail { display: inline-flex; align-items: center; gap: 8px; margin-top: 14px; color: #4338ca; font-weight: 600; font-size: 14.5px; }
+    .av-lbl { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #4338ca; margin: 0 0 8px; }
+    .av-cl { list-style: none; margin: 0; padding: 0; }
+    .av-cl li { display: grid; grid-template-columns: 86px 1fr; gap: 8px; padding: 8px 0; border-top: 1px solid rgba(15,23,42,.08); font-size: 14px; color: #1e293b; line-height: 1.45; }
+    .av-cl li:first-child { border-top: none; padding-top: 2px; }
+    .av-cl li small { font-size: 13px; padding-top: 1px; white-space: nowrap; color: #64748b; font-weight: 600; }
+
+    /* journals */
+    .av-jr { display: flex; justify-content: space-between; align-items: center; padding: 24px 0; border-top: 1px solid rgba(15,23,42,.08); margin-top: 48px; }
+    .av-jr div { display: flex; gap: 34px; font-size: 16px; font-weight: 700; color: #1e293b; }
+
+    /* footer */
+    .av-foot { background: #f8fafc; border-top: 1px solid rgba(15,23,42,.06); padding: 44px 0 26px; }
+    .av-foot-g { display: grid; grid-template-columns: 1fr 200px 260px; gap: 48px; }
+    .av-foot-info { color: #64748b; font-size: 14px; line-height: 1.8; margin-top: 14px; }
+    .av-foot h4 { margin: 4px 0 12px; font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #64748b; }
+    .av-foot-l { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 16px; font-size: 14px; font-weight: 500; color: #1e293b; }
+    .av-foot-l a:hover { color: #4338ca; }
+    .av-foot-bot { margin-top: 32px; padding-top: 18px; border-top: 1px solid rgba(15,23,42,.08); display: flex; justify-content: space-between; font-size: 13px; color: #64748b; }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } .av-in { opacity: 1; } }
+  </style>
+</helmet>
+<div class="av-root" style="width:1440px; position:relative; overflow:hidden; background:#fff">
+
+  <!-- HEADER -->
+  <div style="border-bottom: 1px solid rgba(15,23,42,.08);">
+    <div class="av-wrap av-nav">
+      <a class="av-brand" href="#"><img src="logo.png" alt="ECME logo"><div><b>ECME Lab</b><span>Energy Conversion Materials &amp; Electronics · DGIST</span></div></a>
+      <nav class="av-links"><a class="on" href="#">Home</a><a href="#">Professor</a><a href="#">People</a><a href="#">Research</a><a href="#">Publications</a><a href="#">News</a><a href="#">Contact</a></nav>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <div class="av-wrap av-intro">
+    <div>
+      <div class="av-in av-d1"><span class="av-pill">DGIST · Prof. Ju-Hyuck Lee</span></div>
+      <h1 class="av-in av-d2">Energy Conversion Materials &amp; Electronics Lab</h1>
+    </div>
+    <div class="av-intro-r av-in av-d3">
+      <p>Piezoelectric &amp; triboelectric nanogenerators, functional polymers and bio-piezoelectric materials — toward self-powered electronics and human-inspired tactile sensors.</p>
+      <div>
+        <a class="av-btn av-primary" href="#">Explore Research <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="av-btn av-ghost" href="#">Publications</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESEARCH (hero visual) -->
+  <section class="av-band av-rs">
+    <div class="av-wrap">
+      <div class="av-rs-top">
+        <span class="av-eyebrow">Five research areas</span>
+        <a class="av-link" href="#">All research <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4338ca" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="av-rgrid">
+        <a class="av-card av-rcard av-in av-d2" href="#">
+          <div class="av-rnum"><div class="av-tile"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg></div><span>01</span></div>
+          <h3>Energy Harvesting Technology</h3>
+          <p>Piezoelectric and triboelectric nanogenerators.</p>
+          <span class="av-link">Explore <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4338ca" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="av-card av-rcard av-in av-d3" href="#">
+          <div class="av-rnum"><div class="av-tile"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M8.5 6h7M7.3 8.2l3.4 7.6M16.7 8.2l-3.4 7.6"/></svg></div><span>02</span></div>
+          <h3>Synthesis of Functional Polymers</h3>
+          <p>Functional polymers for energy conversion devices.</p>
+          <span class="av-link">Explore <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4338ca" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="av-card av-rcard av-in av-d4" href="#">
+          <div class="av-rnum"><div class="av-tile"><svg viewBox="0 0 24 24"><path d="M5 20c0-9 6-15 15-15 0 9-6 15-15 15z"/><path d="M5 20l9-9"/></svg></div><span>03</span></div>
+          <h3>Bio-Piezoelectric Materials</h3>
+          <p>Piezoelectric materials of biological origin.</p>
+          <span class="av-link">Explore <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4338ca" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="av-card av-rcard av-in av-d5" href="#">
+          <div class="av-rnum"><div class="av-tile"><svg viewBox="0 0 24 24"><path d="M9 11V5a1.5 1.5 0 0 1 3 0v5M12 10V4a1.5 1.5 0 0 1 3 0v6M15 10V6a1.5 1.5 0 0 1 3 0v7a7 7 0 0 1-7 7h-.5a6 6 0 0 1-4.6-2.2L3.5 14.5a1.6 1.6 0 0 1 2.3-2.2L9 15"/></svg></div><span>04</span></div>
+          <h3>Various Novel Applications</h3>
+          <p>Self-powered electronics and human-inspired tactile sensors.</p>
+          <span class="av-link">Explore <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4338ca" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="av-card av-rcard av-in av-d6" href="#">
+          <div class="av-rnum"><div class="av-tile"><svg viewBox="0 0 24 24"><circle cx="5" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/><path d="M6.6 7.4l3.8 3.4M6.6 16.6l3.8-3.4M14 12h3"/></svg></div><span>05</span></div>
+          <h3>AI-Integrated Research Platform</h3>
+          <p>AI-assisted materials and device research.</p>
+          <span class="av-link">Explore <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4338ca" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT + STATS -->
+  <section class="av-sec">
+    <div class="av-wrap av-about">
+      <div class="av-card av-static av-photo">
+        <img src="hero.jpg" alt="ECME Lab group photo">
+        <div class="av-cap"><b>ECME Lab</b><span>Dept. of Energy Science &amp; Engineering, DGIST</span></div>
+      </div>
+      <div>
+        <div class="av-eyebrow">About the lab</div>
+        <h2 class="av-grad">Lab at a Glance</h2>
+        <p>Led by Prof. Ju-Hyuck Lee in the Dept. of Energy Science &amp; Engineering at DGIST, ECME Lab works on energy conversion materials and self-powered electronics.</p>
+        <div class="av-stats">
+          <div class="av-card av-stat"><b>81</b><span>Papers</span></div>
+          <div class="av-card av-stat"><b>35</b><span>Patents</span></div>
+          <div class="av-card av-stat"><b>18</b><span>Members</span></div>
+          <div class="av-card av-stat"><b>53</b><span>News</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWS -->
+  <section class="av-sec av-band">
+    <div class="av-wrap">
+      <div class="av-head">
+        <div><div class="av-eyebrow">News</div><h2 class="av-grad">News &amp; Achievements</h2><p>Awards, publications and press from our group</p></div>
+        <a class="av-link" href="#">View all news <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4338ca" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="av-news">
+        <a class="av-card av-feat" href="#">
+          <img src="photo1.jpg" alt="">
+          <div class="av-feat-b">
+            <div class="av-meta"><span class="av-tag av-award">AWARD</span><span class="av-date">2026.06.12</span></div>
+            <h3>Gerald Selasie Gbadam · 류연경 석∙박사과정, 2026 NGPT Best Oral Award 수상</h3>
+            <span class="av-link" style="margin-top: 18px;">Read more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4338ca" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </div>
+        </a>
+        <a class="av-card av-ni" href="#"><div class="av-meta"><span class="av-tag av-award">AWARD</span><span class="av-date">2026.06.12</span></div><h3>곽수정 석∙박사과정 · 최다은 석사과정, 2026 NGPT Best Poster Award 수상</h3></a>
+        <a class="av-card av-ni" href="#"><div class="av-meta"><span class="av-tag av-award">AWARD</span><span class="av-date">2025.12.16</span></div><h3>Gerald Selasie Gbadam 석∙박사과정, 2025 대학원 연구페스티벌 우수 연구자상</h3></a>
+        <a class="av-card av-ni" href="#"><div class="av-meta"><span class="av-tag av-paper">PAPER</span><span class="av-date">2025.10</span></div><h3>Gerald Selasie Gbadam 석∙박사과정 1저자 논문 Nature Communications 게재 확정</h3></a>
+        <a class="av-card av-ni" href="#"><div class="av-meta"><span class="av-tag av-paper">PAPER</span><span class="av-date">2025.06.19</span></div><h3>주현서 석∙박사과정 1저자 논문 Advanced Materials 게재 확정</h3></a>
+        <a class="av-card av-ni av-wide" href="#">
+          <div class="av-tile"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg></div>
+          <div><div class="av-meta"><span class="av-tag av-press">PRESS</span><span class="av-date">연합뉴스 · 2025.11.03</span></div><h3>“배터리 교체, 충전 No” 마찰전기 이용한 나노발전기 개발</h3></div>
+          <span class="av-link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4338ca" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PI -->
+  <section class="av-sec" style="padding-bottom: 0;">
+    <div class="av-wrap">
+      <div class="av-pi">
+        <div class="av-pi-l">
+          <div class="av-eyebrow">Professor</div>
+          <h2 class="av-grad">Principal Investigator</h2>
+          <p>Associate Professor, Dept. of Energy Science &amp; Engineering. At DGIST since 2018, after a postdoc at UC Berkeley &amp; LBNL.</p>
+          <a class="av-btn av-ghost" href="#" style="padding: 11px 24px; font-size: 14.5px;">View Profile <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <div class="av-card av-static av-pic">
+          <img src="prof.jpg" alt="Prof. Ju-Hyuck Lee">
+          <div>
+            <h3>Ju-Hyuck Lee</h3>
+            <div class="av-role">Associate Professor</div>
+            <div class="av-dept">Dept. of Energy Science &amp; Engineering, DGIST</div>
+            <a class="av-mail" href="#"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4338ca" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>jhlee85@dgist.ac.kr</a>
+            <div class="av-lbl" style="margin-top: 22px;">Career</div>
+            <ul class="av-cl">
+              <li><small>2018 –</small>DGIST</li>
+              <li><small>2016 – 2018</small>Postdoc, UC Berkeley &amp; LBNL</li>
+              <li><small>2016</small>Ph.D., SKKU</li>
+            </ul>
+          </div>
+          <div>
+            <div class="av-lbl">Honors</div>
+            <ul class="av-cl">
+              <li><small>2025 –</small>Nano Energy Early Career Researcher Board</li>
+              <li><small>2025</small>KIM Emerging Innovator in Materials</li>
+              <li><small>2025</small>Energies Award (MDPI)</li>
+              <li><small>2022</small>IEEE-ISAF Young Investigator Award</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="av-jr">
+        <span class="av-eyebrow">Published in</span>
+        <div><span>Nature Communications</span><span>Advanced Materials</span><span>Nano Energy</span><span>Advanced Science</span><span>J. Mater. Chem. A</span><span>Nano Trends</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="av-foot">
+    <div class="av-wrap">
+      <div class="av-foot-g">
+        <div>
+          <a class="av-brand" href="#"><img src="logo.png" alt=""><div><b>ECME Lab</b><span>Energy Conversion Materials &amp; Electronics Lab</span></div></a>
+          <div class="av-foot-info">Room E6-411, Dept. of Energy Science &amp; Engineering, DGIST<br>Daegu 42988, Republic of Korea</div>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <nav class="av-foot-l"><a href="#">Professor</a><a href="#">People</a><a href="#">Research</a><a href="#">Publications</a><a href="#">News</a><a href="#">Contact</a></nav>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <a class="av-mail" href="#" style="margin-top: 0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4338ca" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>jhlee85@dgist.ac.kr</a>
+        </div>
+      </div>
+      <div class="av-foot-bot"><span>Energy Conversion Materials &amp; Electronics Lab · DGIST</span><span>© JU HYUCK LEE's Group</span></div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+</body>
+</html>

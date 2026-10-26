@@ -136,6 +136,33 @@
       "page": "page-13"
     },
     {
+      "file": "DirectionAV.dc.html",
+      "x": 12480,
+      "y": 0,
+      "w": 1440,
+      "h": 2870,
+      "title": "AV · Research First",
+      "page": "page-13"
+    },
+    {
+      "file": "DirectionAW.dc.html",
+      "x": 14040,
+      "y": 0,
+      "w": 1440,
+      "h": 2890,
+      "title": "AW · Editorial Photo-left",
+      "page": "page-13"
+    },
+    {
+      "file": "DirectionAX.dc.html",
+      "x": 15600,
+      "y": 0,
+      "w": 1440,
+      "h": 2330,
+      "title": "AX · Lab Portal",
+      "page": "page-13"
+    },
+    {
       "file": "DirectionAJ.dc.html",
       "x": 0,
       "y": 0,
@@ -370,6 +397,33 @@
       "page": "page-7"
     },
     {
+      "file": "DirectionNA.dc.html",
+      "x": 6240,
+      "y": 0,
+      "w": 1440,
+      "h": 2850,
+      "title": "NA · Orbit Refined",
+      "page": "page-7"
+    },
+    {
+      "file": "DirectionNB.dc.html",
+      "x": 7800,
+      "y": 0,
+      "w": 1440,
+      "h": 2890,
+      "title": "NB · Orbit Split",
+      "page": "page-7"
+    },
+    {
+      "file": "DirectionNC.dc.html",
+      "x": 9360,
+      "y": 0,
+      "w": 1440,
+      "h": 2900,
+      "title": "NC · Energy Loop",
+      "page": "page-7"
+    },
+    {
       "file": "DirectionO.dc.html",
       "x": 1560,
       "y": 0,
@@ -502,7 +556,7 @@
       "y": -440,
       "w": 880,
       "page": "page-13",
-      "text": "'색도 아직 과함' 피드백 반영. 레퍼런스 사이트(dasresearchlab) 실측 토큰을 상한으로 고정.\n색: 흰 바탕 + #f8fafc 밴드, 글자 #0f172a/#64748b, 그라데이션은 파랑→보라(#3b82f6→#8b5cf6) 하나만 — 섹션 제목 글자·메인 버튼·작은 배지에만. 태그만 초록/파랑/빨강 작은 색.\n글꼴 Inter 하나, 카드 라운드 15px + 옅은 그림자. 애니메이션: 첫 로드 fadeInUp 1회 + 호버뿐, 반복 0개.\nAN · Reference Classic — 레퍼런스와 가장 가까움: 사진 배너 + 어두운 오버레이 + 가운데 흰 제목, 그라데이션 섹션 제목, 사진 뉴스 카드 3개, 아이콘 연구 카드 5개, PI 카드.\nAO · Clean Split — 좌 제목/우 사진, 연구는 아이콘 목록, 날짜 뉴스 목록 + 언론 카드, 좌우 PI.\nAP · Centered Statement — 가운데 큰 제목 아래 사진 + 겹친 통계 카드, 흰/회색 교차 섹션, 3+2 연구 카드.\nAQ · Sidebar Profile — 왼쪽 프로필 열(교수님·연락처·메뉴) + 오른쪽 본문, 2열 연구 카드, 뉴스 타임라인. 학술 프로필 느낌.\n\n하나 고르거나 섞어 말하면 실제 사이트에 이식.\n추가 4안 (같은 색·모션 상한):\nAR · Research Tabs — 왼쪽 제목/오른쪽 사진, 연구 5개를 탭으로 전환하는 패널(첫 탭 열림) + 나머지 4개 카드, 아이콘 통계 띠.\nAS · News-first — 얇은 히어로(제목 + 통계 2×2) 다음 바로 'What's New': 큰 사진 뉴스 + 뉴스 4줄, 5열 연구, PI + Join 카드.\nAT · Photo Band — 상단에 사진 3장 띠(행사·단체·교수님), 가운데 제목 + 얇은 통계 리본, 연구 5카드, 수상/논문·언론 2단 뉴스, 가로 타임라인 PI.\nAU · Card Stack — 큰 소개 카드 + 오른쪽 사진·최신 소식 카드, 3+2 연구 카드, 교수님·논문·연락처 3카드, 날짜 뉴스 목록."
+      "text": "'색도 아직 과함' 피드백 반영. 레퍼런스 사이트(dasresearchlab) 실측 토큰을 상한으로 고정.\n색: 흰 바탕 + #f8fafc 밴드, 글자 #0f172a/#64748b, 그라데이션은 파랑→보라(#3b82f6→#8b5cf6) 하나만 — 섹션 제목 글자·메인 버튼·작은 배지에만. 태그만 초록/파랑/빨강 작은 색.\n글꼴 Inter 하나, 카드 라운드 15px + 옅은 그림자. 애니메이션: 첫 로드 fadeInUp 1회 + 호버뿐, 반복 0개.\nAN · Reference Classic — 레퍼런스와 가장 가까움: 사진 배너 + 어두운 오버레이 + 가운데 흰 제목, 그라데이션 섹션 제목, 사진 뉴스 카드 3개, 아이콘 연구 카드 5개, PI 카드.\nAO · Clean Split — 좌 제목/우 사진, 연구는 아이콘 목록, 날짜 뉴스 목록 + 언론 카드, 좌우 PI.\nAP · Centered Statement — 가운데 큰 제목 아래 사진 + 겹친 통계 카드, 흰/회색 교차 섹션, 3+2 연구 카드.\nAQ · Sidebar Profile — 왼쪽 프로필 열(교수님·연락처·메뉴) + 오른쪽 본문, 2열 연구 카드, 뉴스 타임라인. 학술 프로필 느낌.\n\n하나 고르거나 섞어 말하면 실제 사이트에 이식.\n추가 4안 (같은 색·모션 상한):\nAR · Research Tabs — 왼쪽 제목/오른쪽 사진, 연구 5개를 탭으로 전환하는 패널(첫 탭 열림) + 나머지 4개 카드, 아이콘 통계 띠.\nAS · News-first — 얇은 히어로(제목 + 통계 2×2) 다음 바로 'What's New': 큰 사진 뉴스 + 뉴스 4줄, 5열 연구, PI + Join 카드.\nAT · Photo Band — 상단에 사진 3장 띠(행사·단체·교수님), 가운데 제목 + 얇은 통계 리본, 연구 5카드, 수상/논문·언론 2단 뉴스, 가로 타임라인 PI.\nAU · Card Stack — 큰 소개 카드 + 오른쪽 사진·최신 소식 카드, 3+2 연구 카드, 교수님·논문·연락처 3카드, 날짜 뉴스 목록.\n추가 3안: AV · Research First (연구 5개가 첫 화면 바로 아래 주인공, 단체사진 + 통계, 6건 뉴스) — 전체 사이트 후보로 선정. AW · Editorial Photo-left (사진 왼쪽 히어로, 대표 논문 띠, 키워드 칩 연구 목록). AX · Lab Portal (회색 띠 위 3카드: 연구·사진/통계·뉴스, 페이지 바로가기 타일)."
     },
     {
       "id": "page-12-brief",
@@ -595,6 +649,6 @@
   ],
   "launch": {
     "view": "canvas",
-    "page": "page-13"
+    "page": "page-7"
   }
 }

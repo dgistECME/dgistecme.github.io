@@ -8,6 +8,12 @@ Claude Design 캔버스( https://claude.ai/code/artifact/a6db981f-9b66-4d66-8b9a
 
 | 파일 | 방향 | 상태 |
 |---|---|---|
+| `DirectionNA.dc.html` | NA · Orbit Refined (원형 사진 중심 궤도 + 연구 5칩, 절제 모션, 전체 사이트 후보) | Orbit 계열 (기하 모티프 + 애니메이션) |
+| `DirectionNB.dc.html` | NB · Orbit Split (분할 히어로 + 궤도 다이어그램 연구) | Orbit 계열 (기하 모티프 + 애니메이션) |
+| `DirectionNC.dc.html` | NC · Energy Loop (연구를 하나의 고리로 잇는 다이어그램) | Orbit 계열 (기하 모티프 + 애니메이션) |
+| `DirectionAV.dc.html` | AV · Research First (연구 5개를 히어로 바로 아래 주인공으로, 전체 사이트 후보) | 레퍼런스 수준 (색·모션 상한) |
+| `DirectionAW.dc.html` | AW · Editorial Photo-left (사진 왼쪽 히어로, 대표 논문 띠, 키워드 칩) | 레퍼런스 수준 (색·모션 상한) |
+| `DirectionAX.dc.html` | AX · Lab Portal (3카드 포털 히어로, 페이지 바로가기 타일) | 레퍼런스 수준 (색·모션 상한) |
 | `DirectionAR.dc.html` | AR · Research Tabs (연구 탭 패널, 좌 제목/우 사진, 아이콘 통계 띠) | 레퍼런스 수준 (색·모션 상한) |
 | `DirectionAS.dc.html` | AS · News-first (얇은 히어로 + 큰 사진 뉴스 우선, PI + Join 카드) | 레퍼런스 수준 (색·모션 상한) |
 | `DirectionAT.dc.html` | AT · Photo Band (상단 사진 3장 띠, 가운데 제목, 2단 뉴스) | 레퍼런스 수준 (색·모션 상한) |
