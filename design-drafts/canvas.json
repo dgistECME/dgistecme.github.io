@@ -5,6 +5,10 @@
       "name": "Final · Bold Editorial"
     },
     {
+      "id": "page-14",
+      "name": "Extra · CH mascot (just for fun)"
+    },
+    {
       "id": "page-13",
       "name": "Reference-level · AN AO AP AQ (color & motion capped)"
     },
@@ -62,6 +66,15 @@
       "h": 1640,
       "title": "Home · Bold Editorial (적용 중)",
       "page": "page-1"
+    },
+    {
+      "file": "DirectionCH.dc.html",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 2000,
+      "title": "CH · 마스코트 (번외)",
+      "page": "page-14"
     },
     {
       "file": "DirectionAN.dc.html",
@@ -551,6 +564,14 @@
       "text": "C · Bold Editorial 적용 완료 → https://dgistecme.github.io/ (애니메이션 A 기본)\n색·폰트·간격은 site/src/styles/global.css 상단 토큰에서 조정.\n이전 디자인 복구: git checkout v1-wix-style (또는 backup/wix-style 브랜치)."
     },
     {
+      "id": "page-14-brief",
+      "x": 0,
+      "y": -440,
+      "w": 880,
+      "page": "page-14",
+      "text": "번외. 먼작귀(치이카와) 결을 참고한 마스코트 버전 — 실제 캐릭터는 저작권 때문에 못 쓰므로 자체 마스코트 3마리(충전이·압전이·마찰이)를 그림. 파스텔 + 굵은 외곽선 + 손글씨 말풍선. 채택용이 아니라 '이런 것도 된다' 소개용."
+    },
+    {
       "id": "page-13-brief",
       "x": 0,
       "y": -440,
@@ -649,6 +670,6 @@
   ],
   "launch": {
     "view": "canvas",
-    "page": "page-7"
+    "page": "page-14"
   }
 }

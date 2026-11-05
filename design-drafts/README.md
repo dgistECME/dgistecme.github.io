@@ -8,6 +8,7 @@ Claude Design 캔버스( https://claude.ai/code/artifact/a6db981f-9b66-4d66-8b9a
 
 | 파일 | 방향 | 상태 |
 |---|---|---|
+| `DirectionCH.dc.html` | CH · 마스코트 (번외) (먼작귀 결의 자체 마스코트 3마리, 파스텔 + 굵은 외곽선, 손글씨 말풍선) | 번외 · 재미로 |
 | `DirectionNA.dc.html` | NA · Orbit Refined (원형 사진 중심 궤도 + 연구 5칩, 절제 모션, 전체 사이트 후보) | Orbit 계열 (기하 모티프 + 애니메이션) |
 | `DirectionNB.dc.html` | NB · Orbit Split (분할 히어로 + 궤도 다이어그램 연구) | Orbit 계열 (기하 모티프 + 애니메이션) |
 | `DirectionNC.dc.html` | NC · Energy Loop (연구를 하나의 고리로 잇는 다이어그램) | Orbit 계열 (기하 모티프 + 애니메이션) |
