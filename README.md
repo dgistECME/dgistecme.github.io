@@ -25,6 +25,13 @@ npm run build    # dist/
 
 저장하면 2~3분 후 자동 반영. 파일 열기 → 연필 아이콘(Edit) → 수정 → **Commit changes**.
 
+### 사진은 올리기 전에 압축 (중요)
+휴대폰 원본(장당 3~5 MB)을 그대로 올리면 저장소 기록에 영구히 남아 용량을 먹는다. 올리기 전에 변환:
+```bash
+python tools/add_images.py workshop-2026 사진폴더/     # → public/img/full + thumb 에 WebP(최대 1600px, 장당 약 150 KB)
+```
+변환된 파일만 업로드. 혹시 원본이 올라가도 배포 때 `tools/shrink_images.py`가 사이트용으로 자동 축소하지만, 저장소에는 원본이 남는다.
+
 ### 뉴스 1건 추가 — `src/data/news.yaml`
 맨 위에 추가:
 ```yaml
@@ -72,7 +79,7 @@ npm run build    # dist/
 ```
 
 ### 사진 포스트 추가 — `src/data/photos.yaml`
-사진을 `public/img/full/`(원본)과 `public/img/thumb/`(작게, 선택) 에 업로드 후 `posts:` 맨 위에:
+`tools/add_images.py`로 변환한 사진을 `public/img/full/`과 `public/img/thumb/`에 업로드 후 `posts:` 맨 위에:
 ```yaml
 - year: 2026
   date: 2026.09.10

@@ -24,6 +24,12 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      # shrink any oversized image (e.g. phone original) before it reaches the site
+      - name: Shrink oversized images
+        continue-on-error: true   # never block a deploy; Size guard below still applies
+        run: |
+          pip install --quiet pillow
+          python tools/shrink_images.py
       - run: npm run build
         env:
           # user/org site (<name>.github.io repo): BASE_PATH is "/"

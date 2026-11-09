@@ -17,7 +17,7 @@ EXT = {".jpg", ".jpeg", ".png", ".webp", ".heic", ".gif", ".bmp", ".tif", ".tiff
 def convert(src: Path, name: str, max_px: int, thumb: bool):
     im = ImageOps.exif_transpose(Image.open(src))
     im = im.convert("RGBA" if ("A" in im.getbands() or "transparency" in im.info or im.mode == "P") else "RGB")
-    for folder, size, q in ((FULL, max_px, 82), (THUMB, 480, 78)):
+    for folder, size, q in ((FULL, max_px, 86), (THUMB, 480, 80)):
         if folder is THUMB and not thumb:
             continue
         w = im.copy(); w.thumbnail((size, size), Image.LANCZOS)
