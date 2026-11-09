@@ -30,6 +30,13 @@ jobs:
           # project site: BASE_PATH is "/<repo-name>"
           SITE_URL: https://${{ github.repository_owner }}.github.io
           BASE_PATH: ${{ endsWith(github.repository, '.github.io') && '/' || format('/{0}', github.event.repository.name) }}
+      # Pages limit is 1 GB. Over 800 MB: fail here, so the current live site stays up unchanged.
+      - name: Size guard
+        run: |
+          mb=$(du -sm dist | cut -f1)
+          echo "dist: ${mb} MB (Pages limit 1024 MB)"
+          if [ "$mb" -gt 800 ]; then echo "::error::dist is ${mb} MB (> 800 MB). Deploy blocked, live site unchanged. Compress or remove large files."; exit 1; fi
+          if [ "$mb" -gt 500 ]; then echo "::warning::dist is ${mb} MB (> 500 MB). Compress images soon."; fi
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
