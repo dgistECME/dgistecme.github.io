@@ -1,0 +1,15 @@
+---
+import home from '../data/home.yaml';
+import { img } from '../lib/img';
+---
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <div>{home.footer.address}</div>
+      <div style="margin-top:.6rem">{home.footer.copyright}</div>
+    </div>
+    <div class="logos">
+      {home.footer.logos.map((u: string) => <img src={img(u)} alt="" loading="lazy" />)}
+    </div>
+  </div>
+</footer>

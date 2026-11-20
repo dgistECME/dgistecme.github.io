@@ -1,0 +1,104 @@
+---
+import Base from '../layouts/Base.astro';
+import home from '../data/home.yaml';
+import news from '../data/news.yaml';
+import research from '../data/research.yaml';
+import prof from '../data/professor.yaml';
+import { img, href } from '../lib/img';
+const latest = news.slice(0, 3);
+const no = (i: number) => String(i + 1).padStart(2, '0');
+---
+<Base>
+  <main class="home">
+    <section class="wrap home-hero">
+      <div class="top">
+        <div>
+          <div class="eyebrow">Prof. Ju-Hyuck Lee's Research Group · DGIST</div>
+          <h1>Energy Conversion<br />Materials Engineering</h1>
+        </div>
+        <div>
+          <p class="lead">Harvesting waste mechanical energy with piezoelectric and triboelectric nanogenerators, toward battery-free, self-powered electronics.</p>
+          <div class="areas">
+            {research.topics.map((t: any, i: number) => <a href={href('/research')}><b>{no(i)}</b>{t.title}</a>)}
+          </div>
+        </div>
+      </div>
+      <div class="home-photo">
+        <img src={img(home.banner_wide)} alt="ECME LAB members" width="1560" height="536" fetchpriority="high" />
+      </div>
+      <div class="strip">
+        <div class="hd"><span class="eyebrow">Latest</span><a href="#news">All news →</a></div>
+        {latest.map((n: any) => <a href="#news"><span class="d">{n.date}</span><span>{n.text}</span></a>)}
+      </div>
+    </section>
+
+    <section class="wrap home-sec">
+      <div class="sec-head">
+        <div><div class="eyebrow">Research</div><h2>Five directions, one goal.</h2></div>
+        <a class="more" href={href('/research')}>All research →</a>
+      </div>
+      <div class="rcells">
+        {research.topics.map((t: any, i: number) => (
+          <a href={href('/research')}>
+            <span class="n">{no(i)}</span>
+            <span class="t">{t.title}</span>
+            <span class="go">Explore →</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="wrap home-sec">
+      <div class="split">
+        <div class="l">
+          <div class="eyebrow">ECME Lab</div>
+          <h2>Knowledge for the welfare of mankind.</h2>
+        </div>
+        <div class="r"><p class="mission">{home.mission}</p></div>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="wrap split">
+        <div class="l gcard">
+          <div class="eyebrow">In the press</div>
+          <h2>Articles</h2>
+          <div class="cells one">
+            {home.highlights.map((h: any) => (
+              <a href={h.url} target="_blank" rel="noopener"><span class="t">{h.title}</span></a>
+            ))}
+            <a href={href('/articles')}><span class="m">All articles →</span></a>
+          </div>
+        </div>
+        <div class="r gcard" id="news">
+          <div class="eyebrow">Lab news</div>
+          <h2>ECME News</h2>
+          <ul class="newslist">
+            {news.map((n: any) => <li><span class="d">{n.date}</span><span>{n.text}</span></li>)}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="pi">
+        <img src={img(prof.photo)} alt="Prof. Ju-Hyuck Lee" loading="lazy" />
+        <div>
+          <div class="eyebrow">Professor</div>
+          <h3>Ju-Hyuck Lee <span class="muted" style="font-weight:500">이주혁</span></h3>
+          <div class="role">Associate Professor</div>
+          <div class="dept">Department of Energy Science &amp; Engineering, DGIST · <a href={`mailto:${prof.email}`}>{prof.email}</a></div>
+          <div class="chips">{prof.research_interest.map((r: string) => <span>{r}</span>)}</div>
+          <div class="btns">
+            <a class="btn primary" href={href('/professor')}>View profile</a>
+            <a class="btn ghost" href={href('/opening')}>Join the lab</a>
+          </div>
+        </div>
+      </div>
+      <div class="journals">
+        <span class="eyebrow">Published in</span>
+        <div>{home.journals.map((j: string) => <span>{j}</span>)}</div>
+      </div>
+    </section>
+  </main>
+</Base>

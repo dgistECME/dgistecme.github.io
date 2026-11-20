@@ -1,0 +1,38 @@
+---
+import { NAV } from '../lib/nav';
+import { href, img } from '../lib/img';
+import home from '../data/home.yaml';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const current = Astro.url.pathname.replace(base, '').replace(/\/$/, '') || '/';
+const isCur = (h?: string) => h && (h === current || (h !== '/' && current.startsWith(h)));
+---
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href={href('/')}>
+      <img src={img(home.logo)} alt="" />
+      <span>
+        <span class="t">ECME</span>
+        <span class="s">Energy Conversion Materials Engineering · DGIST</span>
+      </span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav" onclick="const n=document.getElementById('nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))">Menu</button>
+    <ul class="nav" id="nav">
+      {NAV.map((item) => (
+        <li>
+          {item.children ? (
+            <details>
+              <summary aria-current={item.children.some((c) => isCur(c.href)) ? 'page' : undefined}>{item.label}</summary>
+              <ul class="sub">
+                {item.children.map((c) => (
+                  <li><a href={href(c.href)} aria-current={isCur(c.href) ? 'page' : undefined}>{c.label}</a></li>
+                ))}
+              </ul>
+            </details>
+          ) : (
+            <a href={href(item.href!)} aria-current={isCur(item.href) ? 'page' : undefined}>{item.label}</a>
+          )}
+        </li>
+      ))}
+    </ul>
+  </div>
+</header>

@@ -1,0 +1,138 @@
+---
+import '../styles/global.css';
+import '../styles/motion.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import home from '../data/home.yaml';
+import { img } from '../lib/img';
+import { SITE } from '../lib/site';
+interface Props { title?: string; heading?: string; eyebrow?: string; sub?: string; description?: string }
+const { title, heading, eyebrow, sub, description = SITE.description } = Astro.props;
+const full = title
+  ? `${title} | ECME LAB · ${SITE.nameKo}`
+  : `ECME LAB — Energy Conversion Materials Engineering | ${SITE.nameKo}`;
+const canonical = new URL(Astro.url.pathname, SITE.url).href;
+// Temporary preview builds (NOINDEX=1) must stay out of search results.
+const noindex = !!process.env.NOINDEX;
+const ogImage = new URL(img(home.banner)!, SITE.url).href;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'ResearchOrganization',
+      '@id': `${SITE.url}/#org`,
+      name: SITE.fullName,
+      alternateName: ['ECME LAB', 'ECME', 'DGIST ECME', SITE.nameKo, 'Energy Conversion Materials Engineering'],
+      url: SITE.url,
+      logo: new URL(img(home.logo)!, SITE.url).href,
+      email: SITE.email,
+      telephone: SITE.tel,
+      parentOrganization: { '@type': 'CollegeOrUniversity', name: 'DGIST (Daegu Gyeongbuk Institute of Science and Technology)', url: 'https://www.dgist.ac.kr' },
+      address: { '@type': 'PostalAddress', streetAddress: SITE.address.street, addressLocality: SITE.address.city, postalCode: SITE.address.postal, addressCountry: SITE.address.country },
+      founder: { '@id': `${SITE.url}/#prof` },
+    },
+    {
+      '@type': 'Person',
+      '@id': `${SITE.url}/#prof`,
+      name: SITE.professor,
+      alternateName: [SITE.professorKo, '이주혁 교수'],
+      jobTitle: 'Associate Professor',
+      worksFor: { '@id': `${SITE.url}/#org` },
+      affiliation: { '@type': 'CollegeOrUniversity', name: 'DGIST' },
+      email: SITE.email,
+      url: `${SITE.url}/professor/`,
+    },
+    {
+      '@type': 'WebSite',
+      url: SITE.url,
+      name: 'ECME LAB',
+      inLanguage: ['en', 'ko'],
+      publisher: { '@id': `${SITE.url}/#org` },
+    },
+  ],
+};
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{full}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={SITE.keywords} />
+    <meta name="author" content={`${SITE.professor} (${SITE.professorKo}), ${SITE.department}`} />
+    <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ECME LAB · DGIST" />
+    <meta property="og:title" content={full} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={full} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    {SITE.googleVerification && <meta name="google-site-verification" content={SITE.googleVerification} />}
+    {SITE.naverVerification && <meta name="naver-site-verification" content={SITE.naverVerification} />}
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" href={img(home.logo)} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <script is:inline define:vars={{ defaultAnim: SITE.animation }}>
+      // Motion preset: ?anim=a|b|c previews (persists), ?anim=off clears. Default from site.ts.
+      try {
+        const q = new URLSearchParams(location.search).get('anim');
+        if (q === 'off') localStorage.removeItem('anim');
+        else if (q) localStorage.setItem('anim', q);
+        const a = localStorage.getItem('anim') || defaultAnim;
+        if (a) document.documentElement.dataset.anim = a;
+      } catch (e) {}
+    </script>
+    <slot name="head" />
+  </head>
+  <body>
+    <Header />
+    {heading && (
+      <section class="page-head on-dark">
+        <div class="wrap">
+          {eyebrow && <div class="eyebrow">{eyebrow}</div>}
+          <h1>{heading}</h1>
+          {sub && <p class="sub">{sub}</p>}
+        </div>
+      </section>
+    )}
+    <slot name="hero" />
+    <div class="light">
+      <slot />
+    </div>
+    <Footer />
+    <script is:inline>
+      // Scroll reveal + header shrink (only when a motion preset is active)
+      (function () {
+        const anim = document.documentElement.dataset.anim;
+        if (!anim) return;
+        const sel = '.strip > *, .rcells > *, .split > *, .gcard, .pi > *, .journals, .cells > *, .newslist li, .member, .members h2, .paper, .press, .post, .topic, .year, .plain li, .cv h3, .prof > *, .opening > main > *';
+        const els = document.querySelectorAll(sel);
+        let i = 0, lastTop = -1;
+        els.forEach((el) => {
+          const top = el.getBoundingClientRect().top;
+          i = Math.abs(top - lastTop) < 4 ? i + 1 : 0; lastTop = top;
+          el.style.setProperty('--d', Math.min(i, 6) * 70 + 'ms');
+          el.setAttribute('data-reveal', '');
+        });
+        if ('IntersectionObserver' in window) {
+          const io = new IntersectionObserver((ents) => ents.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+          els.forEach((el) => io.observe(el));
+        } else els.forEach((el) => el.classList.add('in'));
+        const hdr = document.querySelector('.site-header');
+        addEventListener('scroll', () => hdr.classList.toggle('scrolled', scrollY > 40), { passive: true });
+      })();
+    </script>
+  </body>
+</html>

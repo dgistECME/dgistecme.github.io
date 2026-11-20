@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+import p from '../data/professor.yaml';
+import { img } from '../lib/img';
+const header: string[] = p.header_lines.slice(1);
+---
+<Base title="Prof. Ju-Hyuck Lee (이주혁 교수)" eyebrow="Professor" heading="Ju-Hyuck Lee" sub="이주혁 · Associate Professor, Department of Energy Science & Engineering, DGIST" description="이주혁 (Ju-Hyuck Lee) 교수 — DGIST 에너지공학과 부교수, ECME LAB 지도교수. 학력, 경력, 연구 분야, 수상 내역.">
+  <main class="wrap">
+    <div class="prof">
+      <img src={img(p.photo)} alt="Prof. Ju-Hyuck Lee" />
+      <div class="cv">
+        <h2 class="name">{p.name}</h2>
+        <p class="muted" style="font-size:.9rem">
+          {header.map((l) => <>{l.includes('@') ? <a href={`mailto:${p.email}`}>{l}</a> : l}<br /></>)}
+        </p>
+        <h3>Education</h3>
+        <ul>{p.education.map((l: string) => <li>{l}</li>)}</ul>
+        <h3>Professional Experience</h3>
+        <ul>{p.experience.map((l: string) => <li>{l}</li>)}</ul>
+        <h3>Research Interest</h3>
+        <ul>{p.research_interest.map((l: string) => <li>{l}</li>)}</ul>
+        <h3>Honors, Awards and Activities</h3>
+        <ul>{p.honors.map((l: string) => <li>{l}</li>)}</ul>
+      </div>
+    </div>
+  </main>
+</Base>

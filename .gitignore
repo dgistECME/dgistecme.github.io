@@ -1,0 +1,6 @@
+node_modules/
+dist/
+.astro/
+
+# design drafts stay local only (kept out of the repo to save space)
+design-drafts/

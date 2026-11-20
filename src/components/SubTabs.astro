@@ -1,0 +1,8 @@
+---
+import { href } from '../lib/img';
+interface Props { tabs: { label: string; href: string }[]; current: string }
+const { tabs, current } = Astro.props;
+---
+<nav class="subtabs" aria-label="Section">
+  {tabs.map((t) => <a href={href(t.href)} aria-current={t.href === current ? 'page' : undefined}>{t.label}</a>)}
+</nav>
