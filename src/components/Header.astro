@@ -5,6 +5,8 @@ import home from '../data/home.yaml';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const current = Astro.url.pathname.replace(base, '').replace(/\/$/, '') || '/';
 const isCur = (h?: string) => h && (h === current || (h !== '/' && current.startsWith(h)));
+// No dropdowns: each menu goes to its first page; sibling pages are switched with in-page tabs (SubTabs).
+const items = NAV.map((i) => ({ label: i.label, href: i.href ?? i.children![0].href, cur: i.href ? isCur(i.href) : i.children!.some((c) => isCur(c.href)) }));
 ---
 <header class="site-header">
   <div class="wrap">
@@ -15,24 +17,9 @@ const isCur = (h?: string) => h && (h === current || (h !== '/' && current.start
         <span class="s">Energy Conversion Materials Engineering · DGIST</span>
       </span>
     </a>
-    <button class="nav-toggle" aria-expanded="false" aria-controls="nav" onclick="const n=document.getElementById('nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))">Menu</button>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Menu" onclick="const n=document.getElementById('nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))"><span></span></button>
     <ul class="nav" id="nav">
-      {NAV.map((item) => (
-        <li>
-          {item.children ? (
-            <details>
-              <summary aria-current={item.children.some((c) => isCur(c.href)) ? 'page' : undefined}>{item.label}</summary>
-              <ul class="sub">
-                {item.children.map((c) => (
-                  <li><a href={href(c.href)} aria-current={isCur(c.href) ? 'page' : undefined}>{c.label}</a></li>
-                ))}
-              </ul>
-            </details>
-          ) : (
-            <a href={href(item.href!)} aria-current={isCur(item.href) ? 'page' : undefined}>{item.label}</a>
-          )}
-        </li>
-      ))}
+      {items.map((i) => <li><a href={href(i.href)} aria-current={i.cur ? 'page' : undefined}>{i.label}</a></li>)}
     </ul>
   </div>
 </header>

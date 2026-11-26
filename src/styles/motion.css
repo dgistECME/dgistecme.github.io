@@ -12,9 +12,10 @@
 [data-anim] [data-reveal].in { opacity: 1; transform: none; }
 
 /* Shared: nav underline grow */
-[data-anim] .nav > li > a, [data-anim] .nav summary { position: relative; }
-[data-anim] .nav > li > a::after, [data-anim] .nav summary::after { content: ""; position: absolute; left: .9rem; right: .9rem; bottom: .35rem; height: 1px; background: var(--c-accent); transform: scaleX(0); transform-origin: left; transition: transform .3s ease; }
-[data-anim] .nav > li > a:hover::after, [data-anim] .nav summary:hover::after, [data-anim] .nav a[aria-current="page"]::after { transform: scaleX(1); }
+[data-anim] .nav > li > a { position: relative; }
+[data-anim] .nav > li > a::after { content: ""; position: absolute; left: .9rem; right: .9rem; bottom: .35rem; height: 1px; background: var(--c-accent); transform: scaleX(0); transform-origin: left; transition: transform .3s ease; }
+[data-anim] .nav > li > a:hover::after, [data-anim] .nav a[aria-current="page"]::after { transform: scaleX(1); }
+@media (max-width: 1180px) { [data-anim] .nav > li > a::after { display: none; } }
 
 /* =========================================================
    A · Soft fade — hero elements stagger in, sections fade-up on scroll

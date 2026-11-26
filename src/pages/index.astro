@@ -3,7 +3,6 @@ import Base from '../layouts/Base.astro';
 import home from '../data/home.yaml';
 import news from '../data/news.yaml';
 import research from '../data/research.yaml';
-import prof from '../data/professor.yaml';
 import { img, href } from '../lib/img';
 const latest = news.slice(0, 3);
 const no = (i: number) => String(i + 1).padStart(2, '0');
@@ -19,7 +18,7 @@ const no = (i: number) => String(i + 1).padStart(2, '0');
         <div>
           <p class="lead">Harvesting waste mechanical energy with piezoelectric and triboelectric nanogenerators, toward battery-free, self-powered electronics.</p>
           <div class="areas">
-            {research.topics.map((t: any, i: number) => <a href={href('/research')}><b>{no(i)}</b>{t.title}</a>)}
+            {research.topics.map((t: any, i: number) => <a href={href(`/research#topic-${i + 1}`)}><b>{no(i)}</b>{t.title}</a>)}
           </div>
         </div>
       </div>
@@ -39,7 +38,7 @@ const no = (i: number) => String(i + 1).padStart(2, '0');
       </div>
       <div class="rcells">
         {research.topics.map((t: any, i: number) => (
-          <a href={href('/research')}>
+          <a href={href(`/research#topic-${i + 1}`)}>
             <span class="n">{no(i)}</span>
             <span class="t">{t.title}</span>
             <span class="go">Explore →</span>
@@ -81,20 +80,6 @@ const no = (i: number) => String(i + 1).padStart(2, '0');
     </section>
 
     <section class="wrap">
-      <div class="pi">
-        <img src={img(prof.photo)} alt="Prof. Ju-Hyuck Lee" loading="lazy" />
-        <div>
-          <div class="eyebrow">Professor</div>
-          <h3>Ju-Hyuck Lee <span class="muted" style="font-weight:500">이주혁</span></h3>
-          <div class="role">Associate Professor</div>
-          <div class="dept">Department of Energy Science &amp; Engineering, DGIST · <a href={`mailto:${prof.email}`}>{prof.email}</a></div>
-          <div class="chips">{prof.research_interest.map((r: string) => <span>{r}</span>)}</div>
-          <div class="btns">
-            <a class="btn primary" href={href('/professor')}>View profile</a>
-            <a class="btn ghost" href={href('/opening')}>Join the lab</a>
-          </div>
-        </div>
-      </div>
       <div class="journals">
         <span class="eyebrow">Published in</span>
         <div>{home.journals.map((j: string) => <span>{j}</span>)}</div>

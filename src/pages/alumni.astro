@@ -1,9 +1,11 @@
 ---
 import Base from '../layouts/Base.astro';
+import SubTabs from '../components/SubTabs.astro';
 import a from '../data/alumni.yaml';
 ---
 <Base title="Alumni" eyebrow="Peoples" heading="Alumni">
   <main class="wrap">
+    <SubTabs />
     <h2 class="section-title">Graduates</h2>
     <ul class="plain">
       {a.graduates.map((g: any) => (

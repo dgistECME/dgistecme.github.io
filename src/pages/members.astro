@@ -1,10 +1,12 @@
 ---
 import Base from '../layouts/Base.astro';
+import SubTabs from '../components/SubTabs.astro';
 import sections from '../data/members.yaml';
 import { img } from '../lib/img';
 ---
 <Base title="Members" eyebrow="Peoples" heading="Members">
   <main class="wrap members">
+    <SubTabs />
     {sections.map((s: any) => (
       <section>
         <h2>{s.section}</h2>

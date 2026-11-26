@@ -3,12 +3,11 @@ import Base from '../layouts/Base.astro';
 import SubTabs from '../components/SubTabs.astro';
 import press from '../data/press.yaml';
 import { img } from '../lib/img';
-const tabs = [{ label: 'ARTICLES', href: '/articles' }, { label: 'PHOTOS', href: '/photos' }];
 const years = [...new Set(press.map((a: any) => a.year))].sort((a: any, b: any) => b - a);
 ---
 <Base title="Articles" eyebrow="News" heading="In the Press" sub={`${press.length} articles`}>
   <main class="wrap" style="max-width:860px">
-    <SubTabs tabs={tabs} current="/articles" />
+    <SubTabs />
     {years.map((y) => (
       <section>
         <h2 class="year">{y}</h2>

@@ -3,7 +3,6 @@ import Base from '../layouts/Base.astro';
 import SubTabs from '../components/SubTabs.astro';
 import data from '../data/papers.yaml';
 import { img } from '../lib/img';
-const tabs = [{ label: 'PAPERS', href: '/papers' }, { label: 'PATENTS', href: '/patents' }];
 // group by year, newest first; legacy (<=2017) lumped under "~2017"
 const groups = new Map<string, any[]>();
 for (const p of data.papers) {
@@ -14,7 +13,7 @@ for (const p of data.papers) {
 ---
 <Base title="Papers" eyebrow="Publication" heading="Papers" sub={`${data.papers.length} peer-reviewed publications, 2011 – ${data.papers[0].year}`}>
   <main class="wrap">
-    <SubTabs tabs={tabs} current="/papers" />
+    <SubTabs />
     <div class="covers">
       {data.covers.map((u: string) => <img src={img(u)} alt="Journal cover" loading="lazy" />)}
     </div>

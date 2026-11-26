@@ -10,7 +10,7 @@ const [photoPiezo, photoTribo, iconPiezo, iconTribo] = r.banner.images;
       const paras: string[] = t.body.split('\n\n');
       const lead = i === 0 && paras.length > 1 ? paras.shift() : null;
       return (
-        <section class="topic">
+        <section class="topic" id={`topic-${i + 1}`}>
           <figure>
             {i === 0 ? (
               <div class="rbanner">
@@ -18,7 +18,7 @@ const [photoPiezo, photoTribo, iconPiezo, iconTribo] = r.banner.images;
                 <div><img src={img(photoTribo)} alt="" /><div>{r.banner.labels[1]}</div><img src={img(iconTribo)} alt="" style="max-height:130px;margin:0 auto" /></div>
               </div>
             ) : (
-              t.images.map((u: string) => <img src={img(u)} alt={t.title} loading="lazy" />)
+              t.images.map((u: string) => <img src={img(u)} alt={t.title} />)
             )}
           </figure>
           <div class="text">
@@ -30,4 +30,8 @@ const [photoPiezo, photoTribo, iconPiezo, iconTribo] = r.banner.images;
       );
     })}
   </main>
+  <script is:inline>
+    // Images above the target load late and push it down: land on the topic again once they are in.
+    if (location.hash) addEventListener('load', () => document.querySelector(location.hash)?.scrollIntoView({ behavior: 'instant' }));
+  </script>
 </Base>

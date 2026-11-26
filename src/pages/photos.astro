@@ -3,7 +3,6 @@ import Base from '../layouts/Base.astro';
 import SubTabs from '../components/SubTabs.astro';
 import data from '../data/photos.yaml';
 import { img } from '../lib/img';
-const tabs = [{ label: 'ARTICLES', href: '/articles' }, { label: 'PHOTOS', href: '/photos' }];
 const years = [...new Set(data.posts.map((p: any) => p.year))].sort((a: any, b: any) => b - a);
 const fmt = (d: string | null) => d ? d.replace(/^(\d{4})\.?(\d{2})?\.?(\d{2})?$/, (_, y, m, dd) => `${y}년${m ? ` ${+m}월` : ''}${dd ? ` ${+dd}일` : ''}`) : '';
 ---
@@ -12,7 +11,7 @@ const fmt = (d: string | null) => d ? d.replace(/^(\d{4})\.?(\d{2})?\.?(\d{2})?$
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css" />
   </Fragment>
   <main class="wrap">
-    <SubTabs tabs={tabs} current="/photos" />
+    <SubTabs />
     {years.map((y) => (
       <section>
         <h2 class="year">{y}</h2>
