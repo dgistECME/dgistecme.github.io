@@ -6,7 +6,7 @@ import sitemap from '@astrojs/sitemap';
 // GitHub Pages: user/org site (<name>.github.io repo) -> base '/'; project site -> base '/<repo>'.
 // SITE_URL / BASE_PATH come from the workflow env; defaults match production.
 export default defineConfig({
-  site: process.env.SITE_URL ?? 'https://dgistecme.github.io',
+  site: process.env.SITE_URL ?? 'https://juhyuckleedgist.com',
   base: process.env.BASE_PATH ?? '/',
   trailingSlash: 'ignore',
   integrations: [sitemap()],

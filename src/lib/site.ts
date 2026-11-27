@@ -1,6 +1,6 @@
 /** Site-wide SEO constants. Edit here only. */
 export const SITE = {
-  url: 'https://dgistecme.github.io',
+  url: 'https://juhyuckleedgist.com',
   name: 'ECME LAB',
   nameKo: 'DGIST 이주혁 교수 연구실',
   fullName: 'Energy Conversion Materials Engineering Lab (ECME LAB), DGIST',

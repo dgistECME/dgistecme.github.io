@@ -34,7 +34,7 @@ jobs:
         env:
           # user/org site (<name>.github.io repo): BASE_PATH is "/"
           # project site: BASE_PATH is "/<repo-name>"
-          SITE_URL: https://${{ github.repository_owner }}.github.io
+          SITE_URL: https://juhyuckleedgist.com
           BASE_PATH: ${{ endsWith(github.repository, '.github.io') && '/' || format('/{0}', github.event.repository.name) }}
       # Pages limit is 1 GB. Over 800 MB: fail here, so the current live site stays up unchanged.
       - name: Size guard

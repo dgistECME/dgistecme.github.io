@@ -4,7 +4,7 @@ import archived from '../data/archived.json';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const stems: Record<string, string> = map;
 // old gallery photos live in the separate repo dgistECME/media (own 1 GB Pages limit); see tools/archive_photos.py
-const ARCHIVE = 'https://dgistecme.github.io/media';
+const ARCHIVE = '/media'; // same origin: dgistECME/media project site follows the org custom domain
 const archivedSet = new Set<string>(archived);
 const at = (stem: string) => (archivedSet.has(stem) ? ARCHIVE : base);
 
